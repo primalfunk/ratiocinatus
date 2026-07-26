@@ -1,0 +1,100 @@
+{
+  "contract_version": "0.1.0",
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "items": [
+    {
+      "contract_version": "0.1.0",
+      "evidence_id": "E-01",
+      "fictional": true,
+      "statements": [
+        "The center closes at 8:00 p.m. Monday through Friday."
+      ],
+      "title": "Current hours"
+    },
+    {
+      "contract_version": "0.1.0",
+      "evidence_id": "E-02",
+      "fictional": true,
+      "statements": [
+        "Month 1: 36 arrivals.",
+        "Month 2: 41 arrivals.",
+        "Month 3: 39 arrivals.",
+        "Month 4: 44 arrivals.",
+        "Month 5: 38 arrivals.",
+        "Month 6: 42 arrivals.",
+        "These are arrivals, not unique individuals."
+      ],
+      "title": "Turn-away log"
+    },
+    {
+      "contract_version": "0.1.0",
+      "evidence_id": "E-03",
+      "fictional": true,
+      "statements": [
+        "120 voluntary respondents.",
+        "74 would use the center after 8:00 p.m. at least once per week.",
+        "28 might.",
+        "18 would not.",
+        "Distributed through the center email list and front desk."
+      ],
+      "title": "Pilot survey"
+    },
+    {
+      "contract_version": "0.1.0",
+      "evidence_id": "E-04",
+      "fictional": true,
+      "statements": [
+        "Two additional staff members.",
+        "One additional security shift.",
+        "$3,600 per month."
+      ],
+      "title": "Staffing estimate"
+    },
+    {
+      "contract_version": "0.1.0",
+      "evidence_id": "E-05",
+      "fictional": true,
+      "statements": [
+        "Six-month grant approved for up to $21,600.",
+        "Restricted to additional staffing and security costs of a weekday two-hour extension."
+      ],
+      "title": "Pilot grant"
+    },
+    {
+      "contract_version": "0.1.0",
+      "evidence_id": "E-06",
+      "fictional": true,
+      "statements": [
+        "Current contractor confirms Monday through Thursday.",
+        "Friday is not confirmed."
+      ],
+      "title": "Security availability"
+    },
+    {
+      "contract_version": "0.1.0",
+      "evidence_id": "E-07",
+      "fictional": true,
+      "statements": [
+        "Six-month weekday pilot.",
+        "Closing extends from 8:00 p.m. to 10:00 p.m.",
+        "Not midnight, overnight, or permanent."
+      ],
+      "title": "Pilot limit"
+    },
+    {
+      "contract_version": "0.1.0",
+      "evidence_id": "E-08",
+      "fictional": true,
+      "statements": [
+        "The board must decide before the grant acceptance deadline."
+      ],
+      "title": "Decision date"
+    }
+  ],
+  "limitations": [
+    "The packet does not claim that the pilot will succeed.",
+    "Respondents are not guaranteed unique future users.",
+    "Friday coverage is not confirmed.",
+    "All evidence and entities are fictional."
+  ]
+}

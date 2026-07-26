@@ -1,0 +1,9 @@
+Ratiocinatus Phase 0.5 fixture validation
+Fixture: ratiocinatus-proof-riverton-evening-access-v1
+Valid: True
+Lines: 68
+Generated variants: 3
+Media checked: True
+
+Findings:
+- INFORMATION FIXTURE_VALID: all requested fixture checks passed

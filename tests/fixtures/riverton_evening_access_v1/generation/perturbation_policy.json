@@ -1,0 +1,93 @@
+{
+  "adversarial": [
+    {
+      "gain_db": -10,
+      "id": "P-01",
+      "kind": "gain",
+      "line_id": "L037"
+    },
+    {
+      "id": "P-02",
+      "kind": "broadband_noise",
+      "line_id": "L053",
+      "snr_db": 22
+    },
+    {
+      "clip_milliseconds": 120,
+      "id": "P-03",
+      "kind": "initial_clip",
+      "line_id": "L058"
+    },
+    {
+      "id": "P-04",
+      "kind": "voice_similarity",
+      "line_id": "L001",
+      "note": "two distinct female stock voices",
+      "speakers": [
+        "PARTICIPANT_A",
+        "PARTICIPANT_B"
+      ]
+    },
+    {
+      "duration_seconds": 0.8,
+      "id": "P-05",
+      "kind": "visual_mismatch",
+      "line_id": "L050",
+      "wrong_speaker": "PARTICIPANT_A"
+    }
+  ],
+  "adversarial_overlaps": [
+    {
+      "id": "O-01",
+      "lines": [
+        "L020",
+        "L021"
+      ],
+      "seconds": 1.1
+    },
+    {
+      "id": "O-02",
+      "lines": [
+        "L040",
+        "L041"
+      ],
+      "seconds": 0.85
+    },
+    {
+      "id": "I-01",
+      "lines": [
+        "L037",
+        "L038"
+      ],
+      "seconds": 0.22
+    }
+  ],
+  "naturalized": {
+    "hesitations": [
+      "pause before L039",
+      "synthetic breath before L063"
+    ],
+    "off_highlight": {
+      "duration_seconds": 0.75,
+      "line_id": "L056"
+    },
+    "overlaps": [
+      {
+        "id": "O-01",
+        "lines": [
+          "L020",
+          "L021"
+        ],
+        "seconds": 0.55
+      },
+      {
+        "id": "O-02",
+        "lines": [
+          "L040",
+          "L041"
+        ],
+        "seconds": 0.4
+      }
+    ]
+  }
+}

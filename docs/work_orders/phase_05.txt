@@ -1,0 +1,1369 @@
+RATIOCINATUS
+PHASE 0.5 WORK ORDER
+CONTROLLED PROOF CORPUS AND SYNTHETIC AUDIOVISUAL FIXTURE
+
+Document status: Implementation work order
+Project design reference: PROJECT_DESIGN.md version 0.1.0
+Phase identifier: 0.5
+Phase title: Controlled Proof Corpus
+Placement: After Phase 0 and before Phase 1
+Target application version: 0.2.0
+Primary implementation language: Python
+Execution model: Local-first
+Date: 2026-07-26
+
+======================================================================
+1. PHASE PLACEMENT
+======================================================================
+
+This work is designated Phase 0.5.
+
+It must begin only after Phase 0 has established repository structure, versioned
+contracts, stable identifiers, canonical serialization, source registration,
+artifact envelopes, provenance, provider boundaries, workspace persistence,
+replay foundations, dependency inventory, and licensing inventory.
+
+It must complete before Phase 1 begins substantive audiovisual ingestion and
+source-addressing work.
+
+This placement is intentional. The controlled proof corpus depends on Phase 0
+infrastructure for provenance, deterministic generation, licensing records,
+artifact identity, and replay. Phase 1 and later phases depend on the corpus as
+a stable, known input.
+
+Phase 0.5 is not an analytical phase. It creates source material and hidden
+reference material. It must not implement transcription, diarization, discourse
+analysis, adjudication, scoring, or annotated-output rendering.
+
+The anticipated sequence becomes:
+
+- Phase 0: Project foundation and evidentiary kernel
+- Phase 0.5: Controlled proof corpus and synthetic audiovisual fixture
+- Phase 1: Audiovisual ingestion and source addressing
+- Phase 2: Transcription and temporal speech evidence
+- Phase 3: Speaker diarization and participant identity foundations
+- later phases as described in PROJECT_DESIGN.md
+
+The builder must recommend a corresponding PROJECT_DESIGN.md revision but must
+not silently rewrite the design document unless explicitly authorized.
+
+======================================================================
+2. PHASE GOAL
+======================================================================
+
+Create a locally generated, legally usable, reproducible, three-speaker
+audiovisual fixture that can serve as the principal controlled proof source for
+Ratiocinatus.
+
+The fixture must provide:
+
+- distinct synthetic voices;
+- an exact canonical script;
+- known speaker assignments;
+- known line order;
+- known intended pauses and overlaps;
+- known acoustic perturbations;
+- a simple controlled visual presentation;
+- an exact generation manifest;
+- hidden reference annotations;
+- multiple controlled difficulty variants;
+- and a redistributable or clearly bounded licensing package.
+
+The corpus must support independent testing of source registration, audiovisual
+ingestion, transcription, timing, diarization, speaker attribution, utterance
+segmentation, discourse construction, proposition normalization, argument graph
+construction, adjudication, scoring, review, and annotated rendering.
+
+The central proof is:
+
+Given the canonical script, generation policy, voice configuration, and fixed
+assembly schedule, the project can generate or regenerate a controlled
+audiovisual exchange whose source media, timing references, speaker references,
+and hidden analytical ground truth are complete, internally consistent,
+validated, and traceable.
+
+======================================================================
+3. DESIGN AUTHORITY
+======================================================================
+
+Implementation must preserve these PROJECT_DESIGN.md principles:
+
+- evidence before interpretation;
+- proposals are not facts;
+- uncertainty is a first-class output;
+- provider independence;
+- local-first operation;
+- deterministic authority where feasible;
+- replayability;
+- and strict separation of observation, interpretation, adjudication, scoring,
+  review, and rendering.
+
+The hidden reference package represents the intended construction and expected
+conservative interpretation of the fixture. It is not an instruction that later
+models must reproduce every interpretation regardless of evidence.
+
+Later analytical systems must be permitted to disagree with a reference item,
+mark an item ambiguous, produce a supported alternative, or fail conservatively.
+
+======================================================================
+4. FIXTURE IDENTITY
+======================================================================
+
+Canonical fixture family name:
+Riverton Evening Access Forum
+
+Canonical fixture identifier:
+ratiocinatus-proof-riverton-evening-access-v1
+
+Canonical discourse format:
+Moderated civic-policy forum
+
+Canonical setting:
+A fictional public meeting concerning whether the fictional Riverton Community
+Center should extend weekday closing time from 8:00 p.m. to 10:00 p.m.
+
+Canonical participants:
+
+- MODERATOR: Elena Ward
+- PARTICIPANT_A: Mara Chen
+- PARTICIPANT_B: Daniel Price
+
+All names, organizations, records, grants, schedules, and events are fictional.
+
+No generated voice may intentionally imitate or be represented as a real person.
+
+======================================================================
+5. REQUIRED OUTPUT VARIANTS
+======================================================================
+
+5.1 VARIANT A: CLEAN REFERENCE
+
+Purpose:
+Establish the best-case source for ingestion, transcription, diarization, and
+speaker attribution.
+
+Requirements:
+
+- three clearly distinct voices;
+- no simultaneous speech;
+- full scripted wording;
+- clean audio;
+- controlled loudness;
+- no background noise;
+- comfortable pauses;
+- no clipped phonemes;
+- no visual ambiguity;
+- and exact line-level schedule.
+
+Canonical suffix: clean
+
+5.2 VARIANT B: NATURALIZED EXCHANGE
+
+Purpose:
+Introduce limited realistic conversational complexity without changing the
+underlying argument.
+
+Requirements:
+
+- three distinct voices;
+- controlled hesitations;
+- one self-correction;
+- one brief interruption;
+- two brief overlap intervals;
+- variable pauses;
+- limited speech-rate variation;
+- one off-camera or visually unhighlighted utterance;
+- and no destructive noise.
+
+Canonical suffix: naturalized
+
+The builder may alter delivery but must not alter propositional content except
+where this work order explicitly authorizes a naturalized form.
+
+5.3 VARIANT C: ADVERSARIAL EVIDENCE
+
+Purpose:
+Test whether later systems expose uncertainty rather than manufacturing
+certainty.
+
+Requirements:
+
+- all Variant B characteristics;
+- one low-volume line;
+- one line with mild broadband background noise;
+- one partially clipped initial word;
+- one longer overlap interval;
+- one deliberately similar voice characteristic between two speakers while
+  preserving meaningful distinction;
+- one visual active-speaker mismatch;
+- and one semantically ambiguous passage.
+
+Canonical suffix: adversarial
+
+Perturbations must be controlled and documented. They must not render the source
+generally unusable.
+
+======================================================================
+6. REQUIRED MEDIA FORM
+======================================================================
+
+Each variant must include:
+
+- one final video file;
+- one final mixed-audio file;
+- one isolated voice stem per participant;
+- one event schedule;
+- one line schedule;
+- one overlap schedule;
+- one visual-state schedule;
+- and one generation manifest.
+
+Preferred final characteristics:
+
+- MP4 container;
+- H.264 video or another broadly supported codec justified by the builder;
+- AAC or PCM-derived audio suitable for later extraction;
+- 1920 by 1080 resolution;
+- 30 frames per second;
+- fixed frame rate;
+- stereo final mix;
+- 48 kHz audio sample rate;
+- no DRM;
+- no timing structures likely to complicate exact source mapping;
+- and duration between 8 and 14 minutes.
+
+Exact codec and rate choices must be recorded and justified.
+
+======================================================================
+7. VISUAL DESIGN
+======================================================================
+
+The video must contain:
+
+- title: Riverton Evening Access Forum;
+- subtitle: Controlled proof fixture;
+- three participant panels;
+- participant name and role;
+- a simple non-photoreal avatar or geometric symbol for each participant;
+- a visible active-speaker indication driven by the known schedule;
+- and a neutral background.
+
+The source video must not contain logical labels, referee calls, scores, fallacy
+names, proposition identifiers, argument arrows, or other downstream answers.
+
+The active-speaker indication is part of the synthetic scene and is not
+authoritative evidence for later analysis.
+
+Variant C must contain one documented active-speaker indication error.
+
+All graphic assets must be programmatically generated or clearly licensed.
+
+======================================================================
+8. TEXT-TO-SPEECH REQUIREMENTS
+======================================================================
+
+Use a provider-independent TTS boundary.
+
+The initial preferred candidate is Kokoro or another local system whose software,
+model weights, and selected voices are compatible with intended fixture use and
+distribution.
+
+Do not assume that an engine license governs every voice or model artifact.
+
+Before generation, record:
+
+- engine name and version;
+- code license;
+- model name and version;
+- model-weight license;
+- voice identifiers and voice-specific terms;
+- phonemizer dependency and license;
+- language and sample rate;
+- inference configuration;
+- deterministic seed where supported;
+- and known reproducibility limitations.
+
+Voice requirements:
+
+- all voices intelligible;
+- three voices meaningfully distinguishable;
+- no intentional imitation of a known person;
+- no voice cloning;
+- Participant A and Participant B distinguishable under ordinary diarization;
+- Moderator the most acoustically distinct voice.
+
+Multiple engines may be used only if fully documented and necessary.
+
+======================================================================
+9. CANONICAL EVIDENCE PACKET
+======================================================================
+
+All evidence is fictional and supplied to all participants before the forum.
+
+E-01 CURRENT HOURS
+The center closes at 8:00 p.m. Monday through Friday.
+
+E-02 TURN-AWAY LOG
+For the six most recent complete months, staff recorded arrivals after the last
+admissible entry time:
+
+- Month 1: 36
+- Month 2: 41
+- Month 3: 39
+- Month 4: 44
+- Month 5: 38
+- Month 6: 42
+
+These are arrivals, not unique individuals.
+
+E-03 PILOT SURVEY
+Of 120 voluntary respondents:
+
+- 74 said they would use the center after 8:00 p.m. at least once per week;
+- 28 said they might;
+- 18 said they would not.
+
+The survey was distributed through the center email list and front desk.
+
+E-04 STAFFING ESTIMATE
+A weekday extension from 8:00 p.m. to 10:00 p.m. is estimated to require two
+additional staff members, one additional security shift, and $3,600 per month.
+
+E-05 PILOT GRANT
+A six-month grant is approved for up to $21,600, restricted to the additional
+staffing and security costs of a weekday two-hour extension.
+
+E-06 SECURITY AVAILABILITY
+The current security contractor confirms Monday through Thursday. Friday is not
+confirmed.
+
+E-07 PILOT LIMIT
+The proposal is a six-month weekday pilot extending closing time from 8:00 p.m.
+to 10:00 p.m. It is not a midnight, overnight, or permanent proposal.
+
+E-08 DECISION DATE
+The board must decide before the grant acceptance deadline.
+
+The packet does not claim the pilot will succeed, that respondents are unique
+future users, or that Friday coverage will become available.
+
+======================================================================
+10. CANONICAL SCRIPT
+======================================================================
+
+Delivery policy:
+
+- Preserve wording exactly in Variant A.
+- Apply only authorized changes in Variants B and C.
+- Do not add substantive claims or improvise.
+- Do not change names, quantities, periods, or proposal scope.
+- Parenthetical directions are not spoken unless marked SPOKEN.
+- Line identifiers remain stable across variants.
+
+OPENING
+
+L001 MODERATOR:
+Good evening. This is the Riverton Evening Access Forum. We are discussing one
+proposal: a six-month weekday pilot that would keep the community center open
+until ten p.m. instead of eight p.m. Mara Chen supports the pilot. Daniel Price
+opposes authorizing it in its current form. I will ask both participants to use
+the evidence packet provided before this forum.
+
+L002 MODERATOR:
+Mara, please give your opening position.
+
+L003 PARTICIPANT_A:
+The center should authorize the six-month pilot. During each of the last six
+months, staff recorded between thirty-six and forty-four arrivals after the last
+admissible entry time. The pilot survey also found seventy-four respondents who
+said they would use the center after eight at least once per week. We have a
+real access problem, and the grant can pay the projected additional cost during
+the pilot.
+
+L004 MODERATOR:
+Daniel, your opening position.
+
+L005 PARTICIPANT_B:
+The board should not authorize the proposal yet. The survey is voluntary, the
+arrival log may count the same people repeatedly, and Friday security has not
+been confirmed. The proposal may be worth testing eventually, but the current
+record does not show that the full five-day pilot is ready.
+
+CURRENT ACCESS
+
+L006 MODERATOR:
+Daniel, do you agree that the current schedule excludes at least some people who
+want to use the center in the evening?
+
+L007 PARTICIPANT_B:
+Yes. I agree that some people cannot arrive before the center closes.
+
+L008 MODERATOR:
+Mara, what does the turn-away log establish?
+
+L009 PARTICIPANT_A:
+It establishes that late arrival is not a one-week anomaly. The count stayed
+between thirty-six and forty-four in every one of the six recorded months.
+
+L010 PARTICIPANT_B:
+It does not establish forty different people every month. The same small group
+could account for many of those arrivals.
+
+L011 PARTICIPANT_A:
+That is true. The log counts arrivals, not unique people. I am using it to show
+a recurring access pattern, not to claim that every entry is a different
+person.
+
+Reference intent:
+
+- L006 is a direct question.
+- L007 is responsive and concedes exclusion.
+- L009 makes a limited recurrence claim.
+- L010 raises a valid scope objection.
+- L011 concedes the limitation and narrows the claim.
+
+STAFFING AND COST
+
+L012 MODERATOR:
+Mara, how much additional staffing would be required?
+
+L013 PARTICIPANT_A:
+The center is one of the most valuable public services in the neighborhood.
+
+L014 MODERATOR:
+That may be relevant to the larger decision, but it does not answer the staffing
+question. How much additional staffing would be required?
+
+L015 PARTICIPANT_A:
+Two additional staff members and one additional security shift.
+
+L016 PARTICIPANT_B:
+And the extension would increase operating costs by at least three thousand six
+hundred dollars per month.
+
+L017 PARTICIPANT_A:
+The estimate is three thousand six hundred dollars per month, yes.
+
+Reference intent:
+
+- L012 creates a direct answer obligation.
+- L013 is related but nonresponsive.
+- L014 identifies the nonresponse and repeats the question.
+- L015 is responsive.
+- L016 states the monthly cost.
+- L017 confirms the estimate.
+
+SURVEY EVIDENCE
+
+L018 MODERATOR:
+Daniel, what is your objection to the survey?
+
+L019 PARTICIPANT_B:
+It was distributed through the center's email list and front desk. People who
+already use the center were more likely to see it and answer it. That makes it
+weak evidence about the whole community.
+
+L020 PARTICIPANT_A:
+It is not a random community survey, and I do not claim that it is. But it is
+evidence about current center users, who are the people most immediately
+affected by the closing time.
+
+L021 PARTICIPANT_B:
+You keep presenting seventy-four responses as seventy-four guaranteed new users.
+
+L022 PARTICIPANT_A:
+No. I said seventy-four respondents reported that they would use later hours at
+least once per week. A stated intention is not a guaranteed visit, and a survey
+response is not proof of a unique new user.
+
+L023 MODERATOR:
+Daniel, do you accept that distinction?
+
+L024 PARTICIPANT_B:
+I accept the wording, but I still think Mara is putting too much weight on the
+survey.
+
+Reference intent:
+
+- L019 is a relevant sampling objection.
+- L020 concedes the limitation and narrows the claim.
+- L021 misrepresents L003 and L020 by substituting guaranteed new users.
+- L022 directly corrects the misrepresentation.
+- L024 is a qualified concession, not agreement on evidential weight.
+
+GRANT AND CONDITIONAL REASONING
+
+L025 MODERATOR:
+Let us turn to cost. Mara, state your argument about the grant.
+
+L026 PARTICIPANT_A:
+If the approved grant fully covers the projected staffing and security cost,
+then that projected cost does not require money from the center's ordinary
+operating budget during the six-month pilot. The grant provides up to twenty-one
+thousand six hundred dollars, and six months at three thousand six hundred
+dollars per month is twenty-one thousand six hundred dollars. Therefore, on the
+figures in the packet, the projected pilot cost is covered without using the
+ordinary operating budget.
+
+L027 PARTICIPANT_B:
+That assumes the estimate is exact. If costs exceed the estimate, the grant may
+not cover the excess.
+
+L028 PARTICIPANT_A:
+Yes. My conclusion is limited to the projected cost in the packet. It does not
+show that every possible overrun is covered.
+
+L029 MODERATOR:
+Daniel, does the grant answer your objection to the projected cost?
+
+L030 PARTICIPANT_B:
+It answers the projected-cost objection if the estimate holds. It does not
+answer the Friday security problem.
+
+Reference intent:
+
+- L026 contains an explicit conditional argument and arithmetic support.
+- L027 raises a relevant qualification.
+- L028 incorporates the qualification.
+- L030 is a responsive, qualified answer.
+- No one claims all possible overruns are covered.
+
+FRIDAY SECURITY
+
+L031 MODERATOR:
+Daniel, state the Friday security problem precisely.
+
+L032 PARTICIPANT_B:
+The contractor has confirmed Monday through Thursday, but not Friday. A
+five-day extension should not be authorized unless the center has a safe and
+lawful way to staff all five evenings.
+
+L033 PARTICIPANT_A:
+The board can authorize the pilot subject to confirmation of Friday coverage.
+
+L034 PARTICIPANT_B:
+That changes the proposal.
+
+L035 PARTICIPANT_A:
+It adds a condition before Friday operation. It does not change the two-hour
+schedule, the six-month limit, or the funding source.
+
+L036 MODERATOR:
+Mara, what happens if Friday coverage is never confirmed?
+
+L037 PARTICIPANT_A:
+The grant deadline is approaching, and delaying the vote could cause the center
+to lose the funding.
+
+L038 MODERATOR:
+That does not answer what happens if Friday coverage is never confirmed.
+
+L039 PARTICIPANT_A:
+The board could operate Monday through Thursday, or decline to begin the pilot.
+The evidence packet does not tell us whether the grantor would accept a
+four-day version, so I cannot say that the first option is available without
+further confirmation.
+
+Reference intent:
+
+- L032 presents a clear objection and burden.
+- L033 proposes conditional authorization.
+- L034 disputes whether that is the same proposal.
+- L035 distinguishes condition from scope.
+- L036 creates a direct question.
+- L037 is nonresponsive.
+- L038 identifies the nonresponse.
+- L039 answers conservatively and preserves an unknown.
+- The proposal-change dispute may remain unresolved.
+
+SCOPE AND MISREPRESENTATION
+
+L040 PARTICIPANT_B:
+Mara wants the building open late every night even though the center cannot
+guarantee security.
+
+L041 PARTICIPANT_A:
+That is not my position. I support a weekday pilot until ten p.m. for six
+months. I am not proposing overnight operation, and I have just said that Friday
+operation requires confirmed coverage.
+
+L042 MODERATOR:
+Daniel, do you accept that Mara's stated proposal is the six-month, two-hour
+weekday pilot described in the packet?
+
+L043 PARTICIPANT_B:
+Yes, that is the proposal she has stated here.
+
+L044 MODERATOR:
+Then please address that proposal rather than a broader one.
+
+Reference intent:
+
+- L040 broadens the position and omits the expressed security condition.
+- L041 corrects the record.
+- L043 concedes the correction.
+- L044 is procedural moderation.
+- L040 is a candidate misrepresentation call.
+
+SELF-CORRECTION
+
+L045 PARTICIPANT_A:
+The survey identified sixty regular evening users, sorry, sixteen people in one
+program whose schedules were discussed in the written comments. That example is
+not part of the numerical evidence packet, so I withdraw it from my argument.
+
+L046 MODERATOR:
+For clarity, are you relying on either sixty or sixteen as evidence for the
+pilot?
+
+L047 PARTICIPANT_A:
+No. I am not relying on either number.
+
+Reference intent:
+
+- L045 contains immediate self-correction and explicit withdrawal.
+- The incorrect number must not become an ordinary contradiction.
+- Neither number enters the committed argument graph as support.
+- L047 confirms withdrawal.
+
+POPULARITY INFERENCE
+
+L048 PARTICIPANT_B:
+If later hours are popular, evening attendance will rise. Evening attendance
+rose last month. Therefore, the later-hours proposal is already popular.
+
+L049 MODERATOR:
+The center has not yet adopted later hours. How does last month's attendance
+increase establish the popularity of a schedule that was not in effect?
+
+L050 PARTICIPANT_B:
+It shows that demand is moving in the right direction.
+
+L051 PARTICIPANT_A:
+It may show increased demand for the center. It cannot, by itself, show that
+later hours caused the increase or that a schedule not yet adopted was already
+popular.
+
+Reference intent:
+
+- L048 contains a candidate affirmation-of-the-consequent structure.
+- It attributes popularity to a policy not yet implemented.
+- L049 directly challenges the inference.
+- L050 retreats to a weaker claim.
+- L051 distinguishes demand from causal or policy-specific support.
+- Formal invalidity requires confident proposition normalization.
+
+COST CONTRADICTION
+
+L052 MODERATOR:
+Daniel, earlier you stated that the extension would increase operating costs by
+at least three thousand six hundred dollars per month. Do you still accept that
+figure as the packet's estimate?
+
+L053 PARTICIPANT_B:
+I never said the extension would cost thousands of dollars each month.
+
+L054 MODERATOR:
+You said, quote, "the extension would increase operating costs by at least three
+thousand six hundred dollars per month." Would you like to correct your current
+answer?
+
+L055 PARTICIPANT_B:
+Yes. I did say that. My current answer was wrong. Three thousand six hundred
+dollars is the packet's monthly estimate.
+
+Reference intent:
+
+- L053 explicitly contradicts L016.
+- L054 cites the earlier statement.
+- L055 corrects L053 and restores the record.
+- Scoring may distinguish contradiction from prompt correction.
+- Correction does not erase the historical contradiction.
+
+UNRESOLVED OPERATIONAL ISSUE
+
+L056 PARTICIPANT_B:
+I have one additional question. If the current security contractor cannot cover
+Friday, who is responsible for finding and vetting a replacement, and what
+standard must that replacement meet?
+
+L057 MODERATOR:
+Mara, can you answer that?
+
+L058 PARTICIPANT_A:
+The board needs to make a decision before the grant deadline.
+
+L059 MODERATOR:
+That does not identify who would find and vet a replacement or what standard
+would apply.
+
+L060 PARTICIPANT_A:
+I do not know. The evidence packet does not assign that responsibility or state
+a vetting standard.
+
+Reference intent:
+
+- L056 is a relevant compound operational question.
+- L058 is nonresponsive.
+- L059 identifies the nonresponse.
+- L060 is responsive and acknowledges missing evidence.
+- The issue remains unresolved even though the answer obligation is satisfied.
+- Later systems must distinguish unanswered from answered but unresolved.
+
+AMBIGUOUS CONCESSION
+
+L061 PARTICIPANT_B:
+If the numbers are real, I suppose the grant would solve the money problem.
+
+L062 MODERATOR:
+Are you disputing that the packet contains those numbers, disputing their
+accuracy, or conceding the projected-cost point conditionally?
+
+L063 PARTICIPANT_B:
+Take it however you like.
+
+Reference intent:
+
+- L061 may be conditional concession, sarcasm, or evidential skepticism.
+- L062 requests disambiguation.
+- L063 refuses disambiguation.
+- Expected result is ambiguous or unresolved.
+- No definitive concession call is required.
+
+CLOSING POSITIONS
+
+L064 MODERATOR:
+Mara, give your closing position without adding new evidence.
+
+L065 PARTICIPANT_A:
+The record shows a recurring late-arrival pattern, interest among current center
+users, a defined two-hour pilot, and grant funding equal to the projected
+six-month cost. Friday security and replacement procedures remain unresolved.
+I support authorization only if required coverage is confirmed before the
+affected evening operates.
+
+L066 MODERATOR:
+Daniel, give your closing position without adding new evidence.
+
+L067 PARTICIPANT_B:
+The access problem is real, but the evidence does not establish how many unique
+people would use later hours, and Friday security is unresolved. I accept that
+the grant matches the projected cost. I oppose authorizing a five-day pilot
+until security coverage and responsibility are defined.
+
+L068 MODERATOR:
+The forum is concluded. This recording is a controlled fictional fixture
+created for testing audiovisual reasoning analysis. No person, organization,
+survey, grant, or policy described here is real.
+
+Reference intent:
+
+- L065 accurately summarizes support and unresolved conditions.
+- L067 concedes access and projected-cost coverage while preserving objections.
+- Neither closing adds a new factual premise.
+- L068 supplies explicit fictional-fixture disclosure.
+
+======================================================================
+11. AUTHORIZED VARIANT DIRECTIONS
+======================================================================
+
+Variant A uses the canonical words without overlap.
+
+Variants B and C may apply only the following changes.
+
+HESITATIONS
+
+- Before L020, Participant A may begin with "Well".
+- Before L039, Participant A may pause audibly.
+- Before L063, Participant B may produce a short dismissive breath or hesitation.
+
+These are delivery phenomena, not propositions.
+
+OVERLAP O-01
+
+- Participant B begins L021 during the end of L020.
+- Variant B target: 0.4 to 0.7 seconds.
+- Variant C target: 0.9 to 1.3 seconds.
+- Both lines remain substantially intelligible.
+
+OVERLAP O-02
+
+- Participant A begins L041 during the end of L040.
+- Variant B target: 0.3 to 0.5 seconds.
+- Variant C target: 0.7 to 1.0 seconds.
+
+INTERRUPTION I-01
+
+- In Variant B, L038 may begin immediately after L037.
+- In Variant C, L038 may begin during the last 0.15 to 0.30 seconds of L037.
+
+VARIANT C ACOUSTIC PERTURBATIONS
+
+P-01:
+Reduce L037 relative to surrounding lines while preserving partial intelligibility.
+
+P-02:
+Add mild broadband room noise to L053 without obscuring the full sentence.
+
+P-03:
+Partially clip the initial word of L058 while leaving the nonresponsive content
+identifiable.
+
+P-04:
+Use somewhat closer pitch or timbre for Participants A and B, but not identical
+voices.
+
+P-05:
+Incorrectly highlight Participant A during the first portion of L050 before
+correcting to Participant B.
+
+Every perturbation must have exact source-time bounds and parameters in the
+manifest.
+
+OFF-CAMERA OR UNHIGHLIGHTED EVENT
+
+- Variant B: no panel highlighted for the first 0.5 to 1.0 seconds of L056.
+- Variant C: no panel highlighted for the first 1.0 to 1.5 seconds of L056.
+
+======================================================================
+12. REQUIRED HIDDEN REFERENCE PACKAGE
+======================================================================
+
+Ordinary analysis must not consume the hidden reference package.
+
+Include:
+
+- canonical script and evidence packet;
+- participant and line definitions;
+- intended speaker per line;
+- exact source times;
+- overlap and perturbation intervals;
+- intended discourse acts;
+- intended propositions;
+- intended argument relations;
+- intended open obligations;
+- candidate adjudication calls;
+- expected non-calls;
+- expected ambiguities;
+- and scoring-neutral fixture notes.
+
+Reference files must distinguish source-construction facts, intended
+interpretations, candidate later adjudications, and expected uncertainty.
+
+======================================================================
+13. REQUIRED REFERENCE LANDMARKS
+======================================================================
+
+Responsive answers:
+
+- L007 to L006
+- L015 to L014 and ultimately L012
+- L030 to L029
+- L039 to L036
+- L047 to L046
+- L055 to L054
+- L060 to L057 and L059
+
+Nonresponsive answers:
+
+- L013 to L012
+- L037 to L036
+- L058 to L057
+
+Candidate misrepresentations:
+
+- L021, weaker and contestable
+- L040, stronger and explicit
+
+Candidate contradiction:
+
+- L053 contradicts L016
+- L055 corrects it
+- L045 is not an ordinary contradiction
+
+Candidate valid reasoning:
+
+- L026, conditional reasoning plus exact packet arithmetic
+
+Candidate invalid reasoning:
+
+- L048, candidate affirmation of the consequent and policy-timing defect
+
+Expected ambiguity:
+
+- L061 through L063
+- L034 and L035 may remain unresolved
+- L021 may remain below adjudication threshold
+
+Open and resolved obligations:
+
+- L012 opens staffing obligation, satisfied by L015
+- L036 opens consequence question, satisfied by L039 with uncertainty
+- L056 opens operational question, answered by L060 while issue remains unresolved
+
+======================================================================
+14. EXPECTED NON-CALLS
+======================================================================
+
+Later systems should not be required to issue:
+
+- contradiction for the corrected and withdrawn numbers in L045;
+- falsehood because survey respondents are not guaranteed users;
+- factual-verification calls about the fictional packet;
+- deception or dishonesty findings;
+- motive or personality judgments;
+- a penalty for "I do not know" in L060;
+- a penalty merely for conditional language;
+- a forced concession from L061;
+- automatic fallacy penalties for objections;
+- or an overall winner encoded in the reference package.
+
+======================================================================
+15. REQUIRED CORPUS STRUCTURE
+======================================================================
+
+A suitable structure is:
+
+tests/
+  fixtures/
+    riverton_evening_access_v1/
+      README.md
+      script/
+        canonical_script.txt
+        evidence_packet.json
+        participants.json
+        line_definitions.json
+      generation/
+        generation_policy.json
+        voice_policy.json
+        visual_policy.json
+        perturbation_policy.json
+      media/
+        clean/
+        naturalized/
+        adversarial/
+      schedules/
+        clean/
+        naturalized/
+        adversarial/
+      reference/
+        discourse_acts.json
+        propositions.json
+        argument_graph.json
+        obligations.json
+        candidate_calls.json
+        expected_non_calls.json
+        ambiguities.json
+      manifests/
+        fixture_manifest.json
+        generation_manifest_clean.json
+        generation_manifest_naturalized.json
+        generation_manifest_adversarial.json
+        license_manifest.json
+      checksums/
+        sha256sums.txt
+      reports/
+        fixture_validation_report.json
+        fixture_validation_report.txt
+
+Equivalent organization is permitted if source media, generation instructions,
+and hidden reference material remain clearly separated.
+
+======================================================================
+16. GENERATION PIPELINE
+======================================================================
+
+Required stages:
+
+1. validate script and evidence packet;
+2. resolve TTS provider and licensed voices;
+3. synthesize each line independently;
+4. preserve raw per-line audio;
+5. normalize only under documented policy;
+6. assemble participant stems;
+7. create pause and overlap schedules;
+8. create final mixed audio;
+9. generate visual frames or scenes;
+10. assemble video;
+11. validate audiovisual timing;
+12. write schedules and manifests;
+13. calculate hashes;
+14. validate reference consistency;
+15. produce reports.
+
+Per-line synthesis is required. Do not submit the full script as one unstructured
+TTS request.
+
+======================================================================
+17. REPRODUCIBILITY POLICY
+======================================================================
+
+Distinguish:
+
+- exact deterministic regeneration;
+- configuration-equivalent regeneration;
+- semantically equivalent regeneration;
+- and non-reproducible generation.
+
+The canonical fixture may be frozen by content hash even if generation is not
+byte-identical across every environment.
+
+Preserve:
+
+- script version;
+- engine and model versions;
+- voice identifiers;
+- synthesis parameters;
+- seeds where supported;
+- per-line text and hashes;
+- assembly schedule;
+- FFmpeg commands;
+- visual-generation parameters;
+- environment summary;
+- and final hashes.
+
+Changed waveform content must not silently retain the prior fixture identity.
+
+======================================================================
+18. LICENSING AND DISTRIBUTION
+======================================================================
+
+Review before committing canonical media:
+
+- TTS engine code;
+- model weights;
+- selected voices;
+- phonemizer;
+- FFmpeg or other tools;
+- fonts;
+- graphic assets;
+- generated source media;
+- script text;
+- and repository distribution status.
+
+Classify the fixture as:
+
+- safely redistributable;
+- redistributable with notices;
+- locally generatable but not distributable;
+- or blocked pending review.
+
+Preferred result: redistributable with required notices.
+
+No third-party music, stock footage, celebrity likeness, cloned voice, or
+unlicensed font is permitted.
+
+======================================================================
+19. REQUIRED CONTRACTS
+======================================================================
+
+Use or extend Phase 0 contracts for:
+
+- ProofFixture
+- ProofFixtureVariant
+- ScriptLine
+- ScriptSpeaker
+- EvidencePacket
+- GenerationPolicy
+- VoiceAssignment
+- SynthesisInvocation
+- LineAudioArtifact
+- LineSchedule
+- OverlapEvent
+- AcousticPerturbation
+- VisualStateEvent
+- FixtureReferenceAnnotation
+- FixtureManifest
+- LicenseManifest
+- FixtureValidationFinding
+- FixtureValidationReport
+
+Equivalent names are permitted where clearer.
+
+Do not prematurely define the complete future analytical ontology.
+
+======================================================================
+20. REQUIRED CLI OPERATIONS
+======================================================================
+
+Provide equivalents of:
+
+- fixture list
+- fixture inspect
+- fixture validate
+- fixture generate
+- fixture regenerate-line
+- fixture render
+- fixture checksum
+- fixture license-report
+- fixture export
+- fixture compare
+
+Required behavior:
+
+- dry-run generation;
+- explicit provider and variant selection;
+- refusal to overwrite canonical artifacts without controlled replacement;
+- structured JSON output;
+- meaningful exit codes;
+- and complete provenance.
+
+======================================================================
+21. REQUIRED VALIDATION
+======================================================================
+
+Validate:
+
+- line identifier uniqueness and ordering;
+- speaker and evidence validity;
+- spoken-number consistency;
+- participant-name consistency;
+- required line presence;
+- schedule monotonicity;
+- overlap boundaries;
+- audio existence and duration;
+- stem and mix consistency where feasible;
+- video duration;
+- visual schedule bounds;
+- perturbation declaration;
+- reference source validity;
+- candidate-call evidence completeness;
+- expected-non-call completeness;
+- manifest and checksum completeness;
+- and licensing status.
+
+A fixture is not valid when licensing is unknown for a required distributable
+component.
+
+======================================================================
+22. REQUIRED TESTING
+======================================================================
+
+Automated tests must cover:
+
+- script and evidence parsing;
+- stable line identifiers;
+- TTS-provider boundary;
+- deterministic mock TTS;
+- per-line orchestration;
+- failed-line recovery;
+- schedule and overlap assembly;
+- perturbation application;
+- visual-state generation;
+- duration checks;
+- manifest and checksum generation;
+- reference consistency;
+- license-manifest validation;
+- CLI behavior;
+- clean-workspace generation;
+- and controlled negative cases.
+
+Ordinary unit tests must not require network, production models, GPU, or full
+fixture regeneration.
+
+======================================================================
+23. REQUIRED NEGATIVE CASES
+======================================================================
+
+Demonstrate detection or rejection of:
+
+- duplicate line identifiers;
+- unknown speaker;
+- missing line;
+- changed script with unchanged fixture version;
+- changed voice assignment with unchanged fixture version;
+- schedule outside media duration;
+- overlap referencing nonexistent lines;
+- reference annotation referencing nonexistent evidence;
+- candidate call lacking source support;
+- missing model-license record;
+- cloned-voice configuration;
+- untracked third-party asset;
+- output hash mismatch;
+- and destructive overwrite of a canonical fixture.
+
+======================================================================
+24. QUALIFICATION RUN
+======================================================================
+
+The qualification must:
+
+1. begin from a clean supported environment;
+2. initialize or open a Phase 0 workspace;
+3. validate script and evidence packet;
+4. inspect TTS availability;
+5. generate Variants A, B, and C;
+6. assemble stems, mixes, and videos;
+7. produce schedules and manifests;
+8. validate all variants;
+9. calculate and freeze hashes;
+10. produce the licensing report;
+11. export the fixture package;
+12. validate the exported package;
+13. demonstrate controlled line regeneration;
+14. classify whether regeneration is hash-identical or version-changing;
+15. produce the completion report.
+
+Record duration, generation time, file sizes, peak memory where practical, and
+GPU use.
+
+======================================================================
+25. COMPLETION GATES
+======================================================================
+
+SCRIPT GATE
+
+- complete 68-line script present;
+- speakers and evidence validate;
+- variant changes remain authorized.
+
+VOICE GATE
+
+- three licensed local voices assigned;
+- intelligible and distinguishable;
+- no cloned or impersonated voice;
+- all terms recorded.
+
+MEDIA GATE
+
+- three variants exist;
+- final video, mix, and stems exist;
+- files open;
+- properties match policy.
+
+TIMING GATE
+
+- every line has source times;
+- overlaps and perturbations are declared;
+- all intervals fall within media duration.
+
+VISUAL GATE
+
+- three-panel presentation exists;
+- active-speaker states follow schedule except one declared Variant C mismatch;
+- no analytical answers appear.
+
+REFERENCE GATE
+
+- hidden references exist;
+- annotations cite valid lines or evidence;
+- candidate calls and non-calls are separate;
+- ambiguity is explicit;
+- no overall winner encoded.
+
+REPRODUCIBILITY GATE
+
+- configuration complete;
+- hashes frozen;
+- commands preserved;
+- regeneration classification accurate;
+- identity changes with canonical media changes.
+
+LICENSING GATE
+
+- licenses and notices present;
+- selected voices approved;
+- no untracked third-party assets;
+- distribution status explicit.
+
+VALIDATION GATE
+
+- machine and human reports pass;
+- negative cases pass;
+- exported-package validation passes.
+
+PHASE-BOUNDARY GATE
+
+- no production transcription;
+- no production diarization;
+- no discourse analysis;
+- no adjudication;
+- no scoring;
+- no analytical overlay rendering.
+
+======================================================================
+26. EXPLICIT NON-DELIVERABLES
+======================================================================
+
+Phase 0.5 must not implement or claim:
+
+- production ingestion;
+- transcription accuracy;
+- diarization accuracy;
+- speaker recognition;
+- discourse or proposition extraction;
+- argument reconstruction;
+- logical adjudication;
+- factual verification;
+- participant scoring;
+- human-review workflow;
+- or finished annotated editions.
+
+The visual fixture is source material. The hidden package is evaluation material.
+
+======================================================================
+27. REQUIRED PROJECT_DESIGN.md REVISION RECOMMENDATION
+======================================================================
+
+The completion report must recommend a design revision that:
+
+- inserts Phase 0.5 after Phase 0;
+- identifies Riverton Evening Access Forum as the initial proof family;
+- changes the initial-proof section from suggestion to selected strategy;
+- records synthetic multi-speaker generation as the initial approach;
+- preserves the right to add human-recorded and found-media corpora later.
+
+The builder must not remove the goal of real long-form analysis.
+
+======================================================================
+28. REQUIRED COMPLETION REPORT
+======================================================================
+
+Include:
+
+- date;
+- application and fixture versions;
+- repository states;
+- delivered files;
+- script validation;
+- TTS engine, model, and voices;
+- licensing status;
+- generation environment;
+- variants and durations;
+- file sizes;
+- line, overlap, perturbation, and visual-state counts;
+- reference-annotation counts;
+- hash inventory;
+- test and qualification results;
+- negative cases;
+- reproducibility classification;
+- deviations;
+- unresolved concerns;
+- proposed design changes;
+- and readiness for Phase 1.
+
+Distinguish complete, partial, mocked, deferred, unsupported, and failed.
+
+======================================================================
+29. PHASE 0.5 SUCCESS DEFINITION
+======================================================================
+
+Phase 0.5 succeeds when Ratiocinatus possesses a controlled audiovisual source
+family that:
+
+- requires no external domain expertise;
+- contains known logical and dialectical structures;
+- includes bounded conversational difficulty;
+- has distinct synthetic speakers;
+- has exact timing and provenance;
+- has hidden references;
+- includes expected ambiguities and expected non-calls;
+- is legally usable under documented policy;
+- validates independently;
+- and serves as the common proof source for Phases 1 through 12.
+
+The desired result is not a demonstration that Ratiocinatus can already judge
+the exchange.
+
+The desired result is a trustworthy exchange against which every later claim of
+capability can be tested.

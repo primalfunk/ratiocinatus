@@ -1,0 +1,69 @@
+{
+  "$defs": {
+    "ProofFixtureVariant": {
+      "enum": [
+        "clean",
+        "naturalized",
+        "adversarial"
+      ],
+      "title": "ProofFixtureVariant",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "discourse_format": {
+      "const": "moderated_civic_policy_forum",
+      "default": "moderated_civic_policy_forum",
+      "title": "Discourse Format",
+      "type": "string"
+    },
+    "family_name": {
+      "const": "Riverton Evening Access Forum",
+      "default": "Riverton Evening Access Forum",
+      "title": "Family Name",
+      "type": "string"
+    },
+    "fixture_id": {
+      "const": "ratiocinatus-proof-riverton-evening-access-v1",
+      "default": "ratiocinatus-proof-riverton-evening-access-v1",
+      "title": "Fixture Id",
+      "type": "string"
+    },
+    "line_count": {
+      "const": 68,
+      "default": 68,
+      "title": "Line Count",
+      "type": "integer"
+    },
+    "speaker_count": {
+      "const": 3,
+      "default": 3,
+      "title": "Speaker Count",
+      "type": "integer"
+    },
+    "variants": {
+      "items": {
+        "$ref": "#/$defs/ProofFixtureVariant"
+      },
+      "title": "Variants",
+      "type": "array"
+    },
+    "version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "variants"
+  ],
+  "title": "ProofFixture",
+  "type": "object"
+}

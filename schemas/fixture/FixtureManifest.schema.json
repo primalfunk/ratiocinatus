@@ -1,0 +1,139 @@
+{
+  "$defs": {
+    "ProofFixture": {
+      "additionalProperties": false,
+      "properties": {
+        "contract_version": {
+          "default": "0.1.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "discourse_format": {
+          "const": "moderated_civic_policy_forum",
+          "default": "moderated_civic_policy_forum",
+          "title": "Discourse Format",
+          "type": "string"
+        },
+        "family_name": {
+          "const": "Riverton Evening Access Forum",
+          "default": "Riverton Evening Access Forum",
+          "title": "Family Name",
+          "type": "string"
+        },
+        "fixture_id": {
+          "const": "ratiocinatus-proof-riverton-evening-access-v1",
+          "default": "ratiocinatus-proof-riverton-evening-access-v1",
+          "title": "Fixture Id",
+          "type": "string"
+        },
+        "line_count": {
+          "const": 68,
+          "default": 68,
+          "title": "Line Count",
+          "type": "integer"
+        },
+        "speaker_count": {
+          "const": 3,
+          "default": 3,
+          "title": "Speaker Count",
+          "type": "integer"
+        },
+        "variants": {
+          "items": {
+            "$ref": "#/$defs/ProofFixtureVariant"
+          },
+          "title": "Variants",
+          "type": "array"
+        },
+        "version": {
+          "const": "1.0.0",
+          "default": "1.0.0",
+          "title": "Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "variants"
+      ],
+      "title": "ProofFixture",
+      "type": "object"
+    },
+    "ProofFixtureVariant": {
+      "enum": [
+        "clean",
+        "naturalized",
+        "adversarial"
+      ],
+      "title": "ProofFixtureVariant",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "canonical_media_frozen": {
+      "title": "Canonical Media Frozen",
+      "type": "boolean"
+    },
+    "canonical_media_hashes": {
+      "items": {
+        "maxItems": 2,
+        "minItems": 2,
+        "prefixItems": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string"
+          }
+        ],
+        "type": "array"
+      },
+      "title": "Canonical Media Hashes",
+      "type": "array"
+    },
+    "checksum_file": {
+      "title": "Checksum File",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "evidence_packet_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Evidence Packet Sha256",
+      "type": "string"
+    },
+    "fixture": {
+      "$ref": "#/$defs/ProofFixture"
+    },
+    "license_manifest_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "License Manifest Sha256",
+      "type": "string"
+    },
+    "script_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Script Sha256",
+      "type": "string"
+    },
+    "voice_policy_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Voice Policy Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "fixture",
+    "script_sha256",
+    "evidence_packet_sha256",
+    "voice_policy_sha256",
+    "license_manifest_sha256",
+    "canonical_media_frozen",
+    "canonical_media_hashes",
+    "checksum_file"
+  ],
+  "title": "FixtureManifest",
+  "type": "object"
+}

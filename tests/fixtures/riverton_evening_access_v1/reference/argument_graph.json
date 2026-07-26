@@ -1,0 +1,51 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "AR-001",
+      "category": "argument_relation",
+      "contract_version": "0.1.0",
+      "description": "Projected-cost conclusion, qualification, and narrowed conclusion.",
+      "evidence_ids": [
+        "E-04",
+        "E-05"
+      ],
+      "line_ids": [
+        "L026",
+        "L027",
+        "L028"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "AR-002",
+      "category": "argument_relation",
+      "contract_version": "0.1.0",
+      "description": "Candidate invalid inference and challenge.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L048",
+        "L049",
+        "L051"
+      ],
+      "status": "candidate"
+    },
+    {
+      "annotation_id": "AR-003",
+      "category": "argument_relation",
+      "contract_version": "0.1.0",
+      "description": "Security objection and conditional response.",
+      "evidence_ids": [
+        "E-06"
+      ],
+      "line_ids": [
+        "L032",
+        "L033",
+        "L035"
+      ],
+      "status": "intended"
+    }
+  ],
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "hidden_reference": true,
+  "ordinary_analysis_must_not_consume": true
+}

@@ -1,0 +1,65 @@
+{
+  "$defs": {
+    "ProofFixtureVariant": {
+      "enum": [
+        "clean",
+        "naturalized",
+        "adversarial"
+      ],
+      "title": "ProofFixtureVariant",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "fixture_id": {
+      "const": "ratiocinatus-proof-riverton-evening-access-v1",
+      "default": "ratiocinatus-proof-riverton-evening-access-v1",
+      "title": "Fixture Id",
+      "type": "string"
+    },
+    "line_count": {
+      "const": 68,
+      "default": 68,
+      "title": "Line Count",
+      "type": "integer"
+    },
+    "media_duration_microseconds": {
+      "exclusiveMinimum": 0,
+      "title": "Media Duration Microseconds",
+      "type": "integer"
+    },
+    "overlap_count": {
+      "minimum": 0,
+      "title": "Overlap Count",
+      "type": "integer"
+    },
+    "perturbation_count": {
+      "minimum": 0,
+      "title": "Perturbation Count",
+      "type": "integer"
+    },
+    "variant": {
+      "$ref": "#/$defs/ProofFixtureVariant"
+    },
+    "visual_state_count": {
+      "exclusiveMinimum": 0,
+      "title": "Visual State Count",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "variant",
+    "media_duration_microseconds",
+    "overlap_count",
+    "perturbation_count",
+    "visual_state_count"
+  ],
+  "title": "ProofFixtureVariantRecord",
+  "type": "object"
+}

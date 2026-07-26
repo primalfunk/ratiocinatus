@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"artifact_type":{"minLength":1,"title":"Artifact Type","type":"string"},"contract_version":{"default":"0.1.0","title":"Contract Version","type":"string"},"payload":{"title":"Payload"},"synthetic":{"default":false,"title":"Synthetic","type":"boolean"}},"required":["artifact_type","payload"],"title":"EvidenceArtifact","type":"object"}

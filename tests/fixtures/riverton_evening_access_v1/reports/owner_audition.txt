@@ -1,0 +1,9 @@
+Ratiocinatus Phase 0.5 owner audition
+Date: 2026-07-26
+Fixture: ratiocinatus-proof-riverton-evening-access-v1
+Scope: clean, naturalized, and adversarial variants
+Result: accepted for initial use
+
+The project owner listened to the generated files and found them adequate to
+begin with.
+

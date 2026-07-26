@@ -1,0 +1,109 @@
+{
+    "application_version":  "0.2.0",
+    "assembly_command":  [
+                             "ffmpeg",
+                             "-hide_banner",
+                             "-loglevel",
+                             "error",
+                             "-y",
+                             "-f",
+                             "concat",
+                             "-safe",
+                             "0",
+                             "-i",
+                             "tests\\fixtures\\riverton_evening_access_v1\\media\\naturalized\\visual_concat.txt",
+                             "-i",
+                             "tests\\fixtures\\riverton_evening_access_v1\\media\\naturalized\\mix.flac",
+                             "-c:v",
+                             "libx264",
+                             "-preset",
+                             "veryfast",
+                             "-crf",
+                             "28",
+                             "-r",
+                             "30",
+                             "-vsync",
+                             "cfr",
+                             "-pix_fmt",
+                             "yuv420p",
+                             "-c:a",
+                             "aac",
+                             "-b:a",
+                             "160k",
+                             "-ar",
+                             "48000",
+                             "-ac",
+                             "2",
+                             "-shortest",
+                             "-movflags",
+                             "+faststart",
+                             "tests\\fixtures\\riverton_evening_access_v1\\media\\naturalized\\forum.mp4"
+                         ],
+    "contract_version":  "0.1.0",
+    "duration_microseconds":  545858667,
+    "environment":  {
+                        "ffmpeg":  [
+                                       "ffmpeg version 2024-09-26-git-f43916e217-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers",
+                                       "built with gcc 13.2.0 (Rev5, Built by MSYS2 project)",
+                                       "configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband"
+                                   ],
+                        "gpu_used":  false,
+                        "machine":  "AMD64",
+                        "onnx_execution_provider":  "CPUExecutionProvider",
+                        "operating_system":  "Windows-10-10.0.26200-SP0",
+                        "python":  "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]"
+                    },
+    "files":  [
+                  {
+                      "bytes":  14301751,
+                      "path":  "media/naturalized/forum.mp4",
+                      "sha256":  "5a6797523d0566d754a30ca8aa290bb26f19a94ac372c31f81b1b6e06113a780"
+                  },
+                  {
+                      "bytes":  33843784,
+                      "path":  "media/naturalized/mix.flac",
+                      "sha256":  "526450008bc65507dc17d6d36845971e120c419291238d8a6b975956e772e159"
+                  },
+                  {
+                      "bytes":  6566867,
+                      "path":  "media/naturalized/stems/moderator.flac",
+                      "sha256":  "df875b05750a2c847fa3f069352122905ab8b0bd39d7bd4c454c02e68fce4d65"
+                  },
+                  {
+                      "bytes":  9916558,
+                      "path":  "media/naturalized/stems/participant_a.flac",
+                      "sha256":  "ed363babe26af094f04db3ca8583d2b3e867aa0364072006d7ad75f46a671856"
+                  },
+                  {
+                      "bytes":  7051692,
+                      "path":  "media/naturalized/stems/participant_b.flac",
+                      "sha256":  "7ff2bc4889087b0aa42948c07acc5b0d76b027bd176b804f25e81dc0b7b1eb33"
+                  }
+              ],
+    "fixture_id":  "ratiocinatus-proof-riverton-evening-access-v1",
+    "font_inputs":  [
+                        {
+                            "path":  "C:\\Windows\\Fonts\\arial.ttf",
+                            "sha256":  "b3658eadae55e682b5f69eb64c439c1ecc8f196c0bb8d4756d145d13bc86476a"
+                        },
+                        {
+                            "path":  "C:\\Windows\\Fonts\\arialbd.ttf",
+                            "sha256":  "e8f4e3baf6cc35fed6fcce3a540e8b39e8f6cda1d22a28f2ec8f526fef7a43f5"
+                        }
+                    ],
+    "generated_at":  "2026-07-26T20:01:21.955828+00:00",
+    "generation_seconds":  63.524,
+    "line_count":  68,
+    "overlap_count":  2,
+    "perturbation_count":  0,
+    "reproducibility":  "configuration_equivalent; canonical media frozen by content hash",
+    "variant":  "naturalized",
+    "visual_state_count":  136,
+    "voice_policy_sha256":  "f42b149a36308c9ee3b2a8b7266afd1eb99b1b6b165b2856a398f7907d729d9a",
+    "loudness_measurement":  {
+                                 "integrated_lufs":  -20.7,
+                                 "loudness_range_lu":  4.1,
+                                 "threshold_lufs":  -31.1,
+                                 "true_peak_dbtp":  -3.2
+                             }
+}

@@ -1,0 +1,23 @@
+{
+  "application_version": "0.1.0",
+  "direct_development": [
+    {"name": "pytest", "required": false, "role": "tests", "source": "PyPI", "version": ">=8"},
+    {"name": "coverage", "required": false, "role": "coverage", "source": "PyPI", "version": ">=7"},
+    {"name": "setuptools", "required": true, "role": "build backend", "source": "PyPI", "version": ">=68"}
+  ],
+  "direct_runtime": [
+    {"name": "pydantic", "platform_constraints": "Python >=3.11", "required": true, "role": "runtime contracts and schema export", "source": "PyPI", "version": ">=2.8,<3"}
+  ],
+  "external_executables": [],
+  "optional_providers": [
+    {"name": "media inspection", "status": "mock only"},
+    {"name": "transcription", "status": "mock only"},
+    {"name": "diarization", "status": "mock only"},
+    {"name": "embedding", "status": "mock only"},
+    {"name": "structured generation", "status": "mock only"},
+    {"name": "rendering", "status": "mock only"}
+  ],
+  "transitive": {"authority": "environment package manager", "command": "python -m pip freeze", "checked_in": false}
+}
+
+

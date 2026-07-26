@@ -1,0 +1,11 @@
+{
+  "application_version": "0.1.0",
+  "fixture_byte_size": 97,
+  "fixture_fingerprint": "41676ca5511f8de1cc27701590c982ea005b574f0cedcb21b413f284e23994af",
+  "fixture_source_id": "src_aa55a9bd07a3b231a54a1639aa98b047",
+  "integrity_before_negative_case": "valid",
+  "modified_content_detected": true,
+  "policy": "source identity is content-derived; equal content shares an identity while each registration remains in append-only history",
+  "report_version": "0.1.0"
+}
+

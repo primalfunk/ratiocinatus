@@ -1,0 +1,26 @@
+{
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "participants": [
+    {
+      "contract_version": "0.1.0",
+      "display_name": "Elena Ward",
+      "fictional": true,
+      "role": "Moderator",
+      "speaker_id": "MODERATOR"
+    },
+    {
+      "contract_version": "0.1.0",
+      "display_name": "Mara Chen",
+      "fictional": true,
+      "role": "Supports the conditional pilot",
+      "speaker_id": "PARTICIPANT_A"
+    },
+    {
+      "contract_version": "0.1.0",
+      "display_name": "Daniel Price",
+      "fictional": true,
+      "role": "Opposes authorization in its current form",
+      "speaker_id": "PARTICIPANT_B"
+    }
+  ]
+}

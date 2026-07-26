@@ -1,0 +1,47 @@
+{
+  "$defs": {
+    "SpeakerRole": {
+      "enum": [
+        "MODERATOR",
+        "PARTICIPANT_A",
+        "PARTICIPANT_B"
+      ],
+      "title": "SpeakerRole",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "display_name": {
+      "minLength": 1,
+      "title": "Display Name",
+      "type": "string"
+    },
+    "fictional": {
+      "const": true,
+      "default": true,
+      "title": "Fictional",
+      "type": "boolean"
+    },
+    "role": {
+      "minLength": 1,
+      "title": "Role",
+      "type": "string"
+    },
+    "speaker_id": {
+      "$ref": "#/$defs/SpeakerRole"
+    }
+  },
+  "required": [
+    "speaker_id",
+    "display_name",
+    "role"
+  ],
+  "title": "ScriptSpeaker",
+  "type": "object"
+}

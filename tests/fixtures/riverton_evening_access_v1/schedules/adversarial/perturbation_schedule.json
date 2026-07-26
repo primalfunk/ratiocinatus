@@ -1,0 +1,70 @@
+{
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "perturbations": [
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 5376000,
+      "kind": "gain",
+      "line_id": "L037",
+      "parameters": [
+        [
+          "gain_db",
+          "-10"
+        ]
+      ],
+      "perturbation_id": "P-01",
+      "start_microseconds": 288811333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3882667,
+      "kind": "broadband_noise",
+      "line_id": "L053",
+      "parameters": [
+        [
+          "snr_db",
+          "22"
+        ],
+        [
+          "seed",
+          "20260726"
+        ]
+      ],
+      "perturbation_id": "P-02",
+      "start_microseconds": 414864333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3229333,
+      "kind": "initial_clip",
+      "line_id": "L058",
+      "parameters": [
+        [
+          "clip_milliseconds",
+          "120"
+        ]
+      ],
+      "perturbation_id": "P-03",
+      "start_microseconds": 449548000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 544466667,
+      "kind": "voice_similarity",
+      "line_id": "L001",
+      "parameters": [
+        [
+          "participant_a_voice",
+          "af_bella"
+        ],
+        [
+          "participant_b_voice",
+          "af_sarah"
+        ]
+      ],
+      "perturbation_id": "P-04",
+      "start_microseconds": 0
+    }
+  ],
+  "variant": "adversarial"
+}

@@ -1,0 +1,56 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "NC-001",
+      "category": "expected_non_call",
+      "contract_version": "0.1.0",
+      "description": "No contradiction call for corrected and withdrawn numbers.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L045",
+        "L046",
+        "L047"
+      ],
+      "status": "expected"
+    },
+    {
+      "annotation_id": "NC-002",
+      "category": "expected_non_call",
+      "contract_version": "0.1.0",
+      "description": "No penalty for acknowledging unknown information.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L060"
+      ],
+      "status": "expected"
+    },
+    {
+      "annotation_id": "NC-003",
+      "category": "expected_non_call",
+      "contract_version": "0.1.0",
+      "description": "No forced concession from the ambiguous exchange.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L061",
+        "L062",
+        "L063"
+      ],
+      "status": "expected"
+    },
+    {
+      "annotation_id": "NC-004",
+      "category": "expected_non_call",
+      "contract_version": "0.1.0",
+      "description": "No factual-verification call about the fictional packet.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L001",
+        "L068"
+      ],
+      "status": "expected"
+    }
+  ],
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "hidden_reference": true,
+  "ordinary_analysis_must_not_consume": true
+}

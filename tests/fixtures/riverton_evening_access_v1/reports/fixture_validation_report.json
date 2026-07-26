@@ -1,0 +1,18 @@
+{
+  "checked_media": true,
+  "contract_version": "0.1.0",
+  "findings": [
+    {
+      "code": "FIXTURE_VALID",
+      "contract_version": "0.1.0",
+      "finding_id": "fvf_402a1f1e668d17ba",
+      "message": "all requested fixture checks passed",
+      "severity": "information",
+      "subject": null
+    }
+  ],
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "line_count": 68,
+  "valid": true,
+  "variant_count": 3
+}

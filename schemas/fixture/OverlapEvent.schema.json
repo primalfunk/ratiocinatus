@@ -1,0 +1,44 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "duration_microseconds": {
+      "exclusiveMinimum": 0,
+      "title": "Duration Microseconds",
+      "type": "integer"
+    },
+    "first_line_id": {
+      "pattern": "^L\\d{3}$",
+      "title": "First Line Id",
+      "type": "string"
+    },
+    "overlap_id": {
+      "pattern": "^O-\\d{2}$|^I-\\d{2}$",
+      "title": "Overlap Id",
+      "type": "string"
+    },
+    "second_line_id": {
+      "pattern": "^L\\d{3}$",
+      "title": "Second Line Id",
+      "type": "string"
+    },
+    "start_microseconds": {
+      "minimum": 0,
+      "title": "Start Microseconds",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "overlap_id",
+    "first_line_id",
+    "second_line_id",
+    "start_microseconds",
+    "duration_microseconds"
+  ],
+  "title": "OverlapEvent",
+  "type": "object"
+}

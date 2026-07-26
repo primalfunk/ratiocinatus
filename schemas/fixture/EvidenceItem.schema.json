@@ -1,0 +1,39 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "evidence_id": {
+      "pattern": "^E-\\d{2}$",
+      "title": "Evidence Id",
+      "type": "string"
+    },
+    "fictional": {
+      "const": true,
+      "default": true,
+      "title": "Fictional",
+      "type": "boolean"
+    },
+    "statements": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Statements",
+      "type": "array"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "evidence_id",
+    "title",
+    "statements"
+  ],
+  "title": "EvidenceItem",
+  "type": "object"
+}

@@ -1,0 +1,70 @@
+{
+  "$defs": {
+    "SpeakerRole": {
+      "enum": [
+        "MODERATOR",
+        "PARTICIPANT_A",
+        "PARTICIPANT_B"
+      ],
+      "title": "SpeakerRole",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "duration_microseconds": {
+      "exclusiveMinimum": 0,
+      "title": "Duration Microseconds",
+      "type": "integer"
+    },
+    "line_id": {
+      "pattern": "^L\\d{3}$",
+      "title": "Line Id",
+      "type": "string"
+    },
+    "output_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Output Sha256",
+      "type": "string"
+    },
+    "sample_count": {
+      "exclusiveMinimum": 0,
+      "title": "Sample Count",
+      "type": "integer"
+    },
+    "sample_rate_hz": {
+      "exclusiveMinimum": 0,
+      "title": "Sample Rate Hz",
+      "type": "integer"
+    },
+    "speaker_id": {
+      "$ref": "#/$defs/SpeakerRole"
+    },
+    "text_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Text Sha256",
+      "type": "string"
+    },
+    "voice_id": {
+      "title": "Voice Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "line_id",
+    "speaker_id",
+    "voice_id",
+    "text_sha256",
+    "output_sha256",
+    "sample_rate_hz",
+    "sample_count",
+    "duration_microseconds"
+  ],
+  "title": "SynthesisInvocation",
+  "type": "object"
+}

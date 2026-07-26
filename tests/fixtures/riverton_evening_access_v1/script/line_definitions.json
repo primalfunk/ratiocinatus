@@ -1,0 +1,551 @@
+{
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "line_count": 68,
+  "lines": [
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L001",
+      "order": 1,
+      "speaker_id": "MODERATOR",
+      "text": "Good evening. This is the Riverton Evening Access Forum. We are discussing one proposal: a six-month weekday pilot that would keep the community center open until ten p.m. instead of eight p.m. Mara Chen supports the pilot. Daniel Price opposes authorizing it in its current form. I will ask both participants to use the evidence packet provided before this forum.",
+      "text_sha256": "bf83ea101af7ebd951c3b2fc1a938161e8ab22b099300f175d4fd30838c1d9ee"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L002",
+      "order": 2,
+      "speaker_id": "MODERATOR",
+      "text": "Mara, please give your opening position.",
+      "text_sha256": "cb2307c1249f97e987adba6fcb25b761e7ec2aae1347a31309fe7c03466b6e45"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L003",
+      "order": 3,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "The center should authorize the six-month pilot. During each of the last six months, staff recorded between thirty-six and forty-four arrivals after the last admissible entry time. The pilot survey also found seventy-four respondents who said they would use the center after eight at least once per week. We have a real access problem, and the grant can pay the projected additional cost during the pilot.",
+      "text_sha256": "81be2e676bff8d67b05669f25376d26c7ed7ce341d477ba7d05696f810ca4bb0"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L004",
+      "order": 4,
+      "speaker_id": "MODERATOR",
+      "text": "Daniel, your opening position.",
+      "text_sha256": "415b0896c776411772118281e5f0ab13b3697aede57c0a1b47de08f3a87476c5"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L005",
+      "order": 5,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "The board should not authorize the proposal yet. The survey is voluntary, the arrival log may count the same people repeatedly, and Friday security has not been confirmed. The proposal may be worth testing eventually, but the current record does not show that the full five-day pilot is ready.",
+      "text_sha256": "401119829e3f5a4db53bd03cebee14705dfda8bdaa234f73ea9917efc25dd164"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L006",
+      "order": 6,
+      "speaker_id": "MODERATOR",
+      "text": "Daniel, do you agree that the current schedule excludes at least some people who want to use the center in the evening?",
+      "text_sha256": "72a2948da76f56cdd9dcbd3ccb1953f7fe4c1736c4d74db6b4980bb964e3c73a"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L007",
+      "order": 7,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "Yes. I agree that some people cannot arrive before the center closes.",
+      "text_sha256": "7dd38c580ea7eee3738909921429399c6a32c6d8727b0f67d1147a5d71a09776"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L008",
+      "order": 8,
+      "speaker_id": "MODERATOR",
+      "text": "Mara, what does the turn-away log establish?",
+      "text_sha256": "da3999ac6123a5173519a71bd3b9364a5ffadf0c215d1f52e82c9eab2e168c70"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L009",
+      "order": 9,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "It establishes that late arrival is not a one-week anomaly. The count stayed between thirty-six and forty-four in every one of the six recorded months.",
+      "text_sha256": "3395265b71d8b80f67d13bc067c1fdaa84b86e39be116313df4d24ecfdb70f03"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L010",
+      "order": 10,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "It does not establish forty different people every month. The same small group could account for many of those arrivals.",
+      "text_sha256": "96104b165d5b0bd445711aa19afd9511e58472f89ac50ae436b7f44be4528d9e"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L011",
+      "order": 11,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "That is true. The log counts arrivals, not unique people. I am using it to show a recurring access pattern, not to claim that every entry is a different person.",
+      "text_sha256": "23fd9c71ab01a72aa6b205a1c3a850c407b573c3b2ef200f714c331ab1364821"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L012",
+      "order": 12,
+      "speaker_id": "MODERATOR",
+      "text": "Mara, how much additional staffing would be required?",
+      "text_sha256": "c4ee36242e099bff34e51276afdc341e1f24a2edd28180e7e7786cdeefce6b1b"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L013",
+      "order": 13,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "The center is one of the most valuable public services in the neighborhood.",
+      "text_sha256": "e2b134ce14d5006ee86647bb0173d6a5adff26de622049ea485b89cc136c98ab"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L014",
+      "order": 14,
+      "speaker_id": "MODERATOR",
+      "text": "That may be relevant to the larger decision, but it does not answer the staffing question. How much additional staffing would be required?",
+      "text_sha256": "5069068ba006cfcd298c6463653669630082c86229719785d90be0cf03740d65"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L015",
+      "order": 15,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "Two additional staff members and one additional security shift.",
+      "text_sha256": "9c71651cd01fa2d6d238391d3509be2e012baaeda886d4e16ac1ffd0682b09e0"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L016",
+      "order": 16,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "And the extension would increase operating costs by at least three thousand six hundred dollars per month.",
+      "text_sha256": "7c516e3cc2b2e17f07066e91bec171eb404641a612ec8e95c09926f0dc293d61"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L017",
+      "order": 17,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "The estimate is three thousand six hundred dollars per month, yes.",
+      "text_sha256": "7fc662236e6e7526e0992780a2881d942b6b6fb154d2f6541b507ba9f4546421"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L018",
+      "order": 18,
+      "speaker_id": "MODERATOR",
+      "text": "Daniel, what is your objection to the survey?",
+      "text_sha256": "73cb7cbc21e124161165de4a68724f5e4d52c85918452eb5343f33708501455a"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L019",
+      "order": 19,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "It was distributed through the center's email list and front desk. People who already use the center were more likely to see it and answer it. That makes it weak evidence about the whole community.",
+      "text_sha256": "96a06c441075120c8876533c5ea8060f096316395200a2c8c9c5aced1dcdb64a"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L020",
+      "order": 20,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "It is not a random community survey, and I do not claim that it is. But it is evidence about current center users, who are the people most immediately affected by the closing time.",
+      "text_sha256": "81bf3e92f7c95819a38ea13a92b69260fa8c1638e4e32833612bbe5f132b3edb"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L021",
+      "order": 21,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "You keep presenting seventy-four responses as seventy-four guaranteed new users.",
+      "text_sha256": "621032e4d0e37d0890f0f80aac7c07bea9a7e43e496353a63b222b80f01f5f9e"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L022",
+      "order": 22,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "No. I said seventy-four respondents reported that they would use later hours at least once per week. A stated intention is not a guaranteed visit, and a survey response is not proof of a unique new user.",
+      "text_sha256": "eb9baf97e170df64802832e2fb8b8da1bbd5b2bc4952a2d3539a5685edd7af9a"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L023",
+      "order": 23,
+      "speaker_id": "MODERATOR",
+      "text": "Daniel, do you accept that distinction?",
+      "text_sha256": "6b38281a7cdfaf5bd070c8c224e74c50d22a97f73862cd729f3631028d572825"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L024",
+      "order": 24,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "I accept the wording, but I still think Mara is putting too much weight on the survey.",
+      "text_sha256": "4f2a8985ecad1708ca1ce011c05904b20b9e8500ce98837dd2ed78c0a65240c6"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L025",
+      "order": 25,
+      "speaker_id": "MODERATOR",
+      "text": "Let us turn to cost. Mara, state your argument about the grant.",
+      "text_sha256": "5d5cc78e7856adb5c643b831ed3772654b6ef51fd94b3cb9bc2554375597f1b1"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L026",
+      "order": 26,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "If the approved grant fully covers the projected staffing and security cost, then that projected cost does not require money from the center's ordinary operating budget during the six-month pilot. The grant provides up to twenty-one thousand six hundred dollars, and six months at three thousand six hundred dollars per month is twenty-one thousand six hundred dollars. Therefore, on the figures in the packet, the projected pilot cost is covered without using the ordinary operating budget.",
+      "text_sha256": "350395f0d89bb96eb8866760edc7b4069f1a14fcaa7e78529d2660fe0df74608"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L027",
+      "order": 27,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "That assumes the estimate is exact. If costs exceed the estimate, the grant may not cover the excess.",
+      "text_sha256": "6e3aba004e2159270a0a60b984b9385e5b298745eda09bfaa20e0c972f55ef0e"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L028",
+      "order": 28,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "Yes. My conclusion is limited to the projected cost in the packet. It does not show that every possible overrun is covered.",
+      "text_sha256": "a769570f605b8b9b17e940a1563ccb48e913eb01194c302d2576aed7da63f77a"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L029",
+      "order": 29,
+      "speaker_id": "MODERATOR",
+      "text": "Daniel, does the grant answer your objection to the projected cost?",
+      "text_sha256": "9e66e9f38ba7c348dc8bd1f2174ab6326dabeaff84a56ae3206a59b99cdc4bce"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L030",
+      "order": 30,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "It answers the projected-cost objection if the estimate holds. It does not answer the Friday security problem.",
+      "text_sha256": "bf6d38d8c03be71cb359fa1ad95cd87502e9924170e396959aabb1aa183fd7cf"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L031",
+      "order": 31,
+      "speaker_id": "MODERATOR",
+      "text": "Daniel, state the Friday security problem precisely.",
+      "text_sha256": "327c06e7691d7520a49f9d8cfe7bfdaa44a688c8561a1a63de6541e1bab6b4c8"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L032",
+      "order": 32,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "The contractor has confirmed Monday through Thursday, but not Friday. A five-day extension should not be authorized unless the center has a safe and lawful way to staff all five evenings.",
+      "text_sha256": "4b7a881d164537001f79763382298f3d4b401cd6c44460b09ee137bba748d818"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L033",
+      "order": 33,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "The board can authorize the pilot subject to confirmation of Friday coverage.",
+      "text_sha256": "8964c4bb0b0fb4e11432d17180fab3c675bded1a4e0352810a1a409c268b0ad4"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L034",
+      "order": 34,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "That changes the proposal.",
+      "text_sha256": "e1d68912073a94b0c887272d0355606ef847abc17f278782d12b2c0d27d6504a"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L035",
+      "order": 35,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "It adds a condition before Friday operation. It does not change the two-hour schedule, the six-month limit, or the funding source.",
+      "text_sha256": "32ca2a4d8f54a504e003dbffa5d960d04bbce7a456dcc14cb47b3f1ee0e270a2"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L036",
+      "order": 36,
+      "speaker_id": "MODERATOR",
+      "text": "Mara, what happens if Friday coverage is never confirmed?",
+      "text_sha256": "96c934ab50e91eb8175c8fa890c21293664cf8b91b80d917ce27187ce165d493"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L037",
+      "order": 37,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "The grant deadline is approaching, and delaying the vote could cause the center to lose the funding.",
+      "text_sha256": "1a3c3d5656026bf42d50ba4799949a13854e52a329781a57db6bf465354303ea"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L038",
+      "order": 38,
+      "speaker_id": "MODERATOR",
+      "text": "That does not answer what happens if Friday coverage is never confirmed.",
+      "text_sha256": "9a1611894025b28012fb5326c1f0dfff63d8b2a34e2e74a41083c6789c72a5d4"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L039",
+      "order": 39,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "The board could operate Monday through Thursday, or decline to begin the pilot. The evidence packet does not tell us whether the grantor would accept a four-day version, so I cannot say that the first option is available without further confirmation.",
+      "text_sha256": "c428bf09f6daab760aebe20cd251cd25fc849b515cc49fe16f523c360479e3e7"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L040",
+      "order": 40,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "Mara wants the building open late every night even though the center cannot guarantee security.",
+      "text_sha256": "b23ec969dda2a6244210c0cfe83e7590d3416cf8a0222639585f8005bcc2be90"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L041",
+      "order": 41,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "That is not my position. I support a weekday pilot until ten p.m. for six months. I am not proposing overnight operation, and I have just said that Friday operation requires confirmed coverage.",
+      "text_sha256": "66a737ebfb8c3242c6175e585d7cb6435e5a72a69f6f3f455d8ecbcce806a121"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L042",
+      "order": 42,
+      "speaker_id": "MODERATOR",
+      "text": "Daniel, do you accept that Mara's stated proposal is the six-month, two-hour weekday pilot described in the packet?",
+      "text_sha256": "c1dff788597a5a54e2c0cf7a4a6b1dd5b0065cfba5183027012dcc9524dbe6d3"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L043",
+      "order": 43,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "Yes, that is the proposal she has stated here.",
+      "text_sha256": "53b463b22706db53d3859e5d2bc51348bc249e23113bb135a53f5b7177072021"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L044",
+      "order": 44,
+      "speaker_id": "MODERATOR",
+      "text": "Then please address that proposal rather than a broader one.",
+      "text_sha256": "f9ce43b085d647145004aa9cc4e09ce0bb15cc2fa2bebecaa5a533a05cf22d07"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L045",
+      "order": 45,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "The survey identified sixty regular evening users, sorry, sixteen people in one program whose schedules were discussed in the written comments. That example is not part of the numerical evidence packet, so I withdraw it from my argument.",
+      "text_sha256": "ac39b290c20bf6589fd7efc8aeba47fbeb87246c8fba90284ec8d90df5bea5c5"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L046",
+      "order": 46,
+      "speaker_id": "MODERATOR",
+      "text": "For clarity, are you relying on either sixty or sixteen as evidence for the pilot?",
+      "text_sha256": "3cbfd6956f345645ce908944293b3718f8b3474f1968e608a62dc77642aecfc2"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L047",
+      "order": 47,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "No. I am not relying on either number.",
+      "text_sha256": "8508d8c835709ff11935f158941af12058e4a75df5c4eea194e3db2db999188a"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L048",
+      "order": 48,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "If later hours are popular, evening attendance will rise. Evening attendance rose last month. Therefore, the later-hours proposal is already popular.",
+      "text_sha256": "77a1e17713e47c88108cdbcfe2e596e42750f1a0fe0a841d9a2eab53fbbf8395"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L049",
+      "order": 49,
+      "speaker_id": "MODERATOR",
+      "text": "The center has not yet adopted later hours. How does last month's attendance increase establish the popularity of a schedule that was not in effect?",
+      "text_sha256": "a5bbd9bf146eb9499f925ed97600f8c109222c9e9f0fc4575eabe4b3fff93d62"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L050",
+      "order": 50,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "It shows that demand is moving in the right direction.",
+      "text_sha256": "d964d22f0881ee9305807063ca7a549962aab701aea2ca9ba6f2a9a197e3a045"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L051",
+      "order": 51,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "It may show increased demand for the center. It cannot, by itself, show that later hours caused the increase or that a schedule not yet adopted was already popular.",
+      "text_sha256": "150b2818ed6caa4c7ca962d44c902284adc3eb75bc032081f2dac3528e87822d"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L052",
+      "order": 52,
+      "speaker_id": "MODERATOR",
+      "text": "Daniel, earlier you stated that the extension would increase operating costs by at least three thousand six hundred dollars per month. Do you still accept that figure as the packet's estimate?",
+      "text_sha256": "98f2b38ed1d66594c5d452c8ed6ef67e6d39f7d8c929ff80766e1f42fafa902e"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L053",
+      "order": 53,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "I never said the extension would cost thousands of dollars each month.",
+      "text_sha256": "8754f20081c7334919d9e82d186c8457728cafb11ac7fe660ca4a90a759ff35b"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L054",
+      "order": 54,
+      "speaker_id": "MODERATOR",
+      "text": "You said, quote, \"the extension would increase operating costs by at least three thousand six hundred dollars per month.\" Would you like to correct your current answer?",
+      "text_sha256": "ded39844c9ebf6be2acad5bb248b4329fdb4015278822da09936cd0e76005ee2"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L055",
+      "order": 55,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "Yes. I did say that. My current answer was wrong. Three thousand six hundred dollars is the packet's monthly estimate.",
+      "text_sha256": "8bd28b9c01efbfae7a9781785755817d06bf795315a6a54a742dd9e9db294c4e"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L056",
+      "order": 56,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "I have one additional question. If the current security contractor cannot cover Friday, who is responsible for finding and vetting a replacement, and what standard must that replacement meet?",
+      "text_sha256": "1cd4caedc7d80aa506f1439f024cb4b8ca939d7a2c1cb820ebba1f1caf11c434"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L057",
+      "order": 57,
+      "speaker_id": "MODERATOR",
+      "text": "Mara, can you answer that?",
+      "text_sha256": "2d6919c6318d946ee4098eb8c790c15f521310d27e465e1e28f090dd394a66a2"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L058",
+      "order": 58,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "The board needs to make a decision before the grant deadline.",
+      "text_sha256": "873110c25b376c7baf1220f205e5cffbe7cf43aa7b78e45a23051c1fce316bd1"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L059",
+      "order": 59,
+      "speaker_id": "MODERATOR",
+      "text": "That does not identify who would find and vet a replacement or what standard would apply.",
+      "text_sha256": "c03d8390e300df3e0e7108c04698ed7006cea6aa5581689d02300fbf2a4c0490"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L060",
+      "order": 60,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "I do not know. The evidence packet does not assign that responsibility or state a vetting standard.",
+      "text_sha256": "de78dde1707e91719698f3b5aad43fc6a387376c4b23083fb2de4a1a7fe0f016"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L061",
+      "order": 61,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "If the numbers are real, I suppose the grant would solve the money problem.",
+      "text_sha256": "8460c64983a3f579844673e7cc06220417be11eb70158f1ec1b018518d22f000"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L062",
+      "order": 62,
+      "speaker_id": "MODERATOR",
+      "text": "Are you disputing that the packet contains those numbers, disputing their accuracy, or conceding the projected-cost point conditionally?",
+      "text_sha256": "7a7dab8725ad6bee3cd0603ecdf8a89fea83741bf9d46ab5cc8f2f40e7b3e225"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L063",
+      "order": 63,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "Take it however you like.",
+      "text_sha256": "bd758b50005ba759e872c3fc6e35e3f4ff8a811fe7a2e8acaed60420439d35a9"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L064",
+      "order": 64,
+      "speaker_id": "MODERATOR",
+      "text": "Mara, give your closing position without adding new evidence.",
+      "text_sha256": "619fb583cb2dc56f3c67a5b8067d20573a81d43a0a53ca0dfd9be7e09f6d9f15"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L065",
+      "order": 65,
+      "speaker_id": "PARTICIPANT_A",
+      "text": "The record shows a recurring late-arrival pattern, interest among current center users, a defined two-hour pilot, and grant funding equal to the projected six-month cost. Friday security and replacement procedures remain unresolved. I support authorization only if required coverage is confirmed before the affected evening operates.",
+      "text_sha256": "330ffdfcd6104e7bebc9a15794f2e994a1151dc1a0f2e2eef89dc036c1e03d14"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L066",
+      "order": 66,
+      "speaker_id": "MODERATOR",
+      "text": "Daniel, give your closing position without adding new evidence.",
+      "text_sha256": "3010a8cef773c96f84d33b0b759d16f300f939cc4530cc274ec30071a18b5cfd"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L067",
+      "order": 67,
+      "speaker_id": "PARTICIPANT_B",
+      "text": "The access problem is real, but the evidence does not establish how many unique people would use later hours, and Friday security is unresolved. I accept that the grant matches the projected cost. I oppose authorizing a five-day pilot until security coverage and responsibility are defined.",
+      "text_sha256": "a2f0bdc8a2294b22de7782ff758fa9523d182c907de68f7fdd55e5d5bab8b716"
+    },
+    {
+      "contract_version": "0.1.0",
+      "line_id": "L068",
+      "order": 68,
+      "speaker_id": "MODERATOR",
+      "text": "The forum is concluded. This recording is a controlled fictional fixture created for testing audiovisual reasoning analysis. No person, organization, survey, grant, or policy described here is real.",
+      "text_sha256": "0869af31f732deec6483cbf4ca0b07306330091a8f37f51575cee1bf8a9ea7fb"
+    }
+  ],
+  "script_version": "1.0.0"
+}

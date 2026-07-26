@@ -1,0 +1,41 @@
+{
+    "application_version":  "0.1.0",
+    "dependencies":  [
+                         {
+                             "license":  "MIT",
+                             "name":  "Pydantic",
+                             "status":  "confirmed"
+                         },
+                         {
+                             "license":  "MIT",
+                             "name":  "pytest",
+                             "status":  "confirmed"
+                         },
+                         {
+                             "license":  "Apache-2.0",
+                             "name":  "coverage.py",
+                             "status":  "confirmed"
+                         },
+                         {
+                             "license":  "MIT",
+                             "name":  "setuptools",
+                             "status":  "confirmed"
+                         }
+                     ],
+    "fixtures":  {
+                     "origin":  "project-authored synthetic",
+                     "redistribution":  "Apache-2.0 for project-authored fixtures; recorded upstream terms remain"
+                 },
+    "project_license":  {
+                            "license":  "Apache-2.0",
+                            "status":  "confirmed by project owner 2026-07-26"
+                        },
+    "provisional":  [
+                        "FFmpeg",
+                        "Whisper-family software and weights",
+                        "pyannote-family software and weights",
+                        "LM Studio and selected models",
+                        "future embeddings",
+                        "future datasets"
+                    ]
+}

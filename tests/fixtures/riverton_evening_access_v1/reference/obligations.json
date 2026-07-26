@@ -1,0 +1,53 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "OB-001",
+      "category": "obligation",
+      "contract_version": "0.1.0",
+      "description": "Staffing answer obligation opens and is satisfied.",
+      "evidence_ids": [
+        "E-04"
+      ],
+      "line_ids": [
+        "L012",
+        "L014",
+        "L015"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "OB-002",
+      "category": "obligation",
+      "contract_version": "0.1.0",
+      "description": "Consequence question is eventually answered with uncertainty.",
+      "evidence_ids": [
+        "E-06"
+      ],
+      "line_ids": [
+        "L036",
+        "L037",
+        "L038",
+        "L039"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "OB-003",
+      "category": "obligation",
+      "contract_version": "0.1.0",
+      "description": "Operational question is answered by acknowledging missing packet information.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L056",
+        "L057",
+        "L058",
+        "L059",
+        "L060"
+      ],
+      "status": "intended"
+    }
+  ],
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "hidden_reference": true,
+  "ordinary_analysis_must_not_consume": true
+}

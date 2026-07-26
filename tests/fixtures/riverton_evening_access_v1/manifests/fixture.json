@@ -1,0 +1,14 @@
+{
+  "contract_version": "0.1.0",
+  "discourse_format": "moderated_civic_policy_forum",
+  "family_name": "Riverton Evening Access Forum",
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "line_count": 68,
+  "speaker_count": 3,
+  "variants": [
+    "clean",
+    "naturalized",
+    "adversarial"
+  ],
+  "version": "1.0.0"
+}

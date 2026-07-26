@@ -1,0 +1,8 @@
+{
+  "application_version": "0.1.0",
+  "checked": ["source integrity", "artifact integrity", "operation reference integrity", "provenance reference integrity", "dependency reference integrity"],
+  "finding": "WORKSPACE_VALID",
+  "report_version": "0.1.0",
+  "valid": true
+}
+

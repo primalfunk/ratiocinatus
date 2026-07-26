@@ -1,0 +1,54 @@
+{
+  "$defs": {
+    "SpeakerRole": {
+      "enum": [
+        "MODERATOR",
+        "PARTICIPANT_A",
+        "PARTICIPANT_B"
+      ],
+      "title": "SpeakerRole",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "line_id": {
+      "pattern": "^L\\d{3}$",
+      "title": "Line Id",
+      "type": "string"
+    },
+    "order": {
+      "maximum": 999,
+      "minimum": 1,
+      "title": "Order",
+      "type": "integer"
+    },
+    "speaker_id": {
+      "$ref": "#/$defs/SpeakerRole"
+    },
+    "text": {
+      "minLength": 1,
+      "title": "Text",
+      "type": "string"
+    },
+    "text_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Text Sha256",
+      "type": "string"
+    }
+  },
+  "required": [
+    "line_id",
+    "order",
+    "speaker_id",
+    "text",
+    "text_sha256"
+  ],
+  "title": "ScriptLine",
+  "type": "object"
+}

@@ -1,0 +1,50 @@
+{
+  "assets": "programmatically generated geometric panels and Pillow-rendered text",
+  "background_rgb": [
+    18,
+    24,
+    38
+  ],
+  "frames_per_second": 30,
+  "height": 1080,
+  "panels": [
+    {
+      "avatar": "circle",
+      "color_rgb": [
+        66,
+        153,
+        225
+      ],
+      "speaker_id": "MODERATOR"
+    },
+    {
+      "avatar": "triangle",
+      "color_rgb": [
+        72,
+        187,
+        120
+      ],
+      "speaker_id": "PARTICIPANT_A"
+    },
+    {
+      "avatar": "square",
+      "color_rgb": [
+        237,
+        137,
+        54
+      ],
+      "speaker_id": "PARTICIPANT_B"
+    }
+  ],
+  "prohibited": [
+    "logical labels",
+    "referee calls",
+    "scores",
+    "fallacy names",
+    "proposition identifiers",
+    "argument arrows"
+  ],
+  "subtitle": "Controlled proof fixture",
+  "title": "Riverton Evening Access Forum",
+  "width": 1920
+}

@@ -1,0 +1,275 @@
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 2.000000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 22.293333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 2.261333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 24.362667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 1.749333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 18.560000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 5.525333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 4.096000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 2.538667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 9.514667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 6.805333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 10.282667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 2.837333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 4.224000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 7.488000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 3.818667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 5.589333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 3.712000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 2.325333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 11.306667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 10.880000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 5.162667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 13.056000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 2.005333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 4.757333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 3.626667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 29.418667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 6.357333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 7.722667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 3.648000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 7.082667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 3.178667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 11.648000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 4.864000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 1.642667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 8.362667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 3.349333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 5.376000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 4.138667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 14.912000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 5.973333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 13.589333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 6.720000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 2.581333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 3.328000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 15.189333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 4.842667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 2.282667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 9.834667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 8.704000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 3.008000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 10.965333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 10.346667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 3.882667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 8.810667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 7.232000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 11.626667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.649999
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 1.514667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 3.349333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 5.098667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 6.016000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 4.117333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 7.914667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 1.493333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 3.285333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650001
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_a.png'
+duration 22.101333
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 3.264000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/participant_b.png'
+duration 19.200000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 0.650000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/moderator.png'
+duration 13.482667
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'
+duration 2.000000
+file 'C:/Users/erinm/Desktop/2026 - Work/07.26 Ratiocinatus/tests/fixtures/riverton_evening_access_v1/generation/visual_frames/none.png'

@@ -1,0 +1,67 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "duration_microseconds": {
+      "exclusiveMinimum": 0,
+      "title": "Duration Microseconds",
+      "type": "integer"
+    },
+    "kind": {
+      "enum": [
+        "gain",
+        "broadband_noise",
+        "initial_clip",
+        "voice_similarity"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "line_id": {
+      "pattern": "^L\\d{3}$",
+      "title": "Line Id",
+      "type": "string"
+    },
+    "parameters": {
+      "items": {
+        "maxItems": 2,
+        "minItems": 2,
+        "prefixItems": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "string"
+          }
+        ],
+        "type": "array"
+      },
+      "title": "Parameters",
+      "type": "array"
+    },
+    "perturbation_id": {
+      "pattern": "^P-\\d{2}$",
+      "title": "Perturbation Id",
+      "type": "string"
+    },
+    "start_microseconds": {
+      "minimum": 0,
+      "title": "Start Microseconds",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "perturbation_id",
+    "line_id",
+    "kind",
+    "start_microseconds",
+    "duration_microseconds",
+    "parameters"
+  ],
+  "title": "AcousticPerturbation",
+  "type": "object"
+}

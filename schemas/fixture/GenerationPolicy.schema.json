@@ -1,0 +1,77 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "channels": {
+      "const": 2,
+      "default": 2,
+      "title": "Channels",
+      "type": "integer"
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "fixture_format_version": {
+      "const": "1.0.0",
+      "default": "1.0.0",
+      "title": "Fixture Format Version",
+      "type": "string"
+    },
+    "fixture_id": {
+      "const": "ratiocinatus-proof-riverton-evening-access-v1",
+      "default": "ratiocinatus-proof-riverton-evening-access-v1",
+      "title": "Fixture Id",
+      "type": "string"
+    },
+    "frames_per_second": {
+      "const": 30,
+      "default": 30,
+      "title": "Frames Per Second",
+      "type": "integer"
+    },
+    "height": {
+      "const": 1080,
+      "default": 1080,
+      "title": "Height",
+      "type": "integer"
+    },
+    "regeneration_class": {
+      "const": "configuration_equivalent",
+      "default": "configuration_equivalent",
+      "title": "Regeneration Class",
+      "type": "string"
+    },
+    "sample_rate_hz": {
+      "const": 48000,
+      "default": 48000,
+      "title": "Sample Rate Hz",
+      "type": "integer"
+    },
+    "seed": {
+      "default": 20260726,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "target_duration_seconds_max": {
+      "const": 840,
+      "default": 840,
+      "title": "Target Duration Seconds Max",
+      "type": "integer"
+    },
+    "target_duration_seconds_min": {
+      "const": 480,
+      "default": 480,
+      "title": "Target Duration Seconds Min",
+      "type": "integer"
+    },
+    "width": {
+      "const": 1920,
+      "default": 1920,
+      "title": "Width",
+      "type": "integer"
+    }
+  },
+  "title": "GenerationPolicy",
+  "type": "object"
+}

@@ -1,0 +1,14 @@
+{
+  "application_version": "0.1.0",
+  "capabilities": [
+    {"capability": "media_inspection", "provider": "mock.media_inspection", "status": "mock"},
+    {"capability": "transcription", "provider": "mock.transcription", "status": "mock"},
+    {"capability": "diarization", "provider": "mock.diarization", "status": "mock"},
+    {"capability": "embedding", "provider": "mock.embedding", "status": "mock"},
+    {"capability": "structured_generation", "provider": "mock.structured_generation", "status": "mock"},
+    {"capability": "rendering", "provider": "mock.rendering", "status": "mock"}
+  ],
+  "production_capabilities": [],
+  "report_version": "0.1.0"
+}
+

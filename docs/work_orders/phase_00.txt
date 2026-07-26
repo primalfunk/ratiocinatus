@@ -1,0 +1,1167 @@
+RATIOCINATUS
+PHASE 0 WORK ORDER
+PROJECT FOUNDATION AND EVIDENTIARY KERNEL
+
+Document status: Implementation work order
+Project design reference: PROJECT_DESIGN.md version 0.1.0
+Target application version: 0.1.0
+Phase identifier: 0
+Primary implementation language: Python
+Execution model: Local-first
+Date: 2026-07-26
+
+======================================================================
+
+1. PHASE GOAL
+   ======================================================================
+
+Establish the trustworthy technical foundation on which all later Ratiocinatus capabilities will depend.
+
+Phase 0 must create:
+
+* the repository and package structure;
+* versioned contracts;
+* stable identifiers;
+* deterministic and canonical serialization;
+* source-evidence foundations;
+* append-only provenance;
+* provider-independent boundaries;
+* configuration;
+* structured logging;
+* persistence foundations;
+* replay foundations;
+* CLI foundations;
+* dependency and licensing inventories;
+* fixture infrastructure;
+* baseline reports;
+* and architectural documentation.
+
+Phase 0 must not attempt to analyze reasoning, identify debate winners, assign scores, or produce public-facing referee judgments.
+
+The phase exists to ensure that future observations, interpretations, adjudications, and scores can be traced through explicit artifacts rather than reconstructed from logs, mutable application state, or model prose.
+
+The central Phase 0 proof is:
+
+> Given the same synthetic or fixture source, configuration, and supported deterministic providers, Ratiocinatus can create, validate, store, reload, export, and replay the same canonical evidentiary package without altering the source or losing provenance.
+
+======================================================================
+2. DESIGN AUTHORITY
+===================
+
+Implementation must follow the current PROJECT_DESIGN.md.
+
+The following design commitments are binding for this phase:
+
+* source evidence must be preserved;
+* material artifacts must be traceable;
+* observation, interpretation, adjudication, scoring, review, and rendering must remain separate;
+* uncertainty must be representable;
+* contracts and rules must be versioned;
+* human or machine revisions must not erase prior states;
+* providers must be replaceable wherever practical;
+* deterministic code must be authoritative where deterministic validation is possible;
+* and completed operations must retain enough information for replay or a precise explanation of why exact replay is unavailable.
+
+If implementation reveals a material conflict with PROJECT_DESIGN.md, the builder must not silently resolve it in code.
+
+The conflict must be documented as one of:
+
+* a proposed design-document revision;
+* a provisional deviation;
+* a deferred architectural question;
+* or a phase blocker.
+
+Minor implementation details that do not alter project meaning or compatibility may be resolved normally.
+
+======================================================================
+3. PHASE BOUNDARY
+=================
+
+Phase 0 establishes infrastructure and contracts.
+
+It does not implement production audiovisual analysis.
+
+No real transcription, speaker diarization, speaker recognition, discourse analysis, argument construction, logical adjudication, scoring, or annotated rendering is required.
+
+Provider interfaces and deterministic mock providers are required where later systems will depend on external tools or models.
+
+The implementation may inspect fixture files and record symbolic source metadata, but it must not expand into Phase 1 audiovisual ingestion except where a minimal source-registration capability is necessary to prove the evidentiary kernel.
+
+======================================================================
+4. REQUIRED DELIVERABLES
+========================
+
+Phase 0 must deliver all of the following.
+
+---
+
+## 4.1 Repository and package foundation
+
+Create a coherent Python project with at least:
+
+* pyproject.toml;
+* src/ratiocinatus package;
+* tests;
+* docs;
+* schemas;
+* configuration resources;
+* fixture resources;
+* report output locations;
+* and command-line entry points.
+
+The internal package structure should anticipate, without prematurely implementing:
+
+* contracts;
+* identifiers;
+* time;
+* serialization;
+* integrity;
+* provenance;
+* persistence;
+* configuration;
+* logging;
+* providers;
+* source evidence;
+* replay;
+* reports;
+* and CLI operations.
+
+Empty placeholder packages should be avoided unless they communicate a deliberate architectural boundary and contain meaningful package documentation.
+
+---
+
+## 4.2 Project metadata and versioning
+
+Define and expose:
+
+* application version;
+* contract version or contract-family versions;
+* canonical serialization version;
+* workspace format version;
+* and report format version where applicable.
+
+Version values must be available programmatically and through the CLI.
+
+The application target for successful Phase 0 completion is 0.1.0.
+
+---
+
+## 4.3 Versioned contract system
+
+Create explicit, validated contracts for the Phase 0 domain.
+
+At minimum, provide contracts for:
+
+* SourceReference;
+* SourceFingerprint;
+* SourceInterval;
+* RegisteredSource;
+* EvidenceArtifact;
+* ArtifactReference;
+* ArtifactEnvelope;
+* ProvenanceRecord;
+* ProviderDescriptor;
+* ProviderInvocation;
+* ProviderResult;
+* ConfigurationSnapshot;
+* OperationRequest;
+* OperationResult;
+* ReplayRecord;
+* ValidationFinding;
+* IntegrityReport;
+* PhaseReport;
+* and WorkspaceManifest.
+
+Equivalent names may be used where they are clearer, but the represented concepts must remain distinct.
+
+Contracts must:
+
+* reject malformed values;
+* use closed enumerations where vocabularies are intended to be closed;
+* distinguish identifiers from display names;
+* distinguish timestamps from durations;
+* define optionality explicitly;
+* carry schema or contract versions;
+* support deterministic serialization;
+* and avoid untyped arbitrary dictionaries for authoritative data.
+
+Contracts must be generated from or directly represented by the authoritative runtime types. Duplicate hand-maintained schemas that can drift from runtime behavior are not acceptable.
+
+---
+
+## 4.4 Stable identifier system
+
+Implement stable identifier generation for:
+
+* workspaces;
+* registered sources;
+* artifacts;
+* operations;
+* provider invocations;
+* provenance records;
+* validation findings;
+* and reports.
+
+Identifiers must be:
+
+* typed or namespace-distinguishable;
+* validated;
+* stable under defined identical inputs;
+* independent of incidental filesystem location where appropriate;
+* and protected against accidental collision or reuse.
+
+The implementation must document which identifiers are:
+
+* content-derived;
+* deterministic from normalized inputs;
+* generated from a controlled deterministic source;
+* or intentionally non-deterministic.
+
+Random UUID generation must not silently undermine replay guarantees.
+
+---
+
+## 4.5 Deterministic clock and execution context
+
+Provide a clock abstraction.
+
+The system must support:
+
+* a real system clock for ordinary execution;
+* a fixed or deterministic clock for tests and replay;
+* timezone-aware timestamps;
+* and explicit recording of the time source used.
+
+Authoritative code must not call the ambient system clock directly where the resulting value enters a canonical artifact.
+
+Provide an execution-context abstraction containing, as appropriate:
+
+* application version;
+* contract versions;
+* clock;
+* identifier source;
+* configuration snapshot;
+* workspace;
+* provider registry;
+* and current operation identity.
+
+---
+
+## 4.6 Canonical serialization
+
+Implement canonical serialization for authoritative contracts.
+
+Canonical serialization must define:
+
+* character encoding;
+* key ordering;
+* whitespace policy;
+* number representation;
+* datetime representation;
+* duration representation;
+* enumeration representation;
+* null handling;
+* list ordering expectations;
+* and treatment of unknown or unsupported values.
+
+The same validated artifact must serialize to the same bytes under the same canonical serialization version.
+
+Provide:
+
+* serialization;
+* deserialization;
+* validation after load;
+* canonical byte generation;
+* canonical hashing;
+* and round-trip tests.
+
+Canonical artifacts should use JSON or JSON Lines unless implementation evidence establishes a compelling reason otherwise.
+
+---
+
+## 4.7 Source registration and evidence preservation
+
+Implement the minimum source-evidence capability necessary to register a source without interpreting its contents.
+
+Source registration must preserve:
+
+* original source reference;
+* file size where applicable;
+* content hash;
+* media or file type when determinable without substantive parsing;
+* registration time;
+* registration configuration;
+* provenance;
+* and integrity status.
+
+The original source must not be modified.
+
+The system must distinguish:
+
+* the original source;
+* a registered reference to the source;
+* copied or normalized working derivatives;
+* and later analytical artifacts.
+
+Phase 0 does not require full audiovisual inspection or normalized media derivatives.
+
+It may register arbitrary fixture files, including small synthetic media fixtures, as opaque evidence sources.
+
+---
+
+## 4.8 Artifact envelope and lineage
+
+All authoritative stored artifacts must use a consistent envelope or equivalent metadata mechanism.
+
+The system must support:
+
+* artifact identity;
+* artifact type;
+* contract version;
+* creation operation;
+* parent or dependency references;
+* provenance references;
+* integrity hash;
+* creation timestamp;
+* supersession state where applicable;
+* and validation state.
+
+Artifacts must not depend on filename conventions alone for meaning.
+
+The architecture must support multiple versions or revisions of an artifact without destructive replacement.
+
+---
+
+## 4.9 Append-only provenance
+
+Implement provenance capable of recording:
+
+* which operation produced an artifact;
+* which inputs were consumed;
+* which configuration was active;
+* which application and contract versions were used;
+* which provider was invoked;
+* which provider version or model descriptor applied;
+* which deterministic seed or decoding policy applied where relevant;
+* and which validation followed production.
+
+Provenance must be append-only or immutable once committed.
+
+Corrections must produce new records rather than rewriting historical claims.
+
+The provenance model must be capable of representing:
+
+* deterministic code operations;
+* external command invocations;
+* model or provider invocations;
+* human review actions;
+* and imported artifacts.
+
+Only deterministic mock and internal operations must be implemented during Phase 0.
+
+---
+
+## 4.10 Provider-independent boundaries
+
+Define provider interfaces for anticipated external capability classes.
+
+At minimum, include boundaries for:
+
+* media inspection;
+* transcription;
+* diarization;
+* embedding generation;
+* structured language-model generation;
+* and rendering.
+
+The interfaces should define:
+
+* capability description;
+* provider identity;
+* provider version;
+* configuration;
+* input contract;
+* output contract;
+* failure contract;
+* availability or health inspection;
+* and invocation provenance.
+
+Phase 0 must not implement production providers.
+
+Provide deterministic mock providers sufficient to prove:
+
+* registration;
+* capability discovery;
+* invocation;
+* validated result handling;
+* malformed result rejection;
+* provider failure handling;
+* and replay.
+
+Mock providers must not pretend to perform actual transcription, reasoning, or media analysis.
+
+---
+
+## 4.11 Provider registry and capability inspection
+
+Implement a registry capable of:
+
+* registering provider implementations;
+* rejecting duplicate or conflicting provider identities;
+* listing available providers;
+* describing capabilities;
+* selecting a provider by explicit configuration;
+* and reporting unavailable capabilities.
+
+Provider selection must not be hidden inside domain logic.
+
+The CLI must expose provider and capability inspection.
+
+---
+
+## 4.12 Configuration system
+
+Implement validated configuration for:
+
+* workspace location;
+* serialization policy;
+* logging;
+* provider selection;
+* deterministic test mode;
+* source registration;
+* persistence;
+* and report output.
+
+Configuration precedence must be explicit.
+
+If environment variables, files, and CLI flags are supported, their precedence must be documented and tested.
+
+Every operation that creates authoritative artifacts must preserve the effective configuration snapshot or a stable reference to it.
+
+Secrets must not be written into canonical configuration snapshots or reports.
+
+---
+
+## 4.13 Workspace and persistence foundation
+
+Create a local workspace format supporting:
+
+* manifest;
+* source registry;
+* artifact storage;
+* provenance storage;
+* operation records;
+* validation reports;
+* replay records;
+* and generated reports.
+
+SQLite may be used for indexes and operational metadata.
+
+Portable canonical artifacts must not exist only inside opaque database rows.
+
+The workspace must support:
+
+* initialization;
+* opening;
+* validation;
+* inspection;
+* export;
+* and safe refusal when the workspace version is unsupported.
+
+Concurrent mutation does not need full multi-user support, but accidental simultaneous writers should be detected or constrained.
+
+---
+
+## 4.14 Operation model
+
+Implement a standard lifecycle for authoritative operations.
+
+At minimum, support:
+
+* request validation;
+* operation identity assignment;
+* input resolution;
+* execution;
+* output validation;
+* artifact commitment;
+* provenance commitment;
+* operation completion;
+* and failure recording.
+
+An operation must not be reported as successful before its required artifacts and provenance have been committed.
+
+Failures should be typed and should distinguish:
+
+* invalid request;
+* missing input;
+* unsupported version;
+* unavailable provider;
+* provider failure;
+* malformed provider output;
+* integrity failure;
+* persistence failure;
+* validation failure;
+* and unexpected internal failure.
+
+---
+
+## 4.15 Validation and integrity checking
+
+Provide validation at multiple levels:
+
+* contract validation;
+* source integrity;
+* artifact integrity;
+* reference integrity;
+* lineage integrity;
+* workspace integrity;
+* and replay eligibility.
+
+Validation findings must be typed and severity-bearing.
+
+At minimum, support:
+
+* information;
+* warning;
+* error;
+* and fatal or equivalent closed levels.
+
+The validation system must produce machine-readable and human-readable reports.
+
+---
+
+## 4.16 Replay foundation
+
+Implement replay for Phase 0 deterministic operations.
+
+Replay must:
+
+* load the original operation request;
+* resolve the recorded configuration;
+* use the fixed clock and deterministic identifier source where applicable;
+* invoke the same deterministic mock providers;
+* reproduce canonical result artifacts;
+* compare expected and reproduced hashes;
+* and generate a replay report.
+
+Where exact replay is impossible, the system must produce an explicit unsupported or non-replayable result rather than approximate success.
+
+The replay model should anticipate future non-deterministic providers by preserving enough invocation information for later comparison even when byte-identical reproduction cannot be guaranteed.
+
+---
+
+## 4.17 Structured logging
+
+Implement structured logs that include, where applicable:
+
+* timestamp;
+* severity;
+* event name;
+* operation identity;
+* workspace identity;
+* artifact identity;
+* provider identity;
+* and error classification.
+
+Logs are operational evidence but are not substitutes for canonical artifacts or provenance.
+
+Human-readable console output may be provided in addition to structured logs.
+
+---
+
+## 4.18 CLI foundation
+
+Provide a stable CLI entry point.
+
+Required Phase 0 operations include equivalents of:
+
+* version;
+* workspace init;
+* workspace inspect;
+* workspace validate;
+* source register;
+* source list;
+* artifact list;
+* artifact inspect;
+* provider list;
+* provider inspect;
+* operation inspect;
+* replay;
+* report;
+* and configuration inspect.
+
+Command names may differ if the result is clearer and coherent.
+
+CLI output should support:
+
+* human-readable text;
+* and structured JSON where practical.
+
+Commands must return meaningful exit codes.
+
+---
+
+## 4.19 Reports
+
+Provide at least:
+
+* workspace report;
+* source-registration report;
+* provider-capability report;
+* integrity report;
+* replay report;
+* dependency inventory;
+* license inventory;
+* and Phase 0 completion report template.
+
+Reports must clearly distinguish:
+
+* implemented behavior;
+* configured but unavailable capability;
+* mock capability;
+* unsupported capability;
+* warning;
+* and failure.
+
+---
+
+## 4.20 Dependency inventory
+
+Produce a machine-readable and human-readable inventory of:
+
+* direct runtime dependencies;
+* direct development dependencies;
+* external executables;
+* optional providers;
+* model families anticipated but not bundled;
+* and transitive dependency information where practical.
+
+The inventory must record:
+
+* package or tool name;
+* version;
+* role;
+* source;
+* whether required or optional;
+* and known platform constraints.
+
+Phase 0 should minimize dependencies.
+
+Production transcription, diarization, vision, and model packages should not be installed merely because they are anticipated.
+
+---
+
+## 4.21 Licensing inventory
+
+Produce an initial licensing assessment covering:
+
+* project source-code license status;
+* direct dependencies;
+* external executables;
+* fixture media;
+* documentation assets;
+* anticipated models;
+* and anticipated datasets.
+
+The assessment must distinguish:
+
+* confirmed license;
+* license requiring further review;
+* unknown license;
+* redistribution restriction;
+* commercial-use restriction;
+* attribution requirement;
+* and model-weight terms separate from software terms.
+
+No final project license must be selected unless the project owner has already made that decision.
+
+The inventory should make clear which future dependencies cannot yet be approved.
+
+---
+
+## 4.22 Documentation
+
+Provide documentation for:
+
+* installation;
+* repository structure;
+* configuration;
+* workspace format;
+* contracts;
+* identifiers;
+* canonical serialization;
+* provenance;
+* providers;
+* replay;
+* CLI usage;
+* testing;
+* dependency inventory;
+* licensing inventory;
+* and Phase 0 limitations.
+
+Provide an architecture decision record template.
+
+Do not create empty documentation stubs presented as completed documentation.
+
+======================================================================
+5. REQUIRED CONTRACT CHARACTERISTICS
+====================================
+
+All authoritative contracts must:
+
+* be versioned;
+* validate on construction or explicit parse;
+* reject unknown fields unless extension policy explicitly permits them;
+* use timezone-aware timestamps;
+* use explicit duration units;
+* use closed vocabularies where the domain is closed;
+* distinguish absent, unknown, and intentionally empty values where material;
+* serialize canonically;
+* survive round-trip load and save;
+* produce stable schema exports;
+* and include tests for malformed and boundary values.
+
+Contract design must avoid premature commitment to later analytical ontology.
+
+Phase 0 contracts should establish infrastructure, evidence, operations, and provenance rather than attempting to define the final logic system.
+
+======================================================================
+6. REQUIRED DETERMINISTIC MOCK PROVIDERS
+========================================
+
+Provide deterministic mocks for each provider family.
+
+Each mock must have:
+
+* provider identity;
+* provider version;
+* declared capabilities;
+* validated configuration;
+* deterministic output;
+* invocation record;
+* success scenario;
+* typed failure scenario;
+* malformed-output scenario;
+* and availability inspection.
+
+Mock results should be visibly synthetic.
+
+Examples may include:
+
+* symbolic media metadata;
+* synthetic transcript segments;
+* symbolic speaker labels;
+* fixed embeddings;
+* schema-constrained structured-generation responses;
+* and symbolic render manifests.
+
+Mocks must not create the impression that production analysis has been completed.
+
+======================================================================
+7. REQUIRED FIXTURES
+====================
+
+Provide a small, repository-safe fixture set.
+
+At minimum:
+
+* one opaque text or binary source fixture;
+* one very small synthetic or clearly redistributable media fixture, if licensing permits;
+* one duplicate-content fixture under a different filename;
+* one modified-content fixture;
+* one malformed or unreadable fixture;
+* mock provider responses;
+* malformed provider responses;
+* expected canonical artifacts;
+* expected hashes;
+* and expected reports.
+
+Fixture licensing and provenance must be documented.
+
+Generated fixtures are preferred where they adequately test the system.
+
+======================================================================
+8. REQUIRED TESTING
+===================
+
+Phase 0 must include automated tests for:
+
+* contract validation;
+* schema export;
+* canonical serialization;
+* round-trip serialization;
+* stable hashing;
+* stable identifiers;
+* deterministic clocks;
+* configuration precedence;
+* secret exclusion;
+* workspace initialization;
+* workspace version rejection;
+* source registration;
+* duplicate-content handling;
+* immutable source preservation;
+* artifact commitment;
+* append-only provenance;
+* provider registration;
+* provider capability inspection;
+* deterministic mock invocation;
+* provider failure;
+* malformed provider output;
+* operation failure recording;
+* artifact integrity;
+* reference integrity;
+* lineage integrity;
+* replay success;
+* replay mismatch;
+* unsupported replay;
+* report generation;
+* CLI exit codes;
+* and structured JSON output.
+
+Tests must include controlled negative cases.
+
+The suite must run without:
+
+* network access;
+* production model weights;
+* GPU access;
+* commercial services;
+* or user-specific files.
+
+======================================================================
+9. COMMAND-LINE PROOF SCENARIO
+==============================
+
+The builder must demonstrate a complete Phase 0 proof through documented CLI operations.
+
+The proof should perform the equivalent of:
+
+1. initialize a workspace;
+2. inspect the workspace;
+3. register a fixture source;
+4. verify the source fingerprint;
+5. invoke one or more deterministic mock providers;
+6. commit provider results as synthetic evidence artifacts;
+7. inspect artifact lineage and provenance;
+8. validate the workspace;
+9. export canonical artifacts and reports;
+10. replay the deterministic operation;
+11. compare canonical hashes;
+12. demonstrate rejection of a malformed provider result;
+13. demonstrate detection of modified source content;
+14. and produce the Phase 0 completion report.
+
+The proof must be repeatable from a clean checkout.
+
+======================================================================
+10. COMPLETION GATES
+====================
+
+Phase 0 is complete only when all of the following are true.
+
+---
+
+## 10.1 Repository gate
+
+* the project installs in a clean supported environment;
+* the CLI launches;
+* the package version reports 0.1.0;
+* and documented test commands execute successfully.
+
+---
+
+## 10.2 Contract gate
+
+* all required Phase 0 concepts have explicit contracts;
+* schemas are exportable;
+* malformed data is rejected;
+* and canonical round trips succeed.
+
+---
+
+## 10.3 Determinism gate
+
+* stable identifiers reproduce under defined identical inputs;
+* fixed-clock runs reproduce timestamps;
+* canonical serialization reproduces byte-identical output;
+* and deterministic mocks reproduce identical results.
+
+---
+
+## 10.4 Evidence gate
+
+* a fixture source can be registered without modification;
+* its content hash is preserved;
+* duplicate content is recognized according to documented policy;
+* and modified content is detected.
+
+---
+
+## 10.5 Provenance gate
+
+* every committed proof artifact traces to an operation;
+* every operation traces to inputs and configuration;
+* provider invocations are preserved;
+* and provenance cannot be silently overwritten.
+
+---
+
+## 10.6 Provider gate
+
+* each provider family has a valid interface;
+* deterministic mocks are discoverable;
+* capability inspection works;
+* failures are typed;
+* and malformed outputs are rejected.
+
+---
+
+## 10.7 Workspace gate
+
+* workspaces can be initialized, opened, validated, inspected, and exported;
+* unsupported workspace versions are safely rejected;
+* and canonical artifacts are not trapped solely inside the database.
+
+---
+
+## 10.8 Replay gate
+
+* the required proof operation replays successfully;
+* expected and reproduced hashes match;
+* replay mismatches are detected;
+* and non-replayable operations are represented explicitly.
+
+---
+
+## 10.9 Reporting gate
+
+* all required reports exist in machine-readable and human-readable form;
+* reports distinguish mock, unsupported, warning, and failure states;
+* and the completion report accurately describes implemented behavior.
+
+---
+
+## 10.10 Dependency and licensing gate
+
+* direct dependencies are inventoried;
+* external executables are inventoried;
+* fixture licenses are documented;
+* anticipated model and dataset licenses are identified as provisional;
+* and unresolved licensing questions are visible.
+
+---
+
+## 10.11 Regression gate
+
+* the complete automated test suite passes;
+* controlled negative cases pass;
+* and a clean proof run produces the expected canonical baseline.
+
+======================================================================
+11. EXPLICIT NON-DELIVERABLES
+=============================
+
+Phase 0 must not implement or claim to implement:
+
+* production FFmpeg ingestion pipelines;
+* production audiovisual normalization;
+* production Whisper transcription;
+* production speaker diarization;
+* biometric speaker identification;
+* face detection or tracking;
+* active-speaker detection;
+* discourse-act classification;
+* proposition extraction;
+* argument graph construction;
+* fallacy detection;
+* logical adjudication;
+* factual verification;
+* participant scoring;
+* human-review GUI;
+* caption rendering;
+* annotated video export;
+* public release policy;
+* or claims of neutrality, accuracy, or debate evaluation.
+
+Symbolic mocks and interfaces for later phases are permitted.
+
+No placeholder or mock result may be presented as a real analytical finding.
+
+======================================================================
+12. DEFERRED QUESTIONS
+======================
+
+The following questions remain deliberately unresolved and must not block Phase 0:
+
+* the first supported discourse format;
+* the first production transcription model;
+* the first production diarization model;
+* whether Whisper-family and pyannote-family tools will become defaults;
+* the final persistence engine;
+* the final review-interface technology;
+* the first adjudication ruleset;
+* burden-of-proof policy;
+* score dimensions and weights;
+* factual-grounding policy;
+* aggregate-score publication policy;
+* biometric identity policy;
+* public-release review requirements;
+* external-source selection policy;
+* the final project software license;
+* model-weight redistribution strategy;
+* dataset strategy;
+* and the exact first end-to-end proof recording.
+
+Phase 0 should make later answers easier to implement without embedding premature assumptions.
+
+======================================================================
+13. IMPLEMENTATION GUIDANCE
+===========================
+
+The builder should prefer:
+
+* small explicit modules;
+* typed contracts;
+* clear dependency direction;
+* standard-library functionality where adequate;
+* minimal runtime dependencies;
+* deterministic test infrastructure;
+* immutable value objects;
+* append-only event or provenance records;
+* human-readable canonical artifacts;
+* and complete failure reporting.
+
+The builder should avoid:
+
+* a monolithic application service;
+* global mutable registries;
+* ambient system clocks;
+* hidden random identifiers;
+* untyped dictionaries;
+* destructive artifact updates;
+* provider-specific types leaking into domain contracts;
+* database-only canonical state;
+* premature async or distributed orchestration;
+* premature GUI work;
+* speculative abstractions with no Phase 0 proof;
+* and production model integration.
+
+The system does not need to solve future scale during Phase 0.
+
+It does need to avoid foundations that make future scale, replacement, validation, or auditability unnecessarily difficult.
+
+======================================================================
+14. SUGGESTED REPOSITORY STRUCTURE
+==================================
+
+A suitable structure may resemble:
+
+ratiocinatus/
+pyproject.toml
+README.md
+PROJECT_DESIGN.md
+LICENSE or LICENSE_STATUS.md
+src/
+ratiocinatus/
+**init**.py
+version.py
+contracts/
+identifiers/
+time/
+serialization/
+integrity/
+provenance/
+configuration/
+persistence/
+workspace/
+operations/
+providers/
+replay/
+reports/
+logging/
+cli/
+schemas/
+tests/
+unit/
+integration/
+fixtures/
+baselines/
+docs/
+architecture/
+decisions/
+licensing/
+reports/
+work_orders/
+scripts/
+
+This structure is guidance rather than a mandatory exact layout.
+
+Any replacement should preserve the architectural separations defined by this work order.
+
+======================================================================
+15. REQUIRED COMPLETION REPORT
+==============================
+
+The Phase 0 completion report must include:
+
+* date;
+* application version;
+* contract versions;
+* canonical serialization version;
+* workspace format version;
+* starting repository state;
+* final repository state;
+* supported Python version or versions;
+* supported operating systems actually tested;
+* dependency changes;
+* delivered capabilities;
+* deliberately omitted capabilities;
+* contract inventory;
+* provider-interface inventory;
+* mock-provider inventory;
+* CLI inventory;
+* fixture inventory;
+* report inventory;
+* test counts and results;
+* proof-run commands;
+* proof-run artifact hashes;
+* replay result;
+* negative-case results;
+* dependency inventory status;
+* licensing inventory status;
+* unresolved questions;
+* deviations from this work order;
+* proposed PROJECT_DESIGN.md revisions;
+* and readiness assessment for Phase 1.
+
+The report must distinguish:
+
+* complete;
+* partial;
+* mocked;
+* deferred;
+* unsupported;
+* and failed.
+
+No incomplete completion gate may be described as complete.
+
+======================================================================
+16. PHASE 0 SUCCESS DEFINITION
+==============================
+
+Phase 0 succeeds when Ratiocinatus possesses a small but trustworthy kernel in which:
+
+* sources can be registered without alteration;
+* artifacts have explicit contracts and identities;
+* outputs are canonically serialized;
+* operations preserve configuration and provenance;
+* providers are replaceable;
+* mock capabilities can be invoked and rejected safely;
+* workspaces can be validated;
+* deterministic operations can be replayed;
+* dependencies and licenses are visible;
+* and no later analytical capability is forced to depend on opaque or mutable state.
+
+The desired result is not a prototype referee.
+
+The desired result is a foundation upon which a referee can eventually be built without sacrificing the record.

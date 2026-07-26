@@ -1,0 +1,9 @@
+{
+  "application_version": "0.1.0",
+  "canonical_serialization_version": "canonical-json-1",
+  "portable_canonical_artifacts": true,
+  "report_version": "0.1.0",
+  "workspace_format_version": "0.1.0",
+  "writer_policy": "exclusive lock"
+}
+

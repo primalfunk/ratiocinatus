@@ -1,0 +1,22 @@
+{
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "overlaps": [
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 550000,
+      "first_line_id": "L020",
+      "overlap_id": "O-01",
+      "second_line_id": "L021",
+      "start_microseconds": 168018667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 400000,
+      "first_line_id": "L040",
+      "overlap_id": "O-02",
+      "second_line_id": "L041",
+      "start_microseconds": 320649333
+    }
+  ],
+  "variant": "naturalized"
+}

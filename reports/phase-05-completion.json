@@ -1,0 +1,83 @@
+{
+    "application_version":  "0.2.0",
+    "date":  "2026-07-26",
+    "fixture_contract_version":  "0.1.0",
+    "fixture_format_version":  "1.0.0",
+    "fixture_id":  "ratiocinatus-proof-riverton-evening-access-v1",
+    "fixture_version":  "1.0.0",
+    "hidden_reference_annotations":  {
+                                         "ambiguities":  3,
+                                         "argument_relations":  3,
+                                         "candidate_calls":  4,
+                                         "discourse_acts":  5,
+                                         "expected_non_calls":  4,
+                                         "obligations":  3,
+                                         "propositions":  4,
+                                         "total":  26
+                                     },
+    "licensing":  {
+                      "downstream_reuse_license_selected":  true,
+                      "status":  "Apache-2.0_with_recorded_third_party_terms"
+                  },
+    "qualification":  {
+                          "export_bytes":  230429046,
+                          "export_compare_differences":  0,
+                          "export_sha256":  "cbf37db66c9618cafa2a799a7b273557f068af1f1a98cc41eddede9605d9d270",
+                          "export_valid":  true,
+                          "line_regeneration_classification":  "hash_identical",
+                          "line_regeneration_id":  "L002",
+                          "line_regeneration_sha256":  "658c97c17900e5d0df95eac5e7b0f24e7c3cd18338e445326d7b58b636d1f340",
+                          "test_result":  "30 passed",
+                          "wheel":  "ratiocinatus-0.2.0-py3-none-any.whl"
+                      },
+    "status":  "complete",
+    "status_reason":  "Machine qualification passed; the project owner accepted all audiovisual variants and selected Apache-2.0.",
+    "tts":  {
+                "engine":  "kokoro-onnx",
+                "engine_version":  "0.4.9",
+                "gpu_used":  false,
+                "model":  "hexgrad/Kokoro-82M-v1.0",
+                "model_license":  "Apache-2.0",
+                "provider_boundary":  true,
+                "voices":  {
+                               "MODERATOR":  "am_adam",
+                               "PARTICIPANT_A":  "af_bella",
+                               "PARTICIPANT_B":  "af_sarah"
+                           }
+            },
+    "variants":  [
+                     {
+                         "duration_seconds":  567.784667,
+                         "line_count":  68,
+                         "mp4_sha256":  "1485faf0c8fa17ded5f17f3c4d1fa882757d65fff44393d3cecc2ad6b1c3266a",
+                         "overlap_count":  0,
+                         "perturbation_count":  0,
+                         "variant":  "clean"
+                     },
+                     {
+                         "duration_seconds":  545.858667,
+                         "line_count":  68,
+                         "mp4_sha256":  "5a6797523d0566d754a30ca8aa290bb26f19a94ac372c31f81b1b6e06113a780",
+                         "overlap_count":  2,
+                         "perturbation_count":  0,
+                         "variant":  "naturalized"
+                     },
+                     {
+                         "duration_seconds":  544.466667,
+                         "line_count":  68,
+                         "mp4_sha256":  "08ab6072bd057c667691b96c0c889adf843de7b57d2d8e6d45f4be29fd9d3bd2",
+                         "overlap_count":  3,
+                         "perturbation_count":  5,
+                         "variant":  "adversarial"
+                     }
+                 ],
+    "owner_audition":  {
+                           "date":  "2026-07-26",
+                           "result":  "accepted_for_initial_use",
+                           "scope":  [
+                                         "clean",
+                                         "naturalized",
+                                         "adversarial"
+                                     ]
+                       }
+}

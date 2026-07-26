@@ -1,0 +1,10 @@
+{
+  "copy_sources": false,
+  "deterministic": false,
+  "log_level": "INFO",
+  "provider_selection": [],
+  "report_output": "reports",
+  "serialization_policy": "canonical-json-1",
+  "workspace": ".ratiocinatus"
+}
+

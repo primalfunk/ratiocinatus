@@ -1,0 +1,9 @@
+{
+  "application_version": "0.1.0",
+  "expected_hashes": ["1e55cbaa78d9a3005ca3eb8c1b08f74b71485913debf5b38f00ddca53b794ba1"],
+  "operation": "deterministic mock transcription",
+  "reproduced_hashes": ["1e55cbaa78d9a3005ca3eb8c1b08f74b71485913debf5b38f00ddca53b794ba1"],
+  "report_version": "0.1.0",
+  "status": "match"
+}
+

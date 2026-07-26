@@ -1,0 +1,69 @@
+{
+  "$defs": {
+    "SpeakerRole": {
+      "enum": [
+        "MODERATOR",
+        "PARTICIPANT_A",
+        "PARTICIPANT_B"
+      ],
+      "title": "SpeakerRole",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "active_speaker": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SpeakerRole"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "actual_speaker": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/SpeakerRole"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "duration_microseconds": {
+      "exclusiveMinimum": 0,
+      "title": "Duration Microseconds",
+      "type": "integer"
+    },
+    "event_id": {
+      "title": "Event Id",
+      "type": "string"
+    },
+    "intentional_mismatch": {
+      "default": false,
+      "title": "Intentional Mismatch",
+      "type": "boolean"
+    },
+    "start_microseconds": {
+      "minimum": 0,
+      "title": "Start Microseconds",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "event_id",
+    "start_microseconds",
+    "duration_microseconds",
+    "active_speaker",
+    "actual_speaker"
+  ],
+  "title": "VisualStateEvent",
+  "type": "object"
+}

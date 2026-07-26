@@ -1,0 +1,14 @@
+{
+  "channels": 2,
+  "contract_version": "0.1.0",
+  "fixture_format_version": "1.0.0",
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "frames_per_second": 30,
+  "height": 1080,
+  "regeneration_class": "configuration_equivalent",
+  "sample_rate_hz": 48000,
+  "seed": 20260726,
+  "target_duration_seconds_max": 840,
+  "target_duration_seconds_min": 480,
+  "width": 1920
+}

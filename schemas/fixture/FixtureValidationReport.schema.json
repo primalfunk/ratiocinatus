@@ -1,0 +1,108 @@
+{
+  "$defs": {
+    "FindingSeverity": {
+      "enum": [
+        "information",
+        "warning",
+        "error",
+        "fatal"
+      ],
+      "title": "FindingSeverity",
+      "type": "string"
+    },
+    "FixtureValidationFinding": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "pattern": "^[A-Z][A-Z0-9_]+$",
+          "title": "Code",
+          "type": "string"
+        },
+        "contract_version": {
+          "default": "0.1.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "finding_id": {
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "severity": {
+          "$ref": "#/$defs/FindingSeverity"
+        },
+        "subject": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Subject"
+        }
+      },
+      "required": [
+        "finding_id",
+        "severity",
+        "code",
+        "message"
+      ],
+      "title": "FixtureValidationFinding",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "checked_media": {
+      "title": "Checked Media",
+      "type": "boolean"
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/FixtureValidationFinding"
+      },
+      "title": "Findings",
+      "type": "array"
+    },
+    "fixture_id": {
+      "const": "ratiocinatus-proof-riverton-evening-access-v1",
+      "default": "ratiocinatus-proof-riverton-evening-access-v1",
+      "title": "Fixture Id",
+      "type": "string"
+    },
+    "line_count": {
+      "minimum": 0,
+      "title": "Line Count",
+      "type": "integer"
+    },
+    "valid": {
+      "title": "Valid",
+      "type": "boolean"
+    },
+    "variant_count": {
+      "minimum": 0,
+      "title": "Variant Count",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "valid",
+    "checked_media",
+    "findings",
+    "line_count",
+    "variant_count"
+  ],
+  "title": "FixtureValidationReport",
+  "type": "object"
+}

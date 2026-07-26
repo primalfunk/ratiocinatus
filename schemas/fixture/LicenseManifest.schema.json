@@ -1,0 +1,124 @@
+{
+  "$defs": {
+    "LicenseComponent": {
+      "additionalProperties": false,
+      "properties": {
+        "component_id": {
+          "title": "Component Id",
+          "type": "string"
+        },
+        "contract_version": {
+          "default": "0.1.0",
+          "title": "Contract Version",
+          "type": "string"
+        },
+        "license": {
+          "title": "License",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "notice": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notice"
+        },
+        "redistributed": {
+          "title": "Redistributed",
+          "type": "boolean"
+        },
+        "required": {
+          "title": "Required",
+          "type": "boolean"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Version"
+        }
+      },
+      "required": [
+        "component_id",
+        "name",
+        "license",
+        "source",
+        "required",
+        "redistributed"
+      ],
+      "title": "LicenseComponent",
+      "type": "object"
+    },
+    "LicenseStatus": {
+      "enum": [
+        "safely_redistributable",
+        "redistributable_with_notices",
+        "locally_generatable_not_distributable",
+        "blocked_pending_review"
+      ],
+      "title": "LicenseStatus",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "components": {
+      "items": {
+        "$ref": "#/$defs/LicenseComponent"
+      },
+      "title": "Components",
+      "type": "array"
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "distribution_status": {
+      "$ref": "#/$defs/LicenseStatus"
+    },
+    "fixture_id": {
+      "const": "ratiocinatus-proof-riverton-evening-access-v1",
+      "default": "ratiocinatus-proof-riverton-evening-access-v1",
+      "title": "Fixture Id",
+      "type": "string"
+    },
+    "no_cloned_voices": {
+      "const": true,
+      "default": true,
+      "title": "No Cloned Voices",
+      "type": "boolean"
+    },
+    "no_third_party_media": {
+      "const": true,
+      "default": true,
+      "title": "No Third Party Media",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "distribution_status",
+    "components"
+  ],
+  "title": "LicenseManifest",
+  "type": "object"
+}

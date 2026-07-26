@@ -1,0 +1,85 @@
+{
+  "canonical_media_frozen": true,
+  "canonical_media_hashes": [
+    [
+      "media/adversarial/forum.mp4",
+      "08ab6072bd057c667691b96c0c889adf843de7b57d2d8e6d45f4be29fd9d3bd2"
+    ],
+    [
+      "media/adversarial/mix.flac",
+      "a2ce45af8552e72983218c3a9bc34511a0fb1e7087b92c8cf4a1ed336769b77d"
+    ],
+    [
+      "media/adversarial/stems/moderator.flac",
+      "bb3dd11d329b5e1474946622504f7faba06f66ddb1761d15af8d248e200dcbee"
+    ],
+    [
+      "media/adversarial/stems/participant_a.flac",
+      "f1cff11fb8148df66d5a92cabc969cd939eb160fb069b0373ac323d52badfbc2"
+    ],
+    [
+      "media/adversarial/stems/participant_b.flac",
+      "b03425f620f2fde7dc71052500766aa60c4e01353c98899f9116e3c03eaba9a6"
+    ],
+    [
+      "media/clean/forum.mp4",
+      "1485faf0c8fa17ded5f17f3c4d1fa882757d65fff44393d3cecc2ad6b1c3266a"
+    ],
+    [
+      "media/clean/mix.flac",
+      "b9c8b4f0183024cd603b5fe4a7ba4e17b4dbbe0586bdbd827e1af7d9b595ad49"
+    ],
+    [
+      "media/clean/stems/moderator.flac",
+      "730fa2463a82b08917ae1eb2ff0d1aa4331d8cbd848f350839cde4aa031e2028"
+    ],
+    [
+      "media/clean/stems/participant_a.flac",
+      "7707bd79e935ef171a285432704e1f13ebd31effba27b25c31008f6abf261240"
+    ],
+    [
+      "media/clean/stems/participant_b.flac",
+      "7512b37eddfb850a5c8a282c8122e68f159bc122beb15e1086bfce9c8912159c"
+    ],
+    [
+      "media/naturalized/forum.mp4",
+      "5a6797523d0566d754a30ca8aa290bb26f19a94ac372c31f81b1b6e06113a780"
+    ],
+    [
+      "media/naturalized/mix.flac",
+      "526450008bc65507dc17d6d36845971e120c419291238d8a6b975956e772e159"
+    ],
+    [
+      "media/naturalized/stems/moderator.flac",
+      "df875b05750a2c847fa3f069352122905ab8b0bd39d7bd4c454c02e68fce4d65"
+    ],
+    [
+      "media/naturalized/stems/participant_a.flac",
+      "ed363babe26af094f04db3ca8583d2b3e867aa0364072006d7ad75f46a671856"
+    ],
+    [
+      "media/naturalized/stems/participant_b.flac",
+      "7ff2bc4889087b0aa42948c07acc5b0d76b027bd176b804f25e81dc0b7b1eb33"
+    ]
+  ],
+  "checksum_file": "checksums/sha256sums.txt",
+  "contract_version": "0.1.0",
+  "evidence_packet_sha256": "22461f164873027c95aa70098dcb3940f79b05be0b16433883dccee2e5f0517b",
+  "fixture": {
+    "contract_version": "0.1.0",
+    "discourse_format": "moderated_civic_policy_forum",
+    "family_name": "Riverton Evening Access Forum",
+    "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+    "line_count": 68,
+    "speaker_count": 3,
+    "variants": [
+      "clean",
+      "naturalized",
+      "adversarial"
+    ],
+    "version": "1.0.0"
+  },
+  "license_manifest_sha256": "281ce8e0e647c54a516b5bdb5ddead76f7f9ed93163203ac8734571be4497685",
+  "script_sha256": "26d042967430085fdaf6c80edd25e30d8fb5c8d183a446ba489f6e2fddfd22f7",
+  "voice_policy_sha256": "f42b149a36308c9ee3b2a8b7266afd1eb99b1b6b165b2856a398f7907d729d9a"
+}

@@ -1,0 +1,203 @@
+L001 MODERATOR:
+Good evening. This is the Riverton Evening Access Forum. We are discussing one proposal: a six-month weekday pilot that would keep the community center open until ten p.m. instead of eight p.m. Mara Chen supports the pilot. Daniel Price opposes authorizing it in its current form. I will ask both participants to use the evidence packet provided before this forum.
+
+L002 MODERATOR:
+Mara, please give your opening position.
+
+L003 PARTICIPANT_A:
+The center should authorize the six-month pilot. During each of the last six months, staff recorded between thirty-six and forty-four arrivals after the last admissible entry time. The pilot survey also found seventy-four respondents who said they would use the center after eight at least once per week. We have a real access problem, and the grant can pay the projected additional cost during the pilot.
+
+L004 MODERATOR:
+Daniel, your opening position.
+
+L005 PARTICIPANT_B:
+The board should not authorize the proposal yet. The survey is voluntary, the arrival log may count the same people repeatedly, and Friday security has not been confirmed. The proposal may be worth testing eventually, but the current record does not show that the full five-day pilot is ready.
+
+L006 MODERATOR:
+Daniel, do you agree that the current schedule excludes at least some people who want to use the center in the evening?
+
+L007 PARTICIPANT_B:
+Yes. I agree that some people cannot arrive before the center closes.
+
+L008 MODERATOR:
+Mara, what does the turn-away log establish?
+
+L009 PARTICIPANT_A:
+It establishes that late arrival is not a one-week anomaly. The count stayed between thirty-six and forty-four in every one of the six recorded months.
+
+L010 PARTICIPANT_B:
+It does not establish forty different people every month. The same small group could account for many of those arrivals.
+
+L011 PARTICIPANT_A:
+That is true. The log counts arrivals, not unique people. I am using it to show a recurring access pattern, not to claim that every entry is a different person.
+
+L012 MODERATOR:
+Mara, how much additional staffing would be required?
+
+L013 PARTICIPANT_A:
+The center is one of the most valuable public services in the neighborhood.
+
+L014 MODERATOR:
+That may be relevant to the larger decision, but it does not answer the staffing question. How much additional staffing would be required?
+
+L015 PARTICIPANT_A:
+Two additional staff members and one additional security shift.
+
+L016 PARTICIPANT_B:
+And the extension would increase operating costs by at least three thousand six hundred dollars per month.
+
+L017 PARTICIPANT_A:
+The estimate is three thousand six hundred dollars per month, yes.
+
+L018 MODERATOR:
+Daniel, what is your objection to the survey?
+
+L019 PARTICIPANT_B:
+It was distributed through the center's email list and front desk. People who already use the center were more likely to see it and answer it. That makes it weak evidence about the whole community.
+
+L020 PARTICIPANT_A:
+It is not a random community survey, and I do not claim that it is. But it is evidence about current center users, who are the people most immediately affected by the closing time.
+
+L021 PARTICIPANT_B:
+You keep presenting seventy-four responses as seventy-four guaranteed new users.
+
+L022 PARTICIPANT_A:
+No. I said seventy-four respondents reported that they would use later hours at least once per week. A stated intention is not a guaranteed visit, and a survey response is not proof of a unique new user.
+
+L023 MODERATOR:
+Daniel, do you accept that distinction?
+
+L024 PARTICIPANT_B:
+I accept the wording, but I still think Mara is putting too much weight on the survey.
+
+L025 MODERATOR:
+Let us turn to cost. Mara, state your argument about the grant.
+
+L026 PARTICIPANT_A:
+If the approved grant fully covers the projected staffing and security cost, then that projected cost does not require money from the center's ordinary operating budget during the six-month pilot. The grant provides up to twenty-one thousand six hundred dollars, and six months at three thousand six hundred dollars per month is twenty-one thousand six hundred dollars. Therefore, on the figures in the packet, the projected pilot cost is covered without using the ordinary operating budget.
+
+L027 PARTICIPANT_B:
+That assumes the estimate is exact. If costs exceed the estimate, the grant may not cover the excess.
+
+L028 PARTICIPANT_A:
+Yes. My conclusion is limited to the projected cost in the packet. It does not show that every possible overrun is covered.
+
+L029 MODERATOR:
+Daniel, does the grant answer your objection to the projected cost?
+
+L030 PARTICIPANT_B:
+It answers the projected-cost objection if the estimate holds. It does not answer the Friday security problem.
+
+L031 MODERATOR:
+Daniel, state the Friday security problem precisely.
+
+L032 PARTICIPANT_B:
+The contractor has confirmed Monday through Thursday, but not Friday. A five-day extension should not be authorized unless the center has a safe and lawful way to staff all five evenings.
+
+L033 PARTICIPANT_A:
+The board can authorize the pilot subject to confirmation of Friday coverage.
+
+L034 PARTICIPANT_B:
+That changes the proposal.
+
+L035 PARTICIPANT_A:
+It adds a condition before Friday operation. It does not change the two-hour schedule, the six-month limit, or the funding source.
+
+L036 MODERATOR:
+Mara, what happens if Friday coverage is never confirmed?
+
+L037 PARTICIPANT_A:
+The grant deadline is approaching, and delaying the vote could cause the center to lose the funding.
+
+L038 MODERATOR:
+That does not answer what happens if Friday coverage is never confirmed.
+
+L039 PARTICIPANT_A:
+The board could operate Monday through Thursday, or decline to begin the pilot. The evidence packet does not tell us whether the grantor would accept a four-day version, so I cannot say that the first option is available without further confirmation.
+
+L040 PARTICIPANT_B:
+Mara wants the building open late every night even though the center cannot guarantee security.
+
+L041 PARTICIPANT_A:
+That is not my position. I support a weekday pilot until ten p.m. for six months. I am not proposing overnight operation, and I have just said that Friday operation requires confirmed coverage.
+
+L042 MODERATOR:
+Daniel, do you accept that Mara's stated proposal is the six-month, two-hour weekday pilot described in the packet?
+
+L043 PARTICIPANT_B:
+Yes, that is the proposal she has stated here.
+
+L044 MODERATOR:
+Then please address that proposal rather than a broader one.
+
+L045 PARTICIPANT_A:
+The survey identified sixty regular evening users, sorry, sixteen people in one program whose schedules were discussed in the written comments. That example is not part of the numerical evidence packet, so I withdraw it from my argument.
+
+L046 MODERATOR:
+For clarity, are you relying on either sixty or sixteen as evidence for the pilot?
+
+L047 PARTICIPANT_A:
+No. I am not relying on either number.
+
+L048 PARTICIPANT_B:
+If later hours are popular, evening attendance will rise. Evening attendance rose last month. Therefore, the later-hours proposal is already popular.
+
+L049 MODERATOR:
+The center has not yet adopted later hours. How does last month's attendance increase establish the popularity of a schedule that was not in effect?
+
+L050 PARTICIPANT_B:
+It shows that demand is moving in the right direction.
+
+L051 PARTICIPANT_A:
+It may show increased demand for the center. It cannot, by itself, show that later hours caused the increase or that a schedule not yet adopted was already popular.
+
+L052 MODERATOR:
+Daniel, earlier you stated that the extension would increase operating costs by at least three thousand six hundred dollars per month. Do you still accept that figure as the packet's estimate?
+
+L053 PARTICIPANT_B:
+I never said the extension would cost thousands of dollars each month.
+
+L054 MODERATOR:
+You said, quote, "the extension would increase operating costs by at least three thousand six hundred dollars per month." Would you like to correct your current answer?
+
+L055 PARTICIPANT_B:
+Yes. I did say that. My current answer was wrong. Three thousand six hundred dollars is the packet's monthly estimate.
+
+L056 PARTICIPANT_B:
+I have one additional question. If the current security contractor cannot cover Friday, who is responsible for finding and vetting a replacement, and what standard must that replacement meet?
+
+L057 MODERATOR:
+Mara, can you answer that?
+
+L058 PARTICIPANT_A:
+The board needs to make a decision before the grant deadline.
+
+L059 MODERATOR:
+That does not identify who would find and vet a replacement or what standard would apply.
+
+L060 PARTICIPANT_A:
+I do not know. The evidence packet does not assign that responsibility or state a vetting standard.
+
+L061 PARTICIPANT_B:
+If the numbers are real, I suppose the grant would solve the money problem.
+
+L062 MODERATOR:
+Are you disputing that the packet contains those numbers, disputing their accuracy, or conceding the projected-cost point conditionally?
+
+L063 PARTICIPANT_B:
+Take it however you like.
+
+L064 MODERATOR:
+Mara, give your closing position without adding new evidence.
+
+L065 PARTICIPANT_A:
+The record shows a recurring late-arrival pattern, interest among current center users, a defined two-hour pilot, and grant funding equal to the projected six-month cost. Friday security and replacement procedures remain unresolved. I support authorization only if required coverage is confirmed before the affected evening operates.
+
+L066 MODERATOR:
+Daniel, give your closing position without adding new evidence.
+
+L067 PARTICIPANT_B:
+The access problem is real, but the evidence does not establish how many unique people would use later hours, and Friday security is unresolved. I accept that the grant matches the projected cost. I oppose authorizing a five-day pilot until security coverage and responsibility are defined.
+
+L068 MODERATOR:
+The forum is concluded. This recording is a controlled fictional fixture created for testing audiovisual reasoning analysis. No person, organization, survey, grant, or policy described here is real.

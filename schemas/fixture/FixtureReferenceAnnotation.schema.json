@@ -1,0 +1,65 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "annotation_id": {
+      "title": "Annotation Id",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "discourse_act",
+        "proposition",
+        "argument_relation",
+        "obligation",
+        "candidate_call",
+        "expected_non_call",
+        "ambiguity"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "evidence_ids": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Ids",
+      "type": "array"
+    },
+    "line_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Line Ids",
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "intended",
+        "candidate",
+        "expected",
+        "ambiguous"
+      ],
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "annotation_id",
+    "category",
+    "line_ids",
+    "description",
+    "status"
+  ],
+  "title": "FixtureReferenceAnnotation",
+  "type": "object"
+}

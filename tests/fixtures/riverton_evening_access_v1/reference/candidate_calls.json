@@ -1,0 +1,63 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "CC-001",
+      "category": "candidate_call",
+      "contract_version": "0.1.0",
+      "description": "Weaker, contestable candidate misrepresentation.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L021",
+        "L022"
+      ],
+      "status": "candidate"
+    },
+    {
+      "annotation_id": "CC-002",
+      "category": "candidate_call",
+      "contract_version": "0.1.0",
+      "description": "Stronger candidate misrepresentation followed by correction.",
+      "evidence_ids": [
+        "E-07"
+      ],
+      "line_ids": [
+        "L040",
+        "L041",
+        "L042",
+        "L043"
+      ],
+      "status": "candidate"
+    },
+    {
+      "annotation_id": "CC-003",
+      "category": "candidate_call",
+      "contract_version": "0.1.0",
+      "description": "Explicit contradiction followed by correction.",
+      "evidence_ids": [
+        "E-04"
+      ],
+      "line_ids": [
+        "L053",
+        "L016",
+        "L055"
+      ],
+      "status": "candidate"
+    },
+    {
+      "annotation_id": "CC-004",
+      "category": "candidate_call",
+      "contract_version": "0.1.0",
+      "description": "Candidate affirmation of the consequent and timing defect.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L048",
+        "L049",
+        "L051"
+      ],
+      "status": "candidate"
+    }
+  ],
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "hidden_reference": true,
+  "ordinary_analysis_must_not_consume": true
+}

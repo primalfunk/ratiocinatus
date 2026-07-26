@@ -1,0 +1,86 @@
+{
+    "components":  [
+                       {
+                           "component_id":  "script",
+                           "contract_version":  "0.1.0",
+                           "license":  "Apache-2.0",
+                           "name":  "Riverton script and evidence",
+                           "notice":  "Fictional project-authored text distributed under Apache-2.0.",
+                           "redistributed":  true,
+                           "required":  true,
+                           "source":  "repository",
+                           "version":  "1.0.0"
+                       },
+                       {
+                           "component_id":  "kokoro-runtime",
+                           "contract_version":  "0.1.0",
+                           "license":  "MIT",
+                           "name":  "kokoro-onnx",
+                           "notice":  "Generation prerequisite only.",
+                           "redistributed":  false,
+                           "required":  true,
+                           "source":  "https://pypi.org/project/kokoro-onnx/0.4.9/",
+                           "version":  "0.4.9"
+                       },
+                       {
+                           "component_id":  "kokoro-model",
+                           "contract_version":  "0.1.0",
+                           "license":  "Apache-2.0",
+                           "name":  "Kokoro-82M model and stock voices",
+                           "notice":  "Model and stock voice files are not bundled.",
+                           "redistributed":  false,
+                           "required":  true,
+                           "source":  "https://huggingface.co/hexgrad/Kokoro-82M",
+                           "version":  "1.0"
+                       },
+                       {
+                           "component_id":  "espeak-ng",
+                           "contract_version":  "0.1.0",
+                           "license":  "GPL-3.0-or-later",
+                           "name":  "eSpeak NG via espeakng-loader",
+                           "notice":  "Phonemizer prerequisite only.",
+                           "redistributed":  false,
+                           "required":  true,
+                           "source":  "https://github.com/espeak-ng/espeak-ng",
+                           "version":  "1.52+"
+                       },
+                       {
+                           "component_id":  "ffmpeg",
+                           "contract_version":  "0.1.0",
+                           "license":  "GPL-3.0-or-later build",
+                           "name":  "FFmpeg",
+                           "notice":  "Generation executable is not bundled.",
+                           "redistributed":  false,
+                           "required":  true,
+                           "source":  "https://ffmpeg.org/legal.html",
+                           "version":  "2024-09-26-git-f43916e217"
+                       },
+                       {
+                           "component_id":  "pillow",
+                           "contract_version":  "0.1.0",
+                           "license":  "MIT-CMU",
+                           "name":  "Pillow",
+                           "notice":  "Visual-generation prerequisite only.",
+                           "redistributed":  false,
+                           "required":  true,
+                           "source":  "https://github.com/python-pillow/Pillow/blob/main/LICENSE",
+                           "version":  "12.1.0"
+                       },
+                       {
+                           "component_id":  "graphics",
+                           "contract_version":  "0.1.0",
+                           "license":  "Apache-2.0",
+                           "name":  "Geometric graphic assets",
+                           "notice":  "No third-party image assets; project-authored graphics use Apache-2.0.",
+                           "redistributed":  true,
+                           "required":  true,
+                           "source":  "programmatically generated",
+                           "version":  "1.0.0"
+                       }
+                   ],
+    "contract_version":  "0.1.0",
+    "distribution_status":  "redistributable_with_notices",
+    "fixture_id":  "ratiocinatus-proof-riverton-evening-access-v1",
+    "no_cloned_voices":  true,
+    "no_third_party_media":  true
+}

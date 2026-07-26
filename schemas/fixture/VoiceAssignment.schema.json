@@ -1,0 +1,77 @@
+{
+  "$defs": {
+    "SpeakerRole": {
+      "enum": [
+        "MODERATOR",
+        "PARTICIPANT_A",
+        "PARTICIPANT_B"
+      ],
+      "title": "SpeakerRole",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "cloned_voice": {
+      "const": false,
+      "default": false,
+      "title": "Cloned Voice",
+      "type": "boolean"
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "engine": {
+      "const": "kokoro-onnx",
+      "title": "Engine",
+      "type": "string"
+    },
+    "engine_version": {
+      "title": "Engine Version",
+      "type": "string"
+    },
+    "intentional_imitation": {
+      "const": false,
+      "default": false,
+      "title": "Intentional Imitation",
+      "type": "boolean"
+    },
+    "language": {
+      "const": "en-us",
+      "default": "en-us",
+      "title": "Language",
+      "type": "string"
+    },
+    "model": {
+      "const": "hexgrad/Kokoro-82M-v1.0",
+      "title": "Model",
+      "type": "string"
+    },
+    "speaker_id": {
+      "$ref": "#/$defs/SpeakerRole"
+    },
+    "speed": {
+      "exclusiveMaximum": 2.0,
+      "exclusiveMinimum": 0.5,
+      "title": "Speed",
+      "type": "number"
+    },
+    "voice_id": {
+      "pattern": "^[a-z]{2}_[a-z]+$",
+      "title": "Voice Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "speaker_id",
+    "engine",
+    "engine_version",
+    "model",
+    "voice_id",
+    "speed"
+  ],
+  "title": "VoiceAssignment",
+  "type": "object"
+}

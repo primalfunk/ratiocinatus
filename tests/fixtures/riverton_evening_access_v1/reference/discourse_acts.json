@@ -1,0 +1,62 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "DA-001",
+      "category": "discourse_act",
+      "contract_version": "0.1.0",
+      "description": "Direct question about access exclusion.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L006"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "DA-002",
+      "category": "discourse_act",
+      "contract_version": "0.1.0",
+      "description": "Responsive concession.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L007"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "DA-003",
+      "category": "discourse_act",
+      "contract_version": "0.1.0",
+      "description": "Related but nonresponsive answer.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L013"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "DA-004",
+      "category": "discourse_act",
+      "contract_version": "0.1.0",
+      "description": "Nonresponsive answer to consequence question.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L037"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "DA-005",
+      "category": "discourse_act",
+      "contract_version": "0.1.0",
+      "description": "Nonresponsive answer to operational question.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L058"
+      ],
+      "status": "intended"
+    }
+  ],
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "hidden_reference": true,
+  "ordinary_analysis_must_not_consume": true
+}

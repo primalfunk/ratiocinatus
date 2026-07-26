@@ -1,0 +1,44 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "AM-001",
+      "category": "ambiguity",
+      "contract_version": "0.1.0",
+      "description": "Whether L061 is a conditional concession remains ambiguous.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L061",
+        "L062",
+        "L063"
+      ],
+      "status": "ambiguous"
+    },
+    {
+      "annotation_id": "AM-002",
+      "category": "ambiguity",
+      "contract_version": "0.1.0",
+      "description": "Whether conditional authorization changes the proposal may remain unresolved.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L034",
+        "L035"
+      ],
+      "status": "ambiguous"
+    },
+    {
+      "annotation_id": "AM-003",
+      "category": "ambiguity",
+      "contract_version": "0.1.0",
+      "description": "The weaker misrepresentation may remain below adjudication threshold.",
+      "evidence_ids": [],
+      "line_ids": [
+        "L021",
+        "L022"
+      ],
+      "status": "ambiguous"
+    }
+  ],
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "hidden_reference": true,
+  "ordinary_analysis_must_not_consume": true
+}

@@ -1,0 +1,550 @@
+{
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "lines": [
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 22293333,
+      "end_microseconds": 24293333,
+      "line_id": "L001",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 2000000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 2261333,
+      "end_microseconds": 27204666,
+      "line_id": "L002",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 24943333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 24362667,
+      "end_microseconds": 52217334,
+      "line_id": "L003",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 27854667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 1749333,
+      "end_microseconds": 54616666,
+      "line_id": "L004",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 52867333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 18560000,
+      "end_microseconds": 73826667,
+      "line_id": "L005",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 55266667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 5525333,
+      "end_microseconds": 80002000,
+      "line_id": "L006",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 74476667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 4096000,
+      "end_microseconds": 84748000,
+      "line_id": "L007",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 80652000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 2538667,
+      "end_microseconds": 87936667,
+      "line_id": "L008",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 85398000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 9514667,
+      "end_microseconds": 98101334,
+      "line_id": "L009",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 88586667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 6805333,
+      "end_microseconds": 105556666,
+      "line_id": "L010",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 98751333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 10282667,
+      "end_microseconds": 116489334,
+      "line_id": "L011",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 106206667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 2837333,
+      "end_microseconds": 119976666,
+      "line_id": "L012",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 117139333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 4224000,
+      "end_microseconds": 124850667,
+      "line_id": "L013",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 120626667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 7488000,
+      "end_microseconds": 132988667,
+      "line_id": "L014",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 125500667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3818667,
+      "end_microseconds": 137457334,
+      "line_id": "L015",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 133638667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 5589333,
+      "end_microseconds": 143696666,
+      "line_id": "L016",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 138107333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3712000,
+      "end_microseconds": 148058667,
+      "line_id": "L017",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 144346667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 2325333,
+      "end_microseconds": 151034000,
+      "line_id": "L018",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 148708667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 11306667,
+      "end_microseconds": 162990667,
+      "line_id": "L019",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 151684000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 10880000,
+      "end_microseconds": 174520667,
+      "line_id": "L020",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 163640667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 5162667,
+      "end_microseconds": 180333334,
+      "line_id": "L021",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 175170667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 13056000,
+      "end_microseconds": 194039333,
+      "line_id": "L022",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 180983333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 2005333,
+      "end_microseconds": 196694666,
+      "line_id": "L023",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 194689333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 4757333,
+      "end_microseconds": 202102000,
+      "line_id": "L024",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 197344667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3626667,
+      "end_microseconds": 206378667,
+      "line_id": "L025",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 202752000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 29418667,
+      "end_microseconds": 236447334,
+      "line_id": "L026",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 207028667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 6357333,
+      "end_microseconds": 243454666,
+      "line_id": "L027",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 237097333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 7722667,
+      "end_microseconds": 251827334,
+      "line_id": "L028",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 244104667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3648000,
+      "end_microseconds": 256125333,
+      "line_id": "L029",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 252477333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 7082667,
+      "end_microseconds": 263858000,
+      "line_id": "L030",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 256775333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3178667,
+      "end_microseconds": 267686667,
+      "line_id": "L031",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 264508000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 11648000,
+      "end_microseconds": 279984667,
+      "line_id": "L032",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 268336667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 4864000,
+      "end_microseconds": 285498667,
+      "line_id": "L033",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 280634667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 1642667,
+      "end_microseconds": 287791334,
+      "line_id": "L034",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 286148667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 8362667,
+      "end_microseconds": 296804000,
+      "line_id": "L035",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 288441333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3349333,
+      "end_microseconds": 300803333,
+      "line_id": "L036",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 297454000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 5376000,
+      "end_microseconds": 306829333,
+      "line_id": "L037",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 301453333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 4138667,
+      "end_microseconds": 311618000,
+      "line_id": "L038",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 307479333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 14912000,
+      "end_microseconds": 327180000,
+      "line_id": "L039",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 312268000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 5973333,
+      "end_microseconds": 333803333,
+      "line_id": "L040",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 327830000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 13589333,
+      "end_microseconds": 348042666,
+      "line_id": "L041",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 334453333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 6720000,
+      "end_microseconds": 355412667,
+      "line_id": "L042",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 348692667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 2581333,
+      "end_microseconds": 358644000,
+      "line_id": "L043",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 356062667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3328000,
+      "end_microseconds": 362622000,
+      "line_id": "L044",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 359294000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 15189333,
+      "end_microseconds": 378461333,
+      "line_id": "L045",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 363272000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 4842667,
+      "end_microseconds": 383954000,
+      "line_id": "L046",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 379111333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 2282667,
+      "end_microseconds": 386886667,
+      "line_id": "L047",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 384604000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 9834667,
+      "end_microseconds": 397371334,
+      "line_id": "L048",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 387536667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 8704000,
+      "end_microseconds": 406725333,
+      "line_id": "L049",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 398021333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3008000,
+      "end_microseconds": 410383333,
+      "line_id": "L050",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 407375333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 10965333,
+      "end_microseconds": 421998666,
+      "line_id": "L051",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 411033333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 10346667,
+      "end_microseconds": 432995334,
+      "line_id": "L052",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 422648667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3882667,
+      "end_microseconds": 437528000,
+      "line_id": "L053",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 433645333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 8810667,
+      "end_microseconds": 446988667,
+      "line_id": "L054",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 438178000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 7232000,
+      "end_microseconds": 454870667,
+      "line_id": "L055",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 447638667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 11626667,
+      "end_microseconds": 467147334,
+      "line_id": "L056",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 455520667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 1514667,
+      "end_microseconds": 469312000,
+      "line_id": "L057",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 467797333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3349333,
+      "end_microseconds": 473311333,
+      "line_id": "L058",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 469962000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 5098667,
+      "end_microseconds": 479060000,
+      "line_id": "L059",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 473961333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 6016000,
+      "end_microseconds": 485726000,
+      "line_id": "L060",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 479710000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 4117333,
+      "end_microseconds": 490493333,
+      "line_id": "L061",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 486376000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 7914667,
+      "end_microseconds": 499058000,
+      "line_id": "L062",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 491143333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 1493333,
+      "end_microseconds": 501201333,
+      "line_id": "L063",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 499708000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3285333,
+      "end_microseconds": 505136666,
+      "line_id": "L064",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 501851333
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 22101333,
+      "end_microseconds": 527888000,
+      "line_id": "L065",
+      "speaker_id": "PARTICIPANT_A",
+      "start_microseconds": 505786667
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 3264000,
+      "end_microseconds": 531802000,
+      "line_id": "L066",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 528538000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 19200000,
+      "end_microseconds": 551652000,
+      "line_id": "L067",
+      "speaker_id": "PARTICIPANT_B",
+      "start_microseconds": 532452000
+    },
+    {
+      "contract_version": "0.1.0",
+      "duration_microseconds": 13482667,
+      "end_microseconds": 565784667,
+      "line_id": "L068",
+      "speaker_id": "MODERATOR",
+      "start_microseconds": 552302000
+    }
+  ],
+  "variant": "clean"
+}

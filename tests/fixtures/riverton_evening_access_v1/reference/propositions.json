@@ -1,0 +1,62 @@
+{
+  "annotations": [
+    {
+      "annotation_id": "PR-001",
+      "category": "proposition",
+      "contract_version": "0.1.0",
+      "description": "Late arrivals form a recurring pattern, not a unique-person count.",
+      "evidence_ids": [
+        "E-02"
+      ],
+      "line_ids": [
+        "L009",
+        "L011"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "PR-002",
+      "category": "proposition",
+      "contract_version": "0.1.0",
+      "description": "The grant equals the six-month projected cost.",
+      "evidence_ids": [
+        "E-04",
+        "E-05"
+      ],
+      "line_ids": [
+        "L026"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "PR-003",
+      "category": "proposition",
+      "contract_version": "0.1.0",
+      "description": "Friday security remains unconfirmed.",
+      "evidence_ids": [
+        "E-06"
+      ],
+      "line_ids": [
+        "L032"
+      ],
+      "status": "intended"
+    },
+    {
+      "annotation_id": "PR-004",
+      "category": "proposition",
+      "contract_version": "0.1.0",
+      "description": "Support is conditional on required coverage.",
+      "evidence_ids": [
+        "E-06",
+        "E-07"
+      ],
+      "line_ids": [
+        "L065"
+      ],
+      "status": "intended"
+    }
+  ],
+  "fixture_id": "ratiocinatus-proof-riverton-evening-access-v1",
+  "hidden_reference": true,
+  "ordinary_analysis_must_not_consume": true
+}

@@ -1,0 +1,58 @@
+{
+  "$defs": {
+    "FindingSeverity": {
+      "enum": [
+        "information",
+        "warning",
+        "error",
+        "fatal"
+      ],
+      "title": "FindingSeverity",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "pattern": "^[A-Z][A-Z0-9_]+$",
+      "title": "Code",
+      "type": "string"
+    },
+    "contract_version": {
+      "default": "0.1.0",
+      "title": "Contract Version",
+      "type": "string"
+    },
+    "finding_id": {
+      "title": "Finding Id",
+      "type": "string"
+    },
+    "message": {
+      "title": "Message",
+      "type": "string"
+    },
+    "severity": {
+      "$ref": "#/$defs/FindingSeverity"
+    },
+    "subject": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Subject"
+    }
+  },
+  "required": [
+    "finding_id",
+    "severity",
+    "code",
+    "message"
+  ],
+  "title": "FixtureValidationFinding",
+  "type": "object"
+}
