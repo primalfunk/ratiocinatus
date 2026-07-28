@@ -1,0 +1,107 @@
+{
+  "assertions": {
+    "at_least_twelve_chunks": true,
+    "coverage_complete": true,
+    "integrity_valid": true,
+    "interruption_observed": true,
+    "mapping_start_middle_end_exact": true,
+    "materialized_cache_hits": true,
+    "materialized_chunks_valid": true,
+    "python_peak_below_256_mib": true,
+    "resume_complete": true,
+    "resume_reused_committed_stages": true,
+    "source_at_least_two_hours": true
+  },
+  "chunks": {
+    "count": 13,
+    "coverage_complete": true,
+    "materialized_samples": [
+      {
+        "actual_duration_microseconds": 600000000,
+        "byte_size": 114424,
+        "cache_first": "miss",
+        "cache_second": "hit",
+        "chunk_id": "chunk_1bac5c384032a6847a7cf9afb512eb41",
+        "content_sha256": "4c01492350460836b2f3f64f9cb6a1ff4ccacca96b7019162b658fcb44b5b7d0",
+        "expected_duration_microseconds": 600000000,
+        "first_seconds": 0.5119,
+        "hit_seconds": 0.316752,
+        "integrity_valid": true,
+        "ordinal": 0
+      },
+      {
+        "actual_duration_microseconds": 600000000,
+        "byte_size": 114424,
+        "cache_first": "miss",
+        "cache_second": "hit",
+        "chunk_id": "chunk_58d6ba9b58ae83f32dad1af201169c8d",
+        "content_sha256": "4c01492350460836b2f3f64f9cb6a1ff4ccacca96b7019162b658fcb44b5b7d0",
+        "expected_duration_microseconds": 600000000,
+        "first_seconds": 0.457428,
+        "hit_seconds": 0.304291,
+        "integrity_valid": true,
+        "ordinal": 6
+      },
+      {
+        "actual_duration_microseconds": 61000000,
+        "byte_size": 18304,
+        "cache_first": "miss",
+        "cache_second": "hit",
+        "chunk_id": "chunk_6057a14373ce1a9c89be9c6f08711ad5",
+        "content_sha256": "000ffe7cdfa113e76e9c8d942118c223b6cd29c30fd5abaa4eeff0624a4051df",
+        "expected_duration_microseconds": 61000000,
+        "first_seconds": 0.349281,
+        "hit_seconds": 0.302928,
+        "integrity_valid": true,
+        "ordinal": 12
+      }
+    ],
+    "maximum_coverage_multiplicity": 2,
+    "overlap_microseconds": 5000000,
+    "target_duration_microseconds": 600000000
+  },
+  "ingestion": {
+    "corpus_id": "corpus_a695a70e5dba3c45717f9fdfaec471f1",
+    "ingestion_id": "ingestion_3377254ebf68ac09e3eeadc82f76c8c0",
+    "output_bytes": 469902759,
+    "output_to_source_ratio": 2.013041,
+    "processing_seconds": 7.66981,
+    "python_allocator_peak_bytes": 2495017,
+    "resume_seconds": 2.762143,
+    "reused_stages": [
+      "audio_normalization_committed",
+      "inspection_committed",
+      "qualification_committed",
+      "selection_committed",
+      "source_verified"
+    ]
+  },
+  "mapped_points": [
+    {
+      "classification": "exact",
+      "corpus_microseconds": 0,
+      "label": "start",
+      "source_microseconds": 0
+    },
+    {
+      "classification": "exact",
+      "corpus_microseconds": 3600500000,
+      "label": "middle",
+      "source_microseconds": 3600500000
+    },
+    {
+      "classification": "exact",
+      "corpus_microseconds": 7200999999,
+      "label": "end",
+      "source_microseconds": 7200999999
+    }
+  ],
+  "qualification": "phase-1-long-recording",
+  "source": {
+    "byte_size": 233429346,
+    "duration_microseconds": 7201000000,
+    "name": "phase1-long-synthetic.avi",
+    "sha256": "a7a06422d18fb729ddb6eb1477c34ca52142c6c2f726bfb850dfd91f9ba2464b"
+  },
+  "status": "passed"
+}

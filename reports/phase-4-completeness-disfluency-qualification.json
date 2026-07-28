@@ -1,0 +1,25 @@
+{
+  "qualification": "phase-4-completeness-and-disfluency-analysis",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "synthetic_mechanics",
+  "contract_models": 17,
+  "runtime_contracts": 254,
+  "focused_test_count": 12,
+  "full_regression_test_count": 202,
+  "assertions": [
+    "Completeness assessments are derived artifacts and do not rewrite utterances.",
+    "Unknown is preserved when bounded observable signals do not support a classification.",
+    "Disfluency spans retain canonical transcript word and interval addressing.",
+    "Self-repair candidates separate reparandum, marker, and repair words.",
+    "Semantic inference and clinical diagnosis are prohibited by policy.",
+    "Analysis persistence is deterministic, sealed, reloadable, and cache-safe.",
+    "Cross-utterance word ownership is rejected during validation.",
+    "CLI operations expose inspection and review lists without mutating source evidence."
+  ],
+  "limitations": [
+    "Rules qualify deterministic mechanics, not linguistic classification accuracy.",
+    "Grammatical and discourse completeness are not inferred in this slice.",
+    "Disfluency and self-repair records require review and are not diagnoses."
+  ]
+}

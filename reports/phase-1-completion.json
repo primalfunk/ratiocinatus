@@ -1,0 +1,238 @@
+{
+  "application_version": "0.3.0",
+  "boundary": {
+    "analytical_overlays_produced": false,
+    "argument_analysis_produced": false,
+    "scores_produced": false,
+    "speaker_analysis_produced": false,
+    "transcripts_produced": false
+  },
+  "completion_gates": {
+    "audio": "complete",
+    "boundary": "complete",
+    "cache": "complete",
+    "chunk": "complete",
+    "corpus": "complete",
+    "inspection": "complete",
+    "long_recording": "complete",
+    "qualification": "complete",
+    "regression": "complete",
+    "reporting": "complete",
+    "resume": "complete",
+    "selection": "complete",
+    "timeline": "complete",
+    "video": "complete"
+  },
+  "contract_version": "0.1.0",
+  "corpus_format_version": "1.0.0",
+  "date": "2026-07-26",
+  "dependencies": {
+    "external_tools_added": [
+      "FFmpeg",
+      "FFprobe"
+    ],
+    "new_python_runtime_dependencies": [],
+    "policy": "external tools are discovered or explicitly configured and are not bundled"
+  },
+  "deviations": [
+    {
+      "classification": "unsupported",
+      "item": "remux and transcode remediation",
+      "resolution": "sources outside the qualified passthrough policy are explicitly refused"
+    },
+    {
+      "classification": "deferred",
+      "item": "cooperative cancellation of an active external-tool process",
+      "resolution": "bounded timeout, interruption between persisted stages, and resumable recovery are implemented"
+    },
+    {
+      "classification": "partial",
+      "item": "packet continuity scan depth",
+      "resolution": "bounded early, middle, and late probes are implemented; exhaustive full-file packet scanning is policy-deferred"
+    }
+  ],
+  "delivered_cli": [
+    "media inspect",
+    "media streams",
+    "media select",
+    "media qualify",
+    "media packets",
+    "media timeline",
+    "media map-time",
+    "derivative normalize-audio",
+    "derivative list",
+    "derivative inspect",
+    "cache inspect",
+    "cache validate",
+    "video plan",
+    "video frame",
+    "video frames",
+    "ingest plan",
+    "ingest run",
+    "ingest resume",
+    "ingest status",
+    "ingest validate",
+    "corpus list",
+    "corpus inspect",
+    "corpus validate",
+    "corpus export",
+    "chunk list",
+    "chunk materialize"
+  ],
+  "design_recommendations": [
+    "Keep transcript and speaker contracts downstream of the immutable corpus boundary.",
+    "Add remux or transcode only through a separately versioned transformation policy with complete lineage.",
+    "Consider an opt-in exhaustive packet scan for high-risk or archival ingestion profiles.",
+    "Retain strict rejection of unknown persisted format and policy versions."
+  ],
+  "evidence": {
+    "audio": {
+      "channels": 1,
+      "codec": "FLAC",
+      "duration_tolerance_microseconds": 100000,
+      "integrity_valid_variants": 3,
+      "sample_format": "signed 16-bit",
+      "sample_rate_hz": 16000
+    },
+    "cache": {
+      "corruption_rebuild": true,
+      "materialized_chunk_hits": 3,
+      "normalization_hits": 3,
+      "policy_invalidation": true,
+      "refuse_and_bypass": true
+    },
+    "chunks": {
+      "long_recording_chunk_count": 13,
+      "materialized_and_virtual": true,
+      "overlap_microseconds": 5000000,
+      "ownership": "earliest chunk owns overlap",
+      "target_duration_microseconds": 600000000
+    },
+    "long_recording": {
+      "duration_microseconds": 7201000000,
+      "integrity_valid": true,
+      "output_bytes": 469902759,
+      "processing_seconds": 7.66981,
+      "python_allocator_peak_bytes": 2495017,
+      "source_bytes": 233429346,
+      "status": "passed"
+    },
+    "packet_continuity": {
+      "discontinuities_detected": 0,
+      "probe_count": 18,
+      "status": "passed",
+      "variants": 3
+    },
+    "resume_recovery": {
+      "elapsed_seconds": 31.765811,
+      "failure_drills": [
+        "orphan atomic partial",
+        "committed derivative substitution",
+        "source mutation",
+        "configuration mismatch",
+        "chunk-policy isolation",
+        "write denial",
+        "full disk",
+        "unsupported stage version",
+        "unsupported corpus version",
+        "external-tool version mutation"
+      ],
+      "persisted_stages_tested": 11,
+      "status": "passed"
+    },
+    "riverton": {
+      "decode_probe_count": 18,
+      "fixture_integrity": "valid",
+      "line_count": 68,
+      "selected_audio_stream": 1,
+      "selected_video_stream": 0,
+      "variant_count": 3
+    },
+    "timeline": {
+      "long_recording_start_middle_end": "exact",
+      "representation": "integer microseconds with explicit domains",
+      "round_trip_and_discontinuity_cases": "passed"
+    },
+    "video": {
+      "policy": "qualified source passthrough",
+      "timestamp_addressing": true,
+      "unsupported_or_damaged_sources": "refused",
+      "vfr_rotation_and_pixel_aspect_preserved": true
+    }
+  },
+  "negative_cases": [
+    "missing and malformed inspection input",
+    "invalid and ambiguous stream selection",
+    "decode timeout, non-zero exit, and zero decoded output",
+    "negative and non-zero timeline origins",
+    "gaps, clipping, and packet DTS regression",
+    "invalid chunk policy and incomplete coverage",
+    "cache corruption, stale policy, refuse, and bypass",
+    "derivative and corpus substitution",
+    "unsupported pixel format and truncated video",
+    "write denial and full disk",
+    "unsupported persisted versions",
+    "source, configuration, and tool mutation"
+  ],
+  "phase_0_5_closure": {
+    "canonical_media_byte_identity": "passed",
+    "fixture_validation": "passed",
+    "status": "complete"
+  },
+  "phase_2_readiness": {
+    "corpus_portable": true,
+    "integrity_validated": true,
+    "ready": true,
+    "source_addressing_stable": true
+  },
+  "qualification_reports": [
+    "phase-1-normalization-qualification.md",
+    "phase-1-video-access-qualification.md",
+    "phase-1-corpus-resume-qualification.md",
+    "phase-1-long-recording-qualification.json",
+    "phase-1-long-recording-qualification.md",
+    "phase-1-resume-recovery-qualification.json",
+    "phase-1-resume-recovery-qualification.md",
+    "phase-1-edge-media-policy-qualification.json",
+    "phase-1-edge-media-policy-qualification.md",
+    "phase-1-packet-continuity-qualification.json",
+    "phase-1-packet-continuity-qualification.md"
+  ],
+  "repository": {
+    "baseline_head": "83f83b9aeac4728a253a03ba9910caef433fe08e",
+    "branch": "master",
+    "phase_1_changes_committed_at_audit": false
+  },
+  "report_version": "0.1.0",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "phase_0_and_1_contracts": 79
+  },
+  "status": "complete",
+  "supported_and_qualified_sources": [
+    "MP4 with H.264 video and AAC audio",
+    "FLAC audio-only",
+    "AVI long-recording technical fixture",
+    "VFR video",
+    "rotation metadata",
+    "non-square pixel aspect",
+    "positive unusual video time base"
+  ],
+  "tests": {
+    "count": 77,
+    "phase_0_proof": "passed",
+    "phase_0_5_fixture_validation": "passed",
+    "pytest": "passed"
+  },
+  "tools": {
+    "ffmpeg": "2024-09-26-git-f43916e217-essentials_build-www.gyan.dev",
+    "ffprobe": "2024-09-26-git-f43916e217-essentials_build-www.gyan.dev",
+    "python": "3.11.0"
+  },
+  "unresolved_issues": [
+    "No silent remediation is available for refused video sources.",
+    "External-tool cancellation is limited to timeout and stage-boundary interruption.",
+    "Packet qualification is representative rather than exhaustive."
+  ],
+  "workspace_format_version": "0.1.0"
+}

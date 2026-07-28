@@ -1,6 +1,6 @@
 """Public compatibility versions."""
 
-__version__ = "0.2.0"
+__version__ = "0.4.0"
 CONTRACT_VERSION = "0.1.0"
 SERIALIZATION_VERSION = "canonical-json-1"
 WORKSPACE_VERSION = "0.1.0"

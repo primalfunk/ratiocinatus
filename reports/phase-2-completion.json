@@ -1,0 +1,190 @@
+{
+  "application_version": "0.4.0",
+  "boundary": {
+    "argument_artifacts_produced": false,
+    "factual_claims_produced": false,
+    "judgment_artifacts_produced": false,
+    "scores_produced": false,
+    "speaker_identity_artifacts_produced": false,
+    "transcript_status": "fallible analytical derivative"
+  },
+  "completion_gates": {
+    "1_stable_source_mapping": "complete",
+    "2_speech_activity_evidence": "complete",
+    "3_timestamped_transcript": "complete",
+    "4_word_evidence": "complete",
+    "5_unknown_and_low_confidence": "complete",
+    "6_alternatives": "complete",
+    "7_corrections": "complete",
+    "8_subtitle_export": "complete",
+    "9_evaluation": "complete",
+    "10_cache_and_recovery": "complete",
+    "11_integrity": "complete",
+    "12_long_recording_operation": "complete",
+    "13_regression_and_boundary": "complete"
+  },
+  "contract_version": "0.1.0",
+  "date": "2026-07-26",
+  "configuration_identifiers": {
+    "semantic_activity_run_ids": [
+      "sarun_e3b8ce8452f35a781f2e2b3766b0ab1a",
+      "sarun_f8059a4dade9142bd732e0f67fea5cd6",
+      "sarun_5759208f2b363240ac43b72548e59e29"
+    ],
+    "speech_activity_policy_version": "1.0.0",
+    "transcript_assembly_policy_version": "1.0.0",
+    "transcription_policy_version": "1.0.0",
+    "transcription_request_ids": [
+      "txreq_c5e6a3051d57254ae948cc36d1ae5788",
+      "txreq_8f1eda60f42453627e1846c90ec260ec",
+      "txreq_431d5ebbff3e61aab1b4c2b33e3d2d61"
+    ]
+  },
+  "evidence": {
+    "cache_and_recovery": {
+      "protected_artifact_count": 12,
+      "protected_artifacts_unchanged": true,
+      "provider_reinvocations": 0,
+      "recovered_stages": [
+        "transcription_report",
+        "transcript_assembly",
+        "transcript_correction",
+        "subtitle_export",
+        "transcript_evaluation"
+      ],
+      "status": "passed"
+    },
+    "controlled_evaluation": {
+      "candidate_selection": "unavailable because controlled references do not label expected candidates",
+      "character_error_rate": 0.03597122302158273,
+      "character_error_rate_change_after_correction": -0.0008992805755395697,
+      "confidence_reliability_bin_count": 3,
+      "segment_timing_available": true,
+      "subtitle_valid": true,
+      "variants": 3,
+      "word_error_rate": 0.04145077720207254,
+      "word_error_rate_change_after_correction": -0.005181347150259065,
+      "word_timing_reference": "unavailable"
+    },
+    "corrections": {
+      "automated_corrections": 0,
+      "base_assemblies_unchanged": true,
+      "difference_entries": 3,
+      "human_corrections": 3,
+      "original_views_retained": true,
+      "successor_versions": 3
+    },
+    "long_recording": {
+      "activity_intervals": 13,
+      "assembly_segments": 13,
+      "cache_replay_complete": true,
+      "chunk_count": 13,
+      "chunk_transition_count": 12,
+      "corpus_id": "corpus_396e56edcdefac8d7e94bcf2335941aa",
+      "duration_microseconds": 7201000000,
+      "overlap_microseconds": 5000000,
+      "overlap_output_duplicated": false,
+      "phase_1_corpus_unchanged": true,
+      "processing_seconds": 4.079543,
+      "python_allocator_peak_bytes": 2773608,
+      "status": "passed",
+      "timestamped_words": 13
+    },
+    "negative_proofs": {
+      "case_count": 17,
+      "selected_test_count": 9,
+      "selected_tests_skipped": false,
+      "status": "passed"
+    },
+    "speech_activity": {
+      "controlled_duration_microseconds": 1658110022,
+      "interval_count": 1750,
+      "probable_non_speech_microseconds": 241918021,
+      "probable_speech_microseconds": 1397344000,
+      "semantic_provider": "local.silero_vad",
+      "semantic_provider_model_version": "6.2.1",
+      "uncertain_microseconds": 18848001,
+      "variants": 3
+    },
+    "subtitles": {
+      "corrected_cues": 66,
+      "formats": [
+        "WebVTT",
+        "SubRip"
+      ],
+      "machine_cues": 69,
+      "source_addressed": true,
+      "validated_exports": 6
+    },
+    "transcription": {
+      "assembly_ids": [
+        "txassembly_c34fca1c06a90c466a9e13672197ac2d",
+        "txassembly_3e84742b9b30c04ffeb212cc0a9f2e99",
+        "txassembly_284259ec601399cdbc0f0489d34741ff"
+      ],
+      "alternative_candidate_count": 0,
+      "blocking_regions": 0,
+      "controlled_corpus_ids": [
+        "corpus_9a883202d33850cbfed34db82269e2d3",
+        "corpus_401c45ffc79578e14356d0d26c325395",
+        "corpus_947b95e48117d0d11bd5e7e7a0fb6112"
+      ],
+      "controlled_observations": 69,
+      "controlled_segments": 69,
+      "controlled_words": 567,
+      "low_confidence_duration_microseconds": 524734000,
+      "low_confidence_regions": 707,
+      "provider": "local.openai_whisper",
+      "provider_version": "1.0.0",
+      "review_regions": 707,
+      "variants": 3
+    }
+  },
+  "known_limitations": [
+    "Controlled accuracy results cover synthetic excerpt lines L001-L005 and do not establish general transcription quality.",
+    "The initial Whisper provider exposes one decoding candidate, so alternative preservation is implemented and tested but provider alternatives are unavailable in the qualification run.",
+    "Provider-native segment and word timestamps do not include an independent timing-confidence score.",
+    "External word alignment is not performed where the controlled reference lacks word timestamps.",
+    "The long-recording qualification uses synthetic ownership and transcript markers to test mechanics, not recognition accuracy."
+  ],
+  "provider_and_model": {
+    "license_expression": "MIT",
+    "model_fingerprint": "9ecf779972d90ba49c06d968637d720dd632c55bbf19d441fb42bf17a411e794",
+    "model_id": "openai/whisper-small",
+    "model_redistributed": false,
+    "model_version": "small",
+    "provider_id": "local.openai_whisper",
+    "provider_version": "1.0.0"
+  },
+  "qualification_reports": [
+    "phase-2-speech-activity-baseline-qualification.json",
+    "phase-2-semantic-vad-qualification.json",
+    "phase-2-transcription-provider-qualification.json",
+    "phase-2-transcript-assembly-qualification.json",
+    "phase-2-transcript-correction-qualification.json",
+    "phase-2-subtitle-export-qualification.json",
+    "phase-2-transcript-evaluation-qualification.json",
+    "phase-2-recovery-qualification.json",
+    "phase-2-long-recording-qualification.json",
+    "phase-2-negative-proofs.json"
+  ],
+  "repository": {
+    "branch": "master",
+    "final_head": "83f83b9aeac4728a253a03ba9910caef433fe08e",
+    "phase_changes_committed_at_audit": false,
+    "starting_head": "83f83b9aeac4728a253a03ba9910caef433fe08e"
+  },
+  "report_version": "0.1.0",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 146
+  },
+  "status": "complete",
+  "tests": {
+    "count": 119,
+    "negative_matrix": "passed",
+    "pytest": "passed"
+  },
+  "unresolved_concerns": [],
+  "workspace_format_version": "0.1.0"
+}

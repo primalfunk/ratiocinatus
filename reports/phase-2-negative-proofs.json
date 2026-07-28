@@ -1,0 +1,114 @@
+{
+  "case_count": 17,
+  "cases": [
+    {
+      "case": "unsupported_audio_or_corpus_version",
+      "expected_typed_result": "strict contract ValidationError",
+      "status": "passed",
+      "test_node": "tests/test_phase1_packet_continuity.py::test_phase1_versions_are_compatibility_gates"
+    },
+    {
+      "case": "missing_normalized_audio_derivative",
+      "expected_typed_result": "invalid CorpusIntegrityReport with explicit missing finding",
+      "status": "passed",
+      "test_node": "tests/test_phase1_corpus_ingestion.py::test_interruption_resume_portable_export_and_integrity"
+    },
+    {
+      "case": "corrupted_audio_evidence",
+      "expected_typed_result": "invalid CorpusIntegrityReport with hash/substitution finding",
+      "status": "passed",
+      "test_node": "tests/test_phase1_corpus_ingestion.py::test_interruption_resume_portable_export_and_integrity"
+    },
+    {
+      "case": "provider_unavailable",
+      "expected_typed_result": "SpeechProviderUnavailable",
+      "status": "passed",
+      "test_node": "tests/test_phase2_foundation.py::test_provider_registry_and_capability_cli_are_conservative"
+    },
+    {
+      "case": "model_unavailable",
+      "expected_typed_result": "SpeechProviderUnavailable for unqualified model fingerprint",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcription.py::test_whisper_timeout_and_model_fingerprint_are_typed"
+    },
+    {
+      "case": "provider_timeout",
+      "expected_typed_result": "SpeechEvidenceFailureKind.TIMEOUT",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcription.py::test_whisper_timeout_and_model_fingerprint_are_typed"
+    },
+    {
+      "case": "malformed_provider_result",
+      "expected_typed_result": "SpeechEvidenceFailureKind.MALFORMED_OUTPUT",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcription.py::test_whisper_timeout_and_model_fingerprint_are_typed"
+    },
+    {
+      "case": "timestamps_outside_requested_interval",
+      "expected_typed_result": "TranscriptionIntegrityError",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcript_assembly.py::test_transcription_temporal_confidence_and_lineage_negative_proofs"
+    },
+    {
+      "case": "invalid_confidence_values",
+      "expected_typed_result": "strict ConfidenceMeasure ValidationError",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcript_assembly.py::test_transcription_temporal_confidence_and_lineage_negative_proofs"
+    },
+    {
+      "case": "word_timestamps_reverse_order",
+      "expected_typed_result": "strict ProviderTranscriptObservation ValidationError",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcript_assembly.py::test_transcription_temporal_confidence_and_lineage_negative_proofs"
+    },
+    {
+      "case": "duplicated_overlap_output",
+      "expected_typed_result": "TranscriptionIntegrityError",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcript_assembly.py::test_transcription_temporal_confidence_and_lineage_negative_proofs"
+    },
+    {
+      "case": "incompatible_transcript_and_corpus_ids",
+      "expected_typed_result": "strict TranscriptionRequest ValidationError",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcription.py::test_whisper_normalization_persistence_reuse_and_corruption"
+    },
+    {
+      "case": "invalid_correction_target",
+      "expected_typed_result": "TranscriptCorrectionIntegrityError",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcript_assembly.py::test_stale_prior_value_and_unknown_version_are_rejected"
+    },
+    {
+      "case": "conflicting_correction_history",
+      "expected_typed_result": "TranscriptCorrectionIntegrityError",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcript_assembly.py::test_stale_prior_value_and_unknown_version_are_rejected"
+    },
+    {
+      "case": "invalid_subtitle_timing",
+      "expected_typed_result": "strict SubtitleCue ValidationError",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcript_assembly.py::test_machine_subtitles_split_on_words_persist_and_detect_corruption"
+    },
+    {
+      "case": "unsupported_subtitle_export_version",
+      "expected_typed_result": "strict SubtitleExportManifest ValidationError",
+      "status": "passed",
+      "test_node": "tests/test_phase2_transcript_assembly.py::test_machine_subtitles_split_on_words_persist_and_detect_corruption"
+    },
+    {
+      "case": "incomplete_cached_artifacts",
+      "expected_typed_result": "RecoveryAction.REBUILT_MISSING",
+      "status": "passed",
+      "test_node": "tests/test_phase2_recovery.py::test_missing_stage_resumes_without_quarantine"
+    }
+  ],
+  "processing_seconds": 17.055419,
+  "pytest_output": ".........                                                                [100%]\n============================== warnings summary ===============================\ntests/test_phase2_foundation.py::test_provider_registry_and_capability_cli_are_conservative\ntests/test_phase2_foundation.py::test_provider_registry_and_capability_cli_are_conservative\ntests/test_phase2_foundation.py::test_provider_registry_and_capability_cli_are_conservative\ntests/test_phase2_transcription.py::test_whisper_normalization_persistence_reuse_and_corruption\ntests/test_phase2_transcription.py::test_whisper_normalization_persistence_reuse_and_corruption\n  C:\\Users\\erinm\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\silero_vad\\model.py:26: DeprecationWarning: path is deprecated. Use files() instead. Refer to https://importlib-resources.readthedocs.io/en/latest/using.html#migrating-from-legacy for migration advice.\n    with impresources.path(package_path, model_name) as f:\n\ntests/test_phase2_foundation.py::test_provider_registry_and_capability_cli_are_conservative\ntests/test_phase2_foundation.py::test_provider_registry_and_capability_cli_are_conservative\ntests/test_phase2_foundation.py::test_provider_registry_and_capability_cli_are_conservative\ntests/test_phase2_transcription.py::test_whisper_normalization_persistence_reuse_and_corruption\ntests/test_phase2_transcription.py::test_whisper_normalization_persistence_reuse_and_corruption\n  C:\\Users\\erinm\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch\\jit\\_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.\n    warnings.warn(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html",
+  "pytest_return_code": 0,
+  "qualification": "phase-2-negative-proofs",
+  "selected_test_count": 9,
+  "skipped_selected_tests": false,
+  "status": "passed"
+}

@@ -1,0 +1,65 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "all_persisted_stages_replay": true,
+    "clustering_resume_reused": true,
+    "cross_chunk_clusters_continuous": true,
+    "diarization_resume_reused": true,
+    "duration_exceeds_two_hours": true,
+    "every_owned_chunk_observed_once": true,
+    "no_duplicate_observations_or_turns": true,
+    "participant_subtitles_complete": true,
+    "phase1_corpus_unchanged": true,
+    "phase1_corpus_valid": true,
+    "phase2_transcript_reused": true,
+    "provider_invocation_bounded": true,
+    "python_peak_below_256_mib": true,
+    "reviewed_identity_view_complete": true,
+    "speaker_transcript_complete": true
+  },
+  "fixture_status": "Synthetic ownership, clustering, and identity control; no diarization or speaker-identity accuracy claim.",
+  "lineage": {
+    "clustering_run_id": "clusterrun_933eed0cae4fad59e5e915c0157295a4",
+    "corpus_id": "corpus_396e56edcdefac8d7e94bcf2335941aa",
+    "diarization_run_id": "diarun_b74b863d59d9340da6898bee0a823dc7",
+    "identity_binding_run_id": "identitybindingrun_d445a5ca773d8f360d41b962a6123921",
+    "identity_foundation_id": "identityfoundation_0cfc8da43ec19daf6b9edb5afd0b95f6",
+    "identity_view_assembly_id": "identityviewassembly_93b5eb4aa72579ab1adb0c75763bc2fb",
+    "participant_subtitle_export_id": "participantsubtitle_485c07ae841941cfc05ef3ea749a7385",
+    "speaker_transcript_view_id": "speakertranscript_d3c9e81d50c80ac1b42ba5cc740adefb"
+  },
+  "measurements": {
+    "cache_hit_count": 7,
+    "cluster_count": 3,
+    "duration_microseconds": 7201000000,
+    "identity_hypothesis_count": 0,
+    "invalidation_count": 0,
+    "manual_binding_count": 3,
+    "overlap_count": 0,
+    "overlap_duration_microseconds": 0,
+    "participant_subtitle_export_count": 2,
+    "peak_memory_bytes": 2698662,
+    "recovery_count": 1,
+    "speaker_observation_count": 13,
+    "speaker_turn_count": 13,
+    "unclustered_observation_count": 0,
+    "unknown_or_unresolved_count": 0
+  },
+  "performance": {
+    "measurement_scope": "tracemalloc Python allocator peak; corpus hashing streams one MiB blocks",
+    "processing_seconds": 1.828711
+  },
+  "phase": 3,
+  "qualification": "phase-3-long-recording-operation",
+  "schema_exports": {
+    "runtime_contracts": 237
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_long_recording_operation": 1,
+    "full_regression": 190,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

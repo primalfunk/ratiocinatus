@@ -1,0 +1,37 @@
+{
+  "qualification": "phase-5-argument-relation-construction",
+  "status": "passed",
+  "target_application_version": "0.7.0",
+  "evidence_class": "synthetic_argument_relation_mechanics",
+  "argument_relation_contract_models": 6,
+  "runtime_contracts": 365,
+  "focused_stage_test_count": 6,
+  "focused_phase_test_count": 35,
+  "full_regression_test_count": 285,
+  "assertions": [
+    "Every canonical objection and rebuttal act produces one bounded relation record.",
+    "Objection relations distinguish content, evidence, wording, definition, procedure, attribution, premise, relevance, general, and unresolved dimensions.",
+    "Rebuttal relations retain direct, denial, counterevidence, counterexample, alternative-explanation, qualification, scope-correction, causal-challenge, and unresolved methods.",
+    "Exact normalized targets take precedence over temporal candidates.",
+    "A single act in the nearest prior bounded-context utterance is probable and review-required.",
+    "Multiple acts in the nearest prior utterance remain alternative targets.",
+    "An explicitly unresolved rebuttal cannot be promoted by temporal proximity.",
+    "Supporting and challenged evidence spans remain source-addressed.",
+    "Rebuttal classification never establishes rebuttal success.",
+    "Every canonical concession act produces a concession structure.",
+    "Partial concession retains restrictions expressed by same-utterance qualifications.",
+    "Every canonical qualification act produces a qualification structure.",
+    "Qualifications preserve scope, temporal, conditional, probabilistic, exception, limitation, hedging, precision, category, and threshold dimensions.",
+    "Several compatible same-utterance targets remain ambiguous qualification scope.",
+    "No factual adjudication or intent inference is performed.",
+    "Argument-relation run and report artifacts are sealed, replayable, and reusable.",
+    "CLI operations build, validate, inspect, and list objections, rebuttals, concessions, qualifications, and unresolved relations.",
+    "Schema export includes all six argument-relation contracts."
+  ],
+  "limitations": [
+    "Temporal proximity is a conservative candidate-target heuristic, not semantic proof.",
+    "Retained disagreement is limited to exact source spans available through canonical acts.",
+    "The controlled fixtures qualify construction mechanics, not natural-conversation relational accuracy.",
+    "Relation confidence remains uncalibrated."
+  ]
+}

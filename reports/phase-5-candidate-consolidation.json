@@ -1,0 +1,33 @@
+{
+  "qualification": "phase-5-candidate-consolidation",
+  "status": "passed",
+  "target_application_version": "0.7.0",
+  "evidence_class": "synthetic_consolidation_mechanics",
+  "consolidation_contract_models": 4,
+  "runtime_contracts": 354,
+  "focused_stage_test_count": 5,
+  "focused_phase_test_count": 23,
+  "full_regression_test_count": 273,
+  "assertions": [
+    "Same-type observations merge only when their Phase 4 evidence spans meet the declared overlap threshold.",
+    "Candidate evidence retains deterministic-only, provider-only, and corroborated provenance.",
+    "Corroboration changes an explicit uncalibrated ranking score and does not confer authority.",
+    "Compatible high-confidence candidates can be selected together for one utterance.",
+    "Mutually exclusive candidates use explicit versioned exclusion groups.",
+    "Close mutually exclusive alternatives remain unresolved and create no canonical act.",
+    "Rejected, deferred, and unresolved candidates remain in the candidate set.",
+    "Provider-only canonical acts require review.",
+    "Unavailable provider evidence does not erase a qualifying deterministic candidate.",
+    "Every Phase 4 utterance is represented by canonical acts or the unclassified inventory.",
+    "Canonical acts retain source observations, evidence spans, target proposals, confidence, and review status.",
+    "Consolidation run, discourse corpus, and report artifacts are sealed and replayable.",
+    "CLI operations build, validate, inspect, list candidates, list canonical acts, and list ambiguity.",
+    "Schema export includes all four consolidation contracts."
+  ],
+  "limitations": [
+    "Selection scores are uncalibrated ranking aids, not probabilities.",
+    "The controlled fixtures qualify consolidation mechanics, not natural-conversation classification accuracy.",
+    "Explicit exclusion groups are conservative and will require evaluation before expansion.",
+    "Provider confidence is not cross-provider comparable without calibration."
+  ]
+}

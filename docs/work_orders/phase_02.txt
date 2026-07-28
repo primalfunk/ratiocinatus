@@ -1,0 +1,943 @@
+# Ratiocinatus Phase 2 Work Order
+
+## Transcription and Temporal Speech Evidence
+
+**Phase:** 2
+**Target application version:** 0.4.0
+**Date:** 2026-07-26
+**Starting point:** Completed Phase 1 audiovisual corpus boundary
+**Primary goal:** Create a timestamped, confidence-bearing transcript whose relationship to the underlying audio remains explicit, inspectable, correctable, and reproducible.
+
+---
+
+## 1. Objective
+
+Phase 2 shall transform the normalized and addressable Phase 1 audio corpus into structured temporal speech evidence.
+
+The phase must establish:
+
+* where speech probably occurs;
+* what words or utterances may have been spoken;
+* when those words or utterances occurred;
+* how confident the system is in each result;
+* where the evidence is weak, ambiguous, missing, or contradictory;
+* what alternative transcript candidates were considered;
+* what corrections were later introduced;
+* and how every transcript claim maps back to the Phase 1 corpus.
+
+The transcript is not an authoritative reconstruction of speech.
+
+It is a versioned analytical artifact composed of evidence-bearing hypotheses over addressable source intervals.
+
+Phase 2 must not perform speaker identity resolution, argument reconstruction, factual adjudication, credibility assessment, rhetorical analysis, scoring, or judgment.
+
+---
+
+## 2. Governing principles
+
+### 2.1 The source remains authoritative
+
+The Phase 1 corpus remains the authoritative audiovisual source.
+
+No transcript text, subtitle, model response, corrected text, or derived representation may replace or modify the source corpus.
+
+Every speech or transcript artifact must retain a valid reference to the source audio interval from which it was derived.
+
+### 2.2 Speech detection and transcription are separate claims
+
+The system must distinguish:
+
+* evidence that speech is present;
+* a proposed transcription of that speech;
+* timing assigned to transcript segments;
+* timing assigned to individual words;
+* confidence in speech presence;
+* confidence in the proposed text;
+* and confidence in temporal alignment.
+
+A transcription must not imply that speech detection, text recognition, and temporal alignment were equally certain.
+
+### 2.3 Unknown is a valid result
+
+The system must be able to represent:
+
+* no speech detected;
+* probable speech with no reliable transcription;
+* partially intelligible speech;
+* uncertain word boundaries;
+* uncertain segment boundaries;
+* overlapping or competing transcript interpretations;
+* non-lexical vocalization;
+* inaudible content;
+* unintelligible content;
+* model refusal or failure;
+* and unsupported language or audio conditions.
+
+The system must not invent text merely to eliminate an unknown region.
+
+### 2.4 Corrections preserve history
+
+Corrections must not silently overwrite prior transcript evidence.
+
+The original candidate, its provenance, its confidence, the correction, the correction source, the author or process responsible, and the reason for the correction must remain recoverable.
+
+### 2.5 Model output is evidence, not truth
+
+Model-generated text must remain attributable to:
+
+* provider;
+* model;
+* model version or fingerprint where available;
+* decoding configuration;
+* prompt or task configuration where applicable;
+* source interval;
+* processing chunk;
+* run identifier;
+* and timestamp.
+
+Unsupported claims of model determinism are prohibited.
+
+---
+
+## 3. Required scope
+
+Phase 2 must implement the following capabilities.
+
+### 3.1 Speech activity evidence
+
+Implement speech activity detection over the normalized Phase 1 audio derivative.
+
+Required behavior:
+
+* consume Phase 1 source and chunk addressing;
+* support complete-recording and chunked processing;
+* preserve overlap ownership rules inherited from Phase 1;
+* represent speech and non-speech intervals;
+* represent uncertain boundary regions;
+* associate confidence with each interval or boundary;
+* prevent duplicate speech intervals at chunk overlaps;
+* retain raw provider output where permitted and practical;
+* and support reproducible reconstruction of the final speech activity timeline.
+
+Speech activity detection must distinguish, where supported:
+
+* probable speech;
+* probable non-speech;
+* uncertain activity;
+* non-lexical human vocalization;
+* music or noise likely to interfere with detection;
+* and provider failure.
+
+The implementation may use one initial speech activity provider, but it must define a provider-independent interface.
+
+### 3.2 Transcription provider abstraction
+
+Implement a provider-independent transcription interface.
+
+At minimum, the interface must support:
+
+* model and capability inspection;
+* language configuration;
+* automatic language proposal where supported;
+* segment transcription;
+* word timestamp requests;
+* alternative candidate requests where supported;
+* confidence or probability output where supported;
+* bounded decoding configuration;
+* provider timeout;
+* cancellation at supported boundaries;
+* structured failure reporting;
+* and raw response retention or normalized evidence capture.
+
+A local transcription provider is preferred for the initial implementation.
+
+Provider-specific fields must not leak into authoritative domain contracts except through an explicit extension or raw-evidence field.
+
+### 3.3 Transcript segments
+
+Create stable transcript-segment records.
+
+Each segment must include, at minimum:
+
+* stable segment identifier;
+* corpus identifier;
+* selected audio-stream lineage;
+* source interval;
+* normalized-audio interval;
+* processing-chunk lineage;
+* proposed transcript text;
+* normalized text, where applicable;
+* language claim;
+* speech activity evidence references;
+* transcription provider and model provenance;
+* text confidence;
+* timing confidence;
+* segment-boundary confidence;
+* alternative candidate references;
+* low-confidence classifications;
+* creation timestamp;
+* format and policy versions;
+* and integrity fields.
+
+Segment identifiers must be stable under identical source, configuration, provider result, and segmentation policy.
+
+The implementation must define what changes invalidate a segment identifier or require a new transcript artifact version.
+
+### 3.4 Word-level evidence
+
+Where provider capability permits, create word-level transcript evidence.
+
+Each word record must include:
+
+* stable word identifier;
+* parent segment identifier;
+* source interval;
+* normalized-audio interval;
+* token or surface text;
+* normalized form, where applicable;
+* sequence position;
+* recognition confidence where available;
+* timing confidence;
+* boundary uncertainty;
+* provider token references where retained;
+* and provenance.
+
+The system must not fabricate word-level confidence when a provider supplies only segment-level confidence.
+
+The system must not imply exact word boundaries when timestamps are estimated, interpolated, or alignment-derived.
+
+Estimated, provider-native, and externally aligned timestamps must be explicitly distinguished.
+
+### 3.5 Temporal alignment and source mapping
+
+All transcript intervals must map through the Phase 1 temporal model.
+
+The implementation must preserve:
+
+* integer-microsecond time representation;
+* source timeline;
+* normalized derivative timeline;
+* chunk-local timeline;
+* overlap ownership;
+* clipping classifications;
+* discontinuity classifications;
+* and source-to-derivative mapping tolerances.
+
+The system must validate that:
+
+* word intervals remain inside their parent segment unless explicitly classified otherwise;
+* segment intervals remain inside the addressable corpus;
+* transcript order does not regress without an explicit discontinuity;
+* overlap ownership prevents duplicated canonical evidence;
+* and subtitle timestamps remain consistent with canonical transcript intervals.
+
+Rounding for display or subtitle formats must not alter canonical microsecond values.
+
+### 3.6 Low-confidence regions
+
+Create explicit low-confidence-region records.
+
+A low-confidence region may arise from:
+
+* low speech probability;
+* low transcription confidence;
+* low temporal-alignment confidence;
+* disagreement among candidates;
+* probable overlap;
+* clipping;
+* noise;
+* music;
+* reverberation;
+* distortion;
+* unsupported language;
+* rapid speech;
+* incomplete words at boundaries;
+* provider error;
+* missing output;
+* or failed validation.
+
+Each record must include:
+
+* source interval;
+* classification;
+* severity;
+* evidence references;
+* threshold or policy responsible;
+* whether review is recommended;
+* and whether the region blocks downstream use.
+
+Low confidence must not be represented solely through formatting, color, or prose.
+
+It must be machine-readable.
+
+### 3.7 Alternative transcript candidates
+
+Support alternative transcript candidates without treating all alternatives as equally plausible.
+
+Alternative candidates may originate from:
+
+* provider-native alternatives;
+* multiple decoding passes;
+* multiple models;
+* different language assumptions;
+* different segmentation policies;
+* or later bounded reprocessing.
+
+Each candidate must include:
+
+* candidate identifier;
+* parent speech interval;
+* proposed text;
+* provider and run provenance;
+* score or rank where available;
+* comparison basis;
+* relationship to the selected candidate;
+* and selection or rejection reason.
+
+The system must distinguish:
+
+* selected candidate;
+* unselected alternative;
+* superseded candidate;
+* invalid candidate;
+* and unresolved candidate set.
+
+Candidate selection must be explainable from recorded policy and evidence.
+
+A lower-ranked candidate must not be deleted merely because another candidate was selected.
+
+### 3.8 Correction records
+
+Implement append-only transcript correction records.
+
+Corrections must support:
+
+* replacement;
+* insertion;
+* deletion;
+* split;
+* merge;
+* boundary adjustment;
+* language correction;
+* normalization-only correction;
+* uncertainty annotation;
+* and restoration of an earlier candidate.
+
+Each correction must record:
+
+* correction identifier;
+* target artifact and version;
+* prior value;
+* proposed value;
+* correction type;
+* affected source interval;
+* author or process;
+* timestamp;
+* reason;
+* evidence or review reference;
+* and resulting transcript version.
+
+Corrections must not alter the Phase 1 corpus or erase the original model output.
+
+The system must be able to render:
+
+* original machine transcript;
+* current corrected transcript;
+* correction history;
+* and a difference report.
+
+Human corrections and automated corrections must be explicitly distinguished.
+
+### 3.9 Transcript assembly
+
+Assemble canonical transcript views from validated segment and word evidence.
+
+Required views:
+
+* machine transcript;
+* corrected transcript;
+* segment timeline;
+* word timeline where available;
+* low-confidence review transcript;
+* alternative-candidate view;
+* and correction-history view.
+
+Transcript assembly must be deterministic over the same stored artifacts and policy version.
+
+Assembly must not silently resolve:
+
+* overlapping segments;
+* temporal gaps;
+* contradictory candidates;
+* invalid word ordering;
+* or unresolved corrections.
+
+Such conditions must produce explicit validation findings.
+
+### 3.10 Subtitle export
+
+Implement subtitle export from canonical transcript evidence.
+
+Required initial formats:
+
+* WebVTT;
+* SubRip Text, or SRT.
+
+Subtitle export must:
+
+* derive from a declared transcript version;
+* preserve source references in export metadata or companion manifest;
+* identify whether text is machine-only or corrected;
+* use explicit timestamp-rounding rules;
+* prevent invalid or regressive timestamps;
+* handle long cues through documented segmentation policy;
+* represent uncertain or unavailable text conservatively;
+* avoid silently removing low-confidence cues;
+* and produce a validation report.
+
+Subtitle files are presentation derivatives, not authoritative transcript storage.
+
+Loss introduced by subtitle format constraints must be documented in an export manifest.
+
+### 3.11 Transcription evaluation
+
+Create a controlled transcription evaluation framework.
+
+The framework must support, at minimum:
+
+* reference transcript ingestion;
+* reference-to-source interval mapping;
+* word error rate;
+* character error rate;
+* segment timing error;
+* word timing error where references permit;
+* speech activity precision;
+* speech activity recall;
+* speech activity F1;
+* missed-speech duration;
+* false-speech duration;
+* low-confidence calibration or reliability analysis;
+* candidate-selection evaluation;
+* subtitle cue validity;
+* and correction impact.
+
+Evaluation must report both aggregate and stratified results.
+
+Useful strata include:
+
+* clean speech;
+* noise;
+* music;
+* overlapping speech;
+* rapid speech;
+* quiet speech;
+* clipped boundaries;
+* accented speech where represented in the controlled corpus;
+* non-speech vocalization;
+* and long-recording chunk boundaries.
+
+The implementation must not claim general transcription quality from a single clean fixture.
+
+### 3.12 Cache, resume, and recovery
+
+Phase 2 must extend the Phase 1 operational guarantees.
+
+Required behavior:
+
+* cache speech activity outputs separately from transcription outputs;
+* cache provider results by source, interval, model, configuration, and policy;
+* validate cached artifacts before reuse;
+* quarantine corrupt cache entries;
+* invalidate only affected downstream artifacts where practical;
+* resume after persisted processing boundaries;
+* recover from interruption between speech detection, transcription, alignment, assembly, correction application, and export;
+* and avoid retranscribing validated intervals unnecessarily.
+
+The system must demonstrate recovery after interruption at each material persisted stage.
+
+A provider or process failure in one chunk must not corrupt completed evidence from unrelated chunks.
+
+### 3.13 Reporting
+
+Produce both machine-readable and human-readable Phase 2 reports.
+
+Required reports:
+
+* speech activity report;
+* transcription report;
+* word-timing report;
+* low-confidence report;
+* alternative-candidate report;
+* correction-history report;
+* subtitle-export report;
+* transcription-evaluation report;
+* cache and recovery report;
+* provider capability report;
+* transcript integrity report;
+* and normalized phase-completion report.
+
+Reports must separate:
+
+* measured results;
+* provider claims;
+* inferred classifications;
+* configured thresholds;
+* validation findings;
+* and unresolved limitations.
+
+---
+
+## 4. Required domain artifacts
+
+The exact names may vary, but the implementation must provide versioned equivalents of the following:
+
+* `SpeechActivityRun`
+* `SpeechActivityInterval`
+* `SpeechBoundaryEvidence`
+* `TranscriptionRun`
+* `TranscriptCandidate`
+* `TranscriptSegment`
+* `TranscriptWord`
+* `TranscriptAlternativeSet`
+* `LowConfidenceRegion`
+* `TranscriptCorrection`
+* `TranscriptVersion`
+* `TranscriptAssembly`
+* `SubtitleExport`
+* `SubtitleExportManifest`
+* `ReferenceTranscript`
+* `TranscriptionEvaluation`
+* `TranscriptionReport`
+* `TranscriptIntegrityResult`
+
+All persisted artifacts must have:
+
+* schemas;
+* explicit format versions;
+* policy versions where behavior depends on policy;
+* provenance;
+* integrity validation;
+* canonical serialization;
+* and strict loading behavior.
+
+Unsupported future versions must be refused rather than guessed.
+
+---
+
+## 5. Processing sequence
+
+The implementation should proceed in the following order.
+
+### Stage 1: Contracts and provider boundaries
+
+* Define Phase 2 domain contracts.
+* Define speech activity and transcription provider interfaces.
+* Define provider capability inspection.
+* Define temporal-confidence and text-confidence semantics.
+* Define transcript and correction versioning rules.
+* Define invalidation and cache keys.
+
+### Stage 2: Speech activity
+
+* Process normalized Phase 1 audio.
+* Produce speech, non-speech, and uncertain intervals.
+* Reconcile chunk overlaps.
+* Validate source mappings.
+* Produce speech activity reports.
+
+### Stage 3: Segment transcription
+
+* Transcribe validated speech intervals.
+* Preserve raw or normalized provider evidence.
+* Produce segment-level text and confidence.
+* Represent failures and unintelligible intervals explicitly.
+* Validate temporal ordering and containment.
+
+### Stage 4: Word timing
+
+* Capture provider-native word timestamps where available.
+* Introduce alignment only through an explicit provider or processing stage.
+* Classify timestamp origin.
+* Validate word ordering and segment containment.
+* Record uncertain boundaries.
+
+### Stage 5: Alternatives and confidence
+
+* Capture or generate bounded alternatives.
+* Define candidate ranking and selection.
+* Create low-confidence regions.
+* Produce review-oriented views.
+
+### Stage 6: Corrections and transcript versions
+
+* Implement append-only correction records.
+* Assemble original and corrected transcript versions.
+* Produce correction diffs.
+* Validate correction lineage.
+
+### Stage 7: Subtitle export
+
+* Export WebVTT and SRT.
+* Validate cues and timestamps.
+* Produce export manifests.
+* Demonstrate machine-only and corrected transcript exports.
+
+### Stage 8: Evaluation and qualification
+
+* Evaluate transcription and speech activity.
+* Test noisy, ambiguous, overlapping, clipped, and chunk-boundary cases.
+* Test cache, resume, corruption, configuration changes, and provider failures.
+* Produce checked-in qualification evidence.
+
+---
+
+## 6. Required command-line operations
+
+Provide CLI operations equivalent to:
+
+* inspect transcription-provider capabilities;
+* detect speech activity;
+* transcribe a corpus;
+* resume transcription;
+* validate transcript artifacts;
+* render a transcript;
+* list low-confidence regions;
+* inspect transcript alternatives;
+* apply or import corrections;
+* show correction history;
+* export WebVTT;
+* export SRT;
+* evaluate against a reference transcript;
+* produce Phase 2 reports;
+* and verify a complete Phase 2 corpus.
+
+Commands must produce structured error output suitable for automation.
+
+CLI rendering must not be the sole representation of any required artifact.
+
+---
+
+## 7. Configuration requirements
+
+Configuration must be explicit and persistable.
+
+At minimum, record:
+
+* speech activity provider;
+* transcription provider;
+* provider model;
+* provider version or fingerprint where available;
+* language mode;
+* speech thresholds;
+* segmentation policy;
+* decoding parameters;
+* candidate count;
+* word-timestamp policy;
+* alignment policy;
+* confidence thresholds;
+* low-confidence classifications;
+* chunk and overlap behavior;
+* timeout policy;
+* cache policy;
+* correction policy;
+* subtitle segmentation policy;
+* timestamp-rounding policy;
+* and evaluation normalization policy.
+
+Changing a configuration field that can affect evidence must invalidate or version the relevant artifact.
+
+Configuration fields that affect only rendering must not force unnecessary retranscription.
+
+---
+
+## 8. Confidence requirements
+
+Confidence must be modeled conservatively.
+
+The system must not collapse all confidence into one number.
+
+At minimum, distinguish:
+
+* speech-presence confidence;
+* transcript-text confidence;
+* segment-timing confidence;
+* word-timing confidence;
+* boundary confidence;
+* candidate-selection confidence;
+* and correction status.
+
+When a provider does not supply a meaningful confidence measure, the field must remain unavailable or explicitly derived.
+
+Provider scores from different models must not be treated as directly comparable without a documented calibration method.
+
+Thresholds must be recorded with the resulting artifacts.
+
+---
+
+## 9. Integrity requirements
+
+Phase 2 integrity validation must detect at least:
+
+* missing Phase 1 corpus references;
+* source hash mismatch;
+* invalid source intervals;
+* invalid derivative intervals;
+* segment time regression;
+* word time regression;
+* words outside parent segments;
+* duplicate canonical intervals caused by chunk overlap;
+* malformed Unicode;
+* impossible confidence values;
+* absent provider provenance;
+* invalid candidate selection;
+* correction cycles;
+* correction against an unknown version;
+* unresolved conflicting corrections;
+* subtitle timestamp regression;
+* subtitle cues outside the source duration;
+* unsupported schema or policy versions;
+* corrupted cached output;
+* and transcript assembly from incompatible lineages.
+
+Integrity failure must be explicit and must not silently yield a partially trusted transcript.
+
+---
+
+## 10. Qualification corpus
+
+Phase 2 qualification must use more than one transcription condition.
+
+At minimum, include controlled cases covering:
+
+* clean single-speaker speech;
+* silence;
+* background noise;
+* music under speech;
+* non-speech vocalization;
+* rapid speech;
+* quiet speech;
+* clipped speech at interval boundaries;
+* ambiguous words;
+* overlapping voices;
+* speech spanning processing chunks;
+* false-positive speech-like noise;
+* provider timeout or failure;
+* malformed provider output;
+* missing word timestamps;
+* alternative candidates;
+* and human correction.
+
+The existing Riverton corpus may remain part of qualification, but it must not be the sole basis for transcription-quality claims unless it demonstrably contains the required conditions and independently prepared reference transcripts.
+
+Any synthetic or generated qualification material must be labeled as such.
+
+Reference transcripts must retain provenance and must not be generated solely by the same model being evaluated.
+
+---
+
+## 11. Required negative proofs
+
+The qualification suite must demonstrate explicit refusal, degradation, or failure handling for:
+
+* unsupported audio or corpus version;
+* missing normalized audio derivative;
+* corrupted audio evidence;
+* provider unavailable;
+* model unavailable;
+* provider timeout;
+* malformed provider result;
+* timestamps outside the requested interval;
+* invalid confidence values;
+* word timestamps in reverse order;
+* duplicated overlap output;
+* incompatible transcript and corpus identifiers;
+* invalid correction target;
+* conflicting correction history;
+* invalid subtitle timing;
+* unsupported subtitle export version;
+* and incomplete cached artifacts.
+
+A negative case passes only when the system produces the expected typed failure or conservative degraded result.
+
+A crash, silent omission, invented transcript, or unrecorded fallback is not a passing negative proof.
+
+---
+
+## 12. Regression requirements
+
+Phase 2 must preserve all Phase 0, Phase 0.5, and Phase 1 guarantees.
+
+The regression suite must demonstrate that Phase 2 does not:
+
+* alter the source audiovisual files;
+* alter normalized Phase 1 audio;
+* alter Phase 1 stream selection;
+* alter Phase 1 temporal mappings;
+* alter Phase 1 chunk ownership;
+* invalidate valid Phase 1 corpus exports;
+* introduce speaker identity artifacts;
+* introduce argument or judgment artifacts;
+* introduce factual claims about the content;
+* or convert transcript hypotheses into authoritative source records.
+
+Existing Phase 0 and Phase 1 qualification evidence must remain valid.
+
+---
+
+## 13. Explicit exclusions
+
+Phase 2 must not implement:
+
+* speaker diarization;
+* speaker naming;
+* voiceprint identity;
+* face-to-voice association;
+* character or participant identity;
+* argument extraction;
+* claim extraction;
+* evidence weighting;
+* credibility analysis;
+* contradiction adjudication;
+* sentiment analysis;
+* rhetorical analysis;
+* legal or factual conclusions;
+* judgment;
+* scoring of speakers or statements;
+* audiovisual enhancement presented as source evidence;
+* source repair;
+* translation as canonical transcript;
+* or generative completion of inaudible speech.
+
+Experimental internal diagnostics may exist only when clearly separated from persisted Phase 2 domain artifacts and excluded from the success definition.
+
+---
+
+## 14. Documentation requirements
+
+Document:
+
+* the evidentiary status of transcripts;
+* provider interfaces;
+* timestamp semantics;
+* confidence semantics;
+* source mapping;
+* chunk overlap reconciliation;
+* transcript versioning;
+* candidate selection;
+* correction lineage;
+* subtitle loss and rounding;
+* cache invalidation;
+* recovery behavior;
+* evaluation methodology;
+* known provider limitations;
+* and the boundary between Phase 2 and later phases.
+
+The documentation must state plainly that a transcript is a fallible analytical derivative.
+
+---
+
+## 15. Completion evidence
+
+The Phase 2 completion report must include:
+
+* application and contract versions;
+* starting repository state;
+* final repository state;
+* provider and model details;
+* model licensing and distribution status;
+* corpus identifiers;
+* configuration identifiers;
+* speech activity counts and durations;
+* transcript segment and word counts;
+* low-confidence counts and durations;
+* alternative-candidate counts;
+* correction counts;
+* subtitle export results;
+* evaluation metrics;
+* cache-hit and invalidation results;
+* interruption and recovery results;
+* peak-memory and long-recording results;
+* negative-case results;
+* regression results;
+* known limitations;
+* evidence inventory;
+* and unresolved concerns.
+
+Measured results must be distinguished from expectations or provider documentation.
+
+---
+
+## 16. Exit gates
+
+Phase 2 is complete only when all of the following gates pass.
+
+### Gate 1: Stable source mapping
+
+Every canonical transcript segment maps validly to the Phase 1 corpus and normalized audio timeline.
+
+### Gate 2: Speech activity evidence
+
+Speech, non-speech, and uncertain regions are represented with explicit provenance and confidence.
+
+### Gate 3: Timestamped transcript
+
+The system produces segment-level transcript text with stable identifiers, source intervals, provenance, and confidence.
+
+### Gate 4: Word evidence
+
+Word-level timestamps are stored where supported, with timestamp origin and uncertainty explicitly represented.
+
+### Gate 5: Unknown and low confidence
+
+Weak, missing, or ambiguous evidence produces machine-readable low-confidence or unknown records rather than invented certainty.
+
+### Gate 6: Alternatives
+
+Alternative transcript candidates are preserved, ranked where possible, and linked to explicit selection decisions.
+
+### Gate 7: Corrections
+
+Corrections are append-only, versioned, attributable, reversible through history, and incapable of erasing the original model evidence.
+
+### Gate 8: Subtitle export
+
+Valid WebVTT and SRT derivatives can be generated from declared transcript versions with documented rounding and loss.
+
+### Gate 9: Evaluation
+
+Speech activity, text accuracy, timing accuracy, confidence behavior, and subtitle validity are evaluated against controlled references.
+
+### Gate 10: Cache and recovery
+
+Validated outputs are reused safely, affected outputs are invalidated correctly, corrupted entries are quarantined, and interrupted processing resumes without duplicating or losing evidence.
+
+### Gate 11: Integrity
+
+Malformed, inconsistent, incompatible, or corrupted transcript artifacts are detected and refused.
+
+### Gate 12: Long-recording operation
+
+A recording longer than two hours is processed through the Phase 1 chunk boundary with bounded memory, overlap reconciliation, resumability, and valid final transcript assembly.
+
+### Gate 13: Regression and boundary
+
+All prior-phase tests pass, and no speaker identity, argument, judgment, scoring, or analytical interpretation artifact is introduced.
+
+---
+
+## 17. Success definition
+
+Phase 2 succeeds when Ratiocinatus can take a valid Phase 1 audiovisual corpus and produce a portable, integrity-checked, timestamped transcript evidence package that:
+
+* identifies probable speech intervals;
+* records proposed transcript text;
+* preserves segment and word timing;
+* expresses uncertainty;
+* retains alternatives;
+* supports append-only correction;
+* exports subtitles;
+* survives interruption and recovery;
+* supports controlled evaluation;
+* and remains fully traceable to the underlying audiovisual source.
+
+The result must be suitable as evidence input for later speaker, discourse, argument, and adjudication phases without presenting machine transcription as settled fact.

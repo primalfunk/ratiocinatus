@@ -193,6 +193,6 @@ def test_lineage_integrity_export_and_cli(tmp_path: Path, capsys) -> None:
     assert main([
         "--json", "workspace", "init", str(root), "--deterministic"
     ]) == EXIT_SUCCESS
-    assert json.loads(capsys.readouterr().out)["application_version"] == "0.2.0"
+    assert json.loads(capsys.readouterr().out)["application_version"] == "0.4.0"
     assert main(["--json", "workspace", "validate", str(root)]) == EXIT_SUCCESS
 

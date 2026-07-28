@@ -1,0 +1,32 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "cache_reuse_requires_identical_evidence_and_configuration": true,
+    "canonical_observations_are_integrity_sealed": true,
+    "canonical_turns_are_integrity_sealed": true,
+    "incomplete_cache_is_refused": true,
+    "normalized_provider_evidence_is_integrity_sealed": true,
+    "participant_identity_is_not_created": true,
+    "phase1_audio_remains_immutable": true,
+    "request_identity_excludes_wall_clock_time": true,
+    "speech_and_chunk_ownership_are_validated": true,
+    "unknown_and_unassigned_turns_are_valid": true
+  },
+  "contract_models": 22,
+  "phase": 3,
+  "production_provider_selected": false,
+  "qualification": "phase-3-deterministic-diarization-evidence-kernel",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 187
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_foundation": 7,
+    "focused_kernel": 3,
+    "full_regression": 139,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

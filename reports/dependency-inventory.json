@@ -1,23 +1,115 @@
 {
-  "application_version": "0.1.0",
-  "direct_development": [
-    {"name": "pytest", "required": false, "role": "tests", "source": "PyPI", "version": ">=8"},
-    {"name": "coverage", "required": false, "role": "coverage", "source": "PyPI", "version": ">=7"},
-    {"name": "setuptools", "required": true, "role": "build backend", "source": "PyPI", "version": ">=68"}
-  ],
-  "direct_runtime": [
-    {"name": "pydantic", "platform_constraints": "Python >=3.11", "required": true, "role": "runtime contracts and schema export", "source": "PyPI", "version": ">=2.8,<3"}
-  ],
-  "external_executables": [],
-  "optional_providers": [
-    {"name": "media inspection", "status": "mock only"},
-    {"name": "transcription", "status": "mock only"},
-    {"name": "diarization", "status": "mock only"},
-    {"name": "embedding", "status": "mock only"},
-    {"name": "structured generation", "status": "mock only"},
-    {"name": "rendering", "status": "mock only"}
-  ],
-  "transitive": {"authority": "environment package manager", "command": "python -m pip freeze", "checked_in": false}
+    "application_version":  "0.4.0",
+    "direct_development":  [
+                               {
+                                   "name":  "pytest",
+                                   "required":  false,
+                                   "role":  "tests",
+                                   "source":  "PyPI",
+                                   "version":  "\u003e=8"
+                               },
+                               {
+                                   "name":  "coverage",
+                                   "required":  false,
+                                   "role":  "coverage",
+                                   "source":  "PyPI",
+                                   "version":  "\u003e=7"
+                               },
+                               {
+                                   "name":  "setuptools",
+                                   "required":  true,
+                                   "role":  "build backend",
+                                   "source":  "PyPI",
+                                   "version":  "\u003e=68"
+                               }
+                           ],
+    "direct_runtime":  [
+                           {
+                               "name":  "pydantic",
+                               "platform_constraints":  "Python \u003e=3.11",
+                               "required":  true,
+                               "role":  "runtime contracts and schema export",
+                               "source":  "PyPI",
+                               "version":  "\u003e=2.8,\u003c3"
+                           }
+                       ],
+    "external_executables":  [
+                                 {
+                                     "name":  "FFmpeg",
+                                     "required":  true,
+                                     "role":  "audio normalization, decode qualification, frame extraction, and transient PCM activity analysis",
+                                     "bundled":  false
+                                 },
+                                 {
+                                     "name":  "FFprobe",
+                                     "required":  true,
+                                     "role":  "media inspection and timestamp/packet access",
+                                     "bundled":  false
+                                 }
+                             ],
+    "optional_providers":  [
+                               {
+                                   "name":  "media inspection",
+                                   "status":  "production FFprobe boundary"
+                               },
+                               {
+                                   "name":  "speech activity",
+                                   "status":  "production energy control plus optional pinned semantic Silero VAD 6.2.1"
+                               },
+                               {
+                                   "name":  "transcription",
+                                   "status":  "optional pinned OpenAI Whisper 20250625 with verified small checkpoint"
+                               },
+                               {
+                                   "name":  "diarization",
+                                   "status":  "unconfigured Phase 3 provider boundary; no production model"
+                               },
+                               {
+                                   "name":  "embedding",
+                                   "status":  "Phase 3 protected-reference contract boundary; no production extractor"
+                               },
+                               {
+                                   "name":  "structured generation",
+                                   "status":  "mock only"
+                               },
+                               {
+                                   "name":  "rendering",
+                                   "status":  "mock only"
+                               }
+                           ],
+    "transitive":  {
+                       "authority":  "environment package manager",
+                       "command":  "python -m pip freeze",
+                       "checked_in":  false
+                   },
+    "optional_runtime":  [
+                             {
+                                 "name":  "silero-vad",
+                                 "version":  "==6.2.1",
+                                 "role":  "semantic speech activity and packaged local model",
+                                 "source":  "PyPI",
+                                 "required":  false
+                             },
+                             {
+                                 "name":  "torch",
+                                 "version":  "\u003e=1.12",
+                                 "role":  "transitive Silero inference runtime",
+                                 "source":  "PyPI",
+                                 "required":  false
+                             },
+                             {
+                                 "name":  "torchaudio",
+                                 "version":  "\u003e=0.12",
+                                 "role":  "transitive Silero audio runtime",
+                                 "source":  "PyPI",
+                                 "required":  false
+                             },
+                             {
+                                 "name":  "openai-whisper",
+                                 "version":  "==20250625",
+                                 "role":  "local transcription observations; model checkpoint acquired separately",
+                                 "source":  "PyPI",
+                                 "required":  false
+                             }
+                         ]
 }
-
-

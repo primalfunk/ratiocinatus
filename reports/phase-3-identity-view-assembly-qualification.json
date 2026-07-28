@@ -1,0 +1,27 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "all_eight_required_views_are_present": true,
+    "conflicted_reviewed_views_are_blocked": true,
+    "machine_and_reviewed_labels_are_separate": true,
+    "manual_labels_are_visibly_distinct": true,
+    "phase2_transcript_evidence_is_unchanged": true,
+    "reviewed_projection_is_recomputed_during_validation": true,
+    "unknown_and_unapplied_proposals_are_preserved": true,
+    "view_lineage_is_content_pinned": true
+  },
+  "phase": 3,
+  "qualification": "phase-3-reviewed-identity-view-assembly",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 206
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_identity_view_assembly": 5,
+    "full_regression": 163,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

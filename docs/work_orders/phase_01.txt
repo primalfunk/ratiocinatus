@@ -1,0 +1,1144 @@
+RATIOCINATUS
+PHASE 1 WORK ORDER
+AUDIOVISUAL INGESTION AND SOURCE ADDRESSING
+
+Document status: Implementation work order
+Project design reference: PROJECT_DESIGN.md version 0.1.0, with accepted Phase 0.5 insertion
+Phase identifier: 1
+Target application version: 0.3.0
+Primary implementation language: Python
+Execution model: Local-first
+Date: 2026-07-26
+
+======================================================================
+1. PHASE GOAL
+======================================================================
+
+Convert complete audiovisual recordings into stable, validated, addressable,
+resumable source corpora suitable for all later Ratiocinatus analysis.
+
+Phase 1 must establish the authoritative relationship among the original
+recording, its registered source identity, audiovisual streams, selected working
+streams, normalized derivatives, processing chunks, source intervals, cache
+entries, integrity records, and ingestion reports.
+
+The phase must support recordings potentially several hours in length without
+requiring the entire recording to remain in memory or forcing completed work to
+be repeated after interruption.
+
+Central proof:
+
+Given a registered audiovisual source, Ratiocinatus can inspect it, select
+streams under explicit policy, create validated normalized working derivatives,
+divide those derivatives into stable processing chunks, map every derived
+interval back to the original source timeline, resume interrupted ingestion
+safely, and reproduce or reuse the same corpus under identical source and
+configuration.
+
+Phase 1 creates no transcript, speaker identity, discourse interpretation,
+logical judgment, score, or analytical video annotation.
+
+======================================================================
+2. STARTING STATE AND PHASE 0.5 HANDOFF
+======================================================================
+
+Phase 1 begins from application version 0.2.0 and the completed Phase 0
+evidentiary kernel plus the machine-qualified Riverton Evening Access Forum
+fixture family.
+
+The frozen Phase 0.5 handoff contains:
+
+- clean MP4, 567.784667 seconds;
+- naturalized MP4, 545.858667 seconds;
+- adversarial MP4, 544.466667 seconds;
+- 1920x1080 H.264 fixed 30 fps video;
+- 48 kHz stereo AAC in each MP4;
+- 48 kHz stereo FLAC mix per variant;
+- three isolated 48 kHz mono FLAC stems per variant;
+- exact microsecond schedules;
+- generation manifests;
+- frozen hashes;
+- hidden reference annotations;
+- 20 fixture schemas;
+- 30 passing tests;
+- and a validated 230 MiB export package.
+
+Phase 0.5 remains partial only because:
+
+- owner audiovisual audition is not yet recorded;
+- and final project-license adoption is not yet committed.
+
+These owner actions do not block Phase 1 engineering.
+
+The builder must:
+
+- consume the frozen fixture as source input;
+- not alter or regenerate canonical Phase 0.5 media;
+- report checksum mismatch immediately;
+- keep hidden reference annotations unavailable to ingestion logic;
+- and preserve all Phase 0 and 0.5 tests.
+
+======================================================================
+3. DESIGN AUTHORITY
+======================================================================
+
+Implementation must preserve:
+
+- original source immutability;
+- content-grounded source identity;
+- explicit separation of source and derivative;
+- exact derivative-to-source traceability;
+- configuration-sensitive derivative identity;
+- explicit stream selection;
+- validated cache reuse;
+- resumable committed stage boundaries;
+- complete external-tool provenance;
+- portable canonical artifacts;
+- and strict separation from later analytical layers.
+
+The original source, selected streams, normalized derivatives, and processing
+chunks must remain distinct artifacts.
+
+======================================================================
+4. PHASE BOUNDARY
+======================================================================
+
+In scope:
+
+- media inspection;
+- stream inventory;
+- explicit stream selection;
+- decode qualification;
+- source timeline construction;
+- normalized audio derivative creation;
+- normalized video access or derivative creation;
+- processing chunk planning;
+- chunk materialization where required;
+- source interval mapping;
+- cache;
+- integrity validation;
+- resume and recovery;
+- ingestion manifest;
+- normalized audiovisual corpus;
+- and reports.
+
+Out of scope:
+
+- voice activity as an analytical result;
+- transcription;
+- word timing;
+- diarization;
+- speaker recognition;
+- face identity;
+- active-speaker inference;
+- scene interpretation;
+- discourse segmentation;
+- propositions;
+- argument graphs;
+- adjudication;
+- scoring;
+- and analytical rendering.
+
+======================================================================
+5. REQUIRED SOURCE CLASSES
+======================================================================
+
+Support at least:
+
+- MP4;
+- MOV where decodable;
+- MKV;
+- WebM;
+- AVI where decodable;
+- MPEG transport or program streams where decodable;
+- WAV;
+- FLAC;
+- MP3;
+- AAC or M4A where decodable;
+- and an explicit generic FFmpeg-compatible path.
+
+Represent distinctly:
+
+- supported;
+- recognized but unsupported;
+- decodable but unqualified;
+- malformed;
+- encrypted or DRM-protected where detectable;
+- missing required streams;
+- and unsupported.
+
+Do not claim universal codec support merely because FFmpeg is installed.
+
+======================================================================
+6. REQUIRED DELIVERABLES
+======================================================================
+
+6.1 MEDIA INSPECTION PROVIDER
+
+Implement a production inspection provider, initially expected to use FFprobe.
+
+Capture where available:
+
+- container format and long name;
+- duration and start time;
+- bit rate and file size;
+- tags, chapters, and programs;
+- stream indexes and types;
+- codec names, profiles, and levels;
+- time bases;
+- start timestamps and durations;
+- frame rates;
+- sample rates;
+- channel counts and layouts;
+- pixel formats and dimensions;
+- sample and display aspect ratio;
+- color metadata;
+- rotation or display matrix;
+- disposition flags;
+- language tags;
+- default and forced status;
+- attachment status;
+- and decode-relevant warnings.
+
+Preserve:
+
+- executable identity;
+- FFprobe version and build configuration;
+- argument array;
+- exit code;
+- standard error;
+- raw JSON hash;
+- parsed result;
+- and invocation provenance.
+
+6.2 STREAM INVENTORY
+
+Create a canonical stream inventory for every source.
+
+Distinguish:
+
+- video;
+- audio;
+- subtitle;
+- data;
+- attachment;
+- unknown;
+- and unsupported.
+
+Every stream must have a stable source-local identity. All streams remain
+visible even when unselected.
+
+6.3 STREAM-SELECTION POLICY
+
+Implement versioned selection policy.
+
+AUDIO DEFAULT:
+
+- explicit configured stream first;
+- otherwise default audio stream;
+- otherwise first decodable audio stream;
+- one authoritative working audio stream;
+- no silent mixing of multiple source streams;
+- retain all rejected candidates and reasons.
+
+VIDEO DEFAULT:
+
+- explicit configured stream first;
+- otherwise default video stream;
+- otherwise first decodable non-attached-picture video stream;
+- exclude cover art;
+- permit audio-only ingestion.
+
+Each decision records:
+
+- candidates;
+- eligibility;
+- disqualifications;
+- ranking factors;
+- selected stream;
+- policy version;
+- determinacy;
+- and human-readable explanation.
+
+6.4 DECODE QUALIFICATION
+
+Inspection alone is insufficient.
+
+Qualification must verify:
+
+- source opens;
+- selected streams begin decoding;
+- representative early, middle, and late regions decode;
+- declared duration is plausible;
+- and obvious truncation or timestamp failure is detected.
+
+Represent:
+
+- inspection success;
+- decode-start success;
+- sampled decode success;
+- full decode success;
+- warning;
+- failure;
+- and not performed.
+
+6.5 SOURCE TIMELINE MODEL
+
+Represent separately:
+
+- source media time;
+- normalized corpus time;
+- derivative-local time;
+- chunk-local time;
+- and wall-clock creation time.
+
+Account for:
+
+- container and stream start times;
+- time bases;
+- negative timestamps;
+- non-zero starts;
+- discontinuities;
+- audio and video duration differences;
+- variable frame rate;
+- and timestamp rounding.
+
+Use integer microseconds or another documented exact rational representation.
+Floating-point seconds may be exported only for readability.
+
+6.6 SOURCE INTERVAL MAPPING
+
+Support:
+
+- point mapping;
+- interval mapping;
+- source-to-derivative;
+- derivative-to-source;
+- chunk-local-to-source;
+- and overlap-aware mapping.
+
+Classify mapping results as:
+
+- exact;
+- rounded;
+- clipped;
+- discontinuous;
+- unavailable;
+- or ambiguous.
+
+Every later token, turn, or frame interval must be recoverable against the
+original source timeline.
+
+6.7 AUDIO NORMALIZATION
+
+Create a speech-processing derivative.
+
+Initial policy:
+
+- WAV PCM or FLAC, decided by ADR;
+- 16 kHz unless qualification justifies another rate;
+- mono;
+- signed 16-bit PCM or justified equivalent;
+- zero-based normalized time;
+- deterministic downmix;
+- no denoising;
+- no silence removal;
+- no voice enhancement;
+- no speech isolation;
+- no dynamic-range compression;
+- no pitch or tempo change;
+- no subjective loudness processing;
+- and no destructive filtering beyond decode, downmix, and resample.
+
+Preserve:
+
+- selected stream;
+- original layout;
+- downmix policy;
+- resampler;
+- output format;
+- sample rate;
+- sample count where available;
+- command;
+- tool version;
+- duration;
+- hash;
+- and interval mapping.
+
+The Riverton MP4 mix is the Phase 1 source. Isolated stems are reference assets
+and must never be selected automatically.
+
+6.8 VIDEO ACCESS OR NORMALIZATION
+
+Create a stable video access plan and, where policy requires, a remux or
+normalized derivative.
+
+The policy must address:
+
+- variable frame rate;
+- edit lists;
+- rotation;
+- non-square pixels;
+- unsupported pixel formats;
+- damaged timestamps;
+- random seek behavior;
+- and storage cost.
+
+If transcoding:
+
+- preserve full frame content;
+- do not crop;
+- do not resize without explicit policy;
+- do not burn captions;
+- do not alter speed;
+- normalize rotation explicitly;
+- and record every transformation.
+
+Frame access must be timestamp-based, not frame-number authoritative.
+
+6.9 NORMALIZED CORPUS
+
+Create an `AudiovisualCorpus` or equivalent connecting:
+
+- registered source;
+- source fingerprint;
+- inspection result;
+- stream inventory;
+- selection decisions;
+- qualification result;
+- source timeline;
+- normalized audio;
+- normalized video access or derivative;
+- chunk plan;
+- interval maps;
+- cache references;
+- integrity state;
+- configuration;
+- and provenance.
+
+The corpus must be independently loadable, exportable, and validatable.
+
+6.10 PROCESSING CHUNK PLAN
+
+Chunks are operational, not semantic.
+
+Support:
+
+- configurable target duration;
+- configurable overlap;
+- minimum and maximum duration;
+- stable IDs;
+- exact intervals;
+- contiguous ordinals;
+- terminal-short-chunk handling;
+- audio chunks;
+- and video seek windows.
+
+Initial default:
+
+- 10-minute target;
+- 5-second overlap;
+- zero-based corpus-time boundaries;
+- no silence-based cutting;
+- no content-aware cutting.
+
+Changing policy creates a new chunk-plan identity.
+
+6.11 CHUNK MATERIALIZATION
+
+Support:
+
+- virtual interval chunks;
+- and materialized files only when providers require them.
+
+Record:
+
+- why materialized;
+- source derivative;
+- interval;
+- codec or sample format;
+- exact command;
+- expected and actual duration;
+- hash;
+- and integrity result.
+
+6.12 CACHE
+
+Implement content- and configuration-addressed cache for:
+
+- inspection;
+- qualification;
+- selection;
+- normalized derivatives;
+- corpus manifests;
+- chunk plans;
+- materialized chunks;
+- interval maps;
+- and reports where appropriate.
+
+Keys include:
+
+- source fingerprint;
+- operation and version;
+- relevant configuration;
+- provider identity and version;
+- external tool version where material;
+- and format version.
+
+Represent:
+
+- hit;
+- miss;
+- invalid;
+- stale;
+- corrupted;
+- incompatible;
+- bypassed;
+- and rebuilt.
+
+Validate before reuse.
+
+6.13 RESUME AND RECOVERY
+
+Persist stages:
+
+- source verified;
+- inspection committed;
+- selection committed;
+- qualification committed;
+- audio normalization committed;
+- video access committed;
+- timeline committed;
+- chunk plan committed;
+- corpus committed;
+- reports committed;
+- and complete.
+
+Resume must:
+
+- locate latest valid stage;
+- validate outputs;
+- reuse valid outputs;
+- rebuild missing or invalid outputs;
+- preserve failed attempts;
+- and never report success before corpus and reports commit.
+
+Handle:
+
+- process interruption;
+- cancellation where supported;
+- write failure;
+- full disk;
+- external-tool error;
+- corrupt partial output;
+- changed source;
+- changed configuration;
+- changed tool version;
+- and unsupported format version.
+
+6.14 INTEGRITY VALIDATION
+
+Validate:
+
+- source hash;
+- inspection attachment;
+- stream references;
+- selected streams;
+- derivative files and hashes;
+- derivative decodability;
+- duration agreement;
+- sample and frame plausibility;
+- mapping bounds;
+- chunk coverage and overlap;
+- cache consistency;
+- lineage;
+- and corpus completeness.
+
+Detect:
+
+- gaps;
+- unintended overlaps;
+- out-of-bounds intervals;
+- negative normalized intervals;
+- impossible duration relationships;
+- missing provenance;
+- stale source;
+- and derivative substitution.
+
+6.15 REPORTS
+
+Produce machine-readable and human-readable:
+
+- inspection report;
+- stream-selection report;
+- decode-qualification report;
+- normalization report;
+- timeline report;
+- chunk-plan report;
+- cache report;
+- integrity report;
+- resume/recovery report where applicable;
+- normalized-source report;
+- and completion report.
+
+======================================================================
+7. REQUIRED CONTRACTS
+======================================================================
+
+Create or extend versioned contracts for:
+
+- MediaInspectionRequest
+- MediaInspectionResult
+- RawInspectionAttachment
+- ContainerDescriptor
+- MediaStreamDescriptor
+- VideoStreamDescriptor
+- AudioStreamDescriptor
+- SubtitleStreamDescriptor
+- StreamDisposition
+- StreamSelectionPolicy
+- StreamCandidateAssessment
+- StreamSelectionDecision
+- DecodeQualificationPolicy
+- DecodeQualificationProbe
+- DecodeQualificationResult
+- MediaTimeBase
+- SourceTimeline
+- TimeDomain
+- MediaTimestamp
+- MediaDuration
+- MediaInterval
+- IntervalMapping
+- IntervalMappingSegment
+- NormalizationPolicy
+- AudioNormalizationPolicy
+- VideoNormalizationPolicy
+- WorkingDerivative
+- AudioDerivative
+- VideoDerivative
+- DerivativeIntegrityRecord
+- ChunkPolicy
+- ProcessingChunk
+- ProcessingChunkPlan
+- MaterializedChunk
+- CacheKey
+- CacheEntry
+- CacheDisposition
+- IngestionRequest
+- IngestionStageRecord
+- IngestionCheckpoint
+- IngestionManifest
+- AudiovisualCorpus
+- CorpusIntegrityReport
+- NormalizedSourceReport
+
+Equivalent names are allowed when clearer.
+
+Do not add transcript or speaker contracts.
+
+======================================================================
+8. EXTERNAL TOOL POLICY
+======================================================================
+
+FFmpeg and FFprobe are expected initial tools.
+
+Implement provider boundaries rather than scattered subprocess calls.
+
+The tool runner must support:
+
+- executable discovery;
+- explicit configured path;
+- version and capability inspection;
+- argument-array invocation;
+- timeout;
+- cancellation where feasible;
+- stdout and stderr capture;
+- exit-code handling;
+- invocation records;
+- controlled temporary paths;
+- and cleanup.
+
+Do not use shell-interpolated strings when argument arrays are available.
+
+Test paths containing spaces and non-ASCII characters.
+
+The local GPL-enabled FFmpeg build may be used as a tool but must not be bundled
+without explicit licensing approval.
+
+======================================================================
+9. STREAM-SELECTION INVARIANTS
+======================================================================
+
+Selection must be deterministic under identical inventory and policy.
+
+Each candidate assessment records:
+
+- identity;
+- eligibility;
+- decode support;
+- attached-picture status;
+- default status;
+- language match;
+- layout match;
+- explicit-index match;
+- rank;
+- rejection reasons;
+- warnings;
+- and final disposition.
+
+Tie-break by documented deterministic rule, ordinarily stream index.
+
+Explicit override remains subject to validation.
+
+======================================================================
+10. AUDIO INVARIANTS
+======================================================================
+
+Phase 1 must not:
+
+- remove silence;
+- suppress noise;
+- isolate voices;
+- selectively equalize speech;
+- alter tempo or pitch;
+- repair clipping;
+- remove overlap;
+- or apply automatic gain control that changes evidence.
+
+Downmix policy must be documented and avoid clipping.
+
+Test:
+
+- stereo;
+- mono;
+- multichannel;
+- audio-only;
+- multiple audio streams;
+- no audio;
+- and unusual sample rates.
+
+======================================================================
+11. VIDEO INVARIANTS
+======================================================================
+
+Later phases must be able to request:
+
+- frame at or nearest a normalized timestamp;
+- frames over an interval;
+- mapping from frame timestamp to source time;
+- and stream metadata.
+
+Test:
+
+- constant frame rate;
+- variable frame rate;
+- non-zero start;
+- rotation;
+- attached cover art;
+- and audio-only source.
+
+Timestamps, not frame numbers, are authoritative.
+
+======================================================================
+12. CHUNK COVERAGE INVARIANTS
+======================================================================
+
+The plan must guarantee:
+
+- first chunk begins at zero;
+- final chunk reaches corpus end;
+- ordinals are contiguous;
+- no unintended gap;
+- overlap equals policy except at boundaries;
+- every interval is valid;
+- every corpus point is covered;
+- and coverage multiplicity is derivable.
+
+Define a versioned ownership policy for overlap, but do not apply it to
+transcription yet.
+
+======================================================================
+13. REQUIRED CLI
+======================================================================
+
+Provide equivalents of:
+
+- media inspect
+- media qualify
+- media streams
+- ingest plan
+- ingest run
+- ingest resume
+- ingest status
+- ingest validate
+- corpus list
+- corpus inspect
+- corpus validate
+- corpus intervals
+- corpus map-time
+- derivative list
+- derivative inspect
+- chunk list
+- chunk materialize
+- cache inspect
+- cache validate
+- cache prune
+- report normalized-source
+
+Support:
+
+- explicit workspace and source;
+- JSON and text output;
+- meaningful exit codes;
+- dry-run;
+- no destructive overwrite;
+- explicit stream selection;
+- and configurable chunk policy.
+
+======================================================================
+14. REQUIRED FIXTURES
+======================================================================
+
+Use:
+
+1. Riverton clean MP4
+2. Riverton naturalized MP4
+3. Riverton adversarial MP4
+4. Riverton clean FLAC mix
+5. generated multiple-audio-stream fixture
+6. generated VFR fixture
+7. generated non-zero-start fixture
+8. generated rotated-video fixture
+9. generated attached-picture fixture
+10. malformed or truncated fixture
+11. no-audio fixture
+12. no-video fixture
+13. duplicate content under another filename
+14. modified content under original filename
+15. at least one reproducible long-duration fixture sufficient for chunk and
+    resume qualification.
+
+Every fixture requires creation provenance, licensing status, expected technical
+landmarks, expected fingerprint, and expected validation disposition.
+
+Do not use hidden Riverton analytical references.
+
+======================================================================
+15. REQUIRED TESTING
+======================================================================
+
+Test:
+
+- FFprobe parsing;
+- executable discovery;
+- malformed output;
+- tool failure and timeout;
+- stream inventory;
+- default and explicit selection;
+- multiple streams;
+- attached-picture exclusion;
+- deterministic tie-breaking;
+- decode qualification;
+- audio-only and video-only;
+- malformed and unsupported input;
+- timeline normalization;
+- negative and non-zero starts;
+- exact mapping and round trips;
+- audio normalization;
+- stereo-to-mono;
+- unusual sample rate;
+- derivative hashing;
+- VFR and rotation;
+- chunk planning;
+- terminal partial chunk;
+- overlap invariants;
+- virtual and materialized chunks;
+- cache hit, miss, stale, corrupted;
+- changed source under same path;
+- changed configuration;
+- resume after every stage;
+- partial-output cleanup;
+- source mutation during run;
+- corpus export and reload;
+- report generation;
+- CLI exit codes;
+- and controlled negatives.
+
+Unit tests remain offline. Integration tests may require FFmpeg and FFprobe.
+
+======================================================================
+16. REQUIRED NEGATIVE CASES
+======================================================================
+
+Detect or reject:
+
+- missing, unreadable, or zero-byte source;
+- hash mismatch;
+- malformed container;
+- encryption or DRM indication where detectable;
+- no eligible required stream;
+- missing explicit stream index;
+- attached picture selected as primary video;
+- decoder failure;
+- tool timeout;
+- derivative duration mismatch;
+- derivative hash mismatch;
+- chunk gap or invalid overlap;
+- out-of-bounds mapping;
+- missing provenance;
+- unsupported time base;
+- stale cache reuse attempt;
+- source change during operation;
+- partial file mistaken for committed derivative;
+- incompatible resume configuration;
+- unsupported corpus version;
+- and destructive overwrite.
+
+======================================================================
+17. RESUME QUALIFICATION
+======================================================================
+
+Prove:
+
+1. interruption after inspection;
+2. reuse of committed inspection;
+3. interruption after audio normalization;
+4. reuse of valid audio;
+5. corrupt uncommitted partial output;
+6. rebuild partial output;
+7. corrupt committed derivative;
+8. detect and rebuild or refuse according to policy;
+9. change source under same path;
+10. prevent old corpus reuse;
+11. change chunk policy;
+12. reuse unaffected derivatives while creating new plan;
+13. preserve interrupted and failed operation history.
+
+======================================================================
+18. LONG-RECORDING QUALIFICATION
+======================================================================
+
+Use a legally usable source of at least two hours.
+
+Demonstrate:
+
+- at least 12 default 10-minute chunks;
+- successful normalized audio;
+- bounded memory;
+- resumable processing;
+- complete chunk coverage;
+- interval mapping near start, middle, and end;
+- cache behavior;
+- and measured processing duration and output size.
+
+The long fixture may be reproducibly generated rather than committed.
+
+======================================================================
+19. FINAL QUALIFICATION
+======================================================================
+
+The final run must:
+
+1. verify Phase 0 and 0.5 integrity;
+2. inspect all Riverton MP4 variants;
+3. select intended streams;
+4. qualify early, middle, and late decode;
+5. generate normalized audio;
+6. establish video access or derivative;
+7. build timelines;
+8. build chunk plans;
+9. validate mappings against technical schedules only;
+10. create and validate corpora;
+11. demonstrate cache reuse;
+12. demonstrate invalidation;
+13. demonstrate interruption and resume;
+14. run the two-hour qualification;
+15. export and reload a corpus;
+16. run integrity checks;
+17. generate all reports;
+18. produce the completion report.
+
+Use actual measurements, not extrapolations.
+
+======================================================================
+20. COMPLETION GATES
+======================================================================
+
+Inspection gate:
+- production inspection works;
+- raw and validated results preserved;
+- streams inventoried;
+- tool provenance recorded.
+
+Selection gate:
+- default and explicit selection work;
+- deterministic;
+- rejected candidates visible.
+
+Qualification gate:
+- required streams decode;
+- warnings and failures typed;
+- early, middle, late probes recorded.
+
+Timeline gate:
+- time domains explicit;
+- exact units used;
+- non-zero and negative starts handled;
+- mappings round-trip within declared tolerance.
+
+Audio gate:
+- normalized derivative exists;
+- policy documented;
+- duration and integrity pass;
+- no prohibited enhancement.
+
+Video gate:
+- selected video is addressable;
+- VFR and rotation policies exist;
+- timestamp-based access works.
+
+Chunk gate:
+- full coverage;
+- overlap invariants;
+- stable IDs;
+- virtual and materialized forms supported.
+
+Cache gate:
+- valid reuse;
+- stale and corrupted rejection;
+- correct invalidation.
+
+Resume gate:
+- interruption recovery;
+- valid reuse;
+- partial rebuild;
+- source mutation detection.
+
+Long-recording gate:
+- two-hour qualification succeeds;
+- memory bounded;
+- mapping and resume proven.
+
+Corpus gate:
+- canonical corpus loads, validates, exports, and reloads;
+- all references resolve.
+
+Reporting gate:
+- all reports exist with actual measurements.
+
+Regression gate:
+- Phase 0 and 0.5 tests pass;
+- canonical Phase 0.5 media remain byte-identical;
+- Phase 1 tests and negatives pass.
+
+Boundary gate:
+- no transcript;
+- no speaker analysis;
+- no discourse or argument artifact;
+- no adjudication;
+- no score;
+- no analytical overlay.
+
+======================================================================
+21. REQUIRED ARCHITECTURE DECISION RECORDS
+======================================================================
+
+Produce ADRs for:
+
+- authoritative media-time representation;
+- normalized audio format and sample rate;
+- video passthrough, remux, or transcode policy;
+- chunk duration and overlap;
+- chunk ownership;
+- cache-key composition;
+- decode-qualification depth;
+- and corpus storage layout.
+
+Each ADR includes context, decision, alternatives, consequences, reversibility,
+and qualification evidence.
+
+======================================================================
+22. DOCUMENTATION
+======================================================================
+
+Document:
+
+- supported source classes;
+- FFmpeg and FFprobe requirements;
+- inspection;
+- stream selection;
+- decode qualification;
+- time domains;
+- interval mapping;
+- audio normalization;
+- video access;
+- chunking;
+- cache;
+- resume and recovery;
+- corpus format;
+- CLI;
+- reports;
+- fixtures;
+- limitations;
+- and Phase 2 handoff.
+
+Update dependency and licensing inventories.
+
+======================================================================
+23. REQUIRED COMPLETION REPORT
+======================================================================
+
+Include:
+
+- date;
+- application, contract, and corpus versions;
+- repository states;
+- dependency changes;
+- tool versions and builds;
+- delivered contracts and CLI;
+- supported and qualified source types;
+- Riverton integrity results;
+- stream inventories and selections;
+- qualification coverage;
+- audio policy and measurements;
+- video policy;
+- timeline and mapping results;
+- chunk policy and counts;
+- cache results;
+- resume results;
+- long-recording qualification;
+- test counts;
+- negative cases;
+- reports;
+- deviations;
+- unresolved issues;
+- design revision recommendations;
+- Phase 0.5 closure status;
+- and Phase 2 readiness.
+
+Distinguish complete, partial, mocked, deferred, unsupported, warning, and failed.
+
+======================================================================
+24. PHASE 1 SUCCESS DEFINITION
+======================================================================
+
+Phase 1 succeeds when Ratiocinatus can accept a complete audiovisual recording
+and produce a trustworthy, portable, addressable corpus in which:
+
+- the original source is unchanged;
+- every stream is known;
+- selected streams are explicit;
+- normalized derivatives are validated;
+- time domains are unambiguous;
+- derived intervals map back to source evidence;
+- long recordings are divided into stable operational chunks;
+- cache reuse is safe;
+- interrupted work resumes without silent duplication or loss;
+- integrity failures are visible;
+- and later phases can consume the corpus without reopening settled ingestion
+  questions.
+
+The desired result is not a transcript.
+
+The desired result is the complete, stable audiovisual ground on which every
+later transcript, speaker attribution, proposition, call, and score can stand.

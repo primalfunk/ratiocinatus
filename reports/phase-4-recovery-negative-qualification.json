@@ -1,0 +1,24 @@
+{
+  "qualification": "phase-4-recovery-and-negative-proofs",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "integrity_validation",
+  "runtime_contracts": 320,
+  "focused_test_count": 3,
+  "full_regression_test_count": 250,
+  "negative_proof_count": 22,
+  "recovery_boundary_count": 10,
+  "assertions": [
+    "All twenty-two required negative proofs are typed, present, and passed.",
+    "Recovery is exercised at all ten Phase 4 processing boundaries.",
+    "Valid artifacts are reused and missing artifacts resume from their direct dependency boundary.",
+    "Corrupt derived artifacts are quarantined before deterministic reconstruction.",
+    "Upstream changes invalidate only transitive downstream Phase 4 dependencies.",
+    "Protected source and prior-phase evidence has identical before and after fingerprints.",
+    "Optional analyzer failure cannot invalidate the deterministic Phase 4 corpus.",
+    "Incomplete proof inventories and incomplete boundary inventories are refused."
+  ],
+  "limitations": [
+    "Synthetic fault injection qualifies recovery mechanics rather than filesystem or hardware reliability."
+  ]
+}

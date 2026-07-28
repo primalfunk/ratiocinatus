@@ -1,0 +1,27 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "corrupt_entries_are_quarantined": true,
+    "failed_rebuilds_preserve_quarantine": true,
+    "interrupted_stages_resume": true,
+    "participant_name_changes_preserve_acoustic_evidence": true,
+    "provider_reinvocation_is_avoided_for_valid_evidence": true,
+    "recovery_paths_are_confined": true,
+    "reports_are_integrity_sealed": true,
+    "transitive_downstream_only_invalidation": true
+  },
+  "phase": 3,
+  "qualification": "phase-3-cache-resume-recovery",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 220
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_phase3_recovery": 6,
+    "full_regression": 179,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

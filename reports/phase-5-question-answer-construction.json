@@ -1,0 +1,36 @@
+{
+  "qualification": "phase-5-question-answer-construction",
+  "status": "passed",
+  "target_application_version": "0.7.0",
+  "evidence_class": "synthetic_question_answer_mechanics",
+  "question_answer_contract_models": 5,
+  "runtime_contracts": 359,
+  "focused_stage_test_count": 6,
+  "focused_phase_test_count": 29,
+  "full_regression_test_count": 279,
+  "assertions": [
+    "Every canonical question act produces a stable source-grounded question artifact.",
+    "Question artifacts retain exact spans, structural type, requested form, alternatives, surface presupposition markers, addressee state, domain, scope, confidence, and review.",
+    "Surface presupposition markers do not establish loadedness, unfairness, misleadingness, or answerability.",
+    "Every canonical answer act produces one answer-relation artifact.",
+    "Exact normalized relation targets take precedence over temporal candidates.",
+    "A single preceding question in bounded temporal context becomes probable and review-required, not identified.",
+    "Multiple preceding questions remain alternative targets.",
+    "An unsupported answer target remains unresolved.",
+    "An answer before an explicit question is not retrospectively linked without explicit target evidence.",
+    "Several answer utterances can jointly target one question.",
+    "Contracts support one answer targeting several questions when explicitly grounded.",
+    "Deferred, refused, inability, and presupposition-rejecting answer states remain distinct.",
+    "Qualification acts in the answer utterance remain linked to the answer relation.",
+    "No responsiveness, adequacy, completeness, or evasion score is produced.",
+    "Question-answer run and report artifacts are sealed, replayable, and reusable without provider reinvocation.",
+    "CLI operations build, validate, inspect, list questions, list answer relations, and list unresolved answers.",
+    "Schema export includes all five question-answer contracts."
+  ],
+  "limitations": [
+    "Temporal proximity is a conservative candidate-link heuristic, not a semantic responsiveness judgment.",
+    "Addressees remain unresolved without explicit evidence.",
+    "The controlled fixtures qualify construction mechanics, not natural-conversation question or answer accuracy.",
+    "Selection and relation confidence remain uncalibrated."
+  ]
+}

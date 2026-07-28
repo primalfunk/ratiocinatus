@@ -1,0 +1,42 @@
+{
+  "qualification": "phase-4-long-recording-operation",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "synthetic_mechanics",
+  "runtime_contracts": 320,
+  "focused_test_count": 2,
+  "full_regression_test_count": 250,
+  "qualification_contract": {
+    "qualification_id": "phase4long_d3c5a28d120cde7e7144f88b5ca2a545",
+    "integrity_sha256": "d9a5e6961c68f1130a77afca76bdf0e7409edf50f275347811fa1d3fb6a46fde"
+  },
+  "measurements": {
+    "duration_microseconds": 7201000000,
+    "processing_chunk_count": 121,
+    "utterance_count": 121,
+    "context_window_count": 1089,
+    "cross_chunk_utterance_count": 1,
+    "continuation_count": 1,
+    "chunk_boundary_interruption_count": 1,
+    "cache_hit_count": 1,
+    "recovery_count": 1,
+    "peak_memory_bytes": 212,
+    "duplicate_word_ownership_count": 0,
+    "duplicate_utterance_count": 0
+  },
+  "assertions": [
+    "The virtual recording duration is strictly greater than two hours.",
+    "Phase 1 chunk ownership, Phase 2 transcript evidence, and Phase 3 speaker evidence are reused.",
+    "Cross-chunk construction is stable with no duplicate word or utterance ownership.",
+    "Continuation and chunk-boundary interruption mechanics are exercised.",
+    "All nine context kinds are generated per utterance under bounded budgets.",
+    "Cache replay and local corruption recovery preserve final integrity.",
+    "Provider-free serialization reloads as the same sealed qualification.",
+    "Working state remains bounded independently of recording duration.",
+    "No natural-speech accuracy claim is made."
+  ],
+  "limitations": [
+    "This virtual qualification establishes deterministic long-recording mechanics, not linguistic or speaker-attribution accuracy.",
+    "Peak memory is the maximum serialized active working state, not whole-process resident memory."
+  ]
+}

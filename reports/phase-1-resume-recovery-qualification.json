@@ -1,0 +1,152 @@
+{
+  "assertions": {
+    "changed_source_rejected": true,
+    "chunk_policy_isolated_with_audio_reuse": true,
+    "committed_derivative_detected_and_rebuilt": true,
+    "full_disk_recorded_and_resumed": true,
+    "incompatible_resume_configuration_rejected": true,
+    "orphan_partial_preserved_and_rebuilt": true,
+    "resume_after_every_stage": true,
+    "tool_version_change_invalidated_identity": true,
+    "unsupported_corpus_version_rebuilt": true,
+    "unsupported_stage_version_rebuilt": true,
+    "write_denial_recorded_and_resumed": true
+  },
+  "elapsed_seconds": 31.765811,
+  "qualification": "phase-1-resume-recovery",
+  "stage_results": [
+    {
+      "elapsed_seconds": 1.131551,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "source_verified"
+    },
+    {
+      "elapsed_seconds": 1.083763,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "inspection_committed"
+    },
+    {
+      "elapsed_seconds": 1.235422,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "selection_committed"
+    },
+    {
+      "elapsed_seconds": 1.300477,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "qualification_committed"
+    },
+    {
+      "elapsed_seconds": 1.404915,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "audio_normalization_committed"
+    },
+    {
+      "elapsed_seconds": 1.521752,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "video_access_committed"
+    },
+    {
+      "elapsed_seconds": 1.388643,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "timeline_committed"
+    },
+    {
+      "elapsed_seconds": 1.509164,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "chunk_plan_committed"
+    },
+    {
+      "elapsed_seconds": 1.513615,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "corpus_committed"
+    },
+    {
+      "elapsed_seconds": 1.525994,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "reused"
+      ],
+      "resumed": true,
+      "stage": "reports_committed"
+    },
+    {
+      "elapsed_seconds": 1.47225,
+      "interrupted": true,
+      "passed": true,
+      "record_statuses": [
+        "committed",
+        "interrupted",
+        "committed"
+      ],
+      "resumed": true,
+      "stage": "complete"
+    }
+  ],
+  "status": "passed"
+}

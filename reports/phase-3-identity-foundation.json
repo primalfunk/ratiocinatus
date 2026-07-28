@@ -1,0 +1,30 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "automatic_binding_is_disabled": true,
+    "biographical_profile_fields_are_absent": true,
+    "cluster_artifacts_remain_identity_free": true,
+    "competing_hypotheses_remain_unresolved": true,
+    "evidence_support_dimensions_remain_separate": true,
+    "foundation_successors_are_append_only": true,
+    "identity_scope_is_validated": true,
+    "premature_reference_voice_hypotheses_are_refused": true,
+    "provenance_is_required": true
+  },
+  "identity_contract_models": 4,
+  "phase": 3,
+  "qualification": "phase-3-scoped-participant-identity-foundation",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 187
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_identity_foundation": 3,
+    "focused_phase3": 20,
+    "full_regression": 139,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

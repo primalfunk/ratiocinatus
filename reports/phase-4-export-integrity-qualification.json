@@ -1,0 +1,21 @@
+{
+  "qualification": "phase-4-portable-export-integrity",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "integrity_validation",
+  "runtime_contracts": 320,
+  "focused_test_count": 2,
+  "full_regression_test_count": 250,
+  "assertions": [
+    "The portable bundle includes the complete Phase 4 artifact chain and exported runtime schemas.",
+    "Every exported entry has a relative path, byte size, media type, contract type, and SHA-256 digest.",
+    "Prior-phase references remain relative and no provider is required to load the bundle.",
+    "Strict reload validates contract types, digests, stale-report state, and manifest integrity.",
+    "Replay produces the same manifest identity for the same artifact set.",
+    "Corrupt, missing, absolute, or type-incompatible entries are refused."
+  ],
+  "limitations": [
+    "The portable evidence bundle does not redistribute optional provider models.",
+    "Referenced source media remains governed by the workspace export policy."
+  ]
+}

@@ -988,6 +988,9 @@ Expected work:
 
 ### Phase 3: Speaker diarization and participant identity foundations
 
+**Completion status:** Complete. All eighteen exit gates are closed by the
+integrity-sealed Phase 3 completion report.
+
 **Goal:** Determine who appears to be speaking without forcing identity certainty.
 
 Expected work:
@@ -1004,6 +1007,11 @@ Expected work:
 
 ### Phase 4: Speaker-attributed discourse corpus
 
+**Completion status:** Complete. All nineteen exit gates are closed by the
+integrity-sealed Phase 4 completion report. The evidence inventory covers
+controlled evaluation, provider-free export, all twenty-two negative proofs,
+recovery at ten persisted boundaries, and greater-than-two-hour operation.
+
 **Goal:** Produce a stable corpus of speaker-attributed utterances.
 
 Expected work:
@@ -1018,6 +1026,19 @@ Expected work:
 - and review tools.
 
 ### Phase 5: Discourse-act construction
+
+**Implementation status:** In progress. The contract, controlled-vocabulary,
+evidence-span, multi-label candidate, confidence, Phase 4 lineage, persistence,
+integrity, and provider-boundary foundation is implemented and qualified. The
+provider-free deterministic high-precision baseline, bounded provider-assisted
+classification, consolidation, relational and lexical structures, quotation-use
+records, event-sourced descriptive procedural state, append-only review,
+evidence-rich review queues, dependency-selective Phase 4 correction
+propagation, and controlled stratified evaluation are also implemented and
+qualified; provider-free portable export and stage-local recovery are now
+also implemented and qualified. Greater-than-two-hour bounded-operation
+mechanics and the twenty-four-gate completion audit are implemented and
+qualified; Phase 5 is complete.
 
 **Goal:** Represent what each utterance is doing in the conversation.
 

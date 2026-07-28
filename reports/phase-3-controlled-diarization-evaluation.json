@@ -1,0 +1,28 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "boundary_error_is_measured": true,
+    "cache_and_human_report_corruption_are_refused": true,
+    "der_contributions_are_separate": true,
+    "exact_interval_scoring_is_used": true,
+    "local_speaker_labels_are_not_identities": true,
+    "maximum_duration_mapping_is_bounded": true,
+    "overlap_duration_is_scored": true,
+    "reference_lineage_is_sealed": true,
+    "stratified_results_are_reported": true
+  },
+  "phase": 3,
+  "qualification": "phase-3-controlled-temporal-diarization-evaluation",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 230
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_diarization_evaluation": 5,
+    "full_regression": 184,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

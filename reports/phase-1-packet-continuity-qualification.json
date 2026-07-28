@@ -1,0 +1,282 @@
+{
+  "assertions": {
+    "all_packet_qualifications_valid": true,
+    "all_probe_statuses_success": true,
+    "all_selected_audio_1_video_0": true,
+    "no_detected_discontinuities": true,
+    "six_probes_per_variant": true,
+    "three_canonical_variants": true
+  },
+  "qualification": "phase-1-packet-continuity",
+  "results": [
+    {
+      "discontinuity_count": 0,
+      "duration_microseconds": 544466667,
+      "probes": [
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "early",
+          "maximum_dts_gap_microseconds": 33334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 57,
+          "status": "success",
+          "stream_index": 0,
+          "stream_type": "video"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "middle",
+          "maximum_dts_gap_microseconds": 33334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 57,
+          "status": "success",
+          "stream_index": 0,
+          "stream_type": "video"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "late",
+          "maximum_dts_gap_microseconds": 33334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 57,
+          "status": "success",
+          "stream_index": 0,
+          "stream_type": "video"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "early",
+          "maximum_dts_gap_microseconds": 21334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 94,
+          "status": "success",
+          "stream_index": 1,
+          "stream_type": "audio"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "middle",
+          "maximum_dts_gap_microseconds": 21334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 94,
+          "status": "success",
+          "stream_index": 1,
+          "stream_type": "audio"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "late",
+          "maximum_dts_gap_microseconds": 21334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 94,
+          "status": "success",
+          "stream_index": 1,
+          "stream_type": "audio"
+        }
+      ],
+      "selected_audio_stream": 1,
+      "selected_video_stream": 0,
+      "source_byte_size": 14264371,
+      "source_sha256": "08ab6072bd057c667691b96c0c889adf843de7b57d2d8e6d45f4be29fd9d3bd2",
+      "tool": {
+        "executable_sha256": "9448e8b4c6ad9abbc63a877a01e6e37b0d26d705374f6bfd8dbab2f54368d09a",
+        "product": "ffprobe",
+        "version_line": "ffprobe version 2024-09-26-git-f43916e217-essentials_build-www.gyan.dev Copyright (c) 2007-2024 the FFmpeg developers"
+      },
+      "valid": true,
+      "variant": "adversarial"
+    },
+    {
+      "discontinuity_count": 0,
+      "duration_microseconds": 567784000,
+      "probes": [
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "early",
+          "maximum_dts_gap_microseconds": 33334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 57,
+          "status": "success",
+          "stream_index": 0,
+          "stream_type": "video"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "middle",
+          "maximum_dts_gap_microseconds": 33334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 57,
+          "status": "success",
+          "stream_index": 0,
+          "stream_type": "video"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "late",
+          "maximum_dts_gap_microseconds": 33334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 57,
+          "status": "success",
+          "stream_index": 0,
+          "stream_type": "video"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "early",
+          "maximum_dts_gap_microseconds": 21334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 94,
+          "status": "success",
+          "stream_index": 1,
+          "stream_type": "audio"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "middle",
+          "maximum_dts_gap_microseconds": 21334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 94,
+          "status": "success",
+          "stream_index": 1,
+          "stream_type": "audio"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "late",
+          "maximum_dts_gap_microseconds": 21334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 94,
+          "status": "success",
+          "stream_index": 1,
+          "stream_type": "audio"
+        }
+      ],
+      "selected_audio_stream": 1,
+      "selected_video_stream": 0,
+      "source_byte_size": 14448161,
+      "source_sha256": "1485faf0c8fa17ded5f17f3c4d1fa882757d65fff44393d3cecc2ad6b1c3266a",
+      "tool": {
+        "executable_sha256": "9448e8b4c6ad9abbc63a877a01e6e37b0d26d705374f6bfd8dbab2f54368d09a",
+        "product": "ffprobe",
+        "version_line": "ffprobe version 2024-09-26-git-f43916e217-essentials_build-www.gyan.dev Copyright (c) 2007-2024 the FFmpeg developers"
+      },
+      "valid": true,
+      "variant": "clean"
+    },
+    {
+      "discontinuity_count": 0,
+      "duration_microseconds": 545859000,
+      "probes": [
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "early",
+          "maximum_dts_gap_microseconds": 33334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 57,
+          "status": "success",
+          "stream_index": 0,
+          "stream_type": "video"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "middle",
+          "maximum_dts_gap_microseconds": 33334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 57,
+          "status": "success",
+          "stream_index": 0,
+          "stream_type": "video"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "late",
+          "maximum_dts_gap_microseconds": 33334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 57,
+          "status": "success",
+          "stream_index": 0,
+          "stream_type": "video"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "early",
+          "maximum_dts_gap_microseconds": 21334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 94,
+          "status": "success",
+          "stream_index": 1,
+          "stream_type": "audio"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "middle",
+          "maximum_dts_gap_microseconds": 21334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 94,
+          "status": "success",
+          "stream_index": 1,
+          "stream_type": "audio"
+        },
+        {
+          "dts_regression_count": 0,
+          "findings": [],
+          "label": "late",
+          "maximum_dts_gap_microseconds": 21334,
+          "missing_dts_count": 0,
+          "missing_pts_count": 0,
+          "packet_count": 94,
+          "status": "success",
+          "stream_index": 1,
+          "stream_type": "audio"
+        }
+      ],
+      "selected_audio_stream": 1,
+      "selected_video_stream": 0,
+      "source_byte_size": 14301751,
+      "source_sha256": "5a6797523d0566d754a30ca8aa290bb26f19a94ac372c31f81b1b6e06113a780",
+      "tool": {
+        "executable_sha256": "9448e8b4c6ad9abbc63a877a01e6e37b0d26d705374f6bfd8dbab2f54368d09a",
+        "product": "ffprobe",
+        "version_line": "ffprobe version 2024-09-26-git-f43916e217-essentials_build-www.gyan.dev Copyright (c) 2007-2024 the FFmpeg developers"
+      },
+      "valid": true,
+      "variant": "naturalized"
+    }
+  ],
+  "scope": "Selected audio and video streams in the three canonical Riverton MP4 variants; early, middle, and late bounded probes.",
+  "status": "passed"
+}

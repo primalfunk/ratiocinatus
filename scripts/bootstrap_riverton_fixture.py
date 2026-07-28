@@ -10,7 +10,7 @@ from pathlib import Path
 FIXTURE_ID = "ratiocinatus-proof-riverton-evening-access-v1"
 CONTRACT = "0.1.0"
 ROOT = Path("tests/fixtures/riverton_evening_access_v1")
-WORK_ORDER = Path("docs/work_orders/phase_05.txt")
+WORK_ORDER = Path("docs/work_orders/phase_00_5.txt")
 
 
 def digest(text: str) -> str:

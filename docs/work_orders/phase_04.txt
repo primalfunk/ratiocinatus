@@ -1,0 +1,1424 @@
+# Ratiocinatus Phase 4 Work Order
+
+## Speaker-Attributed Utterance Corpus
+
+**Phase:** 4
+**Target application version:** 0.6.0
+**Starting point:** Completed Phase 3 participant-speech evidence boundary
+**Primary goal:** Produce a stable, source-addressed corpus of speaker-attributed utterances suitable for later discourse, claim, argument, and adjudication work.
+
+---
+
+## 1. Objective
+
+Phase 4 shall consolidate Phase 2 transcript evidence and Phase 3 speaker-participation evidence into stable utterance records.
+
+The phase must determine:
+
+* which words belong together as one utterance;
+* which speaker or speaker hypothesis is associated with that utterance;
+* where utterances begin and end;
+* how interruptions, restarts, repairs, fragments, and incomplete speech are represented;
+* when spoken material quotes, paraphrases, reads, imitates, or attributes another voice;
+* how local conversational context is assembled;
+* how later transcript or identity corrections propagate;
+* and how reviewers inspect and revise utterance construction without altering the source evidence.
+
+An utterance is a structured analytical unit over transcript and speaker evidence.
+
+It is not necessarily:
+
+* a grammatical sentence;
+* a complete thought;
+* one transcript segment;
+* one diarization turn;
+* one uninterrupted interval;
+* or one proposition.
+
+Phase 4 must preserve the difference between what was audibly produced, how the transcript represents it, who appears to have produced it, and how the system groups it for later analysis.
+
+---
+
+## 2. Governing distinctions
+
+The implementation must preserve the following distinctions.
+
+### 2.1 Transcript segment
+
+A Phase 2 transcription artifact produced from a bounded audio interval.
+
+Transcript segmentation may reflect model behavior rather than discourse structure.
+
+### 2.2 Speaker turn
+
+A Phase 3 interval during which one speaker appears to hold the primary speaking role.
+
+A turn may contain multiple utterances.
+
+### 2.3 Utterance
+
+A bounded unit of speech attributed to one apparent speaker and constructed for discourse analysis.
+
+An utterance may be:
+
+* complete;
+* incomplete;
+* interrupted;
+* resumed;
+* repaired;
+* fragmentary;
+* non-lexical;
+* quoted;
+* jointly produced;
+* or attribution-uncertain.
+
+### 2.4 Sentence
+
+A linguistic or orthographic unit.
+
+An utterance may contain several sentences or less than one sentence.
+
+### 2.5 Proposition
+
+A claim-like semantic unit that may later be extracted from an utterance.
+
+Phase 4 must not equate utterances with claims or arguments.
+
+### 2.6 Speaker attribution
+
+A relationship between an utterance and Phase 3 participant evidence.
+
+Attribution may be:
+
+* machine-clustered;
+* identity-hypothesized;
+* manually bound;
+* role-labeled;
+* conflicting;
+* or unknown.
+
+### 2.7 Quoted speaker
+
+A person whose words are represented inside another person’s utterance.
+
+The quoted speaker is not the acoustic speaker of the current interval.
+
+---
+
+## 3. Governing principles
+
+### 3.1 Prior evidence remains immutable
+
+Phase 4 must not alter:
+
+* Phase 1 source media or timing;
+* Phase 2 transcript observations, words, alternatives, or correction history;
+* Phase 3 observations, turns, clusters, hypotheses, or binding history.
+
+Phase 4 may assemble derived utterance views from declared prior-phase versions.
+
+### 3.2 Utterance construction must be reversible
+
+Every utterance must retain enough lineage to reconstruct:
+
+* the source audio interval;
+* contributing transcript segments and words;
+* contributing speaker turns and observations;
+* corrections applied;
+* segmentation rules used;
+* and any manual review decisions.
+
+### 3.3 No forced completeness
+
+The system must not invent missing words, punctuation, syntactic completion, or intended meaning to make an utterance appear complete.
+
+Incomplete speech must remain incomplete.
+
+### 3.4 No forced speaker certainty
+
+An utterance may remain attributed to:
+
+* a local speaker cluster;
+* an unresolved participant;
+* multiple competing identities;
+* or no assignable speaker.
+
+Stable utterance construction must not require a real-world name.
+
+### 3.5 Surface speech and interpretation remain separate
+
+Phase 4 may identify structural phenomena such as interruption, restart, quotation, or repair.
+
+It must not determine:
+
+* whether a speaker is truthful;
+* what the speaker ultimately believes;
+* whether an answer is evasive;
+* whether an argument is valid;
+* or whether an utterance is persuasive.
+
+---
+
+## 4. Required scope
+
+## 4.1 Utterance-segmentation policy
+
+Define a versioned utterance-segmentation policy.
+
+The policy must consider, where evidence permits:
+
+* speaker continuity;
+* pauses;
+* transcript punctuation;
+* syntactic completion;
+* discourse markers;
+* semantic continuity;
+* interruption;
+* overlap;
+* restart;
+* self-repair;
+* moderator intervention;
+* completion after interruption;
+* transcript-segment boundaries;
+* and source interval continuity.
+
+The policy must define:
+
+* hard segmentation conditions;
+* soft segmentation indicators;
+* prohibited merge conditions;
+* maximum gap permitted inside one utterance;
+* treatment of filler words;
+* treatment of non-lexical vocalizations;
+* treatment of uncertain speaker changes;
+* treatment of cross-chunk continuity;
+* and conditions requiring human review.
+
+The segmentation policy must be deterministic over the same evidence and configuration.
+
+---
+
+## 4.2 Stable utterance records
+
+Create stable utterance records.
+
+Each utterance must include, at minimum:
+
+* stable utterance identifier;
+* utterance-corpus identifier;
+* source corpus lineage;
+* Phase 2 transcript-view version;
+* Phase 3 identity-view version;
+* source-media interval or ordered interval set;
+* normalized-audio interval or ordered interval set;
+* contributing transcript segments;
+* contributing transcript words;
+* contributing speaker turns;
+* attributed speaker target;
+* attribution status;
+* attribution confidence and origin;
+* displayed text;
+* verbatim or normalized text distinction;
+* utterance completeness classification;
+* interruption status;
+* repair status;
+* overlap status;
+* quotation status;
+* context references;
+* review status;
+* creation process;
+* format and policy versions;
+* and integrity fields.
+
+Identifiers must remain stable under identical evidence, configuration, and review state.
+
+The implementation must define when:
+
+* an utterance retains its identifier;
+* a new version is produced;
+* a successor utterance is created;
+* or an utterance becomes invalidated.
+
+---
+
+## 4.3 Utterance text views
+
+The system must distinguish multiple text views where applicable.
+
+Required views include:
+
+* raw machine transcript text;
+* current corrected transcript text;
+* utterance display text;
+* minimally normalized analysis text;
+* and review markup.
+
+Normalization may include documented handling of:
+
+* whitespace;
+* punctuation;
+* capitalization;
+* repeated filler tokens;
+* disfluency notation;
+* and subtitle-specific line breaks.
+
+Normalization must not:
+
+* add omitted content;
+* silently replace uncertain words;
+* convert paraphrase into quotation;
+* remove meaningful repetitions;
+* erase interruption evidence;
+* or alter the original transcript artifact.
+
+Every normalized text field must declare its derivation policy.
+
+---
+
+## 4.4 Utterance completeness
+
+Each utterance must receive an explicit completeness classification.
+
+Required classifications should include equivalents of:
+
+* complete;
+* grammatically incomplete but discourse-complete;
+* interrupted;
+* abandoned;
+* trailing off;
+* clipped by source boundary;
+* clipped by processing boundary;
+* transcription incomplete;
+* inaudible ending;
+* resumed later;
+* fragment;
+* non-lexical;
+* and unknown.
+
+Completeness must not be inferred solely from punctuation.
+
+The system must retain the evidence supporting the classification.
+
+---
+
+## 4.5 Interrupted speech
+
+Represent interruption as a relationship among utterances and speaker activity.
+
+Each interruption record must include:
+
+* interrupted utterance;
+* interruption onset;
+* interrupting speaker or unresolved speaker;
+* interrupting utterance where constructed;
+* overlap interval;
+* whether the original speaker continues underneath;
+* whether the original utterance resumes;
+* temporal evidence;
+* confidence;
+* and review status.
+
+The system must distinguish:
+
+* actual simultaneous interruption;
+* immediate turn takeover;
+* supportive interjection;
+* backchannel;
+* moderator cutoff;
+* technical cutoff;
+* audience interruption;
+* and uncertain interruption.
+
+Phase 4 must not assign blame or intent.
+
+---
+
+## 4.6 Resumed and continued utterances
+
+Support utterances that continue after an interruption or temporary break.
+
+A continuation relationship must record:
+
+* predecessor utterance;
+* successor utterance;
+* intervening speech or event;
+* elapsed gap;
+* speaker consistency;
+* lexical or syntactic continuation evidence;
+* semantic continuation evidence where used;
+* confidence;
+* and disposition.
+
+The system must distinguish:
+
+* same utterance resumed;
+* new utterance on the same topic;
+* repeated restart;
+* recap after interruption;
+* and unresolved continuation.
+
+Non-contiguous source intervals may belong to one logical utterance only when the policy explicitly permits this and preserves all component intervals.
+
+A presentation view may join resumed components, but the underlying temporal pieces must remain visible.
+
+---
+
+## 4.7 Turn repair
+
+Implement bounded turn-repair operations.
+
+Turn repair addresses mismatches among:
+
+* diarization turns;
+* transcript segments;
+* words;
+* speaker boundaries;
+* and utterance boundaries.
+
+Supported repair proposals must include:
+
+* split turn;
+* merge adjacent turns;
+* move boundary;
+* reassign transcript words;
+* detach incorrectly associated words;
+* assign previously unattributed words;
+* preserve mixed-speaker interval;
+* and mark unresolved.
+
+Every repair proposal must record:
+
+* affected artifacts;
+* proposed change;
+* evidence basis;
+* contrary evidence;
+* confidence;
+* whether it is automated or manual;
+* and disposition.
+
+Accepted repairs must produce derived successor records.
+
+They must not rewrite Phase 2 or Phase 3 source artifacts.
+
+---
+
+## 4.8 Self-repair and speech disfluency
+
+Represent audible repairs within a speaker’s own speech.
+
+Relevant phenomena include:
+
+* false start;
+* restart;
+* repetition;
+* substitution;
+* insertion;
+* deletion-like abandonment;
+* hesitation;
+* filler;
+* stutter-like repetition where audibly represented;
+* and explicit correction.
+
+A self-repair record should identify, where possible:
+
+* reparandum, or abandoned material;
+* interruption point;
+* repair marker;
+* repair text;
+* relation between original and repaired material;
+* source intervals;
+* confidence;
+* and review status.
+
+Phase 4 must not diagnose medical, cognitive, or psychological conditions from disfluency.
+
+Self-repair evidence must remain available to later analysis without requiring the utterance text to be artificially cleaned.
+
+---
+
+## 4.9 Overlap-aware utterance construction
+
+Utterance segmentation must preserve Phase 3 overlap evidence.
+
+Required behavior:
+
+* permit simultaneous utterances;
+* preserve independent speaker timelines;
+* avoid serializing overlap into a false sequence;
+* identify dominant and secondary speech only when supported;
+* retain unattributed overlapping words;
+* support partially recoverable speech;
+* and surface overlap for review.
+
+When transcript evidence cannot reliably separate overlapping speakers, the system must represent:
+
+* mixed transcript evidence;
+* uncertain word attribution;
+* or untranscribed overlap.
+
+It must not assign all words to the louder or currently selected speaker without explicit evidence.
+
+---
+
+## 4.10 Quotation handling
+
+Create explicit spoken-quotation records.
+
+The system must distinguish:
+
+* direct quotation;
+* partial quotation;
+* paraphrase;
+* attributed proposition;
+* reported speech;
+* reading from a document;
+* recitation;
+* imitation or impersonation;
+* hypothetical speech;
+* self-quotation;
+* and uncertain quotation.
+
+Each quotation record must include:
+
+* quoting utterance;
+* quoted span;
+* quotation type;
+* attributed quoted speaker where stated;
+* attribution text;
+* source of attribution;
+* whether the quoted words are acoustically present only through the current speaker;
+* whether an external source match exists;
+* confidence;
+* and review status.
+
+A quoted person must not become the acoustic speaker attribution for the utterance.
+
+Quotation marks inserted by a transcript model must not be treated as sufficient proof of quotation.
+
+---
+
+## 4.11 Embedded recordings and played media
+
+The system must represent speech played inside the source recording.
+
+Examples include:
+
+* video clips;
+* archival recordings;
+* advertisements;
+* remote feeds;
+* voice mail;
+* translated playback;
+* and public-address audio.
+
+Such speech must be distinguishable from a physically present participant.
+
+The utterance record must be able to mark:
+
+* primary-source participant speech;
+* embedded-media speech;
+* remote participant speech;
+* synthesized speech;
+* replayed speech;
+* and uncertain source type.
+
+Phase 4 need not identify the embedded speaker definitively, but it must avoid silently clustering played audio with present participants when evidence indicates a different source condition.
+
+---
+
+## 4.12 Speaker-attributed transcript assembly
+
+Produce a canonical speaker-attributed transcript view.
+
+Each rendered utterance should expose, as applicable:
+
+* utterance identifier;
+* source timestamp;
+* speaker cluster or participant label;
+* attribution status;
+* utterance text;
+* interruption or continuation markers;
+* overlap markers;
+* quotation markers;
+* uncertainty markers;
+* and review status.
+
+The system must support at least:
+
+* machine speaker-cluster view;
+* reviewed participant-identity view;
+* unknown-preserving view;
+* correction-aware view;
+* overlap-expanded view;
+* and compact reading view.
+
+No single rendered transcript replaces the underlying utterance corpus.
+
+---
+
+## 4.13 Context windows
+
+Create deterministic context windows for later analytical consumers.
+
+Context windows must be derived from utterance order and declared policy.
+
+Required window types should include equivalents of:
+
+* preceding utterances;
+* following utterances;
+* same-speaker history;
+* current turn neighborhood;
+* exchange window;
+* question-response window where structurally known;
+* interruption neighborhood;
+* quotation neighborhood;
+* and bounded temporal window.
+
+Each context-window record must include:
+
+* target utterance;
+* included utterances;
+* ordering;
+* source intervals;
+* inclusion reason;
+* token or character count;
+* truncation status;
+* omitted-neighbor summary where applicable;
+* policy version;
+* and integrity status.
+
+Context windows must not silently reorder overlapping speech into a false sequence.
+
+Where simultaneous utterances exist, the window must preserve temporal relationships.
+
+---
+
+## 4.14 Context budgeting
+
+Provide bounded context construction suitable for later language-model or analytical processing.
+
+The implementation must support:
+
+* maximum utterance count;
+* maximum token estimate;
+* maximum source duration;
+* speaker-balanced selection where configured;
+* recency weighting;
+* question or interruption preservation;
+* quotation-source preservation;
+* and explicit truncation.
+
+Truncation must be deterministic and reported.
+
+The system must never imply that an analysis considered the complete exchange when the supplied context was truncated.
+
+---
+
+## 4.15 Correction propagation
+
+Corrections from Phase 2 and Phase 3 must propagate through Phase 4 in a controlled and inspectable way.
+
+Required behavior:
+
+* detect changed transcript text;
+* detect changed word boundaries;
+* detect changed speaker turns;
+* detect changed cluster membership;
+* detect changed identity bindings;
+* identify affected utterances;
+* selectively invalidate affected utterance artifacts;
+* preserve unaffected utterance identifiers where justified;
+* rebuild dependent context windows;
+* rebuild speaker-attributed transcript views;
+* and record propagation results.
+
+The system must distinguish:
+
+* text-only changes;
+* timing changes;
+* speaker-attribution changes;
+* segmentation changes;
+* display-label changes;
+* and source-lineage changes.
+
+A participant display-name correction should not force utterance resegmentation.
+
+A word-timing correction may require segmentation review if it crosses an utterance boundary.
+
+---
+
+## 4.16 Manual utterance review
+
+Implement append-only manual review actions.
+
+Supported actions must include:
+
+* approve utterance;
+* split utterance;
+* merge utterances;
+* move boundary;
+* change completeness classification;
+* mark interruption;
+* remove incorrect interruption;
+* link continuation;
+* unlink continuation;
+* mark quotation;
+* revise quotation span;
+* change quotation type;
+* flag uncertain text;
+* flag uncertain speaker attribution;
+* and defer decision.
+
+Each review action must include:
+
+* review-action identifier;
+* target artifact;
+* prior state;
+* proposed state;
+* author;
+* timestamp;
+* rationale;
+* evidence references;
+* confidence or reviewer certainty;
+* and resulting utterance-view version.
+
+Manual review must not erase the machine-generated utterance proposal.
+
+---
+
+## 4.17 Review queues and review tools
+
+Provide review-oriented tools for locating likely utterance problems.
+
+Required review queues should include:
+
+* low-confidence segmentation;
+* uncertain speaker boundary;
+* transcript word crossing speaker boundary;
+* long utterance;
+* very short fragment;
+* unresolved interruption;
+* unresolved continuation;
+* overlap with uncertain attribution;
+* likely turn-repair candidate;
+* probable self-repair;
+* uncertain quotation;
+* conflicting speaker attribution;
+* correction-affected utterance;
+* and integrity-warning queue.
+
+Review interfaces may initially be CLI and report based, but must provide:
+
+* source interval;
+* playable media reference or extraction command;
+* local transcript context;
+* speaker evidence;
+* proposed action;
+* competing alternatives;
+* and current review status.
+
+A reviewer must be able to inspect the evidence without reconstructing lineage manually.
+
+---
+
+## 4.18 Utterance-corpus export
+
+Produce a portable Phase 4 corpus.
+
+The export must include:
+
+* corpus manifest;
+* utterance records;
+* utterance-component mappings;
+* interruption relationships;
+* continuation relationships;
+* self-repair records;
+* quotation records;
+* context windows or reproducible context policies;
+* review records;
+* integrity results;
+* schema inventory;
+* version information;
+* and relative references to prior-phase artifacts.
+
+The export must support reload and complete integrity validation.
+
+The corpus must not require provider execution merely to inspect previously completed evidence.
+
+---
+
+## 4.19 Reporting
+
+Produce machine-readable and human-readable reports for:
+
+* utterance segmentation;
+* utterance completeness;
+* interruptions;
+* continuations;
+* turn repairs;
+* self-repairs and disfluencies;
+* overlap attribution;
+* quotations;
+* speaker attribution;
+* context windows;
+* correction propagation;
+* manual review;
+* unresolved issues;
+* corpus integrity;
+* cache and recovery;
+* evaluation;
+* and phase completion.
+
+Reports must distinguish:
+
+* inherited evidence;
+* machine-derived structure;
+* rule-based proposals;
+* model-assisted proposals;
+* human decisions;
+* measured evaluation;
+* unresolved conflicts;
+* and future expectations.
+
+---
+
+## 5. Required domain artifacts
+
+The exact names may vary, but the implementation must provide versioned equivalents of:
+
+* `UtteranceRun`
+* `UtteranceCorpus`
+* `Utterance`
+* `UtteranceComponent`
+* `UtteranceTextView`
+* `UtteranceAttribution`
+* `UtteranceCompleteness`
+* `InterruptionRelation`
+* `ContinuationRelation`
+* `TurnRepairProposal`
+* `TurnRepairDecision`
+* `SelfRepair`
+* `DisfluencySpan`
+* `SpokenQuotation`
+* `EmbeddedSpeechSource`
+* `ContextWindow`
+* `ContextWindowPolicy`
+* `UtteranceReviewAction`
+* `UtteranceView`
+* `CorrectionPropagationResult`
+* `UtteranceReference`
+* `UtteranceEvaluation`
+* `UtteranceCorpusReport`
+* `Phase4IntegrityResult`
+
+All persisted artifacts must have:
+
+* strict schemas;
+* explicit format versions;
+* policy versions;
+* provenance;
+* canonical serialization;
+* integrity validation;
+* strict loading;
+* and unsupported-version refusal.
+
+---
+
+## 6. Processing sequence
+
+### Stage 1: Contracts and policy
+
+* Define utterance and relationship contracts.
+* Define segmentation policy.
+* Define identity-view and transcript-view dependencies.
+* Define identifier and versioning rules.
+* Define correction-propagation boundaries.
+* Define evaluation policy.
+
+### Stage 2: Initial utterance segmentation
+
+* Align Phase 2 words and segments with Phase 3 turns.
+* Produce provisional utterance boundaries.
+* Preserve uncertain boundaries.
+* Create utterance components and text views.
+* Validate source lineage.
+
+### Stage 3: Completeness and disfluency
+
+* Classify complete and incomplete utterances.
+* Detect bounded restart, repetition, and self-repair candidates.
+* Preserve raw wording.
+* Produce review flags.
+
+### Stage 4: Interruption and overlap
+
+* Construct interruption relationships.
+* Link interrupting and interrupted utterances.
+* Preserve overlap timelines.
+* Identify possible resumptions.
+* Avoid assigning intent or blame.
+
+### Stage 5: Turn repair
+
+* Detect transcript and diarization boundary conflicts.
+* Produce bounded repair proposals.
+* Apply accepted repairs through successor artifacts.
+* Preserve original evidence.
+
+### Stage 6: Quotation and embedded speech
+
+* Identify bounded quotation candidates.
+* Distinguish acoustic speaker from quoted speaker.
+* Represent played or remote speech.
+* Produce quotation review queues.
+
+### Stage 7: Speaker-attributed transcript
+
+* Assemble machine-cluster and reviewed-identity views.
+* Preserve unknown speakers.
+* Render interruption, overlap, continuation, and quotation markers.
+* Validate complete lineage.
+
+### Stage 8: Context windows
+
+* Implement deterministic window policies.
+* Preserve temporal relations and overlap.
+* Enforce context budgets.
+* Record truncation and exclusions.
+
+### Stage 9: Correction propagation and review
+
+* Detect prior-phase changes.
+* Selectively invalidate affected utterances.
+* Rebuild dependent views and windows.
+* Implement append-only review actions.
+* Produce propagation reports.
+
+### Stage 10: Evaluation and qualification
+
+* Evaluate segmentation, attribution, interruption, quotation, and correction behavior.
+* Exercise recovery and corruption cases.
+* Qualify long-recording operation.
+* Produce checked-in completion evidence.
+
+---
+
+## 7. Required command-line operations
+
+Provide CLI operations equivalent to:
+
+* build an utterance corpus;
+* resume utterance construction;
+* validate an utterance corpus;
+* list utterances;
+* inspect one utterance;
+* render source context;
+* render a speaker-attributed transcript;
+* list incomplete utterances;
+* list interruption candidates;
+* list continuation candidates;
+* list overlap-attribution issues;
+* list turn-repair proposals;
+* accept or reject a repair;
+* list self-repair candidates;
+* list quotation candidates;
+* mark or revise a quotation;
+* generate a context window;
+* show context truncation;
+* review an utterance;
+* split or merge utterances;
+* move an utterance boundary;
+* propagate Phase 2 or Phase 3 corrections;
+* show propagation impact;
+* export the utterance corpus;
+* reload and verify an exported corpus;
+* evaluate utterance construction;
+* produce Phase 4 reports;
+* and verify Phase 4 completion.
+
+Commands must return structured, typed failures.
+
+---
+
+## 8. Configuration requirements
+
+Persist all configuration that can affect utterance construction.
+
+At minimum, record:
+
+* transcript-view version;
+* identity-view version;
+* segmentation policy;
+* pause thresholds;
+* syntactic-boundary policy;
+* punctuation use;
+* minimum and maximum utterance duration;
+* interruption policy;
+* overlap policy;
+* continuation policy;
+* self-repair policy;
+* quotation policy;
+* embedded-speech policy;
+* context-window policy;
+* context-budget policy;
+* normalization policy;
+* correction-propagation policy;
+* cache policy;
+* timeout policy;
+* review-queue thresholds;
+* and evaluation policy.
+
+Configuration changes must selectively invalidate dependent artifacts.
+
+Presentation-only changes must not force source-level reconstruction.
+
+---
+
+## 9. Integrity requirements
+
+Phase 4 integrity validation must detect at least:
+
+* missing Phase 1, Phase 2, or Phase 3 lineage;
+* incompatible transcript and identity views;
+* source hash mismatch;
+* invalid source intervals;
+* utterance component time regression;
+* transcript words assigned to incompatible utterances;
+* words missing from canonical assembly without explicit disposition;
+* duplicate canonical word ownership;
+* invalid speaker attribution target;
+* conflicting canonical speaker attributions;
+* interruption relation without temporal support;
+* impossible interruption ordering;
+* continuation cycles;
+* continuation across incompatible speakers without explicit justification;
+* utterance marked complete despite unresolved clipping classification;
+* quotation spans outside utterance text;
+* quoted speaker confused with acoustic speaker;
+* self-repair spans in invalid order;
+* turn repair referencing unknown artifacts;
+* manual review lineage cycles;
+* context windows containing incompatible corpus versions;
+* context order regression;
+* undisclosed context truncation;
+* correction propagation using stale prior-phase versions;
+* unsupported schema or policy versions;
+* and corrupted cached artifacts.
+
+Integrity failure must produce explicit typed findings.
+
+---
+
+## 10. Qualification corpus
+
+Phase 4 qualification must include controlled cases covering:
+
+* clean complete utterance;
+* multiple utterances in one speaker turn;
+* one utterance spanning transcript segments;
+* one transcript segment spanning speakers;
+* short fragment;
+* abandoned utterance;
+* trailing speech;
+* clipped ending;
+* false start;
+* repetition;
+* self-correction;
+* filler and hesitation;
+* direct interruption;
+* rapid turn takeover;
+* supportive interjection;
+* moderator cutoff;
+* audience interruption;
+* speaker resumption;
+* ambiguous continuation;
+* simultaneous utterances;
+* uncertain word attribution during overlap;
+* direct quotation;
+* partial quotation;
+* paraphrase;
+* reported speech;
+* hypothetical quotation;
+* self-quotation;
+* played recording;
+* remote speaker;
+* unknown speaker;
+* conflicting identity binding;
+* transcript correction affecting text only;
+* transcript correction affecting timing;
+* speaker correction affecting attribution;
+* correction requiring resegmentation;
+* manual split;
+* manual merge;
+* manual boundary move;
+* and speech spanning chunk transitions.
+
+Controlled references must be independently prepared and source-addressed.
+
+Synthetic fixtures may prove mechanics but must be labeled separately from natural-speech performance evidence.
+
+---
+
+## 11. Evaluation requirements
+
+Create a controlled evaluation framework capable of measuring:
+
+* utterance-boundary precision;
+* utterance-boundary recall;
+* boundary timing error;
+* utterance segmentation similarity;
+* speaker-attribution accuracy;
+* unknown-attribution appropriateness;
+* interruption detection precision and recall;
+* continuation-link accuracy;
+* incomplete-utterance classification accuracy;
+* overlap-preservation accuracy;
+* self-repair detection accuracy;
+* quotation-span accuracy;
+* quotation-type accuracy;
+* quoted-speaker attribution accuracy where references exist;
+* correction-propagation completeness;
+* unaffected-artifact stability;
+* context-window reproducibility;
+* context truncation correctness;
+* and manual-review impact.
+
+Evaluation policy must specify:
+
+* boundary collars;
+* treatment of punctuation;
+* treatment of backchannels;
+* treatment of fillers;
+* treatment of overlapping utterances;
+* treatment of resumed utterances;
+* treatment of unknown speakers;
+* and treatment of non-lexical vocalization.
+
+Results must be stratified where possible.
+
+Useful strata include:
+
+* clean speech;
+* rapid exchange;
+* interruption;
+* overlap;
+* incomplete speech;
+* correction-affected speech;
+* quotation;
+* embedded speech;
+* and chunk boundaries.
+
+---
+
+## 12. Required negative proofs
+
+Qualification must demonstrate typed refusal or conservative degradation for:
+
+* unsupported prior-phase format;
+* missing transcript view;
+* missing identity view;
+* incompatible transcript and identity lineages;
+* corrupted source mapping;
+* duplicate word ownership;
+* transcript word outside source bounds;
+* speaker turn outside source bounds;
+* invalid utterance component order;
+* impossible interruption relation;
+* continuation cycle;
+* merge across incompatible simultaneous speakers;
+* quotation span outside utterance;
+* quoted and acoustic speaker conflation;
+* invalid turn-repair target;
+* stale correction propagation;
+* manual review against unknown utterance;
+* context window built from mixed corpus versions;
+* undisclosed context truncation;
+* unsupported schema version;
+* provider or optional analyzer failure;
+* and corrupted cache artifact.
+
+A crash, silent omission, invented completion, forced attribution, or destructive rewrite is not a passing negative proof.
+
+---
+
+## 13. Cache, resume, and recovery
+
+Phase 4 must preserve stage-local recovery.
+
+Required behavior:
+
+* cache initial segmentation separately from review decisions;
+* cache completeness and repair analysis separately;
+* cache quotation analysis separately;
+* cache context windows by policy and corpus version;
+* validate artifacts before reuse;
+* quarantine corruption;
+* selectively invalidate correction-affected artifacts;
+* preserve unaffected utterance identifiers;
+* resume after each persisted stage;
+* and avoid reinvoking optional analyzers when valid outputs already exist.
+
+Recovery qualification must include interruption after:
+
+* initial alignment;
+* utterance segmentation;
+* completeness classification;
+* interruption construction;
+* repair proposal generation;
+* quotation construction;
+* attributed transcript assembly;
+* context-window generation;
+* correction propagation;
+* and corpus export.
+
+---
+
+## 14. Long-recording requirements
+
+Phase 4 must qualify operation on a recording longer than two hours.
+
+The proof must demonstrate:
+
+* bounded memory;
+* reuse of Phase 1 chunk ownership;
+* reuse of Phase 2 transcript evidence;
+* reuse of Phase 3 speaker evidence;
+* stable cross-chunk utterance construction;
+* no duplicate word or utterance ownership;
+* cross-chunk continuation handling;
+* interruption handling near chunk boundaries;
+* context-window generation;
+* interruption and resume;
+* cache replay;
+* export and reload;
+* and final integrity validation.
+
+Synthetic markers may qualify mechanics, but they must not support claims about natural utterance-segmentation quality.
+
+---
+
+## 15. Regression requirements
+
+Phase 4 must preserve all Phase 0 through Phase 3 guarantees.
+
+The regression suite must demonstrate that Phase 4 does not:
+
+* alter source media;
+* alter normalized audio;
+* alter canonical transcript evidence;
+* alter transcript corrections;
+* alter diarization observations;
+* alter speaker clusters;
+* alter identity bindings;
+* force unknown speakers into named identities;
+* erase overlap;
+* invent missing speech;
+* convert quotation into acoustic attribution;
+* introduce factual claim extraction;
+* introduce argument analysis;
+* introduce credibility analysis;
+* assign interruption blame;
+* infer intent;
+* score participant performance;
+* or produce judgments.
+
+---
+
+## 16. Explicit exclusions
+
+Phase 4 must not implement:
+
+* semantic claim extraction;
+* argument construction;
+* question-answer responsiveness scoring;
+* factual verification;
+* contradiction adjudication;
+* deception detection;
+* credibility scoring;
+* sentiment scoring;
+* rhetorical-quality scoring;
+* interruption blame;
+* politeness scoring;
+* dominance scoring;
+* mental-state inference;
+* cognitive-condition inference;
+* political-position inference;
+* debate winner selection;
+* or final evidentiary judgment.
+
+Phase 4 may create structural evidence later consumed by those phases, but it must not silently perform them.
+
+---
+
+## 17. Documentation requirements
+
+Document:
+
+* the distinction among transcript segment, speaker turn, utterance, sentence, and proposition;
+* utterance-segmentation policy;
+* completeness classifications;
+* interruption semantics;
+* continuation semantics;
+* turn repair;
+* self-repair and disfluency representation;
+* overlap-aware assembly;
+* quotation handling;
+* embedded and replayed speech;
+* speaker attribution;
+* context-window construction;
+* context truncation;
+* correction propagation;
+* manual review;
+* cache invalidation;
+* long-recording behavior;
+* evaluation methodology;
+* and phase boundaries.
+
+The documentation must state plainly:
+
+* an utterance is an analytical grouping;
+* an utterance need not be grammatically complete;
+* a quoted speaker is not necessarily the acoustic speaker;
+* an interruption flag does not establish intent or blame;
+* and unknown attribution remains acceptable.
+
+---
+
+## 18. Completion evidence
+
+The Phase 4 completion report must include:
+
+* application and contract versions;
+* starting and final repository state;
+* corpus and configuration identifiers;
+* prior-phase view versions;
+* utterance counts;
+* average and distributional utterance durations;
+* complete and incomplete classifications;
+* interruption counts and durations;
+* continuation relationships;
+* overlap-aware utterance counts;
+* self-repair and disfluency counts;
+* quotation counts and types;
+* embedded-speech counts;
+* speaker-attribution dispositions;
+* unknown and conflicting attribution counts;
+* turn-repair proposals and accepted repairs;
+* manual review actions;
+* correction-propagation results;
+* context-window counts and truncation results;
+* evaluation metrics;
+* long-recording results;
+* cache and recovery results;
+* peak-memory results;
+* negative-case results;
+* regression results;
+* known limitations;
+* evidence inventory;
+* and unresolved concerns.
+
+Measured evidence, synthetic mechanics, model-assisted proposals, human review, and future expectations must remain separate.
+
+---
+
+## 19. Exit gates
+
+Phase 4 is complete only when all of the following gates pass.
+
+### Gate 1: Stable utterance construction
+
+The system produces stable utterance records from declared Phase 2 and Phase 3 views.
+
+### Gate 2: Complete source lineage
+
+Every utterance maps to its source intervals, transcript components, and speaker evidence.
+
+### Gate 3: Speaker attribution
+
+Each utterance carries an explicit machine, reviewed, conflicting, or unknown speaker-attribution state.
+
+### Gate 4: Utterance completeness
+
+Complete, incomplete, interrupted, abandoned, clipped, fragmentary, and unknown speech states are machine-readable.
+
+### Gate 5: Turn repair
+
+Transcript and diarization boundary conflicts can produce bounded, reviewable repair proposals without rewriting prior-phase evidence.
+
+### Gate 6: Interrupted speech
+
+Interruptions are represented through temporal relationships and overlap evidence without assigning intent or blame.
+
+### Gate 7: Continued and resumed speech
+
+The system can preserve bounded continuation relationships across interruption or pause without hiding non-contiguous source intervals.
+
+### Gate 8: Self-repair and disfluency
+
+False starts, repetitions, repairs, fillers, and abandoned material can be preserved without artificial cleanup.
+
+### Gate 9: Overlap-aware corpus
+
+Simultaneous utterances remain independently represented and are not flattened into a false sequence.
+
+### Gate 10: Quotation handling
+
+The system distinguishes acoustic speaker, quoting speaker, quoted speaker, quotation, paraphrase, and reported speech.
+
+### Gate 11: Speaker-attributed transcript
+
+Machine-cluster, reviewed-identity, and unknown-preserving transcript views can be rendered from the utterance corpus.
+
+### Gate 12: Context windows
+
+Deterministic, bounded, source-traceable context windows can be generated with explicit truncation.
+
+### Gate 13: Correction propagation
+
+Phase 2 and Phase 3 changes selectively invalidate and rebuild affected Phase 4 artifacts while preserving unaffected evidence.
+
+### Gate 14: Manual review
+
+Reviewers can split, merge, reclassify, relink, and defer utterance decisions through append-only records.
+
+### Gate 15: Evaluation
+
+Segmentation, attribution, interruption, continuation, quotation, overlap, and propagation behavior are evaluated against controlled references.
+
+### Gate 16: Cache and recovery
+
+Validated artifacts are reused safely, corrupted entries are quarantined, and interrupted processing resumes from persisted boundaries.
+
+### Gate 17: Integrity
+
+Malformed, incompatible, impossible, stale, or conflicting Phase 4 artifacts are detected and refused or explicitly degraded.
+
+### Gate 18: Long-recording operation
+
+A recording longer than two hours is processed with bounded memory, stable cross-chunk utterances, resumability, cache replay, export, and reload.
+
+### Gate 19: Regression and boundary
+
+All prior-phase tests pass, and no claim extraction, argument analysis, factual adjudication, credibility scoring, intent inference, or participant judgment is introduced.
+
+---
+
+## 20. Success definition
+
+Phase 4 succeeds when Ratiocinatus can take compatible Phase 2 transcript evidence and Phase 3 participant-speech evidence and produce a portable, integrity-checked corpus of speaker-attributed utterances that:
+
+* groups speech into stable analytical units;
+* preserves source and prior-phase lineage;
+* represents complete and incomplete speech;
+* preserves interruption, overlap, continuation, restart, and repair;
+* distinguishes quotation from acoustic speaker attribution;
+* supports machine, reviewed, conflicting, and unknown speaker states;
+* produces deterministic speaker-attributed transcript views;
+* creates bounded context windows;
+* propagates prior-phase corrections selectively;
+* supports append-only human review;
+* survives interruption and recovery;
+* qualifies long-recording operation;
+* and remains suitable for later discourse, claim, argument, and adjudication phases.
+
+The resulting utterance corpus must improve analytical addressability without converting uncertain speech, uncertain attribution, or incomplete language into false certainty.

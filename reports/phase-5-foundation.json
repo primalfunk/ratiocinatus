@@ -1,0 +1,32 @@
+{
+  "qualification": "phase-5-contract-vocabulary-and-evidence-foundation",
+  "status": "passed",
+  "target_application_version": "0.7.0",
+  "evidence_class": "synthetic_mechanics",
+  "phase5_contract_models": 18,
+  "discourse_act_types": 145,
+  "discourse_act_families": 13,
+  "runtime_contracts": 338,
+  "focused_test_count": 6,
+  "full_regression_test_count": 256,
+  "work_order": "docs/work_orders/phase_05.txt",
+  "work_order_sha256": "3ccc2b2618d766f76f1c5483b848fc0a01f31ce046ebb00ab818f4ddf8f666e7",
+  "assertions": [
+    "Phase 4 utterance evidence remains immutable and is verified by complete canonical digest.",
+    "The closed versioned vocabulary assigns every one of 145 act types to exactly one of thirteen families.",
+    "Multiple compatible acts may be selected without forcing a dominant label.",
+    "Unknown and explicitly unclassified utterances are valid outcomes.",
+    "Every selected act retains exact Phase 4 text-view, character-offset, word, source-interval, and confidence evidence.",
+    "Identified, probable, multiple-candidate, implicit, and unresolved targets remain distinct.",
+    "Provider proposals cannot become authoritative without normalization, validation, and selection.",
+    "Act, span, target, selection, question, answer, quotation, and procedural confidence remain distinct dimensions.",
+    "Canonical acts retain observation and candidate provenance.",
+    "Correction propagation invalidates affected spans and preserves justified unaffected identifiers.",
+    "Strict persistence is sealed, reloadable, and refuses source or evidence mismatch.",
+    "Assertion does not imply truth, answer adequacy, rebuttal success, procedural violation, intent, or participant merit."
+  ],
+  "limitations": [
+    "This slice qualifies contract, lineage, addressing, selection, and provider-boundary mechanics rather than discourse classification accuracy.",
+    "Deterministic classification and domain-specific relation artifacts begin in later slices."
+  ]
+}

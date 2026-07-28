@@ -1,0 +1,31 @@
+{
+  "qualification": "phase-5-bounded-provider-assisted-classification",
+  "status": "passed",
+  "target_application_version": "0.7.0",
+  "evidence_class": "synthetic_provider_mechanics",
+  "provider_analysis_contract_models": 9,
+  "runtime_contracts": 350,
+  "focused_test_count": 6,
+  "full_regression_test_count": 268,
+  "assertions": [
+    "Every provider request contains one target and the exact members of one bounded Phase 4 temporal context window.",
+    "Phase 4 corpus, context bundle, context window, text-view, source-interval, provider, model, policy, and configuration lineage is retained.",
+    "Multiple structured provider proposals normalize into separate immutable observations.",
+    "Provider evidence spans must reproduce exact target text offsets.",
+    "Identified utterance targets and alternatives are confined to the supplied bounded context.",
+    "Provider output remains non-authoritative until a later consolidation stage.",
+    "Provider-native and unavailable confidence origins remain explicit and uncalibrated.",
+    "Raw structured output is retained or hash-addressed through a required digest.",
+    "A retryable timeout retries only within policy and does not duplicate normalized observations.",
+    "Malformed spans become typed validation failures rather than evidence.",
+    "An unavailable provider produces a typed warning and no forced classification.",
+    "Persisted provider runs reload and validate without provider reinvocation.",
+    "Provider output destinations cannot overlap Phase 4 utterance or context evidence.",
+    "CLI operations build, validate, inspect, and list provider observations and failures."
+  ],
+  "limitations": [
+    "The controlled provider qualifies boundary and normalization mechanics, not natural-conversation classification accuracy.",
+    "No production discourse model is selected or qualified.",
+    "Provider confidence is not comparable across providers without calibration."
+  ]
+}

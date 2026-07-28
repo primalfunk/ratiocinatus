@@ -1,0 +1,27 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "conflicted_identity_views_block_trusted_rendering": true,
+    "corrected_revision_lineage_is_preserved": true,
+    "multiple_candidates_and_overlap_are_explicit": true,
+    "phase2_transcript_is_not_modified": true,
+    "source_segments_are_preserved": true,
+    "speaker_turn_and_segment_relations_are_many_to_many": true,
+    "unattributed_content_is_preserved": true,
+    "validation_reconstructs_attribution_spans": true
+  },
+  "phase": 3,
+  "qualification": "phase-3-speaker-labeled-transcript-integration",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 211
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_speaker_transcript_integration": 5,
+    "full_regression": 168,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

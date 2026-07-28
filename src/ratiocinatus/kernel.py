@@ -524,9 +524,170 @@ class Workspace:
 
 
 def export_schemas(destination: Path) -> list[Path]:
+    from .addressing_contracts import ADDRESSING_CONTRACT_MODELS
+    from .chunk_contracts import CHUNK_CONTRACT_MODELS
+    from .corpus_contracts import CORPUS_CONTRACT_MODELS
+    from .normalization_contracts import NORMALIZATION_CONTRACT_MODELS
+    from .materialization_contracts import MATERIALIZATION_CONTRACT_MODELS
+    from .phase1_contracts import PHASE1_CONTRACT_MODELS
+    from .packet_contracts import PACKET_CONTRACT_MODELS
+    from .phase2_contracts import PHASE2_CONTRACT_MODELS
+    from .phase3_contracts import PHASE3_CONTRACT_MODELS
+    from .phase4_contracts import PHASE4_CONTRACT_MODELS
+    from .utterance_relation_contracts import (
+        PHASE4_RELATION_CONTRACT_MODELS,
+    )
+    from .turn_repair_contracts import TURN_REPAIR_CONTRACT_MODELS
+    from .quotation_contracts import QUOTATION_CONTRACT_MODELS
+    from .utterance_view_contracts import UTTERANCE_VIEW_CONTRACT_MODELS
+    from .context_window_contracts import CONTEXT_WINDOW_CONTRACT_MODELS
+    from .phase4_review_contracts import PHASE4_REVIEW_CONTRACT_MODELS
+    from .phase4_evaluation_contracts import PHASE4_EVALUATION_CONTRACT_MODELS
+    from .phase4_export_contracts import PHASE4_EXPORT_CONTRACT_MODELS
+    from .phase4_recovery_contracts import PHASE4_RECOVERY_CONTRACT_MODELS
+    from .phase4_completion_contracts import (
+        PHASE4_COMPLETION_CONTRACT_MODELS,
+    )
+    from .phase5_contracts import PHASE5_CONTRACT_MODELS
+    from .phase5_provider_contracts import (
+        PHASE5_PROVIDER_CONTRACT_MODELS,
+    )
+    from .phase5_baseline_contracts import (
+        PHASE5_BASELINE_CONTRACT_MODELS,
+    )
+    from .phase5_provider_analysis_contracts import (
+        PHASE5_PROVIDER_ANALYSIS_CONTRACT_MODELS,
+    )
+    from .phase5_consolidation_contracts import (
+        PHASE5_CONSOLIDATION_CONTRACT_MODELS,
+    )
+    from .phase5_question_answer_contracts import (
+        PHASE5_QUESTION_ANSWER_CONTRACT_MODELS,
+    )
+    from .phase5_argument_relation_contracts import (
+        PHASE5_ARGUMENT_RELATION_CONTRACT_MODELS,
+    )
+    from .phase5_lexical_example_quotation_contracts import (
+        PHASE5_LEXICAL_EXAMPLE_QUOTATION_CONTRACT_MODELS,
+    )
+    from .phase5_procedural_state_contracts import (
+        PHASE5_PROCEDURAL_STATE_CONTRACT_MODELS,
+    )
+    from .phase5_review_contracts import (
+        PHASE5_REVIEW_CONTRACT_MODELS,
+    )
+    from .phase5_evaluation_contracts import (
+        PHASE5_EVALUATION_CONTRACT_MODELS,
+    )
+    from .phase5_export_contracts import (
+        PHASE5_EXPORT_CONTRACT_MODELS,
+    )
+    from .phase5_recovery_contracts import (
+        PHASE5_RECOVERY_CONTRACT_MODELS,
+    )
+    from .phase5_completion_contracts import (
+        PHASE5_COMPLETION_CONTRACT_MODELS,
+    )
+    from .clustering_contracts import CLUSTERING_CONTRACT_MODELS
+    from .clustering_evaluation_contracts import (
+        CLUSTERING_EVALUATION_CONTRACT_MODELS,
+    )
+    from .diarization_evaluation_contracts import (
+        DIARIZATION_EVALUATION_CONTRACT_MODELS,
+    )
+    from .identity_contracts import IDENTITY_CONTRACT_MODELS
+    from .identity_binding_contracts import (
+        IDENTITY_BINDING_CONTRACT_MODELS,
+    )
+    from .identity_view_contracts import (
+        IDENTITY_VIEW_CONTRACT_MODELS,
+    )
+    from .speaker_transcript_contracts import (
+        SPEAKER_TRANSCRIPT_CONTRACT_MODELS,
+    )
+    from .participant_subtitle_contracts import (
+        PARTICIPANT_SUBTITLE_CONTRACT_MODELS,
+    )
+    from .reference_enrollment_contracts import (
+        REFERENCE_ENROLLMENT_CONTRACT_MODELS,
+    )
+    from .reference_comparison_contracts import (
+        REFERENCE_COMPARISON_CONTRACT_MODELS,
+    )
+    from .transcript_contracts import TRANSCRIPT_CONTRACT_MODELS
+    from .correction_contracts import CORRECTION_CONTRACT_MODELS
+    from .subtitle_contracts import SUBTITLE_CONTRACT_MODELS
+    from .evaluation_contracts import EVALUATION_CONTRACT_MODELS
+    from .recovery_contracts import RECOVERY_CONTRACT_MODELS
+    from .phase3_recovery_contracts import (
+        PHASE3_RECOVERY_CONTRACT_MODELS,
+    )
+    from .phase3_completion_contracts import (
+        PHASE3_COMPLETION_CONTRACT_MODELS,
+    )
+    from .qualification_contracts import QUALIFICATION_CONTRACT_MODELS
+    from .selection_contracts import SELECTION_CONTRACT_MODELS
+    from .video_contracts import VIDEO_CONTRACT_MODELS
+
     destination.mkdir(parents=True, exist_ok=True)
     paths = []
-    for model in CONTRACT_MODELS:
+    for model in (
+        *CONTRACT_MODELS,
+        *PHASE1_CONTRACT_MODELS,
+        *PACKET_CONTRACT_MODELS,
+        *PHASE2_CONTRACT_MODELS,
+        *PHASE3_CONTRACT_MODELS,
+        *PHASE4_CONTRACT_MODELS,
+        *PHASE4_RELATION_CONTRACT_MODELS,
+        *TURN_REPAIR_CONTRACT_MODELS,
+        *QUOTATION_CONTRACT_MODELS,
+        *UTTERANCE_VIEW_CONTRACT_MODELS,
+        *CONTEXT_WINDOW_CONTRACT_MODELS,
+        *PHASE4_REVIEW_CONTRACT_MODELS,
+        *PHASE4_EVALUATION_CONTRACT_MODELS,
+        *PHASE4_EXPORT_CONTRACT_MODELS,
+        *PHASE4_RECOVERY_CONTRACT_MODELS,
+        *PHASE4_COMPLETION_CONTRACT_MODELS,
+        *PHASE5_CONTRACT_MODELS,
+        *PHASE5_PROVIDER_CONTRACT_MODELS,
+        *PHASE5_BASELINE_CONTRACT_MODELS,
+        *PHASE5_PROVIDER_ANALYSIS_CONTRACT_MODELS,
+        *PHASE5_CONSOLIDATION_CONTRACT_MODELS,
+        *PHASE5_QUESTION_ANSWER_CONTRACT_MODELS,
+        *PHASE5_ARGUMENT_RELATION_CONTRACT_MODELS,
+        *PHASE5_LEXICAL_EXAMPLE_QUOTATION_CONTRACT_MODELS,
+        *PHASE5_PROCEDURAL_STATE_CONTRACT_MODELS,
+        *PHASE5_REVIEW_CONTRACT_MODELS,
+        *PHASE5_EVALUATION_CONTRACT_MODELS,
+        *PHASE5_EXPORT_CONTRACT_MODELS,
+        *PHASE5_RECOVERY_CONTRACT_MODELS,
+        *PHASE5_COMPLETION_CONTRACT_MODELS,
+        *CLUSTERING_CONTRACT_MODELS,
+        *CLUSTERING_EVALUATION_CONTRACT_MODELS,
+        *DIARIZATION_EVALUATION_CONTRACT_MODELS,
+        *IDENTITY_CONTRACT_MODELS,
+        *IDENTITY_BINDING_CONTRACT_MODELS,
+        *IDENTITY_VIEW_CONTRACT_MODELS,
+        *SPEAKER_TRANSCRIPT_CONTRACT_MODELS,
+        *PARTICIPANT_SUBTITLE_CONTRACT_MODELS,
+        *REFERENCE_ENROLLMENT_CONTRACT_MODELS,
+        *REFERENCE_COMPARISON_CONTRACT_MODELS,
+        *TRANSCRIPT_CONTRACT_MODELS,
+        *CORRECTION_CONTRACT_MODELS,
+        *SUBTITLE_CONTRACT_MODELS,
+        *EVALUATION_CONTRACT_MODELS,
+        *RECOVERY_CONTRACT_MODELS,
+        *PHASE3_RECOVERY_CONTRACT_MODELS,
+        *PHASE3_COMPLETION_CONTRACT_MODELS,
+        *SELECTION_CONTRACT_MODELS,
+        *ADDRESSING_CONTRACT_MODELS,
+        *CHUNK_CONTRACT_MODELS,
+        *CORPUS_CONTRACT_MODELS,
+        *NORMALIZATION_CONTRACT_MODELS,
+        *MATERIALIZATION_CONTRACT_MODELS,
+        *QUALIFICATION_CONTRACT_MODELS,
+        *VIDEO_CONTRACT_MODELS,
+    ):
         path = destination / f"{model.__name__}.schema.json"
         path.write_bytes(canonical_bytes(model.model_json_schema()))
         paths.append(path)

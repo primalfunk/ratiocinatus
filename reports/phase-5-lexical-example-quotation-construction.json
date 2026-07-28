@@ -1,0 +1,37 @@
+{
+  "qualification": "phase-5-lexical-example-quotation-construction",
+  "status": "passed",
+  "target_application_version": "0.7.0",
+  "evidence_class": "synthetic_lexical_example_quotation_mechanics",
+  "construction_contract_models": 6,
+  "runtime_contracts": 371,
+  "focused_stage_test_count": 6,
+  "focused_phase_test_count": 41,
+  "full_regression_test_count": 291,
+  "assertions": [
+    "Every canonical definition act produces a local definition record.",
+    "Definition records retain defined expression, exact defining text, type, scope, applicable context, exclusions, competitors, challenge links, confidence, and review.",
+    "Definitions remain local unless later evidence explicitly broadens scope.",
+    "Competing definitions remain linked peers.",
+    "Nearest bounded definition challenges remain linked without adjudicating the definition.",
+    "Every canonical example act produces an example record.",
+    "A single nearest prior generalization is probable and review-required.",
+    "Several candidate generalizations remain alternatives and no candidate remains unresolved.",
+    "Example records preserve real, hypothetical, quoted, and uncertain states.",
+    "Example records cannot claim representativeness or proof.",
+    "Every canonical quotation act produces a quotation-use record.",
+    "Matched quotation uses copy exact Phase 4 quotation structure and attribution provenance.",
+    "Acoustic speaker, quoting speaker, attributed speaker, and original source remain distinct fields.",
+    "Phase 5 quotation use cannot mutate Phase 4 acoustic attribution.",
+    "Unmatched quotation uses remain review-required.",
+    "Construction run and report artifacts are sealed, replayable, and reusable.",
+    "CLI operations build, validate, inspect, and list definitions, examples, quotation uses, and unresolved structures.",
+    "Schema export includes all six Stage 7 contracts."
+  ],
+  "limitations": [
+    "Definition extraction is limited to explicit structural wording.",
+    "Example target selection is a bounded candidate heuristic, not semantic proof.",
+    "Participant references remain empty without explicit structured evidence.",
+    "The controlled fixtures qualify construction mechanics, not natural-conversation semantic accuracy."
+  ]
+}

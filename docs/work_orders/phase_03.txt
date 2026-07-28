@@ -1,0 +1,1440 @@
+# Ratiocinatus Phase 3 Work Order
+
+## Speaker Diarization and Participant Identity Foundations
+
+**Phase:** 3
+**Target application version:** 0.5.0
+**Date:** 2026-07-26
+**Starting point:** Completed Phase 2 timestamped transcript-evidence boundary
+**Primary goal:** Determine who appears to be speaking across addressable source intervals without forcing speaker continuity or real-world identity certainty.
+
+---
+
+## 1. Objective
+
+Phase 3 shall transform the Phase 1 audiovisual corpus and Phase 2 temporal speech evidence into structured speaker-participation evidence.
+
+The phase must establish:
+
+* where speaker turns begin and end;
+* when more than one person appears to be speaking;
+* which speech intervals appear to belong to the same voice;
+* how consistent each proposed speaker cluster is;
+* where speaker assignment remains uncertain;
+* what identity hypotheses may be associated with a speaker cluster;
+* how reference voices may support or weaken those hypotheses;
+* how a human reviewer may bind, reject, revise, or leave identity unresolved;
+* and how every diarization or identity claim maps back to the source recording.
+
+Phase 3 must not assume that:
+
+* one diarization cluster always represents one person;
+* one person always maps to one cluster;
+* a voice match proves legal or real-world identity;
+* a visible participant is necessarily the current speaker;
+* a transcript speaker label is correct merely because it is internally consistent;
+* or every speech interval can be assigned confidently.
+
+The result is a participant-identity foundation, not a final speaker-identification system.
+
+---
+
+## 2. Governing distinctions
+
+The implementation must preserve the following distinctions throughout its contracts, processing, reports, and user-facing views.
+
+### 2.1 Speech activity
+
+A claim that human speech is probably present.
+
+This is inherited from Phase 2 and must not be silently redefined by the diarization provider.
+
+### 2.2 Speaker turn
+
+A bounded interval during which one speaker appears to hold the primary speaking role.
+
+A speaker turn is a temporal claim, not an identity claim.
+
+### 2.3 Speaker observation
+
+A bounded piece of acoustic evidence extracted from a source interval and attributed provisionally to a voice representation.
+
+Observations may later be merged, split, rejected, or marked unusable.
+
+### 2.4 Speaker cluster
+
+A hypothesis that multiple observations probably originate from the same speaker.
+
+A cluster is not a person.
+
+### 2.5 Participant identity hypothesis
+
+A proposition that a cluster or observation may correspond to a named or otherwise described participant.
+
+A hypothesis must carry evidence, confidence, alternatives, and status.
+
+### 2.6 Identity binding
+
+An explicit decision associating a cluster or observation with a participant identity.
+
+Bindings may be:
+
+* manual;
+* reference-supported;
+* imported from trusted external metadata;
+* provisional;
+* confirmed for a bounded scope;
+* rejected;
+* superseded;
+* or unresolved.
+
+### 2.7 Unknown state
+
+A valid result indicating that the available evidence does not justify speaker assignment, cluster continuity, or identity.
+
+Unknown must never be treated as a processing failure merely because the system cannot name or cluster a speaker.
+
+---
+
+## 3. Evidentiary principles
+
+### 3.1 The recording remains authoritative
+
+Phase 1 audiovisual evidence remains authoritative.
+
+Phase 2 transcripts, Phase 3 clusters, voice embeddings, identity hypotheses, and manual labels are analytical derivatives.
+
+No Phase 3 operation may alter the recording, normalized audio, canonical Phase 2 transcript, or prior evidence lineage.
+
+### 3.2 Diarization and identity are separate stages
+
+The system must support useful diarization even when no real-world participant identity is known.
+
+Speaker clustering must not depend on names being available.
+
+Identity binding must not be required to complete diarization.
+
+### 3.3 Similarity is not identity
+
+Acoustic similarity may support a same-speaker or identity hypothesis, but it does not prove identity.
+
+The system must preserve alternative explanations, including:
+
+* similar voices;
+* poor recording conditions;
+* channel effects;
+* compression artifacts;
+* mimicry;
+* synthesized or replayed voice;
+* very short samples;
+* overlapping speakers;
+* emotional or physiological voice changes;
+* and provider error.
+
+### 3.4 Identity claims require scope
+
+A binding must state what it applies to.
+
+Possible scopes include:
+
+* one observation;
+* one speaker turn;
+* one local segment;
+* one Phase 3 cluster;
+* one recording;
+* one recording series;
+* or a declared corpus.
+
+A local identity decision must not silently become a global identity assertion.
+
+### 3.5 Human decisions remain attributable
+
+Manual identity binding, cluster merge, cluster split, rejection, and correction must be append-only and attributable.
+
+The original machine proposal must remain recoverable.
+
+### 3.6 Unknown and conflict are first-class states
+
+The implementation must support:
+
+* unidentified speaker;
+* uncertain cluster assignment;
+* unresolved cluster split;
+* unresolved cluster merge;
+* conflicting identity hypotheses;
+* insufficient voice evidence;
+* unusable reference voice;
+* probable speaker change with uncertain boundary;
+* and overlap with unassignable participants.
+
+---
+
+## 4. Required scope
+
+Phase 3 must implement the following capabilities.
+
+## 4.1 Diarization provider abstraction
+
+Implement a provider-independent diarization interface.
+
+At minimum, the interface must support:
+
+* provider capability inspection;
+* input interval declaration;
+* speaker-count constraints where supported;
+* minimum and maximum speaker proposals where supported;
+* turn segmentation;
+* overlapping-speech output where supported;
+* speaker embeddings or equivalent voice representations where supported;
+* clustering output;
+* confidence or score output where supported;
+* batch and chunk processing;
+* provider timeout;
+* bounded cancellation;
+* structured failure reporting;
+* raw-result retention or normalized evidence capture;
+* model provenance;
+* and hardware/runtime reporting.
+
+The initial implementation may qualify one local provider.
+
+Provider-specific values must be normalized into Phase 3 contracts or retained in explicit raw-evidence extensions.
+
+The authoritative Phase 3 domain model must not depend on undocumented provider internals.
+
+---
+
+## 4.2 Speaker observations
+
+Create stable, source-addressed speaker-observation records.
+
+Each observation must include, at minimum:
+
+* stable observation identifier;
+* Phase 1 corpus lineage;
+* selected audio-stream lineage;
+* Phase 2 speech-activity references;
+* relevant transcript-segment references where available;
+* source-media interval;
+* normalized-audio interval;
+* chunk-local interval;
+* overlap-ownership status;
+* acoustic-evidence status;
+* provider and model provenance;
+* embedding reference where produced;
+* quality or usability classification;
+* confidence origin;
+* creation timestamp;
+* format and policy versions;
+* and integrity fields.
+
+Observation identifiers must be stable under identical source evidence, provider result, extraction policy, and applicable configuration.
+
+The implementation must define which changes produce:
+
+* artifact reuse;
+* a new observation version;
+* a new identifier;
+* or invalidation.
+
+---
+
+## 4.3 Speaker turns
+
+Create canonical speaker-turn records.
+
+Each speaker turn must include:
+
+* stable turn identifier;
+* source interval;
+* normalized-audio interval;
+* one or more supporting observations;
+* provisional speaker-cluster reference where available;
+* turn-boundary confidence;
+* speaker-assignment confidence;
+* overlap status;
+* transcript-segment and word references;
+* interruption or continuation relationship where structurally observable;
+* chunk ownership;
+* provider provenance;
+* and validation status.
+
+The system must distinguish:
+
+* single-speaker turn;
+* dominant-speaker turn with background speech;
+* overlapping-speaker interval;
+* uncertain-speaker turn;
+* unassigned speech interval;
+* non-lexical vocalization;
+* and unusable audio interval.
+
+A speaker turn must not be forced to align exactly with a transcript segment.
+
+Transcript segmentation and speaker-turn segmentation must remain independently addressable.
+
+---
+
+## 4.4 Speaker-change boundaries
+
+Represent proposed speaker-change boundaries separately from turns.
+
+Each boundary record must support:
+
+* source timestamp or uncertainty interval;
+* preceding observation or turn;
+* following observation or turn;
+* change confidence;
+* provider basis;
+* competing boundary proposals;
+* whether the boundary falls inside a Phase 2 word or segment;
+* whether the boundary is affected by overlap;
+* and review status.
+
+The system must not hide boundary uncertainty by rounding all changes to transcript-segment edges.
+
+---
+
+## 4.5 Overlapping speech
+
+Create explicit overlap evidence.
+
+Required behavior:
+
+* identify intervals in which multiple voices appear active;
+* record estimated number of active speakers where supported;
+* preserve uncertainty about speaker count;
+* link overlap intervals to supporting observations;
+* associate candidate clusters when supported;
+* allow partial or unknown attribution;
+* represent one dominant and one secondary speaker where supported;
+* and preserve provider limitations.
+
+The system must distinguish:
+
+* true simultaneous speech;
+* rapid turn exchange;
+* cross-talk;
+* background speech;
+* audience speech or reaction;
+* replayed or broadcast speech;
+* and uncertain overlap.
+
+An overlap interval must not be flattened into one canonical speaker turn merely because one voice is louder.
+
+---
+
+## 4.6 Speaker embeddings and acoustic representations
+
+Where the selected provider supports voice embeddings or an equivalent representation, store them as derived technical evidence.
+
+Required controls:
+
+* embeddings must be stored separately from participant identity;
+* embedding format and dimensionality must be versioned;
+* provider and model fingerprint must be retained;
+* extraction interval and preprocessing must be recorded;
+* embedding integrity must be validated;
+* incompatible embedding spaces must not be compared;
+* and embeddings must not be treated as portable biometric identity across unsupported conditions.
+
+The project must document whether embeddings are stored:
+
+* directly;
+* encrypted;
+* hashed where meaningful;
+* referenced from a protected artifact;
+* or omitted from portable exports.
+
+The decision must account for privacy, biometric sensitivity, reproducibility, and downstream evaluation needs.
+
+---
+
+## 4.7 Speaker clustering
+
+Create speaker clusters from compatible observations.
+
+Each cluster must include:
+
+* stable cluster identifier;
+* member observations;
+* member turns;
+* cluster-formation method;
+* provider or clustering-policy provenance;
+* centroid or representative reference where applicable;
+* internal similarity measurements;
+* outlier measurements;
+* temporal distribution;
+* source coverage;
+* confidence or consistency classification;
+* competing cluster assignments;
+* split and merge history;
+* and current status.
+
+The system must support:
+
+* one cluster per apparent speaker where evidence permits;
+* multiple clusters for one actual participant;
+* one contaminated cluster containing multiple participants;
+* uncertain membership;
+* local unclustered observations;
+* and deferred assignment.
+
+Cluster identifiers must not be derived from participant names.
+
+Renaming or binding a participant must not alter the underlying acoustic cluster identifier.
+
+---
+
+## 4.8 Cluster-consistency analysis
+
+Evaluate the internal coherence of each proposed cluster.
+
+Required checks include:
+
+* pairwise or representative acoustic similarity;
+* outlier observations;
+* abrupt channel or quality changes;
+* implausible simultaneous self-overlap;
+* temporal impossibility where the same cluster appears in incompatible overlap roles;
+* conflicting identity bindings;
+* excessive within-cluster variance;
+* unstable short observations;
+* and dependence on a single weak observation.
+
+Each cluster must receive a machine-readable consistency result.
+
+Possible dispositions should include equivalents of:
+
+* consistent;
+* provisionally consistent;
+* mixed evidence;
+* likely over-merged;
+* likely over-split;
+* insufficient evidence;
+* contaminated;
+* and invalid.
+
+A cluster-consistency result must not be presented as proof that all members belong to one human speaker.
+
+---
+
+## 4.9 Cluster merge and split proposals
+
+Support bounded merge and split proposals without silently rewriting cluster history.
+
+Merge proposals must include:
+
+* source cluster identifiers;
+* acoustic basis;
+* temporal basis;
+* identity-hypothesis compatibility;
+* contrary evidence;
+* confidence;
+* and disposition.
+
+Split proposals must include:
+
+* target cluster identifier;
+* proposed partitions;
+* outlier or incompatibility evidence;
+* overlap conflicts;
+* identity conflicts;
+* confidence;
+* and disposition.
+
+Accepted merges and splits must create successor artifacts or an explicit transformation record.
+
+Original clusters must remain recoverable.
+
+---
+
+## 4.10 Identity entities
+
+Create a minimal participant-identity representation suitable for later phases.
+
+An identity entity may represent:
+
+* a named individual;
+* an unnamed but locally distinct participant;
+* a role-defined participant;
+* a moderator;
+* an audience member;
+* a remote or recorded voice;
+* an institutional announcer;
+* or an unresolved participant placeholder.
+
+Each identity entity must include:
+
+* stable identity identifier;
+* canonical display label;
+* alternate names or labels where supplied;
+* identity type;
+* source of identity information;
+* scope;
+* status;
+* and provenance.
+
+Phase 3 must not build biographical profiles, political profiles, psychological models, or credibility assessments.
+
+Identity entities exist only to support participant attribution.
+
+---
+
+## 4.11 Identity hypotheses
+
+Create identity-hypothesis records connecting clusters or observations to identity entities.
+
+Each hypothesis must include:
+
+* hypothesis identifier;
+* target cluster, turn, or observation;
+* proposed identity;
+* hypothesis source;
+* supporting evidence;
+* contrary evidence;
+* acoustic similarity where applicable;
+* contextual support where explicitly permitted;
+* confidence or strength;
+* scope;
+* competing hypotheses;
+* creation process;
+* and disposition.
+
+Permitted hypothesis sources may include:
+
+* reference-voice comparison;
+* trusted external roster or event metadata;
+* transcript self-identification;
+* moderator introduction;
+* manual reviewer proposal;
+* imported annotation;
+* and later audiovisual evidence.
+
+The implementation must distinguish between:
+
+* acoustic support;
+* contextual support;
+* documentary support;
+* manual assertion;
+* and confirmed binding.
+
+These must not be collapsed into one undifferentiated confidence value.
+
+---
+
+## 4.12 Reference-voice enrollment
+
+Implement bounded reference-voice enrollment.
+
+A reference enrollment must include:
+
+* reference identifier;
+* proposed identity;
+* source and licensing status;
+* consent or lawful-use status where recorded;
+* recording provenance;
+* source interval;
+* audio-quality assessment;
+* speech duration;
+* contamination assessment;
+* extraction provider;
+* embedding or representation reference;
+* enrollment scope;
+* expiration or revocation status where applicable;
+* and validation result.
+
+The system must support:
+
+* one or more references per identity;
+* incompatible or low-quality references;
+* rejected enrollment;
+* revoked enrollment;
+* conflicting references;
+* and reference replacement without erasing history.
+
+Reference material must not be treated as valid merely because a file carries a person’s name.
+
+Enrollment must require explicit provenance and validation.
+
+---
+
+## 4.13 Reference-voice comparison
+
+Compare eligible cluster or observation evidence against compatible enrolled references.
+
+Each comparison must record:
+
+* target observation or cluster;
+* reference enrollment;
+* compatible model space;
+* comparison score;
+* threshold policy;
+* cohort or calibration context where available;
+* quality conditions;
+* supporting and contrary evidence;
+* uncertainty;
+* and result classification.
+
+Result classifications should include equivalents of:
+
+* supports hypothesis;
+* weakly supports hypothesis;
+* inconclusive;
+* weakly contradicts hypothesis;
+* contradicts hypothesis;
+* and comparison invalid.
+
+The system must not convert a similarity score directly into a definitive identity binding.
+
+Where calibration is unavailable, the report must say so explicitly.
+
+Scores from different models, model versions, or embedding spaces must not be compared as though they share one scale.
+
+---
+
+## 4.14 Manual identity binding
+
+Implement append-only manual binding records.
+
+Manual actions must support:
+
+* bind cluster to identity;
+* bind observation or turn to identity;
+* reject proposed identity;
+* mark identity unknown;
+* revise a prior binding;
+* limit binding scope;
+* merge identity placeholders;
+* split an incorrectly unified identity;
+* and restore an earlier binding state.
+
+Each manual binding must record:
+
+* binding identifier;
+* target artifact;
+* identity;
+* scope;
+* action;
+* predecessor binding where applicable;
+* author;
+* timestamp;
+* rationale;
+* supporting evidence references;
+* contrary evidence acknowledged;
+* confidence or reviewer certainty;
+* and resulting identity-view version.
+
+Manual binding must not modify the original diarization result.
+
+A manual label must be visibly distinguishable from a model-generated hypothesis.
+
+---
+
+## 4.15 Identity-view assembly
+
+Assemble deterministic participant-assignment views from stored artifacts.
+
+Required views:
+
+* raw provider diarization;
+* canonical machine diarization;
+* cluster-consistency view;
+* unresolved-speaker view;
+* identity-hypothesis view;
+* reference-comparison view;
+* manually reviewed identity view;
+* and binding-history view.
+
+The system must not silently resolve:
+
+* conflicting bindings;
+* overlapping identities;
+* one cluster bound to incompatible identities within the same scope;
+* one identity assigned impossibly to simultaneous independent speakers;
+* unresolved split or merge proposals;
+* or incompatible reference comparisons.
+
+Such conditions must produce explicit validation findings.
+
+---
+
+## 4.16 Transcript integration
+
+Phase 3 must integrate with Phase 2 without rewriting transcript evidence.
+
+Required behavior:
+
+* associate speaker turns with relevant transcript segments and words;
+* permit one transcript segment to span multiple speaker turns;
+* permit one speaker turn to span multiple transcript segments;
+* support unattributed transcript content;
+* support multiple candidate speakers for an interval;
+* preserve Phase 2 correction lineage;
+* and make clear whether speaker attribution applies to the machine transcript, corrected transcript, or both.
+
+Speaker labels in subtitle or transcript views must be generated from a declared Phase 3 identity-view version.
+
+They must not be inserted into the authoritative Phase 2 transcript artifact.
+
+---
+
+## 4.17 Participant-labeled subtitle derivatives
+
+Phase 3 may extend subtitle export to produce optional participant-labeled derivatives.
+
+Required conditions:
+
+* source transcript version must be declared;
+* identity-view version must be declared;
+* unresolved speakers must remain explicitly unknown or cluster-labeled;
+* conflicting bindings must block authoritative labeled export;
+* label-rounding or cue-splitting rules must be recorded;
+* overlapping speakers must not be falsely serialized without disclosure;
+* and a companion manifest must preserve source and identity lineage.
+
+Participant-labeled subtitles remain presentation derivatives.
+
+They are not authoritative identity records.
+
+---
+
+## 4.18 Cache, resume, and recovery
+
+Phase 3 must extend prior operational guarantees.
+
+Required behavior:
+
+* cache diarization-provider output separately from normalized observations;
+* cache speaker embeddings separately from cluster assignments;
+* cache cluster results separately from identity hypotheses;
+* cache reference enrollments and comparisons with complete model lineage;
+* validate artifacts before reuse;
+* quarantine corrupt entries;
+* invalidate only affected downstream stages where practical;
+* resume after persisted stage boundaries;
+* recover from interrupted observation extraction, clustering, comparison, binding assembly, and export;
+* and avoid provider reinvocation where valid evidence already exists.
+
+A change to a participant name must not force acoustic reprocessing.
+
+A change to clustering policy must not force speech transcription unless the transcription evidence itself is invalidated.
+
+A change to the embedding model must invalidate incompatible embeddings, clusters dependent upon them, and reference comparisons, but not unrelated Phase 1 or Phase 2 artifacts.
+
+---
+
+## 4.19 Reporting
+
+Produce machine-readable and human-readable reports for:
+
+* diarization runs;
+* speaker observations;
+* speaker turns;
+* speaker-change boundaries;
+* overlap;
+* speaker clusters;
+* cluster consistency;
+* merge and split proposals;
+* identity hypotheses;
+* reference enrollments;
+* reference comparisons;
+* manual bindings;
+* unknown and unresolved speakers;
+* participant-labeled subtitle exports;
+* diarization evaluation;
+* cache and recovery;
+* provider capabilities;
+* integrity;
+* and phase completion.
+
+Reports must separate:
+
+* provider output;
+* normalized evidence;
+* inferred clustering;
+* identity hypotheses;
+* manual decisions;
+* measured evaluation;
+* configured thresholds;
+* unresolved conflicts;
+* and declared limitations.
+
+---
+
+## 5. Required domain artifacts
+
+The exact names may vary, but the implementation must provide versioned equivalents of:
+
+* `DiarizationRun`
+* `SpeakerObservation`
+* `SpeakerTurn`
+* `SpeakerChangeBoundary`
+* `OverlapInterval`
+* `SpeakerEmbedding`
+* `SpeakerCluster`
+* `ClusterMembership`
+* `ClusterConsistencyResult`
+* `ClusterMergeProposal`
+* `ClusterSplitProposal`
+* `ParticipantIdentity`
+* `IdentityHypothesis`
+* `ReferenceVoiceEnrollment`
+* `ReferenceVoiceComparison`
+* `ManualIdentityBinding`
+* `IdentityView`
+* `ParticipantLabeledSubtitleExport`
+* `DiarizationReference`
+* `DiarizationEvaluation`
+* `DiarizationReport`
+* `ParticipantIdentityReport`
+* `Phase3IntegrityResult`
+
+All persisted artifacts must have:
+
+* strict schemas;
+* explicit format versions;
+* policy versions where behavior depends on policy;
+* provenance;
+* integrity validation;
+* canonical serialization;
+* strict loading behavior;
+* and unsupported-version refusal.
+
+---
+
+## 6. Processing sequence
+
+Implementation should proceed in the following order.
+
+### Stage 1: Contracts and evidence boundaries
+
+* Define Phase 3 contracts.
+* Define diarization-provider abstraction.
+* Define observation, turn, overlap, cluster, identity, and binding semantics.
+* Define identifier and versioning rules.
+* Define cache and invalidation boundaries.
+* Define privacy and export policy for voice embeddings.
+
+### Stage 2: Speaker observations and turns
+
+* Process Phase 2 speech intervals.
+* Produce speaker observations.
+* Produce provisional turns.
+* Preserve uncertain boundaries.
+* Map turns to source and transcript evidence.
+* Reconcile chunk overlap ownership.
+
+### Stage 3: Overlap representation
+
+* Detect or normalize overlapping-speech evidence.
+* Produce overlap intervals.
+* Associate candidate observations and clusters.
+* Preserve unknown speaker count where necessary.
+* Validate temporal consistency.
+
+### Stage 4: Speaker clustering
+
+* Generate or normalize acoustic representations.
+* Construct provisional clusters.
+* Preserve unclustered observations.
+* Produce cluster-membership evidence.
+* Validate simultaneous-self conflicts and other temporal impossibilities.
+
+### Stage 5: Cluster-consistency analysis
+
+* Measure internal coherence.
+* Identify likely over-merges and over-splits.
+* Produce outlier records.
+* Generate bounded merge and split proposals.
+* Do not silently apply proposals.
+
+### Stage 6: Identity foundations
+
+* Create participant-identity entities.
+* Import or create event rosters where available.
+* Generate bounded identity hypotheses.
+* Preserve source and scope for each hypothesis.
+
+### Stage 7: Reference-voice enrollment and comparison
+
+* Validate reference material.
+* Enroll compatible reference voices.
+* Compare eligible observations and clusters.
+* Preserve scores, calibration limits, and alternative explanations.
+* Produce support, contradiction, or inconclusive results.
+
+### Stage 8: Manual identity binding
+
+* Implement append-only binding records.
+* Create reviewed identity views.
+* Support revisions, scope limits, rejection, and restoration.
+* Validate conflicts and impossible assignments.
+
+### Stage 9: Transcript and subtitle integration
+
+* Render speaker-labeled transcript views.
+* Produce optional labeled WebVTT and SRT derivatives.
+* Preserve unresolved and overlapping assignments.
+* Produce export manifests.
+
+### Stage 10: Evaluation and qualification
+
+* Evaluate turns, boundaries, overlap, clustering, and identity foundations.
+* Exercise unknown, conflict, merge, split, and manual-binding cases.
+* Test cache, recovery, corruption, and provider failures.
+* Produce checked-in qualification evidence.
+
+---
+
+## 7. Required command-line operations
+
+Provide CLI operations equivalent to:
+
+* inspect diarization-provider capabilities;
+* diarize a Phase 2 corpus;
+* resume diarization;
+* validate diarization artifacts;
+* list speaker turns;
+* list overlap intervals;
+* inspect speaker clusters;
+* inspect cluster consistency;
+* propose cluster merges;
+* propose cluster splits;
+* list unresolved speakers;
+* create or import participant identities;
+* enroll a reference voice;
+* validate reference enrollment;
+* compare a cluster or observation to references;
+* create an identity hypothesis;
+* manually bind a cluster or observation;
+* reject or supersede a binding;
+* show binding history;
+* render a speaker-labeled transcript;
+* export speaker-labeled WebVTT;
+* export speaker-labeled SRT;
+* evaluate diarization;
+* produce Phase 3 reports;
+* and verify a complete Phase 3 evidence package.
+
+Commands must return typed, structured failures suitable for automation.
+
+Human-readable rendering must not be the sole storage representation of required evidence.
+
+---
+
+## 8. Configuration requirements
+
+Persist all configuration that can affect Phase 3 evidence.
+
+At minimum, record:
+
+* diarization provider;
+* model and model fingerprint;
+* runtime and device configuration;
+* speech-interval input policy;
+* minimum observation duration;
+* maximum processing interval;
+* speaker-count assumptions;
+* overlap policy;
+* embedding extraction policy;
+* clustering algorithm;
+* clustering thresholds;
+* outlier policy;
+* merge and split proposal thresholds;
+* cluster-consistency policy;
+* reference-enrollment requirements;
+* reference-comparison thresholds;
+* calibration policy;
+* identity-hypothesis policy;
+* manual-binding policy;
+* unknown-state policy;
+* labeled-subtitle policy;
+* cache policy;
+* timeout policy;
+* and evaluation policy.
+
+Configuration changes must invalidate only artifacts whose evidentiary basis may have changed.
+
+Rendering-only label changes must not force acoustic reprocessing.
+
+---
+
+## 9. Confidence requirements
+
+Phase 3 must not collapse confidence into one universal score.
+
+At minimum, distinguish:
+
+* speech-presence confidence inherited from Phase 2;
+* speaker-change confidence;
+* turn-boundary confidence;
+* observation-usability confidence;
+* cluster-membership confidence;
+* cluster-consistency confidence;
+* overlap confidence;
+* speaker-count confidence;
+* acoustic identity-support strength;
+* contextual identity-support strength;
+* reference-comparison validity;
+* manual-review certainty;
+* and binding status.
+
+Where a provider does not supply a meaningful confidence value, the field must remain unavailable or explicitly derived.
+
+Derived confidence must record:
+
+* derivation method;
+* input evidence;
+* threshold policy;
+* and limitations.
+
+Scores from different models or embedding spaces must not be treated as interchangeable.
+
+---
+
+## 10. Privacy and biometric safeguards
+
+Because voice representations may constitute sensitive biometric evidence, Phase 3 must document and enforce a storage and export policy.
+
+At minimum:
+
+* raw reference audio must retain provenance and access policy;
+* reference voices must not be enrolled silently;
+* embeddings must not be exported by default unless the export policy explicitly permits them;
+* portable reports should use references or summaries where possible;
+* deletion or revocation of enrolled references must be representable;
+* manual identity binding must not imply consent to biometric enrollment;
+* identity comparison must be bounded to declared project purposes;
+* and logs must not unnecessarily reproduce private reference audio or embedding contents.
+
+The phase need not implement a complete legal-compliance system, but it must not design as though voice identity evidence were ordinary non-sensitive metadata.
+
+---
+
+## 11. Integrity requirements
+
+Phase 3 integrity validation must detect at least:
+
+* missing Phase 1 or Phase 2 lineage;
+* source hash mismatch;
+* invalid source or normalized-audio intervals;
+* turn time regression;
+* observations outside the addressable corpus;
+* invalid overlap ownership;
+* duplicated canonical observations at chunk transitions;
+* incompatible embedding formats;
+* missing model provenance;
+* malformed embedding dimensions;
+* impossible confidence values;
+* cluster membership referencing unknown observations;
+* one observation assigned canonically to incompatible clusters;
+* invalid simultaneous self-overlap;
+* cluster lineage cycles;
+* malformed merge or split history;
+* identity hypothesis referencing unknown targets;
+* manual binding referencing unknown identities;
+* conflicting bindings within the same scope;
+* impossible simultaneous assignment of one bounded participant identity;
+* invalid reference provenance;
+* incompatible reference-comparison model spaces;
+* participant-labeled subtitle cues outside source duration;
+* transcript and identity-view lineage mismatch;
+* unsupported schema or policy versions;
+* and corrupt cache entries.
+
+Integrity failure must produce explicit typed findings.
+
+It must not silently produce a partially trusted participant view.
+
+---
+
+## 12. Qualification corpus
+
+Phase 3 qualification must include controlled examples covering more than clean alternating speakers.
+
+At minimum, qualification must cover:
+
+* one speaker;
+* two alternating speakers;
+* three or more speakers;
+* short turns;
+* long turns;
+* rapid turn exchange;
+* interruption;
+* simultaneous speech;
+* background speech;
+* audience or crowd reaction;
+* same speaker separated by long intervals;
+* one speaker with changing emotional delivery;
+* one speaker recorded through different channels or microphones;
+* similar-sounding speakers;
+* very short unusable observations;
+* non-speech vocalization;
+* replayed or recorded speech within the source;
+* uncertain speaker-change boundary;
+* cluster over-merge;
+* cluster over-split;
+* unknown participant;
+* incorrect identity hypothesis;
+* conflicting reference evidence;
+* manual identity binding;
+* binding revision;
+* reference revocation;
+* provider timeout or failure;
+* malformed provider output;
+* and speech spanning Phase 1 processing chunks.
+
+Presidential-debate material may later become an excellent applied evaluation corpus, but initial qualification should retain controlled fixtures with known speaker and overlap references.
+
+Any debate material must be:
+
+* lawfully sourced;
+* versioned;
+* source-addressed;
+* accompanied by an independently prepared reference annotation;
+* and kept separate from synthetic-mechanics claims.
+
+---
+
+## 13. Diarization evaluation
+
+Create a controlled evaluation framework capable of measuring:
+
+* diarization error rate;
+* missed-speech contribution;
+* false-alarm contribution;
+* speaker-confusion contribution;
+* speaker-change precision and recall;
+* boundary timing error;
+* overlap precision;
+* overlap recall;
+* overlap duration error;
+* cluster purity;
+* cluster coverage;
+* over-merge rate;
+* over-split rate;
+* observation assignment accuracy;
+* unknown-state appropriateness;
+* identity-hypothesis ranking where references exist;
+* manual-binding impact;
+* and participant-labeled subtitle consistency.
+
+Evaluation must specify:
+
+* collar or boundary tolerance;
+* overlap-scoring policy;
+* mapping between reference and system speakers;
+* treatment of unknown speakers;
+* treatment of non-lexical vocalization;
+* treatment of audience or background voices;
+* and whether reference labels represent persons, roles, or local speakers.
+
+Results must be stratified where the corpus permits.
+
+Useful strata include:
+
+* clean alternating speech;
+* interruption;
+* overlap;
+* short turns;
+* low-volume speech;
+* noise;
+* music;
+* channel changes;
+* similar voices;
+* and chunk boundaries.
+
+The system must not claim general speaker-identification performance from a small controlled fixture.
+
+---
+
+## 14. Required negative proofs
+
+Qualification must demonstrate typed refusal or conservative degradation for:
+
+* unsupported Phase 1 or Phase 2 format;
+* missing speech-activity evidence;
+* corrupted normalized audio;
+* unavailable diarization provider;
+* unavailable model;
+* provider timeout;
+* malformed provider output;
+* observation outside requested interval;
+* invalid overlap output;
+* embedding dimension mismatch;
+* incompatible embedding models;
+* invalid cluster membership;
+* cluster lineage cycle;
+* impossible simultaneous self-assignment;
+* invalid merge target;
+* invalid split partition;
+* identity hypothesis with missing target;
+* reference enrollment with missing provenance;
+* reference enrollment with unusable audio;
+* comparison across incompatible model spaces;
+* conflicting manual bindings;
+* binding against an unknown identity;
+* participant-labeled subtitle export from incompatible transcript and identity views;
+* unsupported schema version;
+* and corrupted cached artifacts.
+
+A crash, silent omission, forced identity, or unrecorded fallback is not a passing negative proof.
+
+---
+
+## 15. Long-recording requirements
+
+Phase 3 must qualify operation on a recording longer than two hours.
+
+The long-recording proof must demonstrate:
+
+* bounded memory;
+* Phase 1 chunk and overlap ownership;
+* Phase 2 speech-interval reuse;
+* stable speaker-observation creation;
+* chunk-local provider invocation;
+* cross-chunk cluster continuity;
+* no duplicated canonical turns;
+* interruption and resume;
+* cache replay;
+* final cluster assembly;
+* identity-view assembly;
+* and complete integrity validation.
+
+A synthetic marker provider may qualify mechanics, but it must not be used to claim real diarization or speaker-recognition accuracy.
+
+At least one non-synthetic, multi-speaker recording should be used for a limited operational demonstration, even if it is not sufficient for general quality claims.
+
+---
+
+## 16. Regression requirements
+
+Phase 3 must preserve all Phase 0 through Phase 2 guarantees.
+
+The regression suite must demonstrate that Phase 3 does not:
+
+* alter source audiovisual files;
+* alter Phase 1 normalized audio;
+* alter Phase 1 stream or timeline decisions;
+* alter Phase 2 speech-activity records;
+* alter Phase 2 transcript text or corrections;
+* convert clusters into persons without a recorded hypothesis or binding;
+* overwrite raw provider results;
+* erase unknown or conflicting assignments;
+* introduce argument analysis;
+* introduce factual adjudication;
+* introduce credibility analysis;
+* introduce political classification;
+* introduce psychological inference;
+* introduce judgment;
+* or score the truthfulness, quality, or worth of a participant.
+
+Speaker-labeled transcript views must remain derived views over unchanged Phase 2 evidence.
+
+---
+
+## 17. Explicit exclusions
+
+Phase 3 must not implement:
+
+* face recognition;
+* face-to-voice association;
+* lip-motion active-speaker detection;
+* global participant identity across unrelated corpora without explicit enrollment and scope;
+* covert speaker identification;
+* inferred demographic classification from voice;
+* age, race, ethnicity, sex, gender, health, disability, nationality, or emotional-state classification from voice;
+* personality inference;
+* deception detection;
+* credibility scoring;
+* truthfulness scoring;
+* political-position inference;
+* argument extraction;
+* claim adjudication;
+* rhetorical evaluation;
+* dominance scoring;
+* interruption blame;
+* debate winner selection;
+* or final legal identity determination.
+
+The phase may create foundations later consumed by audiovisual participant-resolution work, but it must not silently perform those later functions.
+
+---
+
+## 18. Documentation requirements
+
+Document:
+
+* the distinction between speech, turn, observation, cluster, hypothesis, identity, and binding;
+* diarization-provider boundaries;
+* source and transcript mapping;
+* overlap semantics;
+* embedding storage and privacy policy;
+* cluster formation;
+* cluster consistency;
+* merge and split history;
+* reference enrollment;
+* comparison-score limitations;
+* identity-hypothesis sources;
+* manual binding;
+* unknown and conflict states;
+* cache invalidation;
+* recovery behavior;
+* evaluation methodology;
+* participant-labeled subtitle derivation;
+* and the boundary between Phase 3 and later visual or argument-analysis phases.
+
+Documentation must state plainly:
+
+* a cluster is not a person;
+* acoustic similarity is not proof of identity;
+* manual binding is a review decision, not a modification of the recording;
+* and unresolved identity is an acceptable outcome.
+
+---
+
+## 19. Completion evidence
+
+The Phase 3 completion report must include:
+
+* application and contract versions;
+* starting and final repository state;
+* provider and model details;
+* model fingerprint;
+* licensing and distribution status;
+* corpus identifiers;
+* configuration identifiers;
+* speaker-observation counts;
+* speaker-turn counts;
+* overlap counts and durations;
+* cluster counts;
+* unclustered observation counts;
+* cluster-consistency dispositions;
+* merge and split proposals;
+* identity-hypothesis counts;
+* reference-enrollment counts;
+* reference-comparison results;
+* manual-binding counts;
+* unknown and unresolved counts;
+* participant-labeled subtitle results;
+* evaluation metrics;
+* long-recording results;
+* cache-hit and invalidation results;
+* recovery results;
+* peak-memory results;
+* negative-case results;
+* regression results;
+* privacy and export decisions;
+* known limitations;
+* evidence inventory;
+* and unresolved concerns.
+
+Measured results must be separated from:
+
+* provider claims;
+* synthetic mechanics proofs;
+* human decisions;
+* and future expectations.
+
+---
+
+## 20. Exit gates
+
+Phase 3 is complete only when all of the following gates pass.
+
+### Gate 1: Source-addressed observations
+
+Every canonical speaker observation maps validly to the Phase 1 corpus and relevant Phase 2 speech evidence.
+
+### Gate 2: Speaker turns
+
+The system produces stable, confidence-bearing speaker turns without forcing identity.
+
+### Gate 3: Speaker-change evidence
+
+Speaker-change boundaries are explicit, source-addressed, and capable of representing temporal uncertainty.
+
+### Gate 4: Overlap
+
+Simultaneous or potentially simultaneous speech is represented explicitly and is not flattened into false single-speaker certainty.
+
+### Gate 5: Speaker clustering
+
+Compatible observations can be grouped into provisional clusters with preserved membership evidence and unknown assignments.
+
+### Gate 6: Cluster consistency
+
+Each cluster receives a machine-readable consistency result capable of exposing over-merges, over-splits, contamination, and insufficient evidence.
+
+### Gate 7: Merge and split history
+
+Cluster merge and split proposals are bounded, reviewable, and append-only; original clusters remain recoverable.
+
+### Gate 8: Identity hypotheses
+
+Clusters and observations may carry bounded identity hypotheses with explicit supporting, contrary, and competing evidence.
+
+### Gate 9: Reference-voice enrollment
+
+Reference voices can be enrolled only with provenance, validation, model lineage, scope, and privacy handling.
+
+### Gate 10: Reference comparison
+
+Compatible references and target evidence can be compared without converting similarity into automatic identity certainty.
+
+### Gate 11: Manual identity binding
+
+Human reviewers can bind, reject, revise, limit, and restore identity assignments through attributable append-only records.
+
+### Gate 12: Unknown and conflict
+
+Unidentified speakers, weak clusters, conflicting hypotheses, and incompatible bindings remain explicit rather than being forced into names.
+
+### Gate 13: Transcript integration
+
+Speaker assignments can be rendered over Phase 2 transcript evidence without modifying the authoritative transcript artifacts.
+
+### Gate 14: Evaluation
+
+Turn segmentation, speaker confusion, overlap, clustering, and identity-foundation behavior are measured against controlled references.
+
+### Gate 15: Cache and recovery
+
+Validated outputs are safely reused, affected artifacts are selectively invalidated, corrupted entries are quarantined, and processing resumes without duplicated or lost evidence.
+
+### Gate 16: Integrity
+
+Malformed, incompatible, impossible, or conflicting Phase 3 artifacts are detected and refused or explicitly degraded.
+
+### Gate 17: Long-recording operation
+
+A recording longer than two hours is processed with bounded memory, cross-chunk continuity, resumability, cache replay, and valid final assembly.
+
+### Gate 18: Regression and boundary
+
+All prior-phase tests pass, and no face identification, argument analysis, factual adjudication, credibility scoring, psychological inference, or participant judgment is introduced.
+
+---
+
+## 21. Success definition
+
+Phase 3 succeeds when Ratiocinatus can take a valid Phase 2 transcript-evidence package and produce a portable, integrity-checked participant-speech evidence package that:
+
+* identifies provisional speaker turns;
+* represents uncertain speaker changes;
+* preserves overlapping speech;
+* groups compatible voice observations into provisional clusters;
+* measures cluster consistency;
+* retains over-merge and over-split uncertainty;
+* supports bounded identity hypotheses;
+* supports validated reference-voice enrollment and comparison;
+* supports append-only manual identity binding;
+* preserves unknown and conflicting states;
+* renders participant-labeled transcript and subtitle derivatives;
+* survives interruption and recovery;
+* supports controlled diarization evaluation;
+* and remains fully traceable to the underlying audiovisual source.
+
+The result must be suitable for later active-speaker, participant-resolution, discourse, argument, and adjudication phases without representing a voice cluster or similarity score as definitive proof of human identity.
+

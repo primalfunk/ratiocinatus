@@ -1,1369 +1,1717 @@
-RATIOCINATUS
-PHASE 0.5 WORK ORDER
-CONTROLLED PROOF CORPUS AND SYNTHETIC AUDIOVISUAL FIXTURE
-
-Document status: Implementation work order
-Project design reference: PROJECT_DESIGN.md version 0.1.0
-Phase identifier: 0.5
-Phase title: Controlled Proof Corpus
-Placement: After Phase 0 and before Phase 1
-Target application version: 0.2.0
-Primary implementation language: Python
-Execution model: Local-first
-Date: 2026-07-26
-
-======================================================================
-1. PHASE PLACEMENT
-======================================================================
-
-This work is designated Phase 0.5.
-
-It must begin only after Phase 0 has established repository structure, versioned
-contracts, stable identifiers, canonical serialization, source registration,
-artifact envelopes, provenance, provider boundaries, workspace persistence,
-replay foundations, dependency inventory, and licensing inventory.
-
-It must complete before Phase 1 begins substantive audiovisual ingestion and
-source-addressing work.
-
-This placement is intentional. The controlled proof corpus depends on Phase 0
-infrastructure for provenance, deterministic generation, licensing records,
-artifact identity, and replay. Phase 1 and later phases depend on the corpus as
-a stable, known input.
-
-Phase 0.5 is not an analytical phase. It creates source material and hidden
-reference material. It must not implement transcription, diarization, discourse
-analysis, adjudication, scoring, or annotated-output rendering.
-
-The anticipated sequence becomes:
-
-- Phase 0: Project foundation and evidentiary kernel
-- Phase 0.5: Controlled proof corpus and synthetic audiovisual fixture
-- Phase 1: Audiovisual ingestion and source addressing
-- Phase 2: Transcription and temporal speech evidence
-- Phase 3: Speaker diarization and participant identity foundations
-- later phases as described in PROJECT_DESIGN.md
-
-The builder must recommend a corresponding PROJECT_DESIGN.md revision but must
-not silently rewrite the design document unless explicitly authorized.
-
-======================================================================
-2. PHASE GOAL
-======================================================================
-
-Create a locally generated, legally usable, reproducible, three-speaker
-audiovisual fixture that can serve as the principal controlled proof source for
-Ratiocinatus.
-
-The fixture must provide:
-
-- distinct synthetic voices;
-- an exact canonical script;
-- known speaker assignments;
-- known line order;
-- known intended pauses and overlaps;
-- known acoustic perturbations;
-- a simple controlled visual presentation;
-- an exact generation manifest;
-- hidden reference annotations;
-- multiple controlled difficulty variants;
-- and a redistributable or clearly bounded licensing package.
-
-The corpus must support independent testing of source registration, audiovisual
-ingestion, transcription, timing, diarization, speaker attribution, utterance
-segmentation, discourse construction, proposition normalization, argument graph
-construction, adjudication, scoring, review, and annotated rendering.
-
-The central proof is:
-
-Given the canonical script, generation policy, voice configuration, and fixed
-assembly schedule, the project can generate or regenerate a controlled
-audiovisual exchange whose source media, timing references, speaker references,
-and hidden analytical ground truth are complete, internally consistent,
-validated, and traceable.
-
-======================================================================
-3. DESIGN AUTHORITY
-======================================================================
-
-Implementation must preserve these PROJECT_DESIGN.md principles:
-
-- evidence before interpretation;
-- proposals are not facts;
-- uncertainty is a first-class output;
-- provider independence;
-- local-first operation;
-- deterministic authority where feasible;
-- replayability;
-- and strict separation of observation, interpretation, adjudication, scoring,
-  review, and rendering.
-
-The hidden reference package represents the intended construction and expected
-conservative interpretation of the fixture. It is not an instruction that later
-models must reproduce every interpretation regardless of evidence.
+# Ratiocinatus Phase 5 Work Order
 
-Later analytical systems must be permitted to disagree with a reference item,
-mark an item ambiguous, produce a supported alternative, or fail conservatively.
+## Discourse-Act Construction
 
-======================================================================
-4. FIXTURE IDENTITY
-======================================================================
+**Phase:** 5
+**Target application version:** 0.7.0
+**Starting point:** Completed Phase 4 speaker-attributed utterance corpus
+**Primary goal:** Represent what each utterance is doing in the conversation through source-grounded, confidence-bearing discourse-act evidence.
 
-Canonical fixture family name:
-Riverton Evening Access Forum
+---
 
-Canonical fixture identifier:
-ratiocinatus-proof-riverton-evening-access-v1
+## 1. Objective
 
-Canonical discourse format:
-Moderated civic-policy forum
+Phase 5 shall transform the stable Phase 4 utterance corpus into a structured representation of conversational function.
 
-Canonical setting:
-A fictional public meeting concerning whether the fictional Riverton Community
-Center should extend weekday closing time from 8:00 p.m. to 10:00 p.m.
+The phase must determine, without forcing certainty:
 
-Canonical participants:
+* whether an utterance asserts something;
+* asks a question;
+* answers an earlier question;
+* objects to a prior statement;
+* rebuts an objection or competing position;
+* concedes a point;
+* qualifies, limits, or conditions a statement;
+* defines a term;
+* gives an example;
+* quotes or attributes another statement;
+* performs a procedural conversational act;
+* or performs some combination of these functions.
 
-- MODERATOR: Elena Ward
-- PARTICIPANT_A: Mara Chen
-- PARTICIPANT_B: Daniel Price
+Phase 5 must also establish:
 
-All names, organizations, records, grants, schedules, and events are fictional.
+* which words or utterance spans support each discourse-act proposal;
+* which earlier or later discourse objects the act relates to;
+* what alternative classifications remain plausible;
+* how confident the system is;
+* what evidence supports or weakens the classification;
+* and how human review may revise the analysis without changing the Phase 4 utterance record.
 
-No generated voice may intentionally imitate or be represented as a real person.
-
-======================================================================
-5. REQUIRED OUTPUT VARIANTS
-======================================================================
+A discourse act is an analytical claim about conversational function.
 
-5.1 VARIANT A: CLEAN REFERENCE
+It is not:
 
-Purpose:
-Establish the best-case source for ingestion, transcription, diarization, and
-speaker attribution.
+* a factual truth determination;
+* a complete semantic claim;
+* an argument-validity judgment;
+* an assessment of sincerity;
+* a psychological interpretation;
+* or a score of rhetorical quality.
 
-Requirements:
+---
 
-- three clearly distinct voices;
-- no simultaneous speech;
-- full scripted wording;
-- clean audio;
-- controlled loudness;
-- no background noise;
-- comfortable pauses;
-- no clipped phonemes;
-- no visual ambiguity;
-- and exact line-level schedule.
+## 2. Governing distinctions
 
-Canonical suffix: clean
+The implementation must preserve the following distinctions.
 
-5.2 VARIANT B: NATURALIZED EXCHANGE
+### 2.1 Utterance
 
-Purpose:
-Introduce limited realistic conversational complexity without changing the
-underlying argument.
+A Phase 4 source-grounded unit of speech.
 
-Requirements:
+An utterance is the primary input to Phase 5.
 
-- three distinct voices;
-- controlled hesitations;
-- one self-correction;
-- one brief interruption;
-- two brief overlap intervals;
-- variable pauses;
-- limited speech-rate variation;
-- one off-camera or visually unhighlighted utterance;
-- and no destructive noise.
+### 2.2 Discourse-act observation
 
-Canonical suffix: naturalized
+A bounded proposal that all or part of an utterance performs a conversational function.
 
-The builder may alter delivery but must not alter propositional content except
-where this work order explicitly authorizes a naturalized form.
+One utterance may produce:
 
-5.3 VARIANT C: ADVERSARIAL EVIDENCE
+* no classifiable act;
+* one act;
+* several simultaneous acts;
+* or several sequential acts over different spans.
 
-Purpose:
-Test whether later systems expose uncertainty rather than manufacturing
-certainty.
+### 2.3 Discourse-act type
 
-Requirements:
+A controlled category such as assertion, question, concession, or procedural speech.
 
-- all Variant B characteristics;
-- one low-volume line;
-- one line with mild broadband background noise;
-- one partially clipped initial word;
-- one longer overlap interval;
-- one deliberately similar voice characteristic between two speakers while
-  preserving meaningful distinction;
-- one visual active-speaker mismatch;
-- and one semantically ambiguous passage.
+A type is not a complete description of meaning.
 
-Canonical suffix: adversarial
+### 2.4 Discourse relation
 
-Perturbations must be controlled and documented. They must not render the source
-generally unusable.
+A directed relationship between a discourse act and another utterance, act, question, proposition-like target, or procedural state.
 
-======================================================================
-6. REQUIRED MEDIA FORM
-======================================================================
+Examples include:
 
-Each variant must include:
+* answers;
+* objects to;
+* rebuts;
+* concedes;
+* qualifies;
+* defines;
+* exemplifies;
+* quotes;
+* redirects;
+* and requests clarification of.
 
-- one final video file;
-- one final mixed-audio file;
-- one isolated voice stem per participant;
-- one event schedule;
-- one line schedule;
-- one overlap schedule;
-- one visual-state schedule;
-- and one generation manifest.
+### 2.5 Evidence span
 
-Preferred final characteristics:
+The exact utterance text and source interval supporting a discourse-act proposal.
 
-- MP4 container;
-- H.264 video or another broadly supported codec justified by the builder;
-- AAC or PCM-derived audio suitable for later extraction;
-- 1920 by 1080 resolution;
-- 30 frames per second;
-- fixed frame rate;
-- stereo final mix;
-- 48 kHz audio sample rate;
-- no DRM;
-- no timing structures likely to complicate exact source mapping;
-- and duration between 8 and 14 minutes.
+An evidence span must not be replaced by an unexplained whole-utterance label when only part of the utterance supports the classification.
 
-Exact codec and rate choices must be recorded and justified.
+### 2.6 Semantic claim
 
-======================================================================
-7. VISUAL DESIGN
-======================================================================
+A later-phase proposition extracted from discourse content.
 
-The video must contain:
+Phase 5 may identify an assertion act but must not yet construct a complete factual-claim system.
 
-- title: Riverton Evening Access Forum;
-- subtitle: Controlled proof fixture;
-- three participant panels;
-- participant name and role;
-- a simple non-photoreal avatar or geometric symbol for each participant;
-- a visible active-speaker indication driven by the known schedule;
-- and a neutral background.
+### 2.7 Argument role
 
-The source video must not contain logical labels, referee calls, scores, fallacy
-names, proposition identifiers, argument arrows, or other downstream answers.
+A later analytical determination that a statement serves as a premise, conclusion, attack, support, or inferential bridge.
 
-The active-speaker indication is part of the synthetic scene and is not
-authoritative evidence for later analysis.
+A rebuttal-like discourse act may later participate in an argument, but Phase 5 must not assume that every rebuttal is logically successful.
 
-Variant C must contain one documented active-speaker indication error.
+### 2.8 Illocutionary force and surface form
 
-All graphic assets must be programmatically generated or clearly licensed.
+The grammatical form of an utterance and its conversational function may differ.
 
-======================================================================
-8. TEXT-TO-SPEECH REQUIREMENTS
-======================================================================
+Examples:
 
-Use a provider-independent TTS boundary.
+* a declarative sentence may function as a question;
+* a question may function as an objection;
+* “Can we move on?” may be procedural rather than informational;
+* “You really believe that?” may be both a question and a challenge.
 
-The initial preferred candidate is Kokoro or another local system whose software,
-model weights, and selected voices are compatible with intended fixture use and
-distribution.
+The system must not classify solely from punctuation or syntax.
 
-Do not assume that an engine license governs every voice or model artifact.
+---
 
-Before generation, record:
+## 3. Governing principles
 
-- engine name and version;
-- code license;
-- model name and version;
-- model-weight license;
-- voice identifiers and voice-specific terms;
-- phonemizer dependency and license;
-- language and sample rate;
-- inference configuration;
-- deterministic seed where supported;
-- and known reproducibility limitations.
+### 3.1 Phase 4 remains immutable
 
-Voice requirements:
+Phase 5 must not alter:
 
-- all voices intelligible;
-- three voices meaningfully distinguishable;
-- no intentional imitation of a known person;
-- no voice cloning;
-- Participant A and Participant B distinguishable under ordinary diarization;
-- Moderator the most acoustically distinct voice.
+* Phase 1 audiovisual evidence;
+* Phase 2 transcript evidence;
+* Phase 3 speaker and identity evidence;
+* Phase 4 utterance segmentation, text, attribution, or review history.
 
-Multiple engines may be used only if fully documented and necessary.
+Phase 5 may derive discourse-act views only from declared Phase 4 corpus versions.
 
-======================================================================
-9. CANONICAL EVIDENCE PACKET
-======================================================================
+### 3.2 Multi-label classification is required
 
-All evidence is fictional and supplied to all participants before the forum.
+An utterance may perform more than one conversational function.
 
-E-01 CURRENT HOURS
-The center closes at 8:00 p.m. Monday through Friday.
+For example:
 
-E-02 TURN-AWAY LOG
-For the six most recent complete months, staff recorded arrivals after the last
-admissible entry time:
+> “Yes, but that figure excludes rural counties.”
 
-- Month 1: 36
-- Month 2: 41
-- Month 3: 39
-- Month 4: 44
-- Month 5: 38
-- Month 6: 42
+This may contain:
 
-These are arrivals, not unique individuals.
+* an answer;
+* a concession;
+* an objection;
+* and a qualification.
 
-E-03 PILOT SURVEY
-Of 120 voluntary respondents:
+The implementation must not force one dominant label when evidence supports several compatible acts.
 
-- 74 said they would use the center after 8:00 p.m. at least once per week;
-- 28 said they might;
-- 18 said they would not.
+### 3.3 Alternatives remain visible
 
-The survey was distributed through the center email list and front desk.
+When several classifications are plausible, the system must retain:
 
-E-04 STAFFING ESTIMATE
-A weekday extension from 8:00 p.m. to 10:00 p.m. is estimated to require two
-additional staff members, one additional security shift, and $3,600 per month.
+* selected proposal;
+* alternative proposals;
+* evidence for each;
+* evidence against each;
+* confidence;
+* and unresolved status.
 
-E-05 PILOT GRANT
-A six-month grant is approved for up to $21,600, restricted to the additional
-staffing and security costs of a weekday two-hour extension.
+### 3.4 Explicit relation targets are preferred
 
-E-06 SECURITY AVAILABILITY
-The current security contractor confirms Monday through Thursday. Friday is not
-confirmed.
+An objection, answer, rebuttal, concession, qualification, or definition should identify its target where evidence permits.
 
-E-07 PILOT LIMIT
-The proposal is a six-month weekday pilot extending closing time from 8:00 p.m.
-to 10:00 p.m. It is not a midnight, overnight, or permanent proposal.
+The system must distinguish:
 
-E-08 DECISION DATE
-The board must decide before the grant acceptance deadline.
+* identified target;
+* probable target;
+* multiple candidate targets;
+* implicit target;
+* and unresolved target.
 
-The packet does not claim the pilot will succeed, that respondents are unique
-future users, or that Friday coverage will become available.
+### 3.5 Unknown is valid
 
-======================================================================
-10. CANONICAL SCRIPT
-======================================================================
+The system must support:
 
-Delivery policy:
+* unclassified utterance;
+* mixed or ambiguous act;
+* insufficient context;
+* truncated act;
+* unintelligible act;
+* ceremonial or phatic speech;
+* non-lexical speech;
+* and unsupported act type.
 
-- Preserve wording exactly in Variant A.
-- Apply only authorized changes in Variants B and C.
-- Do not add substantive claims or improvise.
-- Do not change names, quantities, periods, or proposal scope.
-- Parenthetical directions are not spoken unless marked SPOKEN.
-- Line identifiers remain stable across variants.
+### 3.6 Function is not merit
 
-OPENING
+Phase 5 may identify that an utterance functions as an answer or rebuttal.
 
-L001 MODERATOR:
-Good evening. This is the Riverton Evening Access Forum. We are discussing one
-proposal: a six-month weekday pilot that would keep the community center open
-until ten p.m. instead of eight p.m. Mara Chen supports the pilot. Daniel Price
-opposes authorizing it in its current form. I will ask both participants to use
-the evidence packet provided before this forum.
+It must not determine that the answer is adequate, the rebuttal succeeds, or the objection is reasonable.
 
-L002 MODERATOR:
-Mara, please give your opening position.
+---
 
-L003 PARTICIPANT_A:
-The center should authorize the six-month pilot. During each of the last six
-months, staff recorded between thirty-six and forty-four arrivals after the last
-admissible entry time. The pilot survey also found seventy-four respondents who
-said they would use the center after eight at least once per week. We have a
-real access problem, and the grant can pay the projected additional cost during
-the pilot.
+## 4. Required discourse-act vocabulary
 
-L004 MODERATOR:
-Daniel, your opening position.
+The system must define a closed, versioned vocabulary.
 
-L005 PARTICIPANT_B:
-The board should not authorize the proposal yet. The survey is voluntary, the
-arrival log may count the same people repeatedly, and Friday security has not
-been confirmed. The proposal may be worth testing eventually, but the current
-record does not show that the full five-day pilot is ready.
+At minimum, it must include the following families.
 
-CURRENT ACCESS
+## 4.1 Assertive acts
 
-L006 MODERATOR:
-Daniel, do you agree that the current schedule excludes at least some people who
-want to use the center in the evening?
+Required types should include equivalents of:
 
-L007 PARTICIPANT_B:
-Yes. I agree that some people cannot arrive before the center closes.
+* assertion;
+* denial;
+* affirmation;
+* prediction;
+* report;
+* description;
+* attribution;
+* evaluation;
+* correction;
+* restatement;
+* summary;
+* and uncertainty statement.
 
-L008 MODERATOR:
-Mara, what does the turn-away log establish?
+An assertion classification must indicate that content is presented as holding, not that the content is true.
 
-L009 PARTICIPANT_A:
-It establishes that late arrival is not a one-week anomaly. The count stayed
-between thirty-six and forty-four in every one of the six recorded months.
+---
 
-L010 PARTICIPANT_B:
-It does not establish forty different people every month. The same small group
-could account for many of those arrivals.
+## 4.2 Question acts
 
-L011 PARTICIPANT_A:
-That is true. The log counts arrivals, not unique people. I am using it to show
-a recurring access pattern, not to claim that every entry is a different
-person.
+Required types should include equivalents of:
 
-Reference intent:
+* information question;
+* yes-or-no question;
+* alternative question;
+* clarification question;
+* confirmation question;
+* challenge question;
+* rhetorical question;
+* follow-up question;
+* procedural question;
+* and embedded or quoted question.
 
-- L006 is a direct question.
-- L007 is responsive and concedes exclusion.
-- L009 makes a limited recurrence claim.
-- L010 raises a valid scope objection.
-- L011 concedes the limitation and narrows the claim.
+The system must distinguish question form from question function.
 
-STAFFING AND COST
+---
 
-L012 MODERATOR:
-Mara, how much additional staffing would be required?
+## 4.3 Answer acts
 
-L013 PARTICIPANT_A:
-The center is one of the most valuable public services in the neighborhood.
+Required types should include equivalents of:
 
-L014 MODERATOR:
-That may be relevant to the larger decision, but it does not answer the staffing
-question. How much additional staffing would be required?
+* direct answer;
+* partial answer;
+* qualified answer;
+* indirect answer;
+* negative answer;
+* affirmative answer;
+* answer by correction;
+* answer by rejection of premise;
+* answer deferred;
+* explicit refusal to answer;
+* inability to answer;
+* and candidate answer with unresolved target.
 
-L015 PARTICIPANT_A:
-Two additional staff members and one additional security shift.
+Phase 5 may represent the relationship between question and answer.
 
-L016 PARTICIPANT_B:
-And the extension would increase operating costs by at least three thousand six
-hundred dollars per month.
+It must not yet score responsiveness or adequacy.
 
-L017 PARTICIPANT_A:
-The estimate is three thousand six hundred dollars per month, yes.
+---
 
-Reference intent:
+## 4.4 Objection and challenge acts
 
-- L012 creates a direct answer obligation.
-- L013 is related but nonresponsive.
-- L014 identifies the nonresponse and repeats the question.
-- L015 is responsive.
-- L016 states the monthly cost.
-- L017 confirms the estimate.
+Required types should include equivalents of:
 
-SURVEY EVIDENCE
+* objection;
+* challenge;
+* disagreement;
+* counterexample proposal;
+* premise challenge;
+* relevance challenge;
+* definition challenge;
+* evidence challenge;
+* procedural objection;
+* and unsupported generalized challenge.
 
-L018 MODERATOR:
-Daniel, what is your objection to the survey?
+The classification must identify the challenged target where possible.
 
-L019 PARTICIPANT_B:
-It was distributed through the center's email list and front desk. People who
-already use the center were more likely to see it and answer it. That makes it
-weak evidence about the whole community.
+---
 
-L020 PARTICIPANT_A:
-It is not a random community survey, and I do not claim that it is. But it is
-evidence about current center users, who are the people most immediately
-affected by the closing time.
+## 4.5 Rebuttal acts
 
-L021 PARTICIPANT_B:
-You keep presenting seventy-four responses as seventy-four guaranteed new users.
+Required types should include equivalents of:
 
-L022 PARTICIPANT_A:
-No. I said seventy-four respondents reported that they would use later hours at
-least once per week. A stated intention is not a guaranteed visit, and a survey
-response is not proof of a unique new user.
+* direct rebuttal;
+* rebuttal by denial;
+* rebuttal by counterevidence;
+* rebuttal by counterexample;
+* rebuttal by alternative explanation;
+* rebuttal by qualification;
+* rebuttal by scope correction;
+* rebuttal by causal challenge;
+* and purported rebuttal with unresolved target.
 
-L023 MODERATOR:
-Daniel, do you accept that distinction?
+A rebuttal classification does not establish that the rebuttal defeats the target.
 
-L024 PARTICIPANT_B:
-I accept the wording, but I still think Mara is putting too much weight on the
-survey.
+---
 
-Reference intent:
+## 4.6 Concession acts
 
-- L019 is a relevant sampling objection.
-- L020 concedes the limitation and narrows the claim.
-- L021 misrepresents L003 and L020 by substituting guaranteed new users.
-- L022 directly corrects the misrepresentation.
-- L024 is a qualified concession, not agreement on evidential weight.
+Required types should include equivalents of:
 
-GRANT AND CONDITIONAL REASONING
+* full concession;
+* partial concession;
+* temporary concession;
+* hypothetical concession;
+* concession for argument;
+* acknowledgment without agreement;
+* and apparent concession with uncertain scope.
 
-L025 MODERATOR:
-Let us turn to cost. Mara, state your argument about the grant.
+The system must identify what is conceded and what remains contested where text permits.
 
-L026 PARTICIPANT_A:
-If the approved grant fully covers the projected staffing and security cost,
-then that projected cost does not require money from the center's ordinary
-operating budget during the six-month pilot. The grant provides up to twenty-one
-thousand six hundred dollars, and six months at three thousand six hundred
-dollars per month is twenty-one thousand six hundred dollars. Therefore, on the
-figures in the packet, the projected pilot cost is covered without using the
-ordinary operating budget.
+---
 
-L027 PARTICIPANT_B:
-That assumes the estimate is exact. If costs exceed the estimate, the grant may
-not cover the excess.
+## 4.7 Qualification acts
 
-L028 PARTICIPANT_A:
-Yes. My conclusion is limited to the projected cost in the packet. It does not
-show that every possible overrun is covered.
+Required types should include equivalents of:
 
-L029 MODERATOR:
-Daniel, does the grant answer your objection to the projected cost?
+* scope qualification;
+* temporal qualification;
+* conditional qualification;
+* probabilistic qualification;
+* exception;
+* limitation;
+* hedging;
+* precision correction;
+* category restriction;
+* and threshold qualification.
 
-L030 PARTICIPANT_B:
-It answers the projected-cost objection if the estimate holds. It does not
-answer the Friday security problem.
+Qualification must be represented as modifying another act or span where possible.
 
-Reference intent:
+---
 
-- L026 contains an explicit conditional argument and arithmetic support.
-- L027 raises a relevant qualification.
-- L028 incorporates the qualification.
-- L030 is a responsive, qualified answer.
-- No one claims all possible overruns are covered.
+## 4.8 Definition acts
 
-FRIDAY SECURITY
+Required types should include equivalents of:
 
-L031 MODERATOR:
-Daniel, state the Friday security problem precisely.
+* explicit definition;
+* operational definition;
+* stipulative definition;
+* lexical definition;
+* category inclusion;
+* category exclusion;
+* distinction;
+* term clarification;
+* and definition challenge.
 
-L032 PARTICIPANT_B:
-The contractor has confirmed Monday through Thursday, but not Friday. A
-five-day extension should not be authorized unless the center has a safe and
-lawful way to staff all five evenings.
+The system must preserve the defined term, defining span, and scope.
 
-L033 PARTICIPANT_A:
-The board can authorize the pilot subject to confirmation of Friday coverage.
+---
 
-L034 PARTICIPANT_B:
-That changes the proposal.
+## 4.9 Example and illustration acts
 
-L035 PARTICIPANT_A:
-It adds a condition before Friday operation. It does not change the two-hour
-schedule, the six-month limit, or the funding source.
+Required types should include equivalents of:
 
-L036 MODERATOR:
-Mara, what happens if Friday coverage is never confirmed?
+* example;
+* counterexample;
+* analogy;
+* illustration;
+* anecdotal example;
+* hypothetical example;
+* case citation;
+* enumeration;
+* and example introduced but incomplete.
 
-L037 PARTICIPANT_A:
-The grant deadline is approaching, and delaying the vote could cause the center
-to lose the funding.
+An example classification does not establish representativeness.
 
-L038 MODERATOR:
-That does not answer what happens if Friday coverage is never confirmed.
+---
 
-L039 PARTICIPANT_A:
-The board could operate Monday through Thursday, or decline to begin the pilot.
-The evidence packet does not tell us whether the grantor would accept a
-four-day version, so I cannot say that the first option is available without
-further confirmation.
+## 4.10 Quotation and attribution acts
 
-Reference intent:
+Phase 5 must consume, but not replace, Phase 4 quotation evidence.
 
-- L032 presents a clear objection and burden.
-- L033 proposes conditional authorization.
-- L034 disputes whether that is the same proposal.
-- L035 distinguishes condition from scope.
-- L036 creates a direct question.
-- L037 is nonresponsive.
-- L038 identifies the nonresponse.
-- L039 answers conservatively and preserves an unknown.
-- The proposal-change dispute may remain unresolved.
+Required types should include equivalents of:
 
-SCOPE AND MISREPRESENTATION
+* direct quotation;
+* partial quotation;
+* paraphrase;
+* reported speech;
+* attributed position;
+* self-quotation;
+* citation of prior utterance;
+* quotation challenge;
+* quotation correction;
+* and uncertain attribution.
 
-L040 PARTICIPANT_B:
-Mara wants the building open late every night even though the center cannot
-guarantee security.
+The system must distinguish:
 
-L041 PARTICIPANT_A:
-That is not my position. I support a weekday pilot until ten p.m. for six
-months. I am not proposing overnight operation, and I have just said that Friday
-operation requires confirmed coverage.
+* acoustic speaker;
+* quoting speaker;
+* attributed speaker;
+* and original source where known.
 
-L042 MODERATOR:
-Daniel, do you accept that Mara's stated proposal is the six-month, two-hour
-weekday pilot described in the packet?
+---
 
-L043 PARTICIPANT_B:
-Yes, that is the proposal she has stated here.
+## 4.11 Procedural acts
 
-L044 MODERATOR:
-Then please address that proposal rather than a broader one.
+Required types should include equivalents of:
 
-Reference intent:
+* floor request;
+* floor grant;
+* floor denial;
+* turn yield;
+* time warning;
+* time-expired notice;
+* topic transition;
+* agenda setting;
+* request to answer;
+* request to clarify;
+* request to stop;
+* moderator intervention;
+* rule invocation;
+* rule explanation;
+* acknowledgment of procedure;
+* introduction;
+* closing;
+* greeting;
+* thanks;
+* apology;
+* and technical interruption notice.
 
-- L040 broadens the position and omits the expressed security condition.
-- L041 corrects the record.
-- L043 concedes the correction.
-- L044 is procedural moderation.
-- L040 is a candidate misrepresentation call.
+Procedural acts should later support referee-oriented information without being converted into automatic violations or blame.
 
-SELF-CORRECTION
+---
 
-L045 PARTICIPANT_A:
-The survey identified sixty regular evening users, sorry, sixteen people in one
-program whose schedules were discussed in the written comments. That example is
-not part of the numerical evidence packet, so I withdraw it from my argument.
+## 4.12 Other conversational acts
 
-L046 MODERATOR:
-For clarity, are you relying on either sixty or sixteen as evidence for the
-pilot?
+The vocabulary should support bounded representation of:
 
-L047 PARTICIPANT_A:
-No. I am not relying on either number.
+* request;
+* command;
+* proposal;
+* offer;
+* promise;
+* commitment;
+* withdrawal;
+* retraction;
+* correction;
+* acknowledgment;
+* agreement;
+* disagreement;
+* backchannel;
+* assent;
+* dissent;
+* topic redirection;
+* meta-discourse;
+* and unknown or other.
 
-Reference intent:
+The initial vocabulary should remain conservative and extensible through explicit version changes.
 
-- L045 contains immediate self-correction and explicit withdrawal.
-- The incorrect number must not become an ordinary contradiction.
-- Neither number enters the committed argument graph as support.
-- L047 confirms withdrawal.
+---
 
-POPULARITY INFERENCE
+## 5. Required scope
 
-L048 PARTICIPANT_B:
-If later hours are popular, evening attendance will rise. Evening attendance
-rose last month. Therefore, the later-hours proposal is already popular.
+## 5.1 Discourse-act provider abstraction
 
-L049 MODERATOR:
-The center has not yet adopted later hours. How does last month's attendance
-increase establish the popularity of a schedule that was not in effect?
+Implement a provider-independent analysis interface.
 
-L050 PARTICIPANT_B:
-It shows that demand is moving in the right direction.
+At minimum, the interface must support:
 
-L051 PARTICIPANT_A:
-It may show increased demand for the center. It cannot, by itself, show that
-later hours caused the increase or that a schedule not yet adopted was already
-popular.
+* one utterance plus bounded context;
+* multiple act proposals;
+* act spans;
+* relation-target proposals;
+* confidence or ranking;
+* alternatives;
+* structured output;
+* model capability inspection;
+* deterministic or reproducibility settings where supported;
+* timeout;
+* bounded retry;
+* schema validation;
+* raw-output retention or normalized evidence capture;
+* and typed failure reporting.
 
-Reference intent:
+The implementation may combine:
 
-- L048 contains a candidate affirmation-of-the-consequent structure.
-- It attributes popularity to a policy not yet implemented.
-- L049 directly challenges the inference.
-- L050 retreats to a weaker claim.
-- L051 distinguishes demand from causal or policy-specific support.
-- Formal invalidity requires confident proposition normalization.
+* deterministic rules;
+* lexical patterns;
+* syntactic analysis;
+* local language models;
+* or hybrid methods.
 
-COST CONTRADICTION
+No single provider output may become authoritative without normalization and validation.
 
-L052 MODERATOR:
-Daniel, earlier you stated that the extension would increase operating costs by
-at least three thousand six hundred dollars per month. Do you still accept that
-figure as the packet's estimate?
+---
 
-L053 PARTICIPANT_B:
-I never said the extension would cost thousands of dollars each month.
+## 5.2 Discourse-act observations
 
-L054 MODERATOR:
-You said, quote, "the extension would increase operating costs by at least three
-thousand six hundred dollars per month." Would you like to correct your current
-answer?
+Create stable discourse-act observation records.
 
-L055 PARTICIPANT_B:
-Yes. I did say that. My current answer was wrong. Three thousand six hundred
-dollars is the packet's monthly estimate.
+Each observation must include, at minimum:
 
-Reference intent:
+* stable observation identifier;
+* Phase 4 utterance-corpus lineage;
+* target utterance;
+* evidence span;
+* source-media interval;
+* act family;
+* act type;
+* act modifiers;
+* proposed relation target;
+* relation-target confidence;
+* classification confidence;
+* confidence origin;
+* analysis method;
+* provider and model provenance where applicable;
+* alternative candidates;
+* contrary evidence;
+* context-window reference;
+* review status;
+* creation timestamp;
+* format and policy versions;
+* and integrity fields.
 
-- L053 explicitly contradicts L016.
-- L054 cites the earlier statement.
-- L055 corrects L053 and restores the record.
-- Scoring may distinguish contradiction from prompt correction.
-- Correction does not erase the historical contradiction.
+Observations must be immutable.
 
-UNRESOLVED OPERATIONAL ISSUE
+Selections, corrections, and review decisions must create successor or decision records.
 
-L056 PARTICIPANT_B:
-I have one additional question. If the current security contractor cannot cover
-Friday, who is responsible for finding and vetting a replacement, and what
-standard must that replacement meet?
+---
 
-L057 MODERATOR:
-Mara, can you answer that?
+## 5.3 Evidence spans
 
-L058 PARTICIPANT_A:
-The board needs to make a decision before the grant deadline.
+Every selected discourse act must be supported by one or more explicit evidence spans.
 
-L059 MODERATOR:
-That does not identify who would find and vet a replacement or what standard
-would apply.
+An evidence span must include:
 
-L060 PARTICIPANT_A:
-I do not know. The evidence packet does not assign that responsibility or state
-a vetting standard.
+* utterance identifier;
+* start and end text offsets;
+* contributing word identifiers where available;
+* source-media interval;
+* exact displayed text;
+* text-view version;
+* span role;
+* and confidence.
 
-Reference intent:
+Span roles should include equivalents of:
 
-- L056 is a relevant compound operational question.
-- L058 is nonresponsive.
-- L059 identifies the nonresponse.
-- L060 is responsive and acknowledges missing evidence.
-- The issue remains unresolved even though the answer obligation is satisfied.
-- Later systems must distinguish unanswered from answered but unresolved.
+* act trigger;
+* act content;
+* target reference;
+* qualification marker;
+* concession marker;
+* negation;
+* quotation;
+* procedural formula;
+* and contextual support.
 
-AMBIGUOUS CONCESSION
+The system must validate that text offsets and word references correspond to the declared Phase 4 text view.
 
-L061 PARTICIPANT_B:
-If the numbers are real, I suppose the grant would solve the money problem.
+---
 
-L062 MODERATOR:
-Are you disputing that the packet contains those numbers, disputing their
-accuracy, or conceding the projected-cost point conditionally?
+## 5.4 Composite utterances
 
-L063 PARTICIPANT_B:
-Take it however you like.
+Support utterances containing multiple sequential or nested discourse acts.
 
-Reference intent:
+Examples include:
 
-- L061 may be conditional concession, sarcasm, or evidential skepticism.
-- L062 requests disambiguation.
-- L063 refuses disambiguation.
-- Expected result is ambiguous or unresolved.
-- No definitive concession call is required.
+* answer followed by objection;
+* concession followed by rebuttal;
+* definition followed by example;
+* quotation followed by rejection;
+* procedural request followed by substantive assertion;
+* and assertion containing a qualification.
 
-CLOSING POSITIONS
+The implementation must support:
 
-L064 MODERATOR:
-Mara, give your closing position without adding new evidence.
+* multiple evidence spans;
+* ordered subacts;
+* nested acts where justified;
+* shared text spans;
+* and explicit act relationships.
 
-L065 PARTICIPANT_A:
-The record shows a recurring late-arrival pattern, interest among current center
-users, a defined two-hour pilot, and grant funding equal to the projected
-six-month cost. Friday security and replacement procedures remain unresolved.
-I support authorization only if required coverage is confirmed before the
-affected evening operates.
+A whole utterance must not be assigned one label when materially different spans perform distinct functions.
 
-L066 MODERATOR:
-Daniel, give your closing position without adding new evidence.
+---
 
-L067 PARTICIPANT_B:
-The access problem is real, but the evidence does not establish how many unique
-people would use later hours, and Friday security is unresolved. I accept that
-the grant matches the projected cost. I oppose authorizing a five-day pilot
-until security coverage and responsibility are defined.
+## 5.5 Discourse-act relations
 
-L068 MODERATOR:
-The forum is concluded. This recording is a controlled fictional fixture
-created for testing audiovisual reasoning analysis. No person, organization,
-survey, grant, or policy described here is real.
+Create explicit relations among discourse acts and prior conversational material.
 
-Reference intent:
+Required relation types should include equivalents of:
 
-- L065 accurately summarizes support and unresolved conditions.
-- L067 concedes access and projected-cost coverage while preserving objections.
-- Neither closing adds a new factual premise.
-- L068 supplies explicit fictional-fixture disclosure.
+* answers;
+* responds to;
+* clarifies;
+* corrects;
+* objects to;
+* challenges;
+* rebuts;
+* concedes;
+* qualifies;
+* limits;
+* defines;
+* exemplifies;
+* quotes;
+* attributes;
+* repeats;
+* summarizes;
+* redirects from;
+* requests support for;
+* invokes procedure against;
+* and unresolved relation.
 
-======================================================================
-11. AUTHORIZED VARIANT DIRECTIONS
-======================================================================
+Each relation must include:
 
-Variant A uses the canonical words without overlap.
+* source act;
+* target artifact;
+* target type;
+* relation type;
+* evidence basis;
+* temporal distance;
+* context-window basis;
+* confidence;
+* alternative targets;
+* and review status.
 
-Variants B and C may apply only the following changes.
+---
 
-HESITATIONS
+## 5.6 Question construction
 
-- Before L020, Participant A may begin with "Well".
-- Before L039, Participant A may pause audibly.
-- Before L063, Participant B may produce a short dismissive breath or hesitation.
+Create question artifacts from question-like discourse acts.
 
-These are delivery phenomena, not propositions.
+Each question artifact must include:
 
-OVERLAP O-01
+* stable question identifier;
+* source act;
+* question span;
+* question type;
+* requested information or decision form where structurally recoverable;
+* explicit alternatives where present;
+* presupposition markers where detected;
+* addressee or candidate addressees;
+* procedural or substantive status;
+* scope;
+* confidence;
+* and review status.
 
-- Participant B begins L021 during the end of L020.
-- Variant B target: 0.4 to 0.7 seconds.
-- Variant C target: 0.9 to 1.3 seconds.
-- Both lines remain substantially intelligible.
+Phase 5 must not decide whether a question is fair, loaded, misleading, or answerable except through narrowly structural evidence and explicit uncertainty.
 
-OVERLAP O-02
+---
 
-- Participant A begins L041 during the end of L040.
-- Variant B target: 0.3 to 0.5 seconds.
-- Variant C target: 0.7 to 1.0 seconds.
+## 5.7 Answer relations
 
-INTERRUPTION I-01
+Link answer candidates to question artifacts.
 
-- In Variant B, L038 may begin immediately after L037.
-- In Variant C, L038 may begin during the last 0.15 to 0.30 seconds of L037.
+Each answer relation must record:
 
-VARIANT C ACOUSTIC PERTURBATIONS
+* answer act;
+* target question;
+* answer form;
+* explicitness;
+* polarity where applicable;
+* qualification;
+* whether the answer rejects a presupposition;
+* whether the answer is deferred or refused;
+* alternative question targets;
+* confidence;
+* and review status.
 
-P-01:
-Reduce L037 relative to surrounding lines while preserving partial intelligibility.
+The system must support:
 
-P-02:
-Add mild broadband room noise to L053 without obscuring the full sentence.
+* one answer responding to several questions;
+* several utterances jointly answering one question;
+* answer before an explicit question where context supports it;
+* and unresolved answer target.
 
-P-03:
-Partially clip the initial word of L058 while leaving the nonresponsive content
-identifiable.
+No adequacy, completeness, or evasion score is required in Phase 5.
 
-P-04:
-Use somewhat closer pitch or timbre for Participants A and B, but not identical
-voices.
+---
 
-P-05:
-Incorrectly highlight Participant A during the first portion of L050 before
-correcting to Participant B.
+## 5.8 Objection and rebuttal relations
 
-Every perturbation must have exact source-time bounds and parameters in the
-manifest.
+Construct bounded objection and rebuttal relations.
 
-OFF-CAMERA OR UNHIGHLIGHTED EVENT
+Each relation must identify, where possible:
 
-- Variant B: no panel highlighted for the first 0.5 to 1.0 seconds of L056.
-- Variant C: no panel highlighted for the first 1.0 to 1.5 seconds of L056.
+* target utterance or act;
+* challenged span;
+* challenge type;
+* rebuttal method;
+* supporting evidence span;
+* qualification;
+* alternative target;
+* confidence;
+* and unresolved issues.
 
-======================================================================
-12. REQUIRED HIDDEN REFERENCE PACKAGE
-======================================================================
+The implementation must distinguish:
 
-Ordinary analysis must not consume the hidden reference package.
+* objection to content;
+* objection to evidence;
+* objection to wording;
+* objection to definition;
+* objection to procedure;
+* and objection to attribution.
 
-Include:
+---
 
-- canonical script and evidence packet;
-- participant and line definitions;
-- intended speaker per line;
-- exact source times;
-- overlap and perturbation intervals;
-- intended discourse acts;
-- intended propositions;
-- intended argument relations;
-- intended open obligations;
-- candidate adjudication calls;
-- expected non-calls;
-- expected ambiguities;
-- and scoring-neutral fixture notes.
+## 5.9 Concession and qualification structures
 
-Reference files must distinguish source-construction facts, intended
-interpretations, candidate later adjudications, and expected uncertainty.
+Represent concessions and qualifications as modifiers of other discourse objects.
 
-======================================================================
-13. REQUIRED REFERENCE LANDMARKS
-======================================================================
+Each structure must include:
 
-Responsive answers:
+* conceding or qualifying act;
+* target act or span;
+* conceded content;
+* retained disagreement where present;
+* qualification dimension;
+* scope;
+* condition;
+* exception;
+* confidence;
+* and review status.
 
-- L007 to L006
-- L015 to L014 and ultimately L012
-- L030 to L029
-- L039 to L036
-- L047 to L046
-- L055 to L054
-- L060 to L057 and L059
+The system must preserve cases such as:
 
-Nonresponsive answers:
+> “That was true in 2022, but not after the law changed.”
 
-- L013 to L012
-- L037 to L036
-- L058 to L057
+This contains both temporal concession and temporal qualification.
 
-Candidate misrepresentations:
+---
 
-- L021, weaker and contestable
-- L040, stronger and explicit
+## 5.10 Definition structures
 
-Candidate contradiction:
+Create definition records.
 
-- L053 contradicts L016
-- L055 corrects it
-- L045 is not an ordinary contradiction
+Each definition must include:
 
-Candidate valid reasoning:
+* defined expression;
+* defining text;
+* definition type;
+* source act;
+* scope;
+* applicable context;
+* explicit exclusions;
+* competing definitions where present;
+* definition challenge links;
+* confidence;
+* and review status.
 
-- L026, conditional reasoning plus exact packet arithmetic
+Definitions must remain local to their declared discourse scope unless later evidence justifies broader reuse.
 
-Candidate invalid reasoning:
+---
 
-- L048, candidate affirmation of the consequent and policy-timing defect
+## 5.11 Example structures
 
-Expected ambiguity:
+Create example records.
 
-- L061 through L063
-- L034 and L035 may remain unresolved
-- L021 may remain below adjudication threshold
+Each example must include:
 
-Open and resolved obligations:
+* source act;
+* example span;
+* generalization or target act where identified;
+* example type;
+* real, hypothetical, quoted, or uncertain status;
+* temporal and participant references where structurally present;
+* confidence;
+* and review status.
 
-- L012 opens staffing obligation, satisfied by L015
-- L036 opens consequence question, satisfied by L039 with uncertainty
-- L056 opens operational question, answered by L060 while issue remains unresolved
+Phase 5 must not determine whether an example proves a generalization.
 
-======================================================================
-14. EXPECTED NON-CALLS
-======================================================================
+---
 
-Later systems should not be required to issue:
+## 5.12 Procedural-state representation
 
-- contradiction for the corrected and withdrawn numbers in L045;
-- falsehood because survey respondents are not guaranteed users;
-- factual-verification calls about the fictional packet;
-- deception or dishonesty findings;
-- motive or personality judgments;
-- a penalty for "I do not know" in L060;
-- a penalty merely for conditional language;
-- a forced concession from L061;
-- automatic fallacy penalties for objections;
-- or an overall winner encoded in the reference package.
+Create a limited procedural conversation state.
 
-======================================================================
-15. REQUIRED CORPUS STRUCTURE
-======================================================================
+The representation may include:
 
-A suitable structure is:
+* current recognized speaker;
+* pending question;
+* active response interval;
+* moderator instruction;
+* time warning;
+* time expiration;
+* granted extension;
+* requested clarification;
+* topic transition;
+* and unresolved procedural event.
 
-tests/
-  fixtures/
-    riverton_evening_access_v1/
-      README.md
-      script/
-        canonical_script.txt
-        evidence_packet.json
-        participants.json
-        line_definitions.json
-      generation/
-        generation_policy.json
-        voice_policy.json
-        visual_policy.json
-        perturbation_policy.json
-      media/
-        clean/
-        naturalized/
-        adversarial/
-      schedules/
-        clean/
-        naturalized/
-        adversarial/
-      reference/
-        discourse_acts.json
-        propositions.json
-        argument_graph.json
-        obligations.json
-        candidate_calls.json
-        expected_non_calls.json
-        ambiguities.json
-      manifests/
-        fixture_manifest.json
-        generation_manifest_clean.json
-        generation_manifest_naturalized.json
-        generation_manifest_adversarial.json
-        license_manifest.json
-      checksums/
-        sha256sums.txt
-      reports/
-        fixture_validation_report.json
-        fixture_validation_report.txt
+Every procedural state change must be linked to discourse acts and source intervals.
 
-Equivalent organization is permitted if source media, generation instructions,
-and hidden reference material remain clearly separated.
+This state is descriptive.
 
-======================================================================
-16. GENERATION PIPELINE
-======================================================================
+It must not automatically assign violation, fault, or sanction.
 
-Required stages:
+---
 
-1. validate script and evidence packet;
-2. resolve TTS provider and licensed voices;
-3. synthesize each line independently;
-4. preserve raw per-line audio;
-5. normalize only under documented policy;
-6. assemble participant stems;
-7. create pause and overlap schedules;
-8. create final mixed audio;
-9. generate visual frames or scenes;
-10. assemble video;
-11. validate audiovisual timing;
-12. write schedules and manifests;
-13. calculate hashes;
-14. validate reference consistency;
-15. produce reports.
+## 5.13 Alternatives and candidate selection
 
-Per-line synthesis is required. Do not submit the full script as one unstructured
-TTS request.
+Support multiple act candidates per utterance or span.
 
-======================================================================
-17. REPRODUCIBILITY POLICY
-======================================================================
-
-Distinguish:
-
-- exact deterministic regeneration;
-- configuration-equivalent regeneration;
-- semantically equivalent regeneration;
-- and non-reproducible generation.
-
-The canonical fixture may be frozen by content hash even if generation is not
-byte-identical across every environment.
-
-Preserve:
-
-- script version;
-- engine and model versions;
-- voice identifiers;
-- synthesis parameters;
-- seeds where supported;
-- per-line text and hashes;
-- assembly schedule;
-- FFmpeg commands;
-- visual-generation parameters;
-- environment summary;
-- and final hashes.
-
-Changed waveform content must not silently retain the prior fixture identity.
-
-======================================================================
-18. LICENSING AND DISTRIBUTION
-======================================================================
-
-Review before committing canonical media:
-
-- TTS engine code;
-- model weights;
-- selected voices;
-- phonemizer;
-- FFmpeg or other tools;
-- fonts;
-- graphic assets;
-- generated source media;
-- script text;
-- and repository distribution status.
-
-Classify the fixture as:
-
-- safely redistributable;
-- redistributable with notices;
-- locally generatable but not distributable;
-- or blocked pending review.
-
-Preferred result: redistributable with required notices.
-
-No third-party music, stock footage, celebrity likeness, cloned voice, or
-unlicensed font is permitted.
-
-======================================================================
-19. REQUIRED CONTRACTS
-======================================================================
-
-Use or extend Phase 0 contracts for:
-
-- ProofFixture
-- ProofFixtureVariant
-- ScriptLine
-- ScriptSpeaker
-- EvidencePacket
-- GenerationPolicy
-- VoiceAssignment
-- SynthesisInvocation
-- LineAudioArtifact
-- LineSchedule
-- OverlapEvent
-- AcousticPerturbation
-- VisualStateEvent
-- FixtureReferenceAnnotation
-- FixtureManifest
-- LicenseManifest
-- FixtureValidationFinding
-- FixtureValidationReport
-
-Equivalent names are permitted where clearer.
-
-Do not prematurely define the complete future analytical ontology.
-
-======================================================================
-20. REQUIRED CLI OPERATIONS
-======================================================================
-
-Provide equivalents of:
-
-- fixture list
-- fixture inspect
-- fixture validate
-- fixture generate
-- fixture regenerate-line
-- fixture render
-- fixture checksum
-- fixture license-report
-- fixture export
-- fixture compare
+Each candidate set must record:
+
+* candidate classifications;
+* evidence spans;
+* relation targets;
+* confidence or rank;
+* compatibility with other candidates;
+* exclusion relationships;
+* selection policy;
+* selected candidates;
+* rejected candidates;
+* deferred candidates;
+* and selection rationale.
+
+Compatible acts may be selected together.
+
+Mutually exclusive candidates must remain visible when unresolved.
+
+---
+
+## 5.14 Confidence model
+
+Confidence must be multidimensional.
+
+At minimum, distinguish:
+
+* act-type confidence;
+* evidence-span confidence;
+* target-relation confidence;
+* question-type confidence;
+* answer-link confidence;
+* quotation-use confidence;
+* procedural-state confidence;
+* and selection confidence.
+
+The system must not fabricate provider confidence where unavailable.
+
+Derived confidence must record:
+
+* derivation method;
+* source features;
+* thresholds;
+* and limitations.
+
+Confidence from different providers must not be treated as directly comparable without calibration.
+
+---
+
+## 5.15 Correction propagation
+
+Phase 5 must respond to Phase 4 corpus changes.
 
 Required behavior:
 
-- dry-run generation;
-- explicit provider and variant selection;
-- refusal to overwrite canonical artifacts without controlled replacement;
-- structured JSON output;
-- meaningful exit codes;
-- and complete provenance.
+* detect changed utterance text;
+* detect changed utterance boundaries;
+* detect changed speaker attribution;
+* detect changed quotation structure;
+* detect changed interruption or continuation relations;
+* identify affected discourse acts;
+* selectively invalidate affected observations;
+* rebuild affected relation targets;
+* preserve unaffected act identifiers where justified;
+* rebuild procedural state;
+* rebuild review queues;
+* and record propagation results.
 
-======================================================================
-21. REQUIRED VALIDATION
-======================================================================
+A display-label-only speaker change should not invalidate act classification unless identity-specific context was explicitly used.
 
-Validate:
+A text or boundary change affecting an evidence span must invalidate that span and its dependent act.
 
-- line identifier uniqueness and ordering;
-- speaker and evidence validity;
-- spoken-number consistency;
-- participant-name consistency;
-- required line presence;
-- schedule monotonicity;
-- overlap boundaries;
-- audio existence and duration;
-- stem and mix consistency where feasible;
-- video duration;
-- visual schedule bounds;
-- perturbation declaration;
-- reference source validity;
-- candidate-call evidence completeness;
-- expected-non-call completeness;
-- manifest and checksum completeness;
-- and licensing status.
+---
 
-A fixture is not valid when licensing is unknown for a required distributable
-component.
+## 5.16 Manual review
 
-======================================================================
-22. REQUIRED TESTING
-======================================================================
+Implement append-only review actions.
 
-Automated tests must cover:
+Supported actions must include:
 
-- script and evidence parsing;
-- stable line identifiers;
-- TTS-provider boundary;
-- deterministic mock TTS;
-- per-line orchestration;
-- failed-line recovery;
-- schedule and overlap assembly;
-- perturbation application;
-- visual-state generation;
-- duration checks;
-- manifest and checksum generation;
-- reference consistency;
-- license-manifest validation;
-- CLI behavior;
-- clean-workspace generation;
-- and controlled negative cases.
+* approve act;
+* reject act;
+* add act;
+* change act type;
+* change evidence span;
+* add or remove alternative;
+* change relation target;
+* mark target unresolved;
+* link answer to question;
+* unlink answer;
+* link objection or rebuttal;
+* revise concession scope;
+* revise qualification scope;
+* revise definition;
+* revise example target;
+* revise procedural act;
+* and defer decision.
 
-Ordinary unit tests must not require network, production models, GPU, or full
-fixture regeneration.
+Each action must include:
 
-======================================================================
-23. REQUIRED NEGATIVE CASES
-======================================================================
+* review identifier;
+* target artifact;
+* prior state;
+* proposed state;
+* author;
+* timestamp;
+* rationale;
+* evidence references;
+* certainty;
+* and resulting discourse-view version.
 
-Demonstrate detection or rejection of:
+Manual review must not modify the Phase 4 utterance corpus.
 
-- duplicate line identifiers;
-- unknown speaker;
-- missing line;
-- changed script with unchanged fixture version;
-- changed voice assignment with unchanged fixture version;
-- schedule outside media duration;
-- overlap referencing nonexistent lines;
-- reference annotation referencing nonexistent evidence;
-- candidate call lacking source support;
-- missing model-license record;
-- cloned-voice configuration;
-- untracked third-party asset;
-- output hash mismatch;
-- and destructive overwrite of a canonical fixture.
+---
 
-======================================================================
-24. QUALIFICATION RUN
-======================================================================
+## 5.17 Review queues and tools
 
-The qualification must:
+Provide review queues for likely analytical problems.
 
-1. begin from a clean supported environment;
-2. initialize or open a Phase 0 workspace;
-3. validate script and evidence packet;
-4. inspect TTS availability;
-5. generate Variants A, B, and C;
-6. assemble stems, mixes, and videos;
-7. produce schedules and manifests;
-8. validate all variants;
-9. calculate and freeze hashes;
-10. produce the licensing report;
-11. export the fixture package;
-12. validate the exported package;
-13. demonstrate controlled line regeneration;
-14. classify whether regeneration is hash-identical or version-changing;
-15. produce the completion report.
+Required queues should include:
 
-Record duration, generation time, file sizes, peak memory where practical, and
-GPU use.
+* low-confidence act;
+* multiple incompatible candidates;
+* act without evidence span;
+* relation without target;
+* answer with unresolved question;
+* question with multiple answer candidates;
+* objection with ambiguous target;
+* rebuttal with missing target;
+* concession with unclear scope;
+* qualification with unclear modifier target;
+* definition with missing term;
+* example with unresolved generalization;
+* quotation inconsistency;
+* procedural-state conflict;
+* correction-affected act;
+* and integrity-warning queue.
 
-======================================================================
-25. COMPLETION GATES
-======================================================================
+Review tools must expose:
 
-SCRIPT GATE
+* source interval;
+* utterance text;
+* speaker attribution;
+* local context window;
+* proposed act;
+* evidence span;
+* relation target;
+* alternatives;
+* confidence;
+* contrary evidence;
+* and available review actions.
 
-- complete 68-line script present;
-- speakers and evidence validate;
-- variant changes remain authorized.
+---
 
-VOICE GATE
+## 5.18 Discourse corpus and views
 
-- three licensed local voices assigned;
-- intelligible and distinguishable;
-- no cloned or impersonated voice;
-- all terms recorded.
+Produce a portable Phase 5 discourse corpus.
 
-MEDIA GATE
+Required views include:
 
-- three variants exist;
-- final video, mix, and stems exist;
-- files open;
-- properties match policy.
+* raw candidate view;
+* canonical machine view;
+* reviewed view;
+* alternatives view;
+* question-answer view;
+* objection-rebuttal view;
+* concession-qualification view;
+* definition-example view;
+* procedural view;
+* unresolved view;
+* and source-grounded reading view.
 
-TIMING GATE
+The corpus must include:
 
-- every line has source times;
-- overlaps and perturbations are declared;
-- all intervals fall within media duration.
+* manifest;
+* discourse-act observations;
+* selected acts;
+* evidence spans;
+* relations;
+* questions;
+* answer links;
+* objections;
+* rebuttals;
+* concessions;
+* qualifications;
+* definitions;
+* examples;
+* quotation uses;
+* procedural states;
+* alternatives;
+* review history;
+* correction-propagation results;
+* and integrity findings.
 
-VISUAL GATE
+---
 
-- three-panel presentation exists;
-- active-speaker states follow schedule except one declared Variant C mismatch;
-- no analytical answers appear.
+## 5.19 Reporting
 
-REFERENCE GATE
+Produce machine-readable and human-readable reports for:
 
-- hidden references exist;
-- annotations cite valid lines or evidence;
-- candidate calls and non-calls are separate;
-- ambiguity is explicit;
-- no overall winner encoded.
+* act distribution;
+* assertion acts;
+* questions;
+* answers;
+* objections;
+* rebuttals;
+* concessions;
+* qualifications;
+* definitions;
+* examples;
+* quotation uses;
+* procedural speech;
+* evidence-span coverage;
+* relation-target coverage;
+* alternatives;
+* confidence;
+* unresolved cases;
+* review actions;
+* correction propagation;
+* evaluation;
+* cache and recovery;
+* integrity;
+* and phase completion.
 
-REPRODUCIBILITY GATE
+Reports must separate:
 
-- configuration complete;
-- hashes frozen;
-- commands preserved;
-- regeneration classification accurate;
-- identity changes with canonical media changes.
+* inherited utterance evidence;
+* deterministic rules;
+* provider-generated proposals;
+* selected machine analysis;
+* human review;
+* measured evaluation;
+* and future expectations.
 
-LICENSING GATE
+---
 
-- licenses and notices present;
-- selected voices approved;
-- no untracked third-party assets;
-- distribution status explicit.
+## 6. Required domain artifacts
 
-VALIDATION GATE
+The exact names may vary, but the implementation must provide versioned equivalents of:
 
-- machine and human reports pass;
-- negative cases pass;
-- exported-package validation passes.
+* `DiscourseRun`
+* `DiscourseCorpus`
+* `DiscourseActObservation`
+* `DiscourseAct`
+* `DiscourseActCandidateSet`
+* `DiscourseEvidenceSpan`
+* `DiscourseRelation`
+* `QuestionAct`
+* `AnswerRelation`
+* `ObjectionRelation`
+* `RebuttalRelation`
+* `ConcessionStructure`
+* `QualificationStructure`
+* `DefinitionStructure`
+* `ExampleStructure`
+* `QuotationUse`
+* `ProceduralAct`
+* `ProceduralState`
+* `DiscourseReviewAction`
+* `DiscourseView`
+* `DiscourseCorrectionPropagation`
+* `DiscourseReference`
+* `DiscourseEvaluation`
+* `DiscourseReport`
+* `Phase5IntegrityResult`
 
-PHASE-BOUNDARY GATE
+All persisted artifacts must have:
 
-- no production transcription;
-- no production diarization;
-- no discourse analysis;
-- no adjudication;
-- no scoring;
-- no analytical overlay rendering.
+* strict schemas;
+* explicit format versions;
+* policy versions;
+* provenance;
+* canonical serialization;
+* integrity validation;
+* strict loading behavior;
+* and unsupported-version refusal.
 
-======================================================================
-26. EXPLICIT NON-DELIVERABLES
-======================================================================
+---
 
-Phase 0.5 must not implement or claim:
+## 7. Processing sequence
 
-- production ingestion;
-- transcription accuracy;
-- diarization accuracy;
-- speaker recognition;
-- discourse or proposition extraction;
-- argument reconstruction;
-- logical adjudication;
-- factual verification;
-- participant scoring;
-- human-review workflow;
-- or finished annotated editions.
+### Stage 1: Contracts and vocabulary
 
-The visual fixture is source material. The hidden package is evaluation material.
+* Define the discourse-act vocabulary.
+* Define act families and modifiers.
+* Define relation types.
+* Define evidence-span semantics.
+* Define candidate and confidence models.
+* Define identifier and versioning rules.
+* Define correction-propagation boundaries.
 
-======================================================================
-27. REQUIRED PROJECT_DESIGN.md REVISION RECOMMENDATION
-======================================================================
+### Stage 2: Deterministic baseline
 
-The completion report must recommend a design revision that:
+* Implement high-precision lexical and structural rules.
+* Detect clear questions, procedural formulas, explicit concessions, qualifications, definitions, examples, and quotations.
+* Produce evidence spans.
+* Preserve unknown results.
+* Establish a measurable baseline before model assistance.
 
-- inserts Phase 0.5 after Phase 0;
-- identifies Riverton Evening Access Forum as the initial proof family;
-- changes the initial-proof section from suggestion to selected strategy;
-- records synthetic multi-speaker generation as the initial approach;
-- preserves the right to add human-recorded and found-media corpora later.
+### Stage 3: Provider-assisted classification
 
-The builder must not remove the goal of real long-form analysis.
+* Analyze utterances with bounded Phase 4 context windows.
+* Produce multiple candidate acts.
+* Produce candidate evidence spans and targets.
+* Validate structured output.
+* Preserve provider provenance and failures.
 
-======================================================================
-28. REQUIRED COMPLETION REPORT
-======================================================================
+### Stage 4: Candidate consolidation
 
-Include:
+* Combine deterministic and provider-assisted observations.
+* Preserve agreement and disagreement.
+* Select compatible acts.
+* Retain unresolved alternatives.
+* Produce canonical machine discourse acts.
 
-- date;
-- application and fixture versions;
-- repository states;
-- delivered files;
-- script validation;
-- TTS engine, model, and voices;
-- licensing status;
-- generation environment;
-- variants and durations;
-- file sizes;
-- line, overlap, perturbation, and visual-state counts;
-- reference-annotation counts;
-- hash inventory;
-- test and qualification results;
-- negative cases;
-- reproducibility classification;
-- deviations;
-- unresolved concerns;
-- proposed design changes;
-- and readiness for Phase 1.
+### Stage 5: Question-answer construction
 
-Distinguish complete, partial, mocked, deferred, unsupported, and failed.
+* Create question artifacts.
+* Link answer candidates.
+* Preserve deferred, refused, indirect, and presupposition-rejecting answers.
+* Avoid adequacy scoring.
 
-======================================================================
-29. PHASE 0.5 SUCCESS DEFINITION
-======================================================================
+### Stage 6: Objection, rebuttal, concession, and qualification
 
-Phase 0.5 succeeds when Ratiocinatus possesses a controlled audiovisual source
-family that:
+* Link challenges to targets.
+* Construct rebuttal relations.
+* Identify conceded and retained positions.
+* Identify qualification scope.
+* Preserve target ambiguity.
 
-- requires no external domain expertise;
-- contains known logical and dialectical structures;
-- includes bounded conversational difficulty;
-- has distinct synthetic speakers;
-- has exact timing and provenance;
-- has hidden references;
-- includes expected ambiguities and expected non-calls;
-- is legally usable under documented policy;
-- validates independently;
-- and serves as the common proof source for Phases 1 through 12.
+### Stage 7: Definitions, examples, and quotations
 
-The desired result is not a demonstration that Ratiocinatus can already judge
-the exchange.
+* Construct definition records.
+* Link examples to candidate generalizations.
+* Consume Phase 4 quotation evidence.
+* Distinguish quotation use from acoustic attribution.
 
-The desired result is a trustworthy exchange against which every later claim of
-capability can be tested.
+### Stage 8: Procedural discourse
+
+* Identify procedural acts.
+* Build bounded procedural state.
+* Represent moderator actions and timing-related speech.
+* Do not assign violations or blame.
+
+### Stage 9: Review and correction propagation
+
+* Implement append-only review.
+* Build review queues.
+* Detect Phase 4 changes.
+* Selectively rebuild affected acts and relations.
+* Preserve unaffected artifacts.
+
+### Stage 10: Evaluation and qualification
+
+* Evaluate act types, evidence spans, relations, alternatives, and confidence.
+* Exercise negative cases, recovery, and long-recording mechanics.
+* Export and reload the discourse corpus.
+* Produce checked-in completion evidence.
+
+---
+
+## 8. Required command-line operations
+
+Provide CLI operations equivalent to:
+
+* inspect discourse-provider capabilities;
+* build a discourse corpus;
+* resume discourse analysis;
+* validate discourse artifacts;
+* list discourse acts;
+* inspect one discourse act;
+* show evidence spans;
+* list questions;
+* list answer relations;
+* list unresolved answers;
+* list objections;
+* list rebuttals;
+* list concessions;
+* list qualifications;
+* list definitions;
+* list examples;
+* list quotation uses;
+* list procedural acts;
+* inspect procedural state;
+* list ambiguous candidate sets;
+* approve or reject an act;
+* add or revise an act;
+* change an evidence span;
+* link or unlink a relation target;
+* propagate Phase 4 corrections;
+* show propagation impact;
+* render a discourse-annotated transcript;
+* export the discourse corpus;
+* reload and verify an export;
+* evaluate discourse construction;
+* produce Phase 5 reports;
+* and verify Phase 5 completion.
+
+All commands must return typed, structured errors suitable for automation.
+
+---
+
+## 9. Configuration requirements
+
+Persist all configuration that may affect Phase 5 evidence.
+
+At minimum, record:
+
+* Phase 4 utterance-view version;
+* discourse vocabulary version;
+* deterministic rule version;
+* provider and model;
+* provider fingerprint where available;
+* context-window policy;
+* token and duration budgets;
+* act-candidate count;
+* evidence-span policy;
+* relation-target search window;
+* question-link policy;
+* answer-link policy;
+* objection and rebuttal policy;
+* concession and qualification policy;
+* definition policy;
+* example policy;
+* quotation-use policy;
+* procedural-state policy;
+* confidence thresholds;
+* alternative-selection policy;
+* unknown-state policy;
+* retry and repair policy;
+* cache policy;
+* review-queue policy;
+* correction-propagation policy;
+* and evaluation policy.
+
+Configuration changes must selectively invalidate only dependent artifacts.
+
+---
+
+## 10. Integrity requirements
+
+Phase 5 integrity validation must detect at least:
+
+* missing Phase 4 lineage;
+* incompatible utterance-corpus versions;
+* source hash mismatch;
+* discourse act targeting an unknown utterance;
+* evidence span outside utterance text;
+* word references outside the evidence span;
+* source interval inconsistent with the span;
+* unsupported act type;
+* malformed act modifiers;
+* duplicate canonical act selection;
+* incompatible selected alternatives;
+* relation targeting an unknown artifact;
+* answer relation targeting a non-question without explicit justification;
+* objection or rebuttal with impossible temporal target under the configured policy;
+* concession with no conceded content;
+* qualification with no target or scope;
+* definition with no defined expression;
+* example with invalid span;
+* quotation use incompatible with Phase 4 quotation evidence;
+* procedural-state cycle or impossible transition;
+* confidence outside permitted range;
+* missing confidence origin;
+* review-history cycle;
+* stale correction propagation;
+* mixed corpus versions inside one discourse view;
+* unsupported schema or policy versions;
+* and corrupted cached artifacts.
+
+Integrity failure must produce typed findings and must not silently generate a partially trusted discourse view.
+
+---
+
+## 11. Qualification corpus
+
+Phase 5 qualification must include controlled cases covering:
+
+* simple assertion;
+* denial;
+* explicit question;
+* declarative-form question;
+* rhetorical question;
+* direct answer;
+* indirect answer;
+* partial answer;
+* qualified answer;
+* refusal to answer;
+* rejection of question premise;
+* objection;
+* procedural objection;
+* rebuttal by denial;
+* rebuttal by counterexample;
+* rebuttal by alternative explanation;
+* full concession;
+* partial concession;
+* concession followed by disagreement;
+* temporal qualification;
+* conditional qualification;
+* scope qualification;
+* explicit definition;
+* operational definition;
+* definition challenge;
+* example;
+* counterexample;
+* hypothetical example;
+* direct quotation;
+* paraphrase;
+* quotation correction;
+* moderator instruction;
+* time warning;
+* request to answer;
+* floor grant;
+* topic transition;
+* utterance containing several act types;
+* ambiguous act;
+* act with unresolved target;
+* incomplete speech;
+* overlapping speech;
+* unknown speaker;
+* corrected utterance;
+* utterance-boundary change;
+* and long-distance relation within a bounded context policy.
+
+Reference annotations must be independently prepared and source-addressed.
+
+Synthetic material may prove mechanics but must remain separate from natural-conversation performance evidence.
+
+---
+
+## 12. Evaluation requirements
+
+Create a controlled evaluation framework capable of measuring:
+
+* act-family precision, recall, and F1;
+* act-type precision, recall, and F1;
+* multi-label exact match;
+* multi-label partial match;
+* evidence-span precision, recall, and overlap;
+* relation-target accuracy;
+* question-type accuracy;
+* answer-link accuracy;
+* objection-target accuracy;
+* rebuttal-target accuracy;
+* concession-scope accuracy;
+* qualification-scope accuracy;
+* definition-span accuracy;
+* example-target accuracy;
+* quotation-use accuracy;
+* procedural-act accuracy;
+* alternative-candidate recall;
+* calibration or confidence reliability;
+* unknown-state appropriateness;
+* correction-propagation completeness;
+* unaffected-artifact stability;
+* and human-review impact.
+
+Evaluation policy must specify:
+
+* span-overlap thresholds;
+* treatment of compatible multi-label acts;
+* treatment of nested acts;
+* treatment of unresolved targets;
+* treatment of rhetorical questions;
+* treatment of incomplete utterances;
+* treatment of overlap;
+* and treatment of human-reviewed references.
+
+Results should be stratified by act family and conversational condition.
+
+---
+
+## 13. Required negative proofs
+
+Qualification must demonstrate typed refusal or conservative degradation for:
+
+* unsupported Phase 4 format;
+* missing utterance corpus;
+* corrupted utterance lineage;
+* provider unavailable;
+* model unavailable;
+* provider timeout;
+* malformed structured output;
+* unsupported act type;
+* evidence span outside the utterance;
+* invalid word references;
+* confidence outside allowed range;
+* answer linked to unknown question;
+* objection linked to unknown target;
+* rebuttal relation cycle;
+* concession without content;
+* qualification without scope;
+* definition without term;
+* quotation incompatible with Phase 4 evidence;
+* impossible procedural transition;
+* incompatible selected alternatives;
+* stale review action;
+* correction propagation from the wrong utterance version;
+* export with mixed corpus versions;
+* unsupported schema version;
+* and corrupted cache entry.
+
+A crash, silent omission, fabricated target, forced classification, or destructive rewrite is not a passing negative proof.
+
+---
+
+## 14. Cache, resume, and recovery
+
+Phase 5 must preserve stage-local recovery.
+
+Required behavior:
+
+* cache deterministic observations separately from provider observations;
+* cache context-dependent provider output by exact context policy and input lineage;
+* cache candidate consolidation separately from review decisions;
+* cache relation construction separately from act classification;
+* cache procedural-state assembly separately;
+* validate artifacts before reuse;
+* quarantine corrupt entries;
+* selectively invalidate Phase 4 correction-affected artifacts;
+* preserve unaffected act identifiers where justified;
+* resume after every material persisted stage;
+* and avoid provider reinvocation when valid observations remain reusable.
+
+Recovery qualification must include interruption after:
+
+* deterministic classification;
+* provider analysis;
+* evidence-span normalization;
+* candidate consolidation;
+* question construction;
+* answer linking;
+* objection and rebuttal linking;
+* concession and qualification construction;
+* definition and example construction;
+* procedural-state assembly;
+* review assembly;
+* and export.
+
+---
+
+## 15. Long-recording requirements
+
+Phase 5 must qualify operation on a recording longer than two hours.
+
+The proof must demonstrate:
+
+* bounded memory;
+* incremental utterance processing;
+* deterministic context-window retrieval;
+* bounded relation-target search;
+* cross-chunk conversational continuity where policy permits;
+* no duplicate act ownership;
+* interruption and resume;
+* cache replay;
+* portable export and reload;
+* and complete integrity validation.
+
+Synthetic marker acts may prove mechanics but must not support claims about natural discourse-act quality.
+
+---
+
+## 16. Regression requirements
+
+Phase 5 must preserve all Phase 0 through Phase 4 guarantees.
+
+The regression suite must demonstrate that Phase 5 does not:
+
+* alter source media;
+* alter normalized audio;
+* alter transcript evidence;
+* alter diarization evidence;
+* alter identity bindings;
+* alter utterance segmentation;
+* alter quotation evidence;
+* force unknown speakers into identities;
+* invent missing speech;
+* treat assertion as truth;
+* treat question as fair or unfair;
+* score answer adequacy;
+* label evasion as a settled fact;
+* determine rebuttal success;
+* determine argument validity;
+* assign interruption blame;
+* infer sincerity or intent;
+* perform factual adjudication;
+* score credibility;
+* make psychological or clinical judgments;
+* or rank participants.
+
+---
+
+## 17. Explicit exclusions
+
+Phase 5 must not implement:
+
+* full semantic claim extraction;
+* entity resolution beyond references needed for discourse targets;
+* factual verification;
+* truth-value assignment;
+* contradiction adjudication;
+* premise and conclusion graph construction;
+* formal argument-validity evaluation;
+* fallacy adjudication;
+* burden-of-proof allocation;
+* answer-responsiveness scoring;
+* evasion scoring;
+* deception detection;
+* credibility scoring;
+* sentiment scoring;
+* politeness scoring;
+* dominance scoring;
+* intent inference;
+* mental-state inference;
+* participant performance scoring;
+* or debate winner selection.
+
+Phase 5 may provide evidence later consumed by these functions, but must not silently perform them.
+
+---
+
+## 18. Documentation requirements
+
+Document:
+
+* the distinction among utterance, discourse act, relation, claim, and argument role;
+* discourse-act vocabulary;
+* multi-label behavior;
+* evidence-span semantics;
+* question construction;
+* answer linking;
+* objection and rebuttal relations;
+* concession and qualification scope;
+* definition handling;
+* example handling;
+* quotation use;
+* procedural-state construction;
+* alternatives;
+* confidence;
+* provider boundaries;
+* manual review;
+* correction propagation;
+* cache invalidation;
+* evaluation methodology;
+* long-recording behavior;
+* and phase boundaries.
+
+Documentation must state plainly:
+
+* an assertion label does not establish truth;
+* an answer label does not establish adequacy;
+* a rebuttal label does not establish success;
+* a procedural flag does not establish violation or blame;
+* and ambiguous or unclassified discourse function is an acceptable result.
+
+---
+
+## 19. Completion evidence
+
+The Phase 5 completion report must include:
+
+* application and contract versions;
+* starting and final repository state;
+* corpus and configuration identifiers;
+* Phase 4 input-view identifiers;
+* discourse-act counts by family and type;
+* multi-label utterance counts;
+* unclassified utterance counts;
+* evidence-span coverage;
+* question counts and types;
+* answer-relation counts and unresolved targets;
+* objection and rebuttal counts;
+* concession and qualification counts;
+* definition and example counts;
+* quotation-use counts;
+* procedural-act counts;
+* alternative-candidate counts;
+* confidence distributions;
+* manual review actions;
+* correction-propagation results;
+* evaluation metrics;
+* long-recording results;
+* cache and recovery results;
+* peak-memory results;
+* negative-case results;
+* regression results;
+* known limitations;
+* evidence inventory;
+* and unresolved concerns.
+
+Measured evaluation, synthetic mechanics, provider proposals, deterministic rules, human review, and future expectations must remain separate.
+
+---
+
+## 20. Exit gates
+
+Phase 5 is complete only when all of the following gates pass.
+
+### Gate 1: Immutable discourse corpus
+
+The system produces a versioned discourse corpus without modifying Phase 4 or earlier evidence.
+
+### Gate 2: Stable discourse-act observations
+
+Every act observation is stable, source-grounded, and linked to a declared utterance version.
+
+### Gate 3: Controlled vocabulary
+
+All selected acts use a closed, versioned discourse-act vocabulary.
+
+### Gate 4: Multi-label representation
+
+One utterance may contain multiple compatible or sequential discourse acts without forced single-label collapse.
+
+### Gate 5: Evidence spans
+
+Every selected act has valid, inspectable evidence spans linked to utterance text, words, and source intervals.
+
+### Gate 6: Assertions
+
+Assertive functions can be represented without implying truth.
+
+### Gate 7: Questions
+
+Questions can be classified by conversational function rather than punctuation alone.
+
+### Gate 8: Answers
+
+Answer candidates can be linked to questions with direct, indirect, partial, qualified, deferred, refused, and unresolved states.
+
+### Gate 9: Objections
+
+Objections and challenges can be represented with explicit or unresolved targets.
+
+### Gate 10: Rebuttals
+
+Rebuttal acts and methods can be represented without determining whether they succeed.
+
+### Gate 11: Concessions
+
+Full, partial, hypothetical, and scoped concessions can be represented with retained disagreement where present.
+
+### Gate 12: Qualifications
+
+Temporal, conditional, probabilistic, categorical, and scope qualifications can modify explicit targets.
+
+### Gate 13: Definitions
+
+Defined expressions and defining spans can be represented with local scope and competing definitions.
+
+### Gate 14: Examples
+
+Examples, counterexamples, analogies, and hypothetical cases can be linked to candidate targets without implying proof.
+
+### Gate 15: Quotations
+
+Quotation and attribution functions remain distinct from acoustic speaker identity and preserve Phase 4 quotation lineage.
+
+### Gate 16: Procedural speech
+
+Moderator instructions, timing notices, floor management, topic transitions, and other procedural acts can be represented without assigning violations or blame.
+
+### Gate 17: Alternatives and confidence
+
+Competing act classifications and targets remain inspectable with multidimensional confidence.
+
+### Gate 18: Correction propagation
+
+Phase 4 changes selectively invalidate and rebuild affected Phase 5 artifacts while preserving unaffected evidence.
+
+### Gate 19: Append-only review
+
+Reviewers can approve, reject, revise, add, relink, or defer discourse acts through attributable append-only records.
+
+### Gate 20: Controlled evaluation
+
+Act classification, evidence spans, relation targets, alternatives, confidence, and propagation are evaluated against controlled references.
+
+### Gate 21: Cache and recovery
+
+Validated artifacts are safely reused, corrupted entries are quarantined, and interrupted processing resumes from persisted boundaries.
+
+### Gate 22: Portable export and integrity
+
+The discourse corpus can be exported, reloaded, and completely validated without provider execution.
+
+### Gate 23: Long-recording operation
+
+A recording longer than two hours can be processed with bounded memory, bounded context, resumability, cache replay, export, and reload.
+
+### Gate 24: Regression and boundary
+
+All prior-phase tests pass, and no factual adjudication, argument-validity judgment, answer-quality score, intent inference, credibility score, or participant judgment is introduced.
+
+---
+
+## 21. Success definition
+
+Phase 5 succeeds when Ratiocinatus can take a valid Phase 4 speaker-attributed utterance corpus and produce a portable, integrity-checked discourse representation that:
+
+* identifies what conversational functions utterances appear to perform;
+* supports assertions, questions, answers, objections, rebuttals, concessions, qualifications, definitions, examples, quotations, and procedural speech;
+* permits multiple acts within one utterance;
+* anchors each act to explicit evidence spans;
+* links acts to their conversational targets;
+* preserves alternatives and uncertainty;
+* supports append-only human review;
+* propagates prior-phase corrections selectively;
+* survives interruption and recovery;
+* supports controlled evaluation;
+* and remains fully traceable to the audiovisual source.
+
+The resulting discourse corpus must be suitable for later claim, proposition, argument, rule, and adjudication phases without treating conversational function as factual truth, argumentative success, speaker intent, or participant merit.

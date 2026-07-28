@@ -1,0 +1,94 @@
+{
+  "assertions": {
+    "all_assemblies_review_required_not_blocked": true,
+    "all_provider_observations_promoted": true,
+    "all_repeated_assemblies_stable": true,
+    "all_second_runs_reused": true,
+    "all_timestamped_words_promoted": true,
+    "all_uncertainty_machine_readable": true,
+    "no_assembly_validation_findings": true,
+    "provider_qualification_passed": true
+  },
+  "limitations": [
+    "Canonical promotion preserves provider output; it does not prove that proposed text is correct.",
+    "Whisper does not supply calibrated segment or word timing confidence, so every affected interval remains reviewable.",
+    "Assembly creates only the original machine transcript version; corrections and subtitle exports are separate successor or presentation artifacts."
+  ],
+  "qualification": "phase-2-canonical-transcript-assembly",
+  "results": [
+    {
+      "assembly_id": "txassembly_c34fca1c06a90c466a9e13672197ac2d",
+      "blocking_region_count": 0,
+      "cache_first_reused": true,
+      "cache_second_reused": true,
+      "low_confidence_classifications": {
+        "unavailable_temporal_alignment_confidence": 212,
+        "uncertain_segment_boundary": 23
+      },
+      "low_confidence_region_count": 235,
+      "review_region_count": 235,
+      "segment_count": 23,
+      "segments_match_provider_observations": true,
+      "stable_repeated_assembly": true,
+      "status": "review_required",
+      "stored_relative": "phase2/clean/transcript-assemblies/txassembly_c34fca1c06a90c466a9e13672197ac2d",
+      "validation_findings": [],
+      "variant": "clean",
+      "version_id": "txversion_d30cbea2ff01b9012f644dd403b8d832",
+      "word_count": 189,
+      "words_match_provider_observations": true
+    },
+    {
+      "assembly_id": "txassembly_3e84742b9b30c04ffeb212cc0a9f2e99",
+      "blocking_region_count": 0,
+      "cache_first_reused": true,
+      "cache_second_reused": true,
+      "low_confidence_classifications": {
+        "low_transcription_confidence": 1,
+        "unavailable_temporal_alignment_confidence": 212,
+        "uncertain_segment_boundary": 23
+      },
+      "low_confidence_region_count": 236,
+      "review_region_count": 236,
+      "segment_count": 23,
+      "segments_match_provider_observations": true,
+      "stable_repeated_assembly": true,
+      "status": "review_required",
+      "stored_relative": "phase2/naturalized/transcript-assemblies/txassembly_3e84742b9b30c04ffeb212cc0a9f2e99",
+      "validation_findings": [],
+      "variant": "naturalized",
+      "version_id": "txversion_e2e003f7a453bd7bf2d3dec1e1087447",
+      "word_count": 189,
+      "words_match_provider_observations": true
+    },
+    {
+      "assembly_id": "txassembly_284259ec601399cdbc0f0489d34741ff",
+      "blocking_region_count": 0,
+      "cache_first_reused": true,
+      "cache_second_reused": true,
+      "low_confidence_classifications": {
+        "low_transcription_confidence": 1,
+        "unavailable_temporal_alignment_confidence": 212,
+        "uncertain_segment_boundary": 23
+      },
+      "low_confidence_region_count": 236,
+      "review_region_count": 236,
+      "segment_count": 23,
+      "segments_match_provider_observations": true,
+      "stable_repeated_assembly": true,
+      "status": "review_required",
+      "stored_relative": "phase2/adversarial/transcript-assemblies/txassembly_284259ec601399cdbc0f0489d34741ff",
+      "validation_findings": [],
+      "variant": "adversarial",
+      "version_id": "txversion_9be2be20d94fe7cf0f0124e36f97ebf9",
+      "word_count": 189,
+      "words_match_provider_observations": true
+    }
+  ],
+  "source_provider_qualification": {
+    "qualification": "phase-2-initial-transcription-provider",
+    "reference_policy": "Public project-authored line text and schedules prepared before provider selection; evaluation excerpt is L001-L005.",
+    "status": "passed"
+  },
+  "status": "passed"
+}

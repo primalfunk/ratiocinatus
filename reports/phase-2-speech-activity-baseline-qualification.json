@@ -1,0 +1,120 @@
+{
+  "assertions": {
+    "all_coverage_complete": true,
+    "all_second_runs_reused": true,
+    "all_sources_unchanged": true,
+    "energy_false_positive_exposed": true,
+    "riverton_contains_probable_activity": true,
+    "silence_detected_in_nonsemantic_fixture": true,
+    "stable_repeated_runs": true
+  },
+  "limitations": [
+    "Energy activity is not a semantic voice activity detector.",
+    "Tone and noise are intentionally exposed as probable-speech false positives.",
+    "Scores are derived and uncalibrated.",
+    "No speech precision, recall, or general quality claim is made.",
+    "Hidden Riverton analytical references were not read."
+  ],
+  "provider_status": "qualified_with_known_semantic_limit",
+  "qualification": "phase-2-energy-activity-baseline",
+  "results": [
+    {
+      "addressable_duration_microseconds": 4000000,
+      "boundary_count": 4,
+      "cache_first_reused": false,
+      "cache_second_reused": true,
+      "chunk_count": 1,
+      "corpus_id": "corpus_e7e6b271eb75de45f624aa3db993507b",
+      "coverage_complete": true,
+      "interval_count": 3,
+      "invocation_count": 1,
+      "label": "synthetic_nonsemantic_activity",
+      "measured": {
+        "interfering_music_or_noise": {
+          "duration_microseconds": 0,
+          "interval_count": 0
+        },
+        "non_lexical_vocalization": {
+          "duration_microseconds": 0,
+          "interval_count": 0
+        },
+        "probable_non_speech": {
+          "duration_microseconds": 1990000,
+          "interval_count": 2
+        },
+        "probable_speech": {
+          "duration_microseconds": 2010000,
+          "interval_count": 1
+        },
+        "provider_failure": {
+          "duration_microseconds": 0,
+          "interval_count": 0
+        },
+        "uncertain": {
+          "duration_microseconds": 0,
+          "interval_count": 0
+        }
+      },
+      "request_id": "sareq_f127619caaf8c2c51a7a804ef1977661",
+      "run_id": "sarun_b9b71040149dedf453a24e93fb94d705",
+      "source_byte_size": 384044,
+      "source_sha256": "0a56dd021b9e2a13eff41f189e6b34a0124b175665feb5f0b93fc1ad3b77d82b",
+      "source_unchanged": true,
+      "stable_repeated_run": true,
+      "status": "warning",
+      "stored_relative": "speech_activity/sareq_f127619caaf8c2c51a7a804ef1977661"
+    },
+    {
+      "addressable_duration_microseconds": 567784000,
+      "boundary_count": 3266,
+      "cache_first_reused": false,
+      "cache_second_reused": true,
+      "chunk_count": 1,
+      "corpus_id": "corpus_deb7a31395c8692346f4604ed0d6365c",
+      "coverage_complete": true,
+      "interval_count": 3265,
+      "invocation_count": 1,
+      "label": "riverton_clean",
+      "measured": {
+        "interfering_music_or_noise": {
+          "duration_microseconds": 0,
+          "interval_count": 0
+        },
+        "non_lexical_vocalization": {
+          "duration_microseconds": 0,
+          "interval_count": 0
+        },
+        "probable_non_speech": {
+          "duration_microseconds": 134464000,
+          "interval_count": 321
+        },
+        "probable_speech": {
+          "duration_microseconds": 344100000,
+          "interval_count": 1031
+        },
+        "provider_failure": {
+          "duration_microseconds": 0,
+          "interval_count": 0
+        },
+        "uncertain": {
+          "duration_microseconds": 89220000,
+          "interval_count": 1913
+        }
+      },
+      "request_id": "sareq_05e97224baa886e8a957f1e79d1b7ea9",
+      "run_id": "sarun_495038e68e71f25ffb3496de2971680b",
+      "source_byte_size": 14448161,
+      "source_sha256": "1485faf0c8fa17ded5f17f3c4d1fa882757d65fff44393d3cecc2ad6b1c3266a",
+      "source_unchanged": true,
+      "stable_repeated_run": true,
+      "status": "warning",
+      "stored_relative": "speech_activity/sareq_05e97224baa886e8a957f1e79d1b7ea9"
+    }
+  ],
+  "status": "passed",
+  "synthetic_fixture": {
+    "description": "Project-authored silence, 440 Hz tone, deterministic broadband noise, silence; contains no speech.",
+    "license": "Apache-2.0",
+    "seed": 20260726
+  }
+}

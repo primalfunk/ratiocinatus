@@ -1,0 +1,65 @@
+{
+  "assertions": {
+    "activity_coverage_complete": true,
+    "activity_inherits_every_owned_chunk": true,
+    "activity_resume_reused": true,
+    "assembly_resume_reused": true,
+    "canonical_segment_per_owned_chunk": true,
+    "canonical_word_per_owned_chunk": true,
+    "chunk_transitions_contiguous": true,
+    "duration_exceeds_two_hours": true,
+    "final_assembly_valid": true,
+    "multiple_phase1_chunks": true,
+    "overlap_output_not_duplicated": true,
+    "phase1_corpus_unchanged": true,
+    "phase1_corpus_valid": true,
+    "providers_invoked_once": true,
+    "python_peak_below_256_mib": true,
+    "transcript_observation_per_owned_chunk": true,
+    "transcription_resume_reused": true
+  },
+  "chunks": {
+    "count": 13,
+    "maximum_coverage_multiplicity": 2,
+    "overlap_microseconds": 5000000,
+    "transition_count": 12
+  },
+  "corpus": {
+    "corpus_id": "corpus_396e56edcdefac8d7e94bcf2335941aa",
+    "duration_microseconds": 7201000000,
+    "normalized_audio_sha256": "fc3de500bad481d8e240485bde8bd64553b9793e2798116a660e2df7d49ac996",
+    "source_id": "src_0f23da0a111203558e9fa0ac52dabdc2",
+    "tree_hash_after": "0afd700ce4dd2b2e30159a0ff1ff8b3c509ac8535428243166f0470c24b45724",
+    "tree_hash_before": "0afd700ce4dd2b2e30159a0ff1ff8b3c509ac8535428243166f0470c24b45724"
+  },
+  "fixture_status": "Synthetic ownership and boundary control; no speech or transcription-accuracy claim.",
+  "performance": {
+    "measurement_scope": "tracemalloc Python allocator peak for Phase 2 qualification; hashing streams files in bounded blocks",
+    "processing_seconds": 4.079543,
+    "python_allocator_peak_bytes": 2773608
+  },
+  "phase2": {
+    "activity_interval_count": 13,
+    "activity_provider_calls": 1,
+    "activity_root": "C:\\Users\\erinm\\Desktop\\2026 - Work\\07.26 Ratiocinatus\\.qualification\\phase2-long-v1\\phase2\\speech_activity\\sareq_165ee9f8851c298a2d3781394803add7",
+    "activity_run_id": "sarun_3f54b90a0c0f071ce381348362514a73",
+    "assembly_id": "txassembly_8c37b25069df6d276d52d24f9f3949c3",
+    "assembly_root": "C:\\Users\\erinm\\Desktop\\2026 - Work\\07.26 Ratiocinatus\\.qualification\\phase2-long-v1\\phase2\\transcript-assemblies\\txassembly_8c37b25069df6d276d52d24f9f3949c3",
+    "low_confidence_region_count": 0,
+    "segment_count": 13,
+    "transcript_observation_count": 13,
+    "transcription_provider_calls": 1,
+    "transcription_request_id": "txreq_6818cdb2eaccf06dc957bd8af025daf0",
+    "transcription_response_id": "txresponse_de9e4df90a74050ddc6a5feb810ef126",
+    "transcription_root": "C:\\Users\\erinm\\Desktop\\2026 - Work\\07.26 Ratiocinatus\\.qualification\\phase2-long-v1\\phase2\\transcription\\txreq_6818cdb2eaccf06dc957bd8af025daf0",
+    "word_count": 13
+  },
+  "qualification": "phase-2-long-recording",
+  "resume_boundary": {
+    "activity_cache_reused": true,
+    "assembly_cache_reused": true,
+    "interruption_simulated_after": "speech_activity_committed",
+    "transcription_cache_reused": true
+  },
+  "status": "passed"
+}

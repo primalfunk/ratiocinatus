@@ -1,0 +1,99 @@
+{
+  "interruption_boundaries": [
+    "speech_activity",
+    "transcription_response",
+    "transcription_report",
+    "transcript_assembly",
+    "transcript_correction",
+    "subtitle_export",
+    "transcript_evaluation"
+  ],
+  "limitations": [
+    "Provider-process interruption and malformed-output behavior are covered by provider tests; this qualification does not force a second expensive Whisper inference.",
+    "The transcription metadata repair path validates retained raw and normalized response evidence before rebuilding its report.",
+    "Recovery quarantine is stage-local and never edits Phase 1 or validated transcription response evidence."
+  ],
+  "negative_proofs": {
+    "corrupt assembly quarantined": true,
+    "corrupt correction quarantined": true,
+    "corrupt evaluation quarantined": true,
+    "corrupt subtitle quarantined": true,
+    "corrupt transcription report repaired without provider": true,
+    "upstream evidence remained unchanged": true
+  },
+  "protected_artifact_count": 12,
+  "protected_artifacts_unchanged": true,
+  "qualification": "phase-2-cache-resume-recovery",
+  "records": [
+    {
+      "action": "repaired_without_provider",
+      "artifact_id": "txreport_75f62248d534ad182afb0f0770f1e751",
+      "contract_version": "0.1.0",
+      "detected_failure": "TranscriptionIntegrityError: transcription human report differs",
+      "provider_invoked": false,
+      "quarantine_relative_path": "phase2/clean/transcription/txreq_242a1ade84c15630ab327e9362baf2fb/invalid/report-51801c352b631f7f",
+      "stage": "transcription_report",
+      "upstream_artifact_ids": [
+        "txresponse_535eef87e875c513dd1f33fe7181b7c0"
+      ],
+      "validated_after_recovery": true
+    },
+    {
+      "action": "quarantined_and_rebuilt",
+      "artifact_id": "txassembly_bb63fbce1bd8c3a3961f8302d0c30153",
+      "contract_version": "0.1.0",
+      "detected_failure": "TranscriptAssemblyIntegrityError: persisted artifact txsegment_11f0f2514900f265e6a924324604d360 is missing or malformed",
+      "provider_invoked": false,
+      "quarantine_relative_path": "phase2/clean/transcript-assemblies/invalid/txassembly_bb63fbce1bd8c3a3961f8302d0c30153-d7edd51676a63a3b",
+      "stage": "transcript_assembly",
+      "upstream_artifact_ids": [
+        "txresponse_535eef87e875c513dd1f33fe7181b7c0"
+      ],
+      "validated_after_recovery": true
+    },
+    {
+      "action": "quarantined_and_rebuilt",
+      "artifact_id": "txrevision_c11e9a7bf2b396dcbf3e995e0b6eb117",
+      "contract_version": "0.1.0",
+      "detected_failure": "TranscriptCorrectionIntegrityError: persisted revision artifact is missing or malformed: difference.json",
+      "provider_invoked": false,
+      "quarantine_relative_path": "phase2/naturalized/transcript-revisions/invalid/txrevision_c11e9a7bf2b396dcbf3e995e0b6eb117-c016b2d0a619f840",
+      "stage": "transcript_correction",
+      "upstream_artifact_ids": [
+        "txassembly_5602215329c1cb2400e040e96faf3651"
+      ],
+      "validated_after_recovery": true
+    },
+    {
+      "action": "quarantined_and_rebuilt",
+      "artifact_id": "subtitleexport_f9052954ed1810ee9d07e6e5230817ca",
+      "contract_version": "0.1.0",
+      "detected_failure": "SubtitleExportIntegrityError: subtitle file failed validation: transcript.srt",
+      "provider_invoked": false,
+      "quarantine_relative_path": "phase2/adversarial/subtitle-exports/invalid/subtitleexport_f9052954ed1810ee9d07e6e5230817ca-a081729b425bad61",
+      "stage": "subtitle_export",
+      "upstream_artifact_ids": [
+        "txversion_aa36a7c11611f6a22c69ead1b8c32146"
+      ],
+      "validated_after_recovery": true
+    },
+    {
+      "action": "quarantined_and_rebuilt",
+      "artifact_id": "txevaluation_24bcd7bb0c6caad7a561e7c241be7813",
+      "contract_version": "0.1.0",
+      "detected_failure": "TranscriptEvaluationIntegrityError: persisted evaluation failed validation",
+      "provider_invoked": false,
+      "quarantine_relative_path": "phase2/clean/transcript-evaluations/invalid/txevaluation_24bcd7bb0c6caad7a561e7c241be7813-61df65c2a409b0f0",
+      "stage": "transcript_evaluation",
+      "upstream_artifact_ids": [
+        "txversion_ef7aff18c0078965e90b699585ea3645",
+        "txreference_c758dd5958448bae2da52a67c02f02c5"
+      ],
+      "validated_after_recovery": true
+    }
+  ],
+  "report_id": "phase2recovery_d250d16ae85d253b9939b7b6b5da30e6",
+  "source_evaluation_status": "passed",
+  "status": "passed",
+  "stored_relative": "recovery-reports/phase2recovery_d250d16ae85d253b9939b7b6b5da30e6"
+}

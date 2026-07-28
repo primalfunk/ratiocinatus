@@ -1,5 +1,5 @@
 {
-    "application_version":  "0.1.0",
+    "application_version":  "0.4.0",
     "dependencies":  [
                          {
                              "license":  "MIT",
@@ -20,6 +20,26 @@
                              "license":  "MIT",
                              "name":  "setuptools",
                              "status":  "confirmed"
+                         },
+                         {
+                             "license":  "MIT",
+                             "name":  "Silero VAD 6.2.1 software and packaged model",
+                             "status":  "confirmed; optional and not redistributed"
+                         },
+                         {
+                             "license":  "BSD-3-Clause",
+                             "name":  "PyTorch",
+                             "status":  "confirmed transitive optional runtime"
+                         },
+                         {
+                             "license":  "BSD-2-Clause",
+                             "name":  "TorchAudio",
+                             "status":  "confirmed transitive optional runtime"
+                         },
+                         {
+                             "license":  "MIT",
+                             "name":  "OpenAI Whisper 20250625 code and small model weights",
+                             "status":  "confirmed; optional and not redistributed"
                          }
                      ],
     "fixtures":  {
@@ -31,11 +51,18 @@
                             "status":  "confirmed by project owner 2026-07-26"
                         },
     "provisional":  [
-                        "FFmpeg",
-                        "Whisper-family software and weights",
                         "pyannote-family software and weights",
                         "LM Studio and selected models",
                         "future embeddings",
-                        "future datasets"
-                    ]
+                        "future datasets",
+                        "other Whisper-family software and weights"
+                    ],
+    "external_tools":  [
+                           {
+                               "name":  "FFmpeg and FFprobe",
+                               "license":  "GPL-3.0-or-later for qualified local build",
+                               "bundled":  false,
+                               "status":  "external tool terms recorded; not redistributed"
+                           }
+                       ]
 }

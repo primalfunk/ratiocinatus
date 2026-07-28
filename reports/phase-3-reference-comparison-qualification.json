@@ -1,0 +1,29 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "all_six_result_classes_are_supported": true,
+    "automatic_identity_binding_is_prohibited": true,
+    "calibration_unavailability_is_explicit": true,
+    "comparison_scope_is_validated": true,
+    "inactive_references_are_invalid": true,
+    "incompatible_model_spaces_are_invalid": true,
+    "representation_values_are_absent_from_contracts": true,
+    "scores_are_interpreted_by_explicit_threshold_policy": true,
+    "source_evidence_is_immutable": true
+  },
+  "phase": 3,
+  "qualification": "phase-3-compatible-reference-voice-comparison",
+  "reference_comparison_contract_models": 6,
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 198
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_reference_comparison": 4,
+    "full_regression": 147,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

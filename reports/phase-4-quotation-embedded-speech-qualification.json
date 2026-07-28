@@ -1,0 +1,25 @@
+{
+  "qualification": "phase-4-quotation-and-embedded-speech",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "synthetic_mechanics",
+  "quotation_contract_models": 6,
+  "runtime_contracts": 275,
+  "focused_test_count": 5,
+  "full_regression_test_count": 219,
+  "assertions": [
+    "Quotation candidates retain bounded character, word, and media addressing.",
+    "Quotation marks alone are insufficient for a candidate.",
+    "Quoted-speaker and acoustic-speaker attribution remain separate.",
+    "Automatic quoted-identity binding and paraphrase inference are prohibited.",
+    "Embedded and remote speech require explicit transcript markers.",
+    "Embedded sources cannot be classified as primary participant speech.",
+    "Persistence is deterministic, reloadable, cache-safe, and tamper-evident.",
+    "CLI queues expose quotation and embedded-source review evidence."
+  ],
+  "limitations": [
+    "Synthetic cues qualify mechanics rather than quotation accuracy.",
+    "Paraphrase and attributed-identity resolution require later reviewed evidence.",
+    "Embedded-source markers are transcript metadata candidates, not media-source proof."
+  ]
+}

@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"artifact_id":{"minLength":1,"title":"Artifact Id","type":"string"},"content_sha256":{"pattern":"^[a-f0-9]{64}$","title":"Content Sha256","type":"string"},"contract_version":{"default":"0.1.0","title":"Contract Version","type":"string"}},"required":["artifact_id","content_sha256"],"title":"TranscriptArtifactDigest","type":"object"}

@@ -1,0 +1,32 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "accepted_proposals_require_successor_transformations": true,
+    "automatic_merge_is_disabled": true,
+    "automatic_split_is_disabled": true,
+    "cluster_identifiers_exclude_participant_names": true,
+    "cluster_memberships_are_unique": true,
+    "clustered_and_unclustered_evidence_partition_observations": true,
+    "missing_labels_remain_unclustered": true,
+    "mixed_embedding_spaces_are_refused": true,
+    "provider_must_declare_clustering_capability": true,
+    "simultaneous_self_conflict_produces_reviewable_split": true
+  },
+  "clustering_contract_models": 8,
+  "phase": 3,
+  "production_provider_selected": false,
+  "qualification": "phase-3-provisional-acoustic-clustering",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 187
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_clustering": 4,
+    "focused_phase3": 20,
+    "full_regression": 139,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

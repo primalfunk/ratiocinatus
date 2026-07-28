@@ -1,0 +1,29 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "enrollment_does_not_bind_identity": true,
+    "explicit_lawful_use_basis_is_required": true,
+    "explicit_provenance_is_required": true,
+    "invalid_reference_evidence_is_rejected": true,
+    "multiple_references_per_identity_are_supported": true,
+    "representation_values_are_absent_from_contracts": true,
+    "revocation_and_replacement_are_append_only": true,
+    "scope_is_bounded_to_the_identity_foundation": true,
+    "source_identity_evidence_is_immutable": true
+  },
+  "phase": 3,
+  "qualification": "phase-3-bounded-reference-voice-enrollment",
+  "reference_enrollment_contract_models": 5,
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 192
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_reference_enrollment": 4,
+    "full_regression": 143,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

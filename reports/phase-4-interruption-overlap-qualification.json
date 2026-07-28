@@ -1,0 +1,25 @@
+{
+  "qualification": "phase-4-interruption-overlap-and-continuation",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "synthetic_mechanics",
+  "phase4_relation_contract_models": 7,
+  "runtime_contracts": 261,
+  "focused_test_count": 6,
+  "full_regression_test_count": 208,
+  "assertions": [
+    "Temporal adjacency preserves signed gaps and simultaneous intervals.",
+    "Every Phase 3 overlap is projected or explicitly marked untranscribed.",
+    "Simultaneous interruption requires explicit overlap support.",
+    "Immediate takeover requires bounded temporal and incomplete-terminal evidence.",
+    "Possible resumptions require compatible explicit attribution and intervening activity.",
+    "Continuation cycles and impossible ordering are rejected.",
+    "Persistence is deterministic, sealed, reloadable, and cache-safe.",
+    "CLI queues expose interruption, continuation, overlap, and adjacency evidence."
+  ],
+  "limitations": [
+    "Temporal candidates do not establish intent, blame, dominance, or quality.",
+    "Supportive interjections and backchannels are not inferred.",
+    "Continuation candidates do not use semantic similarity and remain unresolved."
+  ]
+}

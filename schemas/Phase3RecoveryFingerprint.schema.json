@@ -1,0 +1,1 @@
+{"additionalProperties":false,"properties":{"content_sha256":{"pattern":"^[a-f0-9]{64}$","title":"Content Sha256","type":"string"},"contract_version":{"default":"0.1.0","title":"Contract Version","type":"string"},"label":{"minLength":1,"title":"Label","type":"string"}},"required":["label","content_sha256"],"title":"Phase3RecoveryFingerprint","type":"object"}

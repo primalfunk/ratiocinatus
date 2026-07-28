@@ -21,7 +21,11 @@ pip-wheel-metadata/
 .pytest_cache/
 .coverage
 .coverage.*
+coverage.xml
+coverage.json
 htmlcov/
+junit.xml
+.testmondata
 .tox/
 .nox/
 .mypy_cache/
@@ -38,10 +42,15 @@ htmlcov/
 /.qualification/
 /.verification/
 /exports/
+/tmp/
+/temp/
 *.fixture.zip
 
 # Downloaded model weights and provider caches are never repository assets
 /.cache/
+/.huggingface/
+/.torch/
+/.whisper/
 /models/
 *.onnx
 *.safetensors
@@ -54,24 +63,65 @@ htmlcov/
 .env
 .env.*
 !.env.example
+.envrc
+.direnv/
+.secrets/
+.aws/
+.azure/
+.config/gcloud/
+.netrc
+_netrc
+.npmrc
+.pypirc
+credentials.json
+credentials.*.json
+service-account*.json
+secrets.json
+secrets.*.json
+*.secret
+*.token
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+id_rsa*
+id_ed25519*
+id_ecdsa*
 *.local.json
 *.local.toml
 *.local.yaml
 *.local.yml
+
+# Local databases and runtime state
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
 
 # Operational logs and temporary files
 *.log
 *.tmp
 *.temp
 *.bak
+*.orig
+*.rej
 *.swp
 *~
 
-# Editors and operating systems
+# Local agent, editor, and operating-system metadata
+.agents/
+.codex/
+.claude/
 .idea/
 .vscode/
 .vs/
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
 Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/

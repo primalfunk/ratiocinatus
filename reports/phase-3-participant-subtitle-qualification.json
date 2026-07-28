@@ -1,0 +1,27 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "conflicted_views_refuse_export": true,
+    "corrected_revision_lineage_is_declared": true,
+    "file_bytes_and_hashes_are_validated": true,
+    "format_losses_are_declared": true,
+    "identity_view_lineage_is_declared": true,
+    "overlap_is_visibly_disclosed": true,
+    "unknown_and_unattributed_labels_are_preserved": true,
+    "webvtt_and_srt_are_presentation_derivatives": true
+  },
+  "phase": 3,
+  "qualification": "phase-3-participant-labeled-subtitles",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 215
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_participant_subtitles": 5,
+    "full_regression": 173,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

@@ -1,0 +1,30 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "controlled_reference_is_independently_sealed": true,
+    "controlled_reference_labels_are_not_identities": true,
+    "embedding_values_are_excluded": true,
+    "false_merges_and_false_splits_are_distinct": true,
+    "incompatible_embedding_spaces_are_blocked": true,
+    "partial_reference_coverage_is_explicit": true,
+    "protected_artifact_paths_and_integrity_are_checked": true,
+    "source_clusters_are_not_renamed_or_modified": true
+  },
+  "evaluation_contract_models": 7,
+  "phase": 3,
+  "production_provider_selected": false,
+  "qualification": "phase-3-controlled-clustering-evaluation",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 187
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_clustering_evaluation": 3,
+    "focused_phase3": 20,
+    "full_regression": 139,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

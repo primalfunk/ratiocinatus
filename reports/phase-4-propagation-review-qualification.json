@@ -1,0 +1,27 @@
+{
+  "qualification": "phase-4-correction-propagation-and-review",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "synthetic_mechanics",
+  "propagation_review_contract_models": 9,
+  "runtime_contracts": 296,
+  "focused_test_count": 6,
+  "full_regression_test_count": 236,
+  "assertions": [
+    "Validated predecessor and rebuilt successor chains are compared deterministically.",
+    "Text, timing, attribution, segmentation, display-label, and source-lineage changes are distinguished.",
+    "Only affected predecessor dependencies are invalidated while unaffected evidence remains reusable.",
+    "Rebuilt transcript views and context windows are required in the successor chain.",
+    "Predecessor machine evidence remains immutable and addressable.",
+    "All fifteen required manual review actions are represented in append-only ledgers.",
+    "Unknown review targets and review lineage inconsistencies are rejected.",
+    "Review queues package source intervals, media access, local context, speaker evidence, proposed actions, and alternatives.",
+    "Persistence is reloadable, cache-safe, and tamper-evident.",
+    "CLI operations expose propagation impact, manual review, and review queues."
+  ],
+  "limitations": [
+    "Synthetic fixtures qualify mechanics rather than correction or reviewer accuracy.",
+    "Corpus-scoped successor utterance identifiers change when upstream corpus lineage changes; predecessor mappings preserve addressability.",
+    "Temporal utterance mapping is a bounded fallback after canonical word ownership, not semantic equivalence inference."
+  ]
+}

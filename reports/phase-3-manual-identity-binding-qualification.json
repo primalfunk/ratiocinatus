@@ -1,0 +1,27 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "active_state_is_derived": true,
+    "all_decisions_are_attributable": true,
+    "conflicting_branches_remain_visible": true,
+    "diarization_is_not_modified": true,
+    "merge_and_split_reference_existing_identities": true,
+    "predecessor_history_is_append_only": true,
+    "rejection_and_unknown_are_explicit": true,
+    "revision_and_restoration_require_active_predecessors": true
+  },
+  "phase": 3,
+  "qualification": "phase-3-manual-identity-binding",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 201
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_manual_identity_binding": 5,
+    "full_regression": 158,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

@@ -1,0 +1,45 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "cluster_contract_has_no_participant_identity": true,
+    "embedding_export_requires_explicit_authorization": true,
+    "embedding_values_are_not_loggable": true,
+    "identity_binding_is_separate_from_diarization": true,
+    "identity_support_dimensions_remain_separate": true,
+    "provider_boundary_is_conservatively_unavailable": true,
+    "provider_output_has_no_participant_identity": true,
+    "schemas_are_strict_and_closed": true,
+    "unknown_identity_is_representable": true,
+    "unsupported_versions_are_refused": true
+  },
+  "contract_models": 22,
+  "contract_version": "0.1.0",
+  "embedding_policy": {
+    "default_storage": "protected_reference",
+    "log_embedding_values": false,
+    "portable_export": false,
+    "portable_export_requirement": "stored evidence plus explicit authorization reference"
+  },
+  "phase": 3,
+  "provider": {
+    "available": false,
+    "capabilities": [
+      "turn_segmentation"
+    ],
+    "provider_id": "unconfigured.diarization",
+    "production_model_selected": false
+  },
+  "qualification": "phase-3-contract-and-evidence-boundary-foundation",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 187
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused": 14,
+    "full_regression": 139,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

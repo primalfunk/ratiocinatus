@@ -1,0 +1,26 @@
+{
+  "qualification": "phase-4-context-windows",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "synthetic_mechanics",
+  "context_window_contract_models": 6,
+  "runtime_contracts": 287,
+  "focused_test_count": 6,
+  "full_regression_test_count": 230,
+  "assertions": [
+    "All nine declared context-window kinds are generated for every utterance.",
+    "Window generation is deterministic and source-traceable.",
+    "Canonical temporal order, overlap groups, lanes, and simultaneous references are preserved.",
+    "Utterance-count, token-estimate, and source-duration budgets are enforced.",
+    "Speaker balancing and question, interruption, quotation, and overlap preservation priorities are policy controlled.",
+    "Budget truncation and structural unavailability are disclosed separately.",
+    "A target that cannot fit the declared budget is refused rather than clipped.",
+    "Persistence is reloadable, cache-safe, and tamper-evident.",
+    "CLI operations build, validate, inspect, list, show, and queue truncated windows."
+  ],
+  "limitations": [
+    "Synthetic fixtures qualify mechanics rather than conversational-context quality.",
+    "Question-response structure uses explicit terminal question punctuation and immediate canonical response order.",
+    "Token counts are deterministic character-based estimates rather than model-specific tokenizer counts."
+  ]
+}

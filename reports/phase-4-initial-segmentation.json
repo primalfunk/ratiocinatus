@@ -1,0 +1,40 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "cache_replay_is_stable": true,
+    "canonical_words_have_exactly_one_owner": true,
+    "corrupt_cache_is_refused": true,
+    "cross_segment_merge_is_policy_bounded": true,
+    "deterministic_rebuild_is_identical": true,
+    "phase2_and_phase3_evidence_remain_immutable": true,
+    "policy_changes_create_new_phase4_identity": true,
+    "source_and_normalized_intervals_are_preserved": true,
+    "speaker_observation_lineage_is_explicit": true,
+    "speaker_turn_lineage_is_explicit": true,
+    "typed_cli_build_inspect_list_and_validate_are_available": true,
+    "unknown_and_conflicting_speakers_are_not_forced": true,
+    "word_boundary_ties_are_owned_once_and_flagged": true
+  },
+  "boundaries": [
+    "Initial segmentation is deterministic structural evidence, not a linguistic or semantic conclusion.",
+    "Completeness remains unknown unless punctuation and a bounded attribution span jointly support a provisional result.",
+    "Unknown speaker attribution remains acceptable.",
+    "Interruption, continuation, repair, disfluency, and quotation relations remain later Phase 4 stages.",
+    "No claim extraction, argument analysis, adjudication, credibility scoring, intent inference, or participant judgment is introduced."
+  ],
+  "phase": 4,
+  "qualification": "phase-4-deterministic-initial-utterance-segmentation",
+  "schema_exports": {
+    "phase4_contracts": 11,
+    "runtime_contracts": 248
+  },
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "tests": {
+    "focused_phase4": 9,
+    "focused_segmentation": 4,
+    "full_regression": 199,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_04.txt"
+}

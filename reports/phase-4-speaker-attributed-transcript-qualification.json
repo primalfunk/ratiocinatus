@@ -1,0 +1,25 @@
+{
+  "qualification": "phase-4-speaker-attributed-transcript",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "synthetic_mechanics",
+  "utterance_view_contract_models": 6,
+  "runtime_contracts": 281,
+  "focused_test_count": 5,
+  "full_regression_test_count": 224,
+  "assertions": [
+    "Every bundle contains exactly all six canonical transcript views.",
+    "Every view preserves utterance identifiers and source intervals.",
+    "Unknown and conflicting speakers remain explicit.",
+    "Interruption, continuation, overlap, quotation, source, repair, uncertainty, and review evidence is rendered as markers.",
+    "The overlap-expanded view preserves temporal groups and lanes.",
+    "Sequential overlap linearization and unavailable label or text surfaces produce sealed loss records.",
+    "Persistence is deterministic, reloadable, cache-safe, and tamper-evident.",
+    "CLI operations build, validate, inspect, list, and render transcript views."
+  ],
+  "limitations": [
+    "Synthetic fixtures qualify mechanics rather than speaker-attribution accuracy.",
+    "Presentation views do not replace the utterance corpus or upstream evidence.",
+    "Compact and sequential views cannot express simultaneous speech spatially; declared losses preserve that limitation."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "qualification": "phase-4-bounded-turn-repair",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "synthetic_mechanics",
+  "turn_repair_contract_models": 8,
+  "runtime_contracts": 269,
+  "focused_test_count": 6,
+  "full_regression_test_count": 214,
+  "assertions": [
+    "Transcript, boundary, turn, attribution, and utterance mismatches are source-addressed.",
+    "Every proposal retains supporting and contrary evidence.",
+    "All required repair actions are represented by strict contracts.",
+    "Automated word reassignment and source mutation are prohibited.",
+    "Ambiguous or overlap-affected evidence is preserved or marked unresolved.",
+    "Accepted decisions create sealed predecessor-linked successor records.",
+    "Rejected and deferred decisions cannot create successor records.",
+    "Persistence is deterministic, reloadable, cache-safe, and tamper-evident.",
+    "CLI operations expose conflict, proposal, successor, decision, and validation flows."
+  ],
+  "limitations": [
+    "Synthetic rules qualify mechanics rather than repair accuracy.",
+    "Accepted successors project changes but do not yet assemble a replacement utterance view.",
+    "Word reassignment requires explicit later review evidence."
+  ]
+}

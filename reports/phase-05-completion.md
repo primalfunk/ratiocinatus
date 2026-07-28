@@ -21,7 +21,7 @@
 | adversarial | 544.466667 s | 68 | 3 | 4, plus one visual mismatch | 136 | 14,264,371 | `08ab6072bd057c667691b96c0c889adf843de7b57d2d8e6d45f4be29fd9d3bd2` |
 
 Each variant has a 48 kHz stereo FLAC mix and three isolated 48 kHz mono FLAC
-stems. Videos are 1920ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â1080, H.264, fixed 30 fps, with 48 kHz stereo AAC and no
+stems. Videos are 1920x1080, H.264, fixed 30 fps, with 48 kHz stereo AAC and no
 DRM. Total frozen fixture size is approximately 230 MiB. The checksum inventory
 contains more than 126 entries, including all canonical media and 68 raw PCM
 line artifacts.

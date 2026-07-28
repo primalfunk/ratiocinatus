@@ -1,0 +1,35 @@
+{
+  "qualification": "phase-5-procedural-state-construction",
+  "status": "passed",
+  "target_application_version": "0.7.0",
+  "evidence_class": "synthetic_procedural_state_mechanics",
+  "procedural_state_contract_models": 5,
+  "runtime_contracts": 376,
+  "focused_stage_test_count": 6,
+  "focused_phase_test_count": 47,
+  "full_regression_test_count": 297,
+  "assertions": [
+    "Canonical procedural acts and procedural questions produce source-time-ordered events.",
+    "Every procedural event retains its source act, utterance, source intervals, evidence spans, observed attribution, target state, effects, confidence, and review.",
+    "Every procedural event produces exactly one immutable contiguous snapshot.",
+    "Observed acoustic speaker remains distinct from procedurally recognized speaker.",
+    "Pronouns do not automatically identify floor recipients.",
+    "A floor grant can open an active response interval while its target remains unresolved.",
+    "Explicit turn yield and time-expiration events close the active response interval.",
+    "Answer requests preserve bounded pending-question targets.",
+    "Warnings and expiration remain distinct timing events.",
+    "Moderator instructions, clarification requests, topic transitions, technical interruptions, and unresolved events remain explicit state.",
+    "Every state change is linked to a discourse act and source-media interval.",
+    "Violation, fault, blame, and sanction fields are constrained to false or zero.",
+    "No intent inference is performed.",
+    "Procedural-state run and report artifacts are sealed, replayable, and reusable.",
+    "CLI operations build, validate, inspect, and list events, snapshots, and unresolved procedural events.",
+    "Schema export includes all five procedural-state contracts."
+  ],
+  "limitations": [
+    "Recognized speaker remains unresolved without explicit procedural target evidence.",
+    "Pending questions persist until an explicit later procedural event changes state.",
+    "Granted extensions require explicit structured evidence and are not inferred from generic wording.",
+    "The controlled fixtures qualify state mechanics, not natural-conversation procedural accuracy."
+  ]
+}

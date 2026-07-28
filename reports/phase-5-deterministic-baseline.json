@@ -1,0 +1,30 @@
+{
+  "qualification": "phase-5-deterministic-high-precision-baseline",
+  "status": "passed",
+  "target_application_version": "0.7.0",
+  "evidence_class": "deterministic_rules",
+  "baseline_contract_models": 3,
+  "deterministic_rule_count": 27,
+  "runtime_contracts": 341,
+  "focused_test_count": 6,
+  "full_regression_test_count": 262,
+  "assertions": [
+    "Every emitted observation is supported by an explicit lexical or structural cue.",
+    "Punctuation alone and generic declarative form never force a classification.",
+    "Clear questions, procedural formulas, concessions, qualifications, definitions, examples, assertive markers, and Phase 4 quotations are represented.",
+    "Multiple compatible observations may be emitted for one utterance.",
+    "Unsupported utterances remain explicitly unclassified.",
+    "Evidence spans reproduce exact Phase 4 display text and retain source-media addressing.",
+    "Phase 4 quotation evidence is consumed without changing acoustic speaker attribution.",
+    "Rule confidence is explicitly uncalibrated and is not treated as provider probability.",
+    "The baseline invokes no provider and performs no semantic claim extraction.",
+    "Builds replay deterministically and sealed persistence refuses tampering or incompatible quotation lineage.",
+    "CLI operations build, validate, inspect, list observations, and list unclassified utterances.",
+    "Phase 4 and earlier evidence remains byte-for-byte outside the output destination."
+  ],
+  "limitations": [
+    "The deterministic fixture qualifies conservative mechanics, not general natural-conversation accuracy.",
+    "Recall is intentionally limited before provider-assisted classification.",
+    "Partial-span media timing remains at utterance resolution when word-to-character alignment is unavailable."
+  ]
+}

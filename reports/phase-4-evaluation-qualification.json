@@ -1,0 +1,23 @@
+{
+  "qualification": "phase-4-controlled-utterance-evaluation",
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "evidence_class": "measured_evaluation",
+  "runtime_contracts": 320,
+  "focused_test_count": 3,
+  "full_regression_test_count": 250,
+  "metric_inventory_count": 20,
+  "assertions": [
+    "All twenty required Phase 4 evaluation metrics have typed results.",
+    "Precision, recall, timing, segmentation, attribution, relation, quotation, propagation, and context metrics are source-traceable.",
+    "A metric with no applicable reference examples is disclosed as not applicable rather than assigned a favorable score.",
+    "Boundary matching uses an explicit collar and deterministic one-to-one matching.",
+    "Segmentation similarity uses canonical word ownership rather than text similarity.",
+    "Controlled references and evaluation reports are sealed, reloadable, and tamper-evident.",
+    "Stratified results preserve evidence class and do not imply natural-speech generalization."
+  ],
+  "limitations": [
+    "Controlled fixture measurements do not establish general natural-speech accuracy.",
+    "Not-applicable results are not treated as zero or perfect performance."
+  ]
+}

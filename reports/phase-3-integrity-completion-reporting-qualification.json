@@ -1,0 +1,28 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "all_eighteen_gates_are_explicit": true,
+    "completion_requires_every_gate": true,
+    "corrupt_present_evidence_is_refused": true,
+    "evidence_classes_remain_separate": true,
+    "human_and_machine_reports_are_hashed": true,
+    "long_recording_gate_remains_pending": true,
+    "missing_evidence_is_conservatively_reported": true,
+    "provider_claims_are_not_measurements": true,
+    "report_successors_are_append_only": true
+  },
+  "phase": 3,
+  "qualification": "phase-3-integrity-completion-reporting",
+  "schema_exports": {
+    "fixture_contracts": 20,
+    "runtime_contracts": 237
+  },
+  "status": "passed",
+  "target_application_version": "0.5.0",
+  "tests": {
+    "focused_phase3_completion": 6,
+    "full_regression": 190,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_03.txt"
+}

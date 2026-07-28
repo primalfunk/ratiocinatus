@@ -1,0 +1,80 @@
+{
+  "assertions": {
+    "all_base_assemblies_unchanged": true,
+    "all_corrections_human_only": true,
+    "all_differences_and_histories_complete": true,
+    "all_invalidated_word_claims_withheld": true,
+    "all_original_and_current_views_distinct": true,
+    "all_repeated_revisions_stable": true,
+    "all_second_runs_reused": true,
+    "all_successor_lineages_valid": true,
+    "source_assembly_qualification_passed": true
+  },
+  "correction_scope": "One controlled human merge per variant restores the public L001 orthography '8 p.m.' from the observed '8p. M.'.",
+  "limitations": [
+    "This qualification demonstrates correction mechanics and lineage, not independent transcript accuracy.",
+    "Text-changing corrections conservatively withhold inherited word evidence from the corrected view until it is re-aligned.",
+    "Subtitle export is qualified separately as a presentation derivative."
+  ],
+  "qualification": "phase-2-append-only-transcript-corrections",
+  "results": [
+    {
+      "automated_correction_count": 0,
+      "base_assembly_unchanged": true,
+      "base_version_id": "txversion_d30cbea2ff01b9012f644dd403b8d832",
+      "cache_first_reused": true,
+      "cache_second_reused": true,
+      "corrected_segment_words_withheld": true,
+      "corrected_text_visible": true,
+      "difference_entry_count": 1,
+      "history_correction_count": 1,
+      "human_correction_count": 1,
+      "original_text_retained": true,
+      "resulting_version_id": "txversion_2c10a509ef38899b4867b956df64a36a",
+      "revision_id": "txrevision_c35a65d7e8f525e3d0a87d67f16074e7",
+      "stable_repeated_revision": true,
+      "stored_relative": "phase2/clean/transcript-revisions/txrevision_c35a65d7e8f525e3d0a87d67f16074e7",
+      "variant": "clean",
+      "version_predecessor_valid": true
+    },
+    {
+      "automated_correction_count": 0,
+      "base_assembly_unchanged": true,
+      "base_version_id": "txversion_e2e003f7a453bd7bf2d3dec1e1087447",
+      "cache_first_reused": true,
+      "cache_second_reused": true,
+      "corrected_segment_words_withheld": true,
+      "corrected_text_visible": true,
+      "difference_entry_count": 1,
+      "history_correction_count": 1,
+      "human_correction_count": 1,
+      "original_text_retained": true,
+      "resulting_version_id": "txversion_2df098fd98356ad0b889efbf47e1b908",
+      "revision_id": "txrevision_751da32100bcc154e6aa840970cdc1bb",
+      "stable_repeated_revision": true,
+      "stored_relative": "phase2/naturalized/transcript-revisions/txrevision_751da32100bcc154e6aa840970cdc1bb",
+      "variant": "naturalized",
+      "version_predecessor_valid": true
+    },
+    {
+      "automated_correction_count": 0,
+      "base_assembly_unchanged": true,
+      "base_version_id": "txversion_9be2be20d94fe7cf0f0124e36f97ebf9",
+      "cache_first_reused": true,
+      "cache_second_reused": true,
+      "corrected_segment_words_withheld": true,
+      "corrected_text_visible": true,
+      "difference_entry_count": 1,
+      "history_correction_count": 1,
+      "human_correction_count": 1,
+      "original_text_retained": true,
+      "resulting_version_id": "txversion_dd301ca3efeb7b8946719d445bb05818",
+      "revision_id": "txrevision_5553807c8db18ba286b6f510e9951402",
+      "stable_repeated_revision": true,
+      "stored_relative": "phase2/adversarial/transcript-revisions/txrevision_5553807c8db18ba286b6f510e9951402",
+      "variant": "adversarial",
+      "version_predecessor_valid": true
+    }
+  ],
+  "status": "passed"
+}

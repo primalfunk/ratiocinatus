@@ -1,0 +1,37 @@
+{
+  "application_version": "0.4.0",
+  "assertions": {
+    "canonical_word_ownership_is_unique": true,
+    "completeness_and_interruption_are_coherent": true,
+    "contract_versions_are_strict": true,
+    "integrity_findings_are_typed": true,
+    "prior_phase_lineage_is_explicit": true,
+    "quoted_and_acoustic_speaker_boundaries_are_declared": true,
+    "schema_export_includes_phase4": true,
+    "text_views_preserve_derivation": true,
+    "unknown_and_conflicting_attribution_are_explicit": true,
+    "utterance_identifiers_are_stable_over_identical_state": true
+  },
+  "boundaries": [
+    "An utterance is an analytical grouping, not necessarily a sentence, speaker turn, transcript segment, complete thought, or proposition.",
+    "A quoted speaker is not necessarily the acoustic speaker.",
+    "An interruption flag does not establish intent or blame.",
+    "Unknown speaker attribution remains acceptable.",
+    "No claim extraction, argument analysis, adjudication, credibility scoring, or participant judgment is introduced."
+  ],
+  "phase": 4,
+  "qualification": "phase-4-contract-and-utterance-boundary-foundation",
+  "schema_exports": {
+    "phase4_contracts": 11,
+    "runtime_contracts": 248
+  },
+  "status": "passed",
+  "target_application_version": "0.6.0",
+  "tests": {
+    "focused_phase4_foundation": 5,
+    "full_regression": 195,
+    "status": "passed"
+  },
+  "work_order": "docs/work_orders/phase_04.txt",
+  "work_order_sha256": "b0511a0a82fb4b10a61838fc1155f42c96e455c03fd3c268f44035905b799d75"
+}
